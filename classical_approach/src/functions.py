@@ -1087,3 +1087,5 @@ def plot_best_coefficients(cf_df:pd.DataFrame,top):
 def top_coefficients_winner(top,names):
     cf_df=get_top_coefficients(top=top,names=names)
     plot_best_coefficients(cf_df=cf_df,top=top)
+
+    return cf_df
