@@ -496,10 +496,10 @@ def check_for_outliers(data_df: pd.DataFrame):
 # method used to explore the class imbalance of our dataset
 def class_imbalance(data_df: pd.DataFrame,field='diagnosis'):
     df=data_df
-    order=[0,1] # the order that we want to present our classes
+    # order=[0,1] # the order that we want to present our classes
 
     # we find how many entries per class
-    entries=df[field].value_counts().reindex(order)
+    entries=df[field].value_counts()
     print(f'Absolute frequencies of field "{field}"')
     print(entries)
 
