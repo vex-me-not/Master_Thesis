@@ -816,6 +816,19 @@ def metric_ci(y_true, y_pred, metric, is_proba=False, proba=None, n_samples=5000
     
     return np.percentile(stats, [2.5, 97.5]) # we return the two ends of the interval
 
+def specificity_metric(y_val,y_pred):
+    tn, fp, fn_, tp=confusion_matrix(y_val, y_pred).ravel()
+    
+    speci=tn / (tn + fp) if (tn + fp) > 0 else 0
+
+    return speci
+
+def npv_metric(y_val,y_pred):
+    tn, fp, fn_, tp=confusion_matrix(y_val, y_pred).ravel()
+    
+    npv=tn / (tn + fn_) if (tn + fn_) > 0 else 0
+
+    return npv
 
 # method used to print the confidence interval of bootstrapping as actual intervals([start,end]) of all metrics
 def bootstrap_model_intervals(df_dev:pd.DataFrame,df_val:pd.DataFrame, model):
@@ -827,7 +840,9 @@ def bootstrap_model_intervals(df_dev:pd.DataFrame,df_val:pd.DataFrame, model):
         'Recall': (recall_score, False),
         'MCC': (matthews_corrcoef, False),
         'ROC AUC': (roc_auc_score, True),
-        'PR AUC': (average_precision_score, True)
+        'PR AUC': (average_precision_score, True),
+        'Specificity': (specificity_metric, False),
+        'NPV': (npv_metric, False)
     }
 
 
@@ -878,13 +893,13 @@ def bootstrap_model_intervals(df_dev:pd.DataFrame,df_val:pd.DataFrame, model):
         print(f"{name:15s}: [{ci[0]:.4f}, {ci[1]:.4f}]")
 
     # specificity and NPV as point estimates (not bootstrapped here)
-    tn, fp, fn_, tp=confusion_matrix(y_val, y_pred).ravel()
+    # tn, fp, fn_, tp=confusion_matrix(y_val, y_pred).ravel()
     
-    specificity=tn / (tn + fp) if (tn + fp) > 0 else 0
-    npv=tn / (tn + fn_) if (tn + fn_) > 0 else 0
+    # specificity=tn / (tn + fp) if (tn + fp) > 0 else 0
+    # npv=tn / (tn + fn_) if (tn + fn_) > 0 else 0
     
-    print(f"Specificity         : {specificity:.4f}")
-    print(f"NPV                 : {npv:.4f}")
+    # print(f"Specificity         : {specificity:.4f}")
+    # print(f"NPV                 : {npv:.4f}")
 
 
 # method used to calculate the metrics score of all methods need for the violinplot
@@ -898,7 +913,9 @@ def metric_ci_plot(y_true, y_pred, proba, n_samples=1000, seed=42):
         'Recall': [],
         'MCC': [],
         'ROC AUC': [],
-        'PR AUC': []
+        'PR AUC': [],
+        'Specificity': [],
+        'NPV': []
     }
 
     for sample in range(n_samples):
@@ -915,6 +932,8 @@ def metric_ci_plot(y_true, y_pred, proba, n_samples=1000, seed=42):
         metrics['Precision'].append(precision_score(y_bs, y_pred_bs))
         metrics['Recall'].append(recall_score(y_bs, y_pred_bs))
         metrics['MCC'].append(matthews_corrcoef(y_bs, y_pred_bs))
+        metrics['Specificity'].append(specificity_metric(y_bs, y_pred_bs))
+        metrics['NPV'].append(npv_metric(y_bs, y_pred_bs))
         metrics['ROC AUC'].append(roc_auc_score(y_bs, y_proba_bs))
         metrics['PR AUC'].append(average_precision_score(y_bs, y_proba_bs))
 
