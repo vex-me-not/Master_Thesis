@@ -1,0 +1,1871 @@
+% thesis.tex
+%
+% Enjoy, evolve, and share!
+%
+% Compile it as follows:
+% xelatex demo.tex
+% bibtex demo.aux
+% xelatex demo.tex && xelatex demo.tex
+%
+% Alternatively, compile it using `make -i' (see the provided Makefile).
+%
+% Check file `dimscthesis.cls' for other configuration options.
+%
+%
+% This documentclass supports the following options:
+% en
+% 		If present, the document adds some English pages in the front matter
+% 		plus changes some headings to English. Use this option if thesis is in English.
+%       Omit if written in Greek.
+%
+% inscr
+% 		If present, then a page with the inscription provided via the command
+% 		\inscription{} is printed.
+%
+% ack
+%		If present, then a page with the acknowledgements provided via the
+%		command \acksEn{} is printed.
+%
+% preface
+%		If present, then a preface page is included just before the
+%		introductory chapter. The content of this page is controled via the
+%		command \preface{}.
+%
+% oneside
+%		If present, the thesis is formatted as if it will be printed on
+%		only one side of each page, the other side being left blank.
+%		Default is "twoside", which is used when this option is omitted.
+%
+\documentclass[en,inscr,ack,preface]{dimscthesis}
+
+% Scans for figures relative to this file
+\graphicspath{ {./figures/} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% User-specific package inclusions %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+    unicode=true,                     % non-Latin characters in bookmarks
+    pdffitwindow=true,                % page fit to window when opened
+    pdfnewwindow=true,                % links in new window
+    pdfkeywords={quantum, machine, learning, classification, tumor},  % list of keywords
+    colorlinks=true,                  % false: boxed links; true: colored links
+    linkcolor=black,                  % color of internal links
+    citecolor=black,                  % color of links to bibliography
+    filecolor=black,                  % color of file links
+    urlcolor=black,                   % color of external links
+    pdftitle={A Comparative Analysis of Classical Machine Learning and Variational Quantum Classifiers for Breast Tumor Classification Using Fine Needle Aspiration Data},          % title
+    pdfauthor={Charisis Nikolaos},    % author
+    pdfsubject={Master Thesis}               % subject of the document
+}
+\urlstyle{same}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% User-specific package inclusions %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[shortlabels]{enumitem}
+\usepackage{lscape}
+\usepackage{subcaption}
+\usepackage{listings}
+
+\usepackage{float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% User-specific configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Required Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% First name, last name
+%
+\authorFirstGr{Νικόλαος}
+\authorFirstAbrGr{Ν.} % abbreviation of first name
+\authorMiddleGr{Ζ.}   % abbreviation of father's first name
+\authorLastGr{Χαρίσης}
+\authorFirstEn{Nikolaos}
+\authorFirstAbrEn{N.}
+\authorMiddleEn{Z.}
+\authorLastEn{Charisis}
+\authorSN{7115152400008}
+
+%
+% Program (greek and english)
+%
+\programGr{ΕΠΙΣΤΗΜΗ ΔΕΔΟΜΕΝΩΝ \& ΤΕΧΝΟΛΟΓΙΕΣ ΠΛΗΡΟΦΟΡΙΑΣ}
+\programEn{Data Science and Information Technologies}
+
+%
+% The title of the thesis
+%
+\titleGr{Συγκριτική Ανάλυση Κλασικών Μεθόδων Μηχανικής Μάθησης και Mεταβλητών Kβαντικών Tαξινομητών για την Ταξινόμηση Όγκων Μαστού με Χρήση Δεδομένων Παρακέντησης με λεπτή βελόνα }
+\titleEn{A Comparative Analysis of Classical Machine Learning and Variational Quantum Classifiers for Breast Tumor Classification Using Fine Needle Aspiration Data}
+
+%
+% Month followed by Year
+%
+\dateGr{ΦΕΒΡΟΥΑΡΙΟΣ 2026}
+\dateEn{FEBRUARY 2026}
+
+%
+% Advisor info
+%
+\advisorGr{Μανδηλαρά Αικατερίνη}
+\advisorRankGr{Ερευνητής}
+\advisorOrgGr{ΕΚΠΑ}
+\advisorEn{Mandilara Aikaterini}
+\advisorRankEn{Researcher}
+\advisorOrgEn{NKUA}
+
+%
+% Members of the advisory board
+% (the first one, will be automatically taken up by the advisor)
+%
+\boardTwoGr{Γουνόπουλος Δημήτριος}
+\boardTwoRankGr{Καθηγητής}
+\boardTwoOrgGr{ΕΚΠΑ}
+\boardTwoEn{Gunopulos Dimitrios}
+\boardTwoRankEn{Professor}
+\boardTwoOrgEn{NKUA}
+
+\boardThreeGr{Συβρίδης Δημήτριος}
+\boardThreeRankGr{Καθηγητής}
+\boardThreeOrgGr{ΕΚΠΑ}
+\boardThreeEn{Syvridis Dimitrios}
+\boardThreeRankEn{Professor}
+\boardThreeOrgEn{NKUA}
+
+%
+% The examination date of the thesis
+%
+\examinationDateGr{1 Φεβρουαρίου 2026}
+\examinationDateEn{1 February, 2026}
+
+%
+% Supervisors[heading(optional, defaluts to ΕΠΙΒΛΕΠΩΝ/SUPERVISOR)]{people} (greek and english)
+%
+\supervisorsGr[Επιβλέποντες]{
+    {\bfseries Μανδηλαρά Αικατερίνη}, Ερευνητής ΕΚΠΑ\\
+    % {\bfseries Επιβλέπων Δεύτερος}, Καθηγητής ΕΚΠΑ
+}
+\supervisorsEn[Supervisors]{
+    {\bfseries Mandilara Aikaterini}, Researcher NKUA\\
+    % {\bfseries Board Second}, Professor NKUA
+}
+
+%
+% Abstract in Greek
+%
+\abstractGr{%
+    Η περίληψη περιλαμβάνει το σκοπό-αντικείµενο της εργασίας, τη μεθοδολογία, τα κύρια βήματα που ακολουθήθηκαν και τέλος τα κύρια αποτελέσματα.
+    Μετά το τέλος της περίληψης δηλώνεται η επιστημονική περιοχή της εργασίας και 5 λέξεις κλειδιά.
+    Η συνολική έκταση της περίληψης και των λέξεων δήλωσης επιστημονικής περιοχής και λέξεων-κλειδιών θα είναι 1-2 σελίδες.
+}
+%
+% Subject area and keywords in Greek
+%
+\subjectAreaGr{Κβαντική Μηχανική Μάθηση}
+\keywordsGr{κβαντική, μηχανική, μάθηση, κατηγοριοποίηση, όγκος}
+
+\abstractEn{%
+    The abstract details the scope and purpose of this thesis, methodology, any experiments and the results thereof.
+    You also need to declare the subject area and up to 5 keywords to be included after the abstract.
+    The abstract and keywords should span no more than 2 pages.
+}
+
+%
+% Subject area and keywords in English
+%
+\subjectAreaEn{Quantum Machine Learning}
+\keywordsEn{quantum, machine, learning, classification, tumor}
+
+%
+% Inscription page (insc)
+%
+\inscription{\emph{Optional inscription section.\\
+        Included when passing \emph{inscr} in the \textbackslash{}documentclass.}}
+
+%
+% Acknowledgment page (ack)
+%
+\acks{%
+    Acknowledgment page. This page is optional. Included when passing the \textit{ack} option in the \textbackslash{}documentclass.
+}
+
+%
+% Preface page (preface)
+%
+\preface{%
+    This is where you provide more non-scientific details not written in the abstract or the main matter.
+
+    This page is included by adding the \emph{preface} option in the \textbackslash{}documentclass.
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Main Matter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frontmatter
+
+\mainmatter
+
+% add main chapters (should be given in capital letters)
+\chapter{INTRODUCTION} \label{introduction}
+\chapter{CLASSICAL MACHINE LEARNING METHODS} \label{clml}
+\section{Logistic Regression} \label{lr}
+\section{Naive Bayes Classifier} \label{nvb}
+\section{Support Vector Machines} \label{svms}
+\section{Linear Discriminant Analysis} \label{LDA}
+\section{Random Forests} \label{rfs}
+\section{Light Gradient Boosting Machine} \label{lightgbm}
+% \chapter{INTRODUCTION} \label{introduction}
+\chapter{QUANTUM COMPUTING AND QUANTUM MACHINE LEARNING} \label{quantum}
+\section{The Qubit} \label{qbt}
+\section{Quantum Entanglement} \label{entanglement}
+\section{Quantum Gates} \label{qgates}
+\section{Data Encoding} \label{encoding}
+\section{Qunatum Ciruits} \label{circuits}
+\chapter{RESULTS FROM CLASSICAL MACHINE LEARNING METHODS} \label{mlres}
+\section{Exploratory Data Analysis} \label{eda}
+\section{Evaluation of Classical Machine Learning Methods} \label{clas_eval}
+\section{Classical Models and their Respective Hyperparameters} \label{clas_models}
+\section{Evaluation Metrics} \label{eval_metr}
+\section{Repeated Nested Cross Validation} \label{rncv}
+\section{Finding the Best Classical Model} \label{find_best}
+\section{Finetuning the Best Model} \label{finetune_best}
+\section{Bootstrapping} \label{bootstrap}
+\section{95\% Confidence Intervals based on bootstrapping} \label{ci}
+\chapter{RESULTS FROM QUANTUM MACHINE LEARNING METHODS} \label{qml}
+
+Following the determination that Logistic Regression represents the most efficacious classical machine learning approach for the current tumor classification problem, the research transitions toward the implementation of Quantum Machine Learning (QML) paradigms. Specifically, this study investigates the Variational Quantum Classifier (VQC) to identify optimal sets of trainable parameters that provide a robust and satisfactory solution to the diagnostic task. This exploration involves a systematic evaluation of the VQC's classification capabilities across architectures consisting of 1, 2, 3, 4, and 5 qubits, respectively. To facilitate this, Principal Component Analysis (PCA) is employed to perform the necessary dimensionality reduction, ensuring the input features are structurally compatible with the constraints of the quantum circuits. The computational implementation of this framework is supported by the PennyLane \textbf{[CITE]} Python library for quantum circuit simulation and differentiable programming, while NumPy facilitates essential numerical manipulations. Furthermore, pandas and scikit-learn are utilized for data orchestration and dimensionality reduction, while Seaborn \textbf{[CITE]} and Matplotlib \textbf{[CITE]} are employed for high-fidelity data visualization and statistical plotting.
+
+A critical component of this transition involves a refined approach to data management and integrity, starting with a tripartite division of the dataset. Unlike the previous classical approach, we utilize a 60-20-20 split, wherein 60\% of the original data is allocated for model training, 20\% is reserved for validation to guide the optimization of variational parameters, and the remaining 20\% serves as a dedicated test set for final, unbiased model evaluation. To maintain the statistical integrity of the dataset, class imbalance is meticulously accounted for through stratified sampling across all three subsets, ensuring that the proportional representation of benign and malignant cases remains consistent. Furthermore, to mitigate the significant risks associated with data leakage, we ensure that no information from the validation or test sets influences the training phase. In practical terms, this necessitates that any preprocessing transformers or feature scalers, including the PCA model, are fitted exclusively on the training subset and subsequently applied to the validation and test sets only after the initial stratified split has been performed.
+
+Another significant departure from the classical methodology is the modification of the target label encoding. Rather than the standard binary assignment of 0 for benign and 1 for malignant, we adopt a bipolar encoding scheme where the benign class is represented by -1 and the malignant class by 1. This preprocessing step is necessitated by the physical nature of the quantum classifier, which essentially utilizes the sign of the output measurement to assign a predicted label to each input vector. This encoding aligns with the measurement of a quantum bit in the computational basis, where expectation values naturally range within the interval [-1, 1]. Consequently, the Mean Square Error (MSE) is selected as the objective loss function for its simplicity and its compatibility with these continuous expectation values. Notably, during the optimization process, we utilize the raw measurement values rather than their discrete signs to preserve the granular gradient information required for effective training. The rationale behind this specific choice and its impact on the convergence of the model will be expanded upon in subsequent sections of this study.
+
+As a concluding note on the experimental design, the evaluation of the VQC’s performance is streamlined to focus on four primary metrics: Accuracy, Recall, Precision, and the F1-score. By restricting the evaluation to these fundamental indicators, we aim to provide a clear and focused assessment of the VQC’s potential within a medical diagnostic context without the confounding variables introduced by a larger collection of comparative methods. This simplified evaluation framework is intended to illuminate the relative strengths of the quantum approach in comparison to established classical baselines. Having established these methodological differences and the underlying logic of our quantum framework, we now proceed to an in-depth explanation of the specific training, validation, and testing protocols designed for the Variational Quantum Classifier.
+
+The methodological framework adopted for this research remains consistent across all experimental trials involving Variational Quantum Classifiers (VQCs) of various qubit capacities. This framework is partitioned into two primary segments: the data preparation stage and the training and testing phase. The data preparation process is fundamentally guided by the specific number of qubits utilized in each iteration, primarily involving the implementation of dimensionality reduction techniques and the systematic scaling of the training, validation, and test datasets. Additionally, a preliminary exploratory data visualization of the processed data is conducted to evaluate the spatial separability of the two classes, thereby gauging the inherent complexity of the classification task.
+
+Following the completion of the data preprocessing phase for all three subsets, the training and evaluation stage focuses on optimizing the Variational Quantum Classifier using the training and validation sets, followed by a final assessment of its performance on the test set. The fundamental circuit architecture remains invariant regardless of the qubit count and is categorized into three specific components. The initial segment involves data encoding, wherein classical information is mapped into the quantum state. To achieve this, we employ the Amplitude Efficient State Preparation method proposed by Petruccione and Schuld \textbf{[CITE]}, which facilitates the encoding of \(2^n\) features using n qubits by first normalizing the input vectors.
+
+In cases where the number of features is less than \(2^n\), the input vector is padded with a constant value of 0.1 to satisfy the dimensionality requirements of the encoding scheme. This padding ensures that the input dimensions remain consistent with the Hilbert space of the chosen qubit configuration. This segment is crucial as it defines the initial state of the quantum system before any transformations occur in the variational layers.
+
+The second component comprises the variational segment, which incorporates the system's trainable parameters. Drawing inspiration from the work of Schuld et al.\textbf{[CITE]} and contemporary methodologies in classical neural networks, this architectural section consists of layers that are repeated for a predetermined number of iterations. Each layer is composed of a sequence of single-qubit rotation gates followed by Controlled-NOT (CNOT) gates to facilitate multi-qubit entanglement. Adopting the notation utilized by the PennyLane library, the single-qubit rotation gates are implemented as arbitrary rotations, defined mathematically as $R(\phi, \theta, \omega) = R_Z(\omega) R_Y(\theta) R_Z(\phi)$. This sequence represents a rotation around the z-axis by an angle $\omega$, followed by a rotation around the y-axis by $\theta$, and a final rotation around the z-axis by $\phi$.
+
+This specific configuration of gates allows the model to navigate the Hilbert space effectively, with these rotation angles serving as the primary trainable quantum parameters. Consequently, the number of trainable parameters per layer scales linearly with the number of qubits: three for a single qubit, six for two qubits, nine for three qubits, twelve for four qubits, and fifteen for a five-qubit configuration. Crucially, these parameter values are unique to each layer; for instance, a single-qubit classifier utilizing two variational layers would comprise six distinct trainable parameters. As such, the total parameter space expands rapidly in relation to both circuit width and depth
+
+The third and final component of the Variational Quantum Classifier architecture is the measurement stage, during which the quantum state is collapsed to extract classical information. To maintain a streamlined and interpretable framework, the measurement is restricted to the first qubit of the circuit. The integration of Controlled-NOT gates in the preceding layers is critical at this stage, as the entanglement generated by these multi-qubit operations ensures that the state of the primary qubit is inextricably linked to the states of all other qubits in the register. Consequently, the expectation value derived from the first qubit, typically obtained through measurement in the Z basis, reflects a global state influenced by the entire circuit. This approach exploits the intrinsic properties of quantum entanglement, where a measurement on a single subsystem provides representative insights into the collective quantum state of the system. An illustrative representation of a VQC configuration comprising two qubits and six layers is provided in Figure\textbf{~\ref{fig:2_qbts_6_layers}} to clarify this architectural design.
+
+\begin{figure}
+% Define the figure file in the \includegraphics command
+% Must be relative to one of the paths
+% in the \graphicspath command at the top
+\includegraphics[width=\linewidth]{best_VQC_2_qubits_biased}
+% Place caption under the figure
+\caption{A VQC configuration comprising of two qubits and six layers
+}
+% Label the caption to include in the list of figures
+\label{fig:2_qbts_6_layers}
+\end{figure}
+
+To derive the final predictive output of the circuit, we extract the expectation value from the measurement of the first qubit. To this result, we introduce a classical scalar known as a bias term, which is initially set to zero. Consequently, the decision function of the classifier is defined as the summation of the quantum circuit's measurement and this classical value. We distinguish between two primary configurations: the unbiased Variational Quantum Classifier, where the bias remains fixed at zero to evaluate a strictly quantum-mechanical approach, and the biased VQC, where the bias is integrated into the optimization pipeline as an additional trainable parameter.
+
+In the biased configuration, the parameter is optimized through classical gradient-based methods alongside the variational rotation angles. The objective of this distinction is to systematically observe the performance variance between a purely quantum model and a hybrid system, where the quantum output is either bolstered or refined by a classical offset. It is hypothesized that for architectures characterized by low qubit counts and minimal circuit depth,where the problem complexity is relatively low,the contribution of the bias term may be negligible. However, its utility is expected to become more pronounced as the system scales in complexity, specifically when increasing the number of qubits and variational layers.
+
+To identify the optimal configuration of trainable parameters, whether strictly quantum or a hybrid of quantum and classical, we evaluate various layer depths while training the Variational Classifier over a set number of epochs, adjusted according to the qubit count. The optimization process begins with the stochastic initialization of the circuit’s variational parameters to small random values, while the classical bias is initialized at zero. Subsequently, we utilize the objective loss function and a classical optimizer to iteratively update the quantum rotation angles; in the specific case of the biased classifier, the classical bias parameter is optimized concurrently.
+
+Throughout the optimization process, the classifier is evaluated using the previously unseen validation set to assess its generalization capability. Using a batch size consistent with the training phase, validation data is processed to generate predicted labels, from which the accuracy, precision, recall, and F1-score are calculated. To facilitate a comprehensive analysis of the model's evolution, performance metrics are simultaneously recorded for the training set
+
+This comparative approach allows for a detailed assessment of the model's learning trajectory and helps identify potential occurrences of overfitting or underfitting. Furthermore, tracking the progression of the cost function across both training and validation inputs is imperative for understanding convergence behavior and the stability of the optimization.
+
+The specific parameters associated with the highest validation performance are preserved, along with the epoch count required to achieve this optimal state. Ultimately, these optimized parameters are utilized to perform inference on the held-out test set, providing an unbiased evaluation of the Variational Quantum Classifier's performance and its efficacy in solving the tumor classification problem.
+
+To ensure a robust assessment of the generalization capabilities of the Variational Quantum Classifier, the aforementioned experimental procedure is repeated ten times for each specific layer configuration. This iterative approach facilitates a rigorous statistical analysis of the correlation between circuit depth, and the concomitant increase in the total number of trainable parameters, and the resulting model performance. By conducting multiple independent trials, the methodology accounts for the stochasticity inherent in parameter initialization and the non-convex nature of the optimization landscape, thereby providing a more statistically significant estimation of the model’s predictive stability and performance across different initial conditions.
+
+Furthermore, the mean number of epochs required for achieving these results within each layer configuration is recorded to evaluate the efficiency and stability of the training process. The computational latency, measured in seconds, is also documented for each training cycle to provide a detailed perspective on the temporal requirements associated with scaling the quantum architecture. Ultimately, the specific parameters from the most efficacious model across all experimental iterations and layer depths are preserved for final evaluation, irrespective of the circuit depth at which they were attained. This comprehensive data collection enables a thorough characterization of the trade-offs between quantum circuit complexity, computational cost, and classification accuracy.
+
+Several technical considerations regarding the optimization protocol warrant further clarification. The Mean Squared Error (MSE) is employed as the objective function for the training process, subject to a specific methodological refinement. While the final classification labels are determined by the algebraic sign of the model's output, specifically the sum of the VQC measurement and the bias term, the loss function is calculated using the raw continuous values. This approach effectively treats the binary classification problem as a regression task where a zero-threshold is applied post-measurement. This choice is critical as it ensures a smooth and differentiable cost landscape, avoiding the discontinuous or step-like functions that typically arise when calculating loss based on discrete labels. Consequently, this allows for more effective monitoring of the training trajectory and provides a more granular signal for gradient updates.
+
+The optimization of the parameters is executed using the Nesterov Momentum optimizer, also known as Nesterov Accelerated Gradient \textbf{[CITE]}. This method is an advanced iteration of standard momentum-based gradient descent, frequently utilized in deep learning for its ability to anticipate the loss landscape and achieve superior convergence rates. The input data is processed in stochastic mini-batches of size five, with the order of samples randomized in each epoch. Given the relative scarcity of the dataset, a batch size of this magnitude is considered sufficient to provide stable gradient estimates while maintaining the stochasticity necessary for effective exploration of the parameter space.
+
+It is important to clarify that the comprehensive training procedure, which spans various layer depths across ten independent trials, is executed in two distinct phases. The initial phase involves the implementation of unbiased classifiers, followed by a secondary phase dedicated to biased models. Consequently, for each specific qubit configuration, we obtain two distinct model types: an unbiased model defined by purely quantum variational parameters and a biased model characterized by a combination of quantum and classical parameters.
+
+This dual-track approach is designed to elucidate which specific methodology provides the optimal solution for the tumor classification task at a given qubit count. Furthermore, it enables a comparative analysis of the respective advantages of each paradigm as the problem scales, providing deeper insight into the efficacy of hybrid quantum-classical optimization versus purely quantum strategies. This methodology ensures that the performance of the Variational Quantum Classifier is evaluated not only on its quantum depth but also on its ability to integrate classical components to improve diagnostic accuracy.
+
+\section{1-qubit Results} \label{1qbt}
+
+Following the establishment of the overarching methodology, the initial phase of implementation utilizes a single-qubit Variational Quantum Classifier as a baseline model. Given the constraints of the Amplitude Efficient State Preparation method, a single-qubit register is limited to encoding a maximum of $2^1 = 2$ features. This necessitates a significant reduction in dimensionality from the original dataset, which initially comprised 30 distinct features. To address this while preserving the fundamental statistical characteristics of the data, Principal Component Analysis is performed across the training, validation, and testing subsets. To maintain the integrity of the experimental results and prevent data leakage, the transformation is fitted solely on the training partition and subsequently applied to the validation and test sets.
+
+This reduction yields two primary principal components that collectively explain 62.97\% of the total variance within the dataset. Although this captured variance is slightly lower than the 63.24\% that would be achievable if the transformation were fitted on the entire dataset simultaneously, it remains a robust representation of the underlying data distribution. By condensing the high-dimensional feature space into two components, the model retains over half of the original information, providing a manageable and statistically significant input for the 1-qubit variational circuit. This configuration serves as an essential starting point for evaluating the classification performance of quantum architectures at their most fundamental scale, allowing for a clear assessment of how effectively minimal quantum resources can handle the compressed feature space.
+
+To characterize the distribution and interrelationships of the identified principal components, we utilize the pairplot functionality provided by the Seaborn library \textbf{[CITE]}. This visualization tool facilitates a comprehensive analysis of the pairwise interactions between variables within a dataset while simultaneously providing an estimation of the univariate distribution for each individual feature. The resulting output is structured as a symmetrical matrix-style grid, where both the rows and columns correspond to the principal components derived from the dimensionality reduction process. Within this grid, each off-diagonal cell represents a bivariate scatter plot comparing two specific variables, while the diagonal cells display the univariate distribution of each component, typically through histograms or kernel density estimates. This approach provides a condensed yet detailed summary of both the univariate and bivariate structures of the transformed tumor dataset, offering critical insights into the spatial separation between the benign and malignant classes before they are processed by the quantum classifier.
+
+The plots situated along the principal diagonal of the grid represent marginal univariate distributions. Each cell on the diagonal corresponds to an isolated variable, facilitating an analysis of its independent statistical profile rather than a bivariate interaction. While typically rendered as histograms, these visualizations can be adapted to employ kernel density estimates to provide a smoothed representation of the underlying probability density function. These diagonal plots are essential for inspecting fundamental statistical properties, including the range, dispersion, skewness, and modality of each principal component, as well as identifying potential outliers within the feature space. Effectively, the diagonal matrix elements characterize the distribution of each variable in isolation.
+
+The remaining cells in the grid, located off the principal diagonal, illustrate the bivariate relationships between distinct pairs of variables. These cells primarily utilize scatter plots where each data point represents an individual observation from the transformed dataset. The axes for these plots are determined by their respective positions in the grid matrix: the variable associated with the column is mapped to the $x$-axis, while the variable associated with the row is mapped to the $y$-axis. These bivariate visualizations enable a qualitative assessment of how pairs of variables interact, revealing whether they exhibit positive or negative correlation, identifying the presence of linear or nonlinear dependencies, and highlighting structural nuances such as spatial clustering or heteroscedasticity across the range of values.
+
+The pairplot matrix exhibits inherent symmetry relative to its principal diagonal. This structural organization implies that the bivariate relationship between any two variables is represented twice within the grid; specifically, the interaction between components $i$ and $j$ is visualized once with variable $i$ on the $y$-axis and again with the axes transposed. Although this configuration introduces a deliberate degree of visual redundancy, it significantly enhances data interpretability by providing mirrored perspectives of feature interactions. This repetition allows for a more efficient cross-comparative analysis of patterns and correlations across the various principal component pairings.
+
+When the target categorical variable is assigned to the hue parameter, the pairplot introduces an additional layer of dimensionality by color-coding individual data points according to their respective class or group membership. In this context, the off-diagonal scatter plots facilitate a comparative analysis of class-specific spatial distributions within the feature space, while the diagonal elements provide stratified marginal density estimates for each class.
+
+This multidimensional representation is particularly advantageous for exploratory data analysis in classification tasks, as it allows for a rigorous assessment of class overlap, linear or non-linear separability, and the degree to which inter-variable relationships remain consistent across different target categories. By visualizing how classes occupy distinct regions or clusters within the principal component space, we can anticipate the potential efficacy of the Variational Quantum Classifier and identify specific regions where class boundaries may be ambiguous.
+
+In summary, the pairplot serves as a comprehensive visual framework for exploratory data analysis. The marginal distributions situated along the diagonal facilitate an understanding of each individual feature in isolation, whereas the off-diagonal scatter plots elucidate the complex interactions and correlations between variable pairs. Collectively, these visualizations offer a holistic perspective on the underlying data structure, enabling the identification of significant patterns, linear dependencies, and potential anomalies prior to the commencement of formal modeling. Figure\textbf{~\ref{fig:pairplot_2_PCs}} illustrates the resulting pairplot for the training partition following the application of Principal Component Analysis and the selection of two principal components.
+
+The visualization highlights the spatial distribution of the classes within the reduced feature space, providing a qualitative baseline for the expected performance of the single-qubit Variational Quantum Classifier. By observing the degree of overlap between the malignant and benign clusters in these two dimensions, one can gauge the relative difficulty the quantum model will face in establishing an optimal decision boundary. This visual confirmation is a prerequisite for the training phase, as it ensures that the dimensionality reduction process has preserved sufficient variance and class-specific structure to support the subsequent classification task. 
+
+\begin{figure}[H]
+% Define the figure file in the \includegraphics command
+% Must be relative to one of the paths
+% in the \graphicspath command at the top
+\includegraphics[width=\linewidth]{pairplot_2_PCs}
+% Place caption under the figure
+\caption{Pairplot of the 2 PCs for the training subset
+}
+% Label the caption to include in the list of figures
+\label{fig:pairplot_2_PCs}
+\end{figure}
+
+A close examination of Figure\textbf{~\ref{fig:pairplot_2_PCs}} yields several significant insights regarding the class-specific distributions within the reduced feature space. By analyzing the marginal distributions along the main diagonal, it is evident that the two classes exhibit minimal spatial overlap with respect to the first principal component, suggesting that this dimension captures features with high discriminatory power. Conversely, regarding the second principal component, the probability density of the positive class appears to be largely enveloped by the distribution of the negative class. This configuration implies that while the first component provides a clear basis for separation, the second component encompasses a region of high statistical ambiguity where the feature values of the positive class are effectively a subset of those plausible for the negative class.
+
+In a general classification setting, the relative overlap between class-conditional distributions is a primary factor in determining how effectively a given feature can separate distinct classes. When the distribution of one class largely envelops that of another, it indicates that the majority of feature values characteristic of the enveloped class are also highly plausible under the encompassing class. In such instances, the classes share a substantial region of high probability density, which introduces a profound intrinsic ambiguity into the data. From a probabilistic perspective, there are few, if any, regions of the feature space uniquely associated with the enveloped class; consequently, even an optimal Bayes classifier is compelled to make errors in these overlapping regions, resulting in a high irreducible error that no modeling approach can entirely overcome.
+
+This enveloping behavior has direct consequences for classification performance. Because the encompassing class assigns non-negligible probability to nearly all values characteristic of the other, misclassification errors tend to be asymmetric. Samples from the enveloped class are particularly susceptible to misidentification, as they reside in regions where the likelihood of the enveloping class remains significant. In practical terms, this often manifests as low recall for the enveloped class and a heightened sensitivity of performance metrics to decision thresholds and class priors. Importantly, this limitation does not reflect a failure of the learning algorithm itself, but rather indicates that the feature in question is weakly discriminative. Improving performance in such scenarios typically necessitates the incorporation of additional features or a transition toward probabilistic predictions rather than hard class assignments.
+
+In contrast, when class-conditional distributions do not overlap extensively, the feature space contains regions that are specific to each class. In this case, each distribution occupies a portion of the feature domain where the other assigns little or no probability mass. This partial separation implies the existence of feature values that provide strong evidence in favor of one class over the other. Consequently, a decision boundary can be positioned such that most samples are classified correctly, ensuring that errors are largely confined to the relatively narrow regions where the distributions intersect.
+
+From a theoretical standpoint, the non-enveloping case corresponds to a lower Bayes error rate, resulting in a more favorable classification problem. The existence of class-specific regions leads to more balanced precision and recall, as well as generally higher discrimination metrics, such as the area under the ROC curve (AUC). In these settings, simple models like linear classifiers are often sufficient to achieve near-optimal performance, where increasing model complexity yields only marginal improvements. Overall, the absence of enveloping behavior indicates that the feature is genuinely informative and that classification performance is primarily limited by noise rather than a fundamental overlap between the classes.
+
+Shifting focus to the off-diagonal cells of the pairplot, we examine the bivariate relationship between the first and second principal components. It is evident that, despite localized class overlap or "spillage," the two categories appear largely linearly separable within this two-dimensional projection. This observation is particularly encouraging, as it suggests that even the most fundamental Variational Quantum Classifiers may achieve satisfactory performance. This structural behavior, including the marginal distribution overlaps, is consistent with expectations: the first component accounts for 42.34\% of the total variance, while the second describes the remaining 20.63\%. While the variance explained by each individual component typically decreases as the number of components increases, the current level of separation provides confidence that the quantum approach will yield robust results.
+
+As previously stated, we investigate the impact of the circuit depth on classifier performance and evaluate whether the introduction of a classical bias parameter enhances or inhibits the model's classification capabilities. Given that the dimension of the associated Hilbert space is $4^n-1$, we restrict our experimentation to configurations with one and two layers. Since the architecture utilizes a single qubit, each layer consists exclusively of a single Rot gate, comprising three trainable parameters, without the possibility of quantum entanglement. This structural constraint further justifies limiting the depth to two layers, as empirical evidence indicates that successive rotations in the absence of entangling CNOT gates offer no additional expressive advantage. Each model configuration is trained for 150 epochs, a duration considered sufficient for the proper optimization of the variational and classical parameters.
+
+\begin{figure}[H]
+% Define the figure file in the \includegraphics command
+% Must be relative to one of the paths
+% in the \graphicspath command at the top
+\centering % This centers the image horizontally
+\includegraphics[scale=1.0]{1_qubit_layer}
+% Place caption under the figure
+\caption{A single layer of the 1-qubit VQC
+}
+% Label the caption to include in the list of figures
+\label{fig:1_qubit_layer}
+\end{figure}
+
+An examination of the evaluation results reveals several noteworthy observations regarding the classifier's performance. Foremost, the 1-qubit configuration yields highly satisfactory results even with a single variational layer. In the unbiased case, the model achieves average performance metrics across ten independent runs of 91.93\% accuracy, 91.95\% precision, 90.63\% recall, and a 91.19\% F1-score, with all indicators consistently exceeding the 90\% threshold. The introduction of a classical bias parameter produces a marginal performance shift, resulting in an average accuracy of 92.11\%, 91.83\% precision, 91.12\% recall, and a 91.45\% F1-score. Transitioning to a two-layer architecture yields comparable outcomes; the unbiased classifier achieves an accuracy of 91.93\%, a precision of 91.85\%, a recall of 90.73\%, and an F1-score of 91.21\%. Similarly, the biased two-layer model demonstrates stable performance with 92.02\% accuracy, 91.68\% precision, 91.10\% recall, and a 91.37\% F1-score. These findings suggest that for a single-qubit system, both configurations are remarkably effective, and increasing circuit depth beyond a single layer provides negligible performance gains.
+
+\begin{figure}[H]
+% Define the figure file in the \includegraphics command
+% Must be relative to one of the paths
+% in the \graphicspath command at the top
+\includegraphics[width=\linewidth]{heatmap_performance_1_qubits_10_runs.png}
+% Place caption under the figure
+\caption{Performance Results for 1-qubit classifiers after 10 runs
+}
+% Label the caption to include in the list of figures
+\label{fig:1_qubit_perf_heat}
+\end{figure}
+
+Examining the efficiency metrics for the two approaches, we observe that for the single-layer configuration, the unbiased classifier converges to its optimal parameters after approximately 81 epochs, with the training procedure lasting an average of 4.9 seconds. In comparison, the biased classifier requires nearly 78 epochs to reach optimization, with an average training time of 4.78 seconds. Upon adding an extra layer, the unbiased classifier finds its optimal values significantly faster, at approximately 44 epochs, though the training procedure extends to an average of 6.12 seconds. For the biased two-layer variety, the model identifies its best parameter values after only 37 epochs, completing its training in an average of 4.91 seconds. 
+
+\begin{figure}[H]
+% Define the figure file in the \includegraphics command
+% Must be relative to one of the paths
+% in the \graphicspath command at the top
+\includegraphics[width=\linewidth]{heatmap_efficiency_1_qubits_10_runs.png}
+% Place caption under the figure
+\caption{Efficiency Results for 1-qubit classifiers after 10 runs
+}
+% Label the caption to include in the list of figures
+\label{fig:1_qubit_eff_heat}
+\end{figure}
+
+From a comparative perspective, the biased classifier appears to demonstrate superior performance, achieving higher scores across the four key metrics regardless of the number of layers. Furthermore, despite requiring the optimization of an additional parameter, it exhibits greater efficiency by identifying optimal parameter values more rapidly and requiring less training time, particularly in the two-layer configuration. It is important to note, however, that these differences are minuscule and fall within the margin of statistical error. Even the approximate one-second variation in training time may be attributable to external system processes occupying computational resources during the training phase rather than the inherent properties of the models themselves.
+
+It is particularly noteworthy that, regardless of whether a biased or unbiased classifier is employed, our initial intuition regarding the impact of circuit depth, and consequently, the number of parameters, is validated. Aside from marginal variations attributable to statistical error, there is no significant performance improvement when transitioning from a single-layer to a two-layer classifier. In certain instances, such as the biased classifier, a slight decrease in performance is even observable. Regarding efficiency, the results align with expectations: as the number of trainable parameters increases, the computational time per training instance also rises. Simultaneously, increasing the parameter count while maintaining a constant Hilbert space dimension allows the model to converge to optimal results in fewer epochs. 
+
+\begin{figure}[H]
+% Define the figure file in the \includegraphics command
+% Must be relative to one of the paths
+% in the \graphicspath command at the top
+\includegraphics[width=\linewidth]{trend_1_qubits_10_runs.png}
+% Place caption under the figure
+\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 1-Qubit
+}
+% Label the caption to include in the list of figures
+\label{fig:1_qubit_trend}
+\end{figure}
+
+In the final phase of our evaluation, we examine the highest-performing models from both the biased and unbiased configurations across all experimental runs. We present the specific variational quantum circuit (VQC) architectures alongside the evolution of the loss function and key performance metrics over the 150-epoch duration for both the training and validation sets.
+
+This analysis facilitates an investigation of the loss landscape to identify plateaus and peaks, offering valuable insight into the progression and stability of the optimization procedure. Similarly, monitoring the evolution of these metrics throughout the training process allows us to detect potential signs of overfitting or underfitting while providing a comprehensive overview of the model's general learning trajectory and convergence behavior.
+
+For the best-performing biased classifier, the VQC architecture consists of a single layer, which aligns with our previous average findings. Despite its structural simplicity, this circuit achieved an accuracy of 92.11\%, a precision of 91.70\%, a recall of 91.27\%, and an F1-score of 91.47\% at the 84th epoch.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering % This centers the image horizontally
+	\includegraphics[scale=1.0]{best_VQC_1_qubit_biased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 1-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:1_qubit_best_vqc_biased}
+\end{figure} 
+
+Regarding the evolution of the loss function, there is a prominent decline during the initial 20 epochs, followed by an anomalous period between the 80th and 100th epochs where the loss increases and then decreases sharply. Remarkably, the model identifies its optimal parameters during this volatile interval. While this might appear surprising, it is important to note that neither the minimization of the training cost nor the validation cost exclusively guarantees high performance; indeed, such fluctuations can be a concerning sign of potential overfitting.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{best_losses_1_qubit_biased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 1-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:1_qubit_best_losses_biased}
+\end{figure} 
+
+This observation is further reinforced by a closer examination of the key metric progression for the training and validation sets throughout the 150 epochs. Notably, the model demonstrates strong generalization, as the trajectories of the training and validation curves are remarkably similar; with the exception of brief intervals where validation performance marginally exceeds training metrics, the divergence between the two remains minimal and consistently within a statistical error margin of 0.05. Furthermore, in relation to the loss function behavior, the peak scores are indeed observed at epoch 84, where the loss function paradoxically exhibits an upward trend. Conversely, around epoch 100, when the loss function reaches its absolute minimum, the performance metrics begin to decline, indicating that the point of lowest loss does not necessarily coincide with the model's most accurate predictive state. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_1_qubit_biased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 1-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:1_qubit_best_metrics_biased}
+\end{figure} 
+
+The results for the best-performing unbiased classifier follow a similar trend. Consistent with our average findings, its VQC architecture consists of a single layer. This configuration achieved an accuracy of 92.11\%, a precision of 91.70\%, a recall of 91.27\%, and an F1-score of 91.47\% at the 86th epoch. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering % This centers the image horizontally
+	\includegraphics[scale=1.0]{./figures/best_VQC_1_qubit_unbiased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 1-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:1_qubit_best_vqc_unbiased}
+\end{figure}
+
+Regarding the evolution of the loss function, the trajectory for the unbiased classifier differs notably from the frequent fluctuations observed in the biased variant. While the cost function exhibits a rapid initial decline during the first 20 epochs, it subsequently enters a plateau lasting approximately 20 epochs following a minor increase and decrease. The loss then rises for nearly 10 epochs before descending again around epoch 100, where it reaches its minimum and ultimately stabilizes. Notably, the optimal performance metrics are once again identified at an epoch where the cost function is not at its absolute minimum, but is instead characterized by an increasing trend. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_1_qubit_unbiased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 1-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:1_qubit_best_losses_unbiased}
+\end{figure}
+
+The progression of key metrics for the unbiased classifier is quite similar to that of the biased case. Both curves exhibit comparable trends, and with the exception of the interval between the 80th and 100th epochs, their divergence remains largely insignificant, suggesting a lack of substantial overfitting or underfitting. The sudden increase in divergence during this specific interval coincides with the point where the cost function begins to rise. Precision appears to be the metric most affected by this development, while the others remain well within the 0.05 error margin. Interestingly, after the 100th epoch, as the cost function reaches its plateau, the performance metrics follow suit. However, this stability is not sufficient to surpass the peak scores recorded at the 86th epoch, further reinforcing the notion that while minimizing the loss function is essential to the training process, it is not an absolute panacea for achieving optimal classification results. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_1_qubit_unbiased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 1-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:1_qubit_best_metrics_unbiased}
+\end{figure}
+
+Having successfully addressed the classification problem using a single-qubit configuration, we now extend our investigation to a two-qubit architecture. This transition allows us to explore a larger Hilbert space and evaluate whether the increased dimensionality and the potential for quantum entanglement offer superior discriminative capabilities compared to the 1-qubit model.
+
+\section{2-qubits Results} \label{2qbt}
+
+By utilizing a two-qubit architecture, we can incorporate four principal components ($2^2 = 4$), a significant increase over the single-qubit case. These four features account for 79.79\% of the total variance within the training subset of the tumor classification problem, a figure that closely aligns with the 79.24\% variance explained by four components across the entire dataset. Specifically, the first and second components account for 42.34\% and 20.63\% of the total variance, respectively, while the third and fourth components contribute an additional 10.80\% and 6.01\%. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{pairplot_4_PCs}
+	% Place caption under the figure
+	\caption{Pairplot of the 4 PCs for the training subset
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:pairplot_4_PCs}
+\end{figure}
+
+A close inspection of the pairplot in Figure\textbf{~\ref{fig:pairplot_4_PCs}} for the four principal components reveals that the relationship between the first two dimensions remains consistent with the single-qubit case. More notably, however, are the characteristics of the third and fourth features. The class distributions for the third component exhibit overlap, though to a lesser extent than that observed in the second component. In contrast, the positive class distribution for the fourth component is almost entirely enveloped by that of the negative class. Consequently, it can be argued that the third component is significantly more discriminative and informative than the fourth.
+
+Turning our attention to the pairwise scatterplots, we observe that feature pairs involving the fourth component, when analyzed without the influence of the first, lack clear linear separability. In the $PC_2$–$PC_4$ pairing specifically, the majority of samples cluster within the same spatial region, with the negative class distribution effectively eclipsing the positive one. Consequently, we anticipate that the classification task will increase in complexity, as these higher-order components are less inherently informative and the classes become increasingly difficult to distinguish.
+
+Utilizing two qubits allows us to leverage quantum entanglement to our advantage. Consequently, the Rot gates in each layer are followed by a ring of CNOT gates that entangle the qubits. This introduction of entanglement is intended to enhance the classifier's expressive power, assisting the model in navigating the increased dimensionality of the feature space. Reflecting on the limitations and empirical findings discussed previously, we evaluate both biased and unbiased versions of the classifier across configurations of 1, 4, 5, 6, and 7 layers. This results in 6, 24, 30, 36, and 42 trainable parameters for the unbiased cases, respectively, while the biased counterparts require 7, 25, 31, 37, and 43 parameters. To accommodate this expanded parameter space, we have extended the training duration to 200 epochs to ensure sufficient optimization. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering % This centers the image horizontally
+	\includegraphics[scale=1.0]{2_qubits_layer}
+	% Place caption under the figure
+	\caption{A single layer of the 2-qubit VQC
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubit_layer}
+\end{figure}
+
+An inspection of the evaluation results across ten independent runs allows for several key conclusions. Most notably, the performance of the single-layer classifier has decreased significantly compared to the 1-qubit model. In the unbiased configuration, the model achieves an accuracy of 74.30\%, a precision of 72.61\%, a recall of 70.58\%, and an F1-score of 71.21\%. The biased case yields slightly higher results, with 75.61\% accuracy, 74.18\% precision, 72.01\% recall, and a 72.68\% F1-score. In both instances, these metrics represent a substantial decline from the 1-qubit baseline and only marginally surpass the random chance threshold of 62.70\%. However, increasing the circuit depth to four layers leads to a dramatic improvement: the unbiased classifier reaches 90.18\% accuracy and an 89.16\% F1-score, while the biased version achieves 91.40\% accuracy and a 90.73\% F1-score. These gains suggest that the expanded feature dimensionality necessitates a higher number of trainable parameters to achieve satisfactory performance. This trend continues as the depth increases to five, six, and seven layers. For these configurations, the unbiased classifier yields accuracies of 91.40\%, 92.28\%, and 91.84\%, and F1-scores of 90.65\%, 91.51\%, and 90.95\%, respectively. Similarly, the biased classifier scores 91.67\%, 92.72\%, and 91.84\% in accuracy, and 90.92\%, 92.12\%, and 91.16\% in F1-score, indicating that peak performance is reached at approximately six layers before stabilizing or slightly declining. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{heatmap_performance_2_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Performance Results for 2-qubit classifiers after 10 runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_perf_heat}
+\end{figure}
+
+In terms of training efficiency across the varying circuit depths, the unbiased classifier identified its optimal parameter values after 8, 152, 142, 131, and 127 epochs for each respective layer configuration, with average training durations of 7.48, 13.91, 15.95, 18.53, and 21.23 seconds. For the biased variant, the required optimization periods reached 161, 156, 139, 118, and 126 epochs, while the corresponding training procedures averaged 7.36, 14.03, 16.41, 18.70, and 21.57 seconds. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{heatmap_efficiency_2_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Efficiency Results for 2-qubit classifiers after 10 runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_eff_heat}
+\end{figure}
+
+From a comparative perspective, a clear trend emerges in our results. First, the single-layer classifier significantly underperforms in both configurations. This is expected as the dimensionality of the Hilbert space has increased, and the limited number of trainable parameters in a single layer is insufficient to navigate it effectively. To improve performance, we must increase the expressivity of the circuit by introducing more parameters. Consequently, the key performance metrics improve drastically as the number of layers increases. However, this approach reaches a point of diminishing returns, as performance gains become marginal beyond the fourth layer.
+
+Interestingly, both versions of the classifier demonstrate relatively comparable performance. While the biased classifier achieves marginally higher scores across all metrics, these differences remain within the scope of statistical error. A more significant observation is that the biased classifier appears to be at least as efficient as its unbiased counterpart, if not more so. Aside from the single-layer case, where both models yielded unsatisfactory results, the biased classifier converges to optimal parameter values in fewer epochs while maintaining training times similar to the unbiased version. This slight advantage in efficiency justifies a preference for the biased approach, notwithstanding its negligible superiority in predictive accuracy. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{trend_2_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 2 Qubits
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_trend}
+\end{figure}
+
+In regard to the top performers across all circuit depths and experimental runs, the most effective unbiased classifier utilized a 6-layer VQC. This configuration reached an accuracy of 94.74\%, a precision of 94.80\%, a recall of 93.85\%, and an F1-score of 94.29\% at the 94th epoch. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{./figures/best_VQC_2_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 2-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_best_vqc_unbiased}
+\end{figure}
+
+Regarding the evolution of the loss function, we observe that the sharp decline in cost begins after the 30th epoch and continues until approximately the 75th epoch, at which point it appears to reach a plateau. Subsequently, the loss fluctuates sporadically before reaching its absolute minimum after the 100th epoch. Although the timing for finding the best parameters is closer to this minimum than in previous instances, we still observe that the absolute minimization of the cost does not coincide perfectly with the highest performance scores. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_2_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 2-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_best_losses_unbiased}
+\end{figure}
+
+Upon observing the performance curves of the model, we detect somewhat erratic behavior. The model undergoes an extensive period of underperformance until the 50th epoch, at which point it begins to improve, ultimately reaching its peak by the 94th epoch. Following this peak, performance declines rapidly before once again exhibiting signs of improvement. Despite these fluctuations, there is no evidence of overfitting or underfitting, as the training and validation curves follow a consistent trend. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_2_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 2-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_best_metrics_unbiased}
+\end{figure}
+
+For the best-performing biased model, we identify a classifier with a VQC architecture consisting of 6 layers. This classifier achieves an accuracy of 95.61\%, a precision of 95.10\%, a recall of 95.54\%, and an F1-score of 95.31\% at the 75th epoch. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{./figures/best_VQC_2_qubits_biased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 2-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_best_vqc_biased}
+\end{figure}
+
+The evolution of the loss function for this classifier is quite similar to that of its unbiased counterpart, with the sharp decrease appearing after 30 epochs and lasting until the 70th epoch. Subsequently, we observe the same pattern in which the cost increases and then decreases until it reaches a plateau after 190 epochs. It is evident that the discovery of the best parameters does not occur when the cost is at its lowest, as the loss function exhibits an upward trend at the 75th epoch. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_2_qubits_biased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 2-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_best_losses_biased}
+\end{figure}
+
+An inspection of the progression of key metrics throughout the 200 epochs reveals that the biased model exhibits the same erratic behavior as its unbiased counterpart. Performance begins with relatively low scores, not exceeding 80\%. Around the 45th epoch, the performance increases drastically, reaching its peak at the 75th epoch. This is followed by a series of sharp decreases and subsequent increases in performance until a local maximum occurs at approximately epoch 175, after which it begins to decline. Nevertheless, because the behavior of the training and validation curves remains similar, there is no evidence to suggest significant overfitting or underfitting of the model. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_2_qubits_biased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 2-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:2_qubits_best_metrics_biased}
+\end{figure}
+
+Having concluded our investigation of the two-qubit paradigm, we proceed to increase the number of available qubits and, consequently, the number of principal components upon which the model will rely.
+
+\section{3-qubits Results} \label{3qbts}
+
+Since we are now working with three qubits, our data encoding scheme allows us to utilize eight features. This enables us to perform PCA with eight principal components serving as our features. With this approach, we can express 92.71\% of the variance in the training data for our classification task, which is a substantial increase compared to the 79.79\% achieved in the two-qubit case. This result was expected, as the exploratory data analysis of the classical approach had already determined that eight principal components can explain up to 92.60\% of the total variance in our data. With each of the eight components accounting for 42.34\%, 20.63\%, 10.80\%, 6.01\%, 4.65\%, 4.20\%, 2.46\%, and 1.60\% of the total explained variance respectively, we anticipate that each new component added will be less discriminatively informative than the previous ones. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{pairplot_8_PCs}
+	% Place caption under the figure
+	\caption{Pairplot of the 8 PCs for the training subset
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:pairplot_8_PCs}
+\end{figure}
+
+A closer examination of the pairplot in Figure\textbf{~\ref{fig:pairplot_8_PCs}} appears to validate this trend. Along the main diagonal, we can observe that as we progress through the principal components, their distributions exhibit increasing overlap. Specifically, in the eighth principal component, the negative class distribution encapsulates the positive class almost entirely. This pattern is also evident, though to a lesser extent, in the fifth, sixth, and seventh features, which is consistent with the fact that each of these components individually accounts for less than 5\% of the total explained variance.
+
+Inspecting the remaining scatterplot cells reveals a distinct lack of linear separability, particularly in pairs involving the newly introduced components. For instance, the pairwise scatterplot between the fourth and fifth principal components exhibits little to no separability. Interestingly, all scatterplot pairs involving the first principal component appear to maintain a clear class distinction, which is a direct result of the significant amount of variance this component captures. Ultimately, we expect the classification task to become more challenging as the new features, while providing a more descriptive representation of the dataset, appear to be less informative for discriminating between classes.
+
+To address our problem, we evaluate both biased and unbiased variational quantum classifiers across configurations of 1, 5, 6, and 8 layers. These configurations involve 9, 45, 54, and 72 trainable parameters for the unbiased version, and 10, 46, 55, and 73 parameters for the biased variant, respectively. The layer architecture remains consistent with our previous models, utilizing a combination of rotation gates and CNOT gates. Although several three-qubit gates are available, we maintain simplicity by using only single-qubit rotations and two-qubit CNOT gates. To accommodate the increased number of trainable parameters relative to earlier experiments, we have extended the training duration to 250 epochs. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering % This centers the image horizontally
+	\includegraphics[scale=1.0]{3_qubits_layer}
+	% Place caption under the figure
+	\caption{A single layer of the 3-qubit VQC
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubit_layer}
+\end{figure}
+
+An inspection of the average results across ten runs reveals that the simplest single-layer classifier significantly underperforms, failing to surpass the random chance baseline. The unbiased version achieves an accuracy of 61.40\%, a precision of 53.96\%, a recall of 52.03\%, and an F1-score of 49.01\%. Similarly, the biased version performs slightly better but remains below standards, reaching an accuracy of 61.84\%, a precision of 54.72\%, a recall of 52.33\%, and an F1-score of 49.18\%. Performance improves notably as more layers and trainable parameters are introduced. For the unbiased classifier, the 5, 6, and 8-layer configurations yield accuracies of 91.58\%, 91.40\%, and 92.02\%, with corresponding F1-scores of 90.78\%, 90.64\%, and 91.37\%. Likewise, the biased classifier achieves accuracy scores of 91.49\%, 92.37\%, and 92.46\%, and F1-scores of 91.05\%, 91.71\%, and 91.92\% for the same respective layer counts.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{heatmap_performance_3_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Performance Results for 3-qubit classifiers after 10 runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_perf_heat}
+\end{figure} 
+
+Regarding the efficiency of the classifiers, the unbiased model reached its optimal parameter values after 92, 231, 214, and 191 epochs for the 1, 5, 6, and 8-layer configurations, respectively. These training procedures lasted an average of 10.42, 29.57, 35.46, and 45.50 seconds for each corresponding depth. Similarly, the biased classifier identified its best parameters after 49, 211, 209, and 196 epochs, with the training sessions averaging 10.55, 31.43, 36.08, and 46.78 seconds. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{heatmap_efficiency_3_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Efficiency Results for 3-qubit classifiers after 10 runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_eff_heat}
+\end{figure}
+
+A comparison of the biased and unbiased approaches reveals several clear insights. First, the single-layer version of both configurations fails to generalize, yielding disappointing results. To provide context, a baseline classifier that simply categorizes every instance as the negative class, the dominant class in this dataset, would achieve an accuracy of 62.7\%. Consequently, it is apparent that increasing the number of trainable parameters by extending the depth of the circuit is essential. By doing so, we are able to reach far more substantial results, regardless of which classifier version is utilized.
+
+Considering that recall is critical for this tumor classification problem, a case can be made for preferring the biased classifier, as it consistently achieves higher scores in this metric. Additionally, the biased approach maintains training times comparable to the unbiased version while converging to optimal parameter values slightly faster. However, it remains important to note that these marginal differences in performance and efficiency may be attributable to statistical variance rather than a definitive architectural advantage. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{trend_3_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 3 Qubits
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_trend}
+\end{figure}
+
+When identifying the top-performing unbiased classifier, we report a model whose VQC consists of 5 layers. After 234 epochs, this configuration achieved an accuracy of 95.61\%, a precision of 94.83\%, a recall of 96.03\%, and an F1-score of 95.35\%. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{./figures/best_VQC_3_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 3-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_best_vqc_unbiased}
+\end{figure}
+
+A closer examination of the cost function evolution reveals that it is no longer characterized by the sharp decreases observed in previous models. This effect is visible only to a much lesser extent between the 100th and 150th epochs. Prior to that, the loss function undergoes minor fluctuations, though a general downward trend remains present. Following the 150th epoch and the subsequent minor peaks, the loss function reaches a plateau, consistently remaining between 0.6 and 0.9. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_3_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 3-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_best_losses_unbiased}
+\end{figure}
+
+There appears to be a slight difference in the progression of the key metrics. For most metrics, although the training and validation curves are not identical, they follow similar patterns by increasing and decreasing in the same regions. The only exception is the precision metric, where the validation and training curves appear significantly divergent initially. This gap narrows after the 125th epoch, after which the two curves share many similarities, particularly in their general trends. This is encouraging since the best parameters are identified at the 234th epoch, a point where the model shows no indications of overfitting or underfitting across any of the metrics. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_3_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 3-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_best_metrics_unbiased}
+\end{figure}
+
+For the biased method, the best-performing classifier consists of 8 layers and, after 201 epochs, yields an accuracy of 95.61\%, a precision of 96.05\%, a recall of 94.54\%, and an F1-score of 95.21\%. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{./figures/best_VQC_3_qubits_biased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 3-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_best_vqc_biased}
+\end{figure}
+
+If we examine the evolution of the loss function more closely, we notice a pattern similar to that of the unbiased case. The sharp and immediate decrease in cost observed in previous iterations of our classifiers is absent. Instead, it is replaced by a series of minor fluctuations, followed around the 50th epoch by a gradual yet steep decline in cost that continues until the 110th epoch. Subsequently, the loss appears to reach a plateau, notwithstanding some inconsequential fluctuations. Notably, the cost is not at its absolute minimum at the 201st epoch, when the best parameters are identified. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_3_qubits_biased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 3-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_best_losses_biased}
+\end{figure}
+
+Unlike its unbiased counterpart, the validation and training curves for the key metrics are quite similar. With the exception of the precision metric, they remain close throughout the training process, and the distance between them remains minimal. Even regarding precision, the behavior stabilizes and the curves align more closely once the training passes the 150th epoch.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_3_qubits_biased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 3-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:3_qubits_best_metrics_biased}
+\end{figure}
+
+Having completed the classification task using the three-qubit approach, and consequently the eight features associated with it, we now move on to the four-qubit configuration.
+
+\section{4-qubits Results} \label{4qbts}
+
+Our 4-qubit implementation allows us, through the use of the Amplitude-Efficient State Preparation routine, to encode 16 features. These features are the 16 principal components obtained by fitting the PCA transformer onto the training subset and using it to transform all three data subsets. With this strategy, we are able to explain 99.08\% of the total variance in the training data, which is slightly higher than the 98.92\% that could be explained if the transformer were fitted on the entirety of the original dataset. Each of the principal components accounts for 42.34\%, 20.63\%, 10.80\%, 6.01\%, 4.65\%, 4.20\%, 2.46\%, 1.60\%, 1.38\%, 1.27\%, 1.11\%, 0.92\%, 0.72\%, 0.39\%, 0.28\%, and 0.25\% of the total explained variance ratio, respectively. We observe that with 16 principal components, we are able to describe our problem almost in its entirety, with the drawback being that some of the newly introduced features account for only miniscule amounts of variance. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{pairplot_16_PCs}
+	% Place caption under the figure
+	\caption{Pairplot of the 16 PCs for the training subset
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:pairplot_16_PCs}
+\end{figure}
+
+As with the eight-principal-component case, each subsequent component becomes less informative. A close examination of the main diagonal reveals that the primary body of the positive class distribution is entirely enveloped by the negative distribution across the eight newly added components. This is expected, given that several of these components account for less than 1\% of the total explained variance ratio. Consequently, the introduction of these features is unlikely to contribute significantly to the classification of the input. This effect becomes even more apparent when focusing on the scatterplots involving these eight new features. No linear class separability is visible, as the blue negative class and the orange positive class conglomerate at the center of each corresponding cell. 
+
+To address the problem, we maintain the existing layer architecture, where each layer consists exclusively of rotation gates and CNOT gates. To account for the increased complexity of the classification task, we evaluate biased and unbiased classifiers with variational quantum circuit depths of 1, 5, 10, and 15 layers. Consequently, the unbiased configurations require training 12, 60, 120, and 180 parameters, while the biased versions involve 13, 61, 121, and 181 trainable parameters, respectively. Given the increase in trainable parameters and the larger Hilbert space, each model is trained for 300 epochs, representing a slight increase over previous experiments.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{4_qubits_layer}
+	% Place caption under the figure
+	\caption{A single layer of the 4-qubit VQC
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubit_layer}
+\end{figure}
+
+An inspection of the average scores obtained after ten runs reveals that the simple one-layered classifier performs poorly, with some metrics falling below 50\%. Specifically, the unbiased version achieves an accuracy of 61.40\%, a precision of 50.35\%, a recall of 50.10\%, and an F1-score of 43.64\%, while the biased counterpart yields an average accuracy of 61.23\%, a precision of 49.90\%, a recall of 49.96\%, and an F1-score of 43.55\%. Interestingly, increasing the circuit depth to five layers shows improvement, yet the results remain underwhelming; the unbiased classifier reaches an average accuracy of 72.02\%, a precision of 72.99\%, a recall of 65.55\%, and an F1-score of 64.52\%, whereas the biased version performs notably better with an accuracy of 82.46\%, a precision of 82.03\%, a recall of 80.65\%, and an F1-score of 80.69\%. The results gain significant weight as we move to the ten-layer circuit, where the unbiased classifier achieves an accuracy of 89.56\%, a precision of 90.71\%, a recall of 87.32\%, and an F1-score of 88.35\%, and the biased version reaches an accuracy of 89.91\%, a precision of 90.65\%, a recall of 88.44\%, and an F1-score of 89.01\%. Performance improves further with 15 layers, as the unbiased classifier returns an accuracy of 93.42\%, a precision of 94.47\%, a recall of 91.72\%, and an F1-score of 92.70\%, while the biased counterpart yields an accuracy of 92.72\%, a precision of 92.88\%, a recall of 91.81\%, and an F1-score of 92.10\%.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{heatmap_performance_4_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Performance Results for 4-qubit classifiers after 10 runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_perf_heat}
+\end{figure} 
+
+Regarding the efficiency of the 4-qubit classifiers across depths of 1, 5, 10, and 15 layers, the unbiased method identified its optimal parameters after 108, 252, 241, and 226 epochs, respectively, with training procedures lasting an average of 16.06, 56.19, 98.02, and 146 seconds for each corresponding circuit depth. For the biased method, the best values for the trainable parameters were found after 29, 252, 243, and 206 epochs, while the training sessions lasted an average of 15.70, 56.59, 98.92, and 151.06 seconds, respectively. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{heatmap_efficiency_4_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Efficiency Results for 4-qubit classifiers after 10 runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_eff_heat}
+\end{figure}
+
+Several important conclusions emerge from the comparison of the two methods. It is immediately clear that with a low number of layers and a limited count of trainable parameters, both approaches severely underperform. While the biased method shows a performance advantage in the 5-layer configuration, it remains considerably substandard. This outcome is expected, as the significantly larger Hilbert space of a 4-qubit system requires a higher number of parameters to be traversed efficiently. Substantial results are only achieved by increasing circuit depth; specifically, at 15 layers, the unbiased method demonstrates a slight edge over its biased counterpart. Furthermore, the unbiased version requires less training time and identifies optimal parameters at approximately the same epoch as the biased model, suggesting that the efficiency advantage previously observed for the biased approach has diminished in this larger space. Nevertheless, because the differences in key metrics are so miniscule, it remains valid to argue that the two models are effectively equivalent.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{trend_4_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 4 Qubits
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_trend}
+\end{figure}
+
+When examining the top-performing models, the best unbiased classifier features a VQC with 15 layers. At the 179th epoch, this model achieves an accuracy of 96.49\%, a precision of 96.72\%, a recall of 95.73\%, and an F1-score of 96.19\%.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{./figures/best_VQC_4_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 4-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_best_vqc_unbiased}
+\end{figure}
+
+The evolution of its loss function differs slightly from previous models. Initially, the validation cost remains higher than the training cost until approximately the 160th epoch, at which point its curve crosses below the training cost before eventually reaching a plateau after the 200th epoch. While we observe some sharp increases in cost followed by similarly sharp declines, they are not as pronounced as those seen in previous cases. If anything, these fluctuations may indicate temporary periods of overfitting or underfitting, confirming that the decision to extend the training duration was well-advised. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_4_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 4-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_best_losses_unbiased}
+\end{figure}
+
+Observing the progression of the key metrics, we notice somewhat erratic behavior from the model. During the first 140 epochs, the classifier underperforms and fails to achieve either high accuracy or recall. However, after the 150th epoch, the performance picks up significantly, eventually reaching its peak at the 179th epoch where it scores an accuracy of 96.49\%, a precision of 96.72\%, a recall of 95.73\%, and an F1-score of 96.19\%. Generally, it appears that the unbiased classifier, with its 180 parameters, struggles to learn effectively from the data initially and only achieves strong results after 150 epochs have passed. Until that point, the scores remain relatively low, although, surprisingly, the model manages to avoid severe instances of overfitting or underfitting throughout this process. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_4_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 4-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_best_metrics_unbiased}
+\end{figure}
+
+For the biased approach, the best-performing classifier for the 4-qubit task consists of 15 layers. After 255 epochs, this model achieves an accuracy of 95.61\%, a precision of 95.51\%, a recall of 95.04\%, and an F1-score of 95.26\%.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{./figures/best_VQC_4_qubits_biased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 4-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_best_vqc_biased}
+\end{figure}
+
+The loss function for the biased model begins discouragingly, with a sharp increase during the initial epochs, but it soon follows with an equally rapid decline. By the 90th epoch, the validation curve drops below the training curve, effectively alleviating concerns regarding overfitting. Unlike the unbiased case, a final fluctuation occurs toward the end of the training process after the 250th epoch; however, we successfully identified the best parameters at epoch 255, where the model achieved an accuracy of 95.61\%, a precision of 95.51\%, a recall of 95.04\%, and an F1-score of 95.26\%, just before this instability occurred.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_4_qubits_biased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 4-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_best_losses_biased}
+\end{figure}
+
+Examining the progression of the key metrics, we observe the same erratic behavior that characterized the unbiased classifier. Initially, all key metrics score poorly, followed by significant fluctuations between high and low values. It is during one of these surges that the best parameters are identified, achieving an accuracy of 95.61\%, a precision of 95.51\%, a recall of 95.04\%, and an F1-score of 95.26\%, which demonstrates that the extended training duration was pivotal to achieving high performance. Despite these constant fluctuations, the model shows minimal signs of overfitting, as the distance between the training and validation curves remains low throughout the process, even as they periodically cross one another.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_4_qubits_biased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 4-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:4_qubits_best_metrics_biased}
+\end{figure}   
+
+Finally, we move on to tackle the problem using a 5-qubit configuration, an approach that allows us to utilize the full set of original features without the necessity of performing dimensionality reduction.
+
+\section{5-qubits Results} \label{5qbt}
+
+The use of 5 qubits allows us, through the Amplitude-Efficient State Preparation routine, to encode a total of 32 features ($2^5$). Since we have 30 features at our disposal, we incorporate two latent dimensions by padding each normalized input vector with 0.1. Because we are not performing PCA for this approach, no further exploratory data analysis is required beyond the initial analysis conducted during our classical assessment of the problem.
+
+Consistent with our previous methodology, the layer composition remains unchanged, consisting exclusively of Rot and CNOT gates. To address the increased dimensionality of the 5-qubit problem, we employ a significantly larger number of trainable parameters by evaluating biased and unbiased classifiers at circuit depths of 1, 20, and 30 layers. Consequently, the unbiased configurations require the optimization of 15, 300, and 450 parameters, respectively, while the biased versions involve 16, 301, and 451 parameters. Given the substantial increase in parameter counts, we have extended the training duration for each model to 400 epochs to ensure sufficient convergence. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{5_qubits_layer}
+	% Place caption under the figure
+	\caption{A single layer of the 5-qubit VQC
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubit_layer}
+\end{figure}
+
+An inspection of the average scores obtained across ten runs reveals several compelling patterns. Once again, the simple single-layer classifier fails to categorize the data in a satisfactory manner; the unbiased version achieves an accuracy of 62.28\%, a precision of 31.42\%, a recall of 49.31\%, and an F1-score of 38.38\%, while the biased counterpart performs slightly better but still inadequately, scoring an accuracy of 66.67\%, a precision of 70.26\%, a recall of 56.70\%, and an F1-score of 52.36\%. It is evident that in both instances, the parameter count is insufficient to navigate the enlarged Hilbert space effectively. However, performance improves significantly as the circuit depth increases. For depths of 10, 20, and 30 layers, the unbiased classifier achieves accuracies of 82.72\%, 84.56\%, and 85.35\%, precisions of 84.05\%, 84.96\%, and 85.25\%, recalls of 78.63\%, 81.73\%, and 83.14\%, and F1-scores of 80.01\%, 82.67\%, and 83.80\%, respectively. Similarly, the biased classifier yields accuracies of 84.74\%, 84.47\%, and 84.74\%, precisions of 85.66\%, 84.80\%, and 84.75\%, recalls of 81.52\%, 81.81\%, and 82.16\%, and F1-scores of 82.63\%, 82.57\%, and 82.99\%.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{heatmap_performance_5_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Performance Results for 5-qubit classifiers after 10 runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_perf_heat}
+\end{figure}
+
+In terms of efficiency, the unbiased 5-qubit classifier identified its optimal parameters after 192 epochs for 1 layer, 280 epochs for 10 layers, 214 epochs for 20 layers, and 270 epochs for 30 layers. The average training durations for these unbiased configurations were 33.77 seconds, 210.74 seconds, 390.85 seconds, and 569.58 seconds, respectively. Similarly, the biased classifier reached its best performance after 341, 255, 233, and 251 epochs, with corresponding average training times of 30.38 seconds for 1 layer, 203.97 seconds for 10 layers, 422.98 seconds for 20 layers, and 568.32 seconds for 30 layers.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{heatmap_efficiency_5_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Efficiency Results for 5-qubit classifiers after 10 runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_eff_heat}
+\end{figure}
+
+A close comparison of the two approaches reveals several critical insights. Most notably, when utilizing only a single layer, both methods fail to generalize effectively and perform abysmally; specifically, recall and precision scores fall below 50\%, leading to a consistently low F1-score. As the number of layers increases, all performance metrics improve across both methods. However, it is significant that even with 20 layers, the models are unable to surpass the 85\% accuracy threshold. In fact, there is no statistically significant difference between the scores achieved at 20 layers and 30 layers. This stagnation suggests that even 450 parameters are insufficient to provide adequate coverage of the 5-qubit Hilbert space, indicating that a further increase in circuit depth or parameter count is necessary to capture the complexity of the 30-feature dataset.
+
+In terms of efficiency, it is evident that increasing the number of layers to achieve higher scores results in a corresponding increase in training time for both methods. This trend suggests that if we were to increase the number of trainable parameters further, the practical feasibility of our approach could be compromised. Despite this potential drawback, the allocated number of epochs appears to be more than sufficient, as both models consistently identify their optimal parameter values in fewer than 300 epochs across all tested configurations. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{trend_5_qubits_10_runs.png}
+	% Place caption under the figure
+	\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 5 Qubits
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_trend}
+\end{figure}
+
+Regarding the top-performing models across all iterations and layer configurations, the unbiased method identified a VQC with 20 layers that, after 321 epochs, achieved an accuracy of 88.60\%, a precision of 87.44\%, a recall of 88.99\%, and an F1-score of 88.02\%.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{./figures/best_VQC_5_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 5-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_best_vqc_unbiased}
+\end{figure}
+
+The evolution of the loss function in this case is more similar to our low-qubit approaches. The cost begins to decrease relatively early and, despite fluctuations that lead to some substantial spikes, it starts to plateau after the 150th epoch. It is encouraging that no signs of overfitting or underfitting are observed, as the validation and training curves remain in close proximity while consistently exhibiting the aforementioned downward tendencies. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_5_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 5-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_best_losses_unbiased}
+\end{figure}
+
+Observing the progression of the key metrics for this classifier, we see significant volatility with numerous fluctuations in both the training and validation curves. Interestingly, despite the initial decrease in cost, the performance metrics drop dramatically during the early epochs before rising to fluctuate between 0.7 and 0.9, failing to achieve a truly high-level performance. This behavior suggests that the model struggles to learn effectively from the data and that a higher parameter count may be required to reach more substantial results; however, since no lasting distance develops between the validation and training curves, the model appears to avoid both overfitting and underfitting throughout the process.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_5_qubits_unbiased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 5-qubit unbiased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_best_metrics_unbiased}
+\end{figure}
+
+For the biased method, the best-performing classifier for the 5-qubit task utilizes a 10-layer VQC. After 198 epochs, this model achieves an accuracy of 88.60\%, a precision of 87.64\%, a recall of 88.00\%, and an F1-score of 87.81\%. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	%\centering % This centers the image horizontally
+	\includegraphics[width=\linewidth]{./figures/best_VQC_5_qubits_biased.png}
+	% Place caption under the figure
+	\caption{VQC of the best 5-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_best_vqc_biased}
+\end{figure}
+
+The evolution of the loss function for this biased model is slightly different from its unbiased counterpart, as it initially shows an increase in cost before gradually dropping until the 50th epoch. From that point, it begins to steadily decrease and eventually plateaus after the 200th epoch, a stage where no further significant increases or decreases are observed. Once again, the fact that both curves follow the same general tendencies and that the validation curve remains consistently below the training curve serves as a promising sign regarding the capabilities of the model
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_losses_5_qubits_biased.png}
+	% Place caption under the figure
+	\caption{Evolution of the loss function of the best 5-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_best_losses_biased}
+\end{figure}
+
+Should we observe the progression of the four key metrics for the training and validation data, it is evident that despite an initial drop in scores up until the 50th epoch, the model remains quite stable. Around the 100th epoch, it reaches relatively high scores and with the exception of some fluctuations, it never drops significantly lower. Although the model still displays some difficulty learning from the data, it appears to stabilize as the epochs progress. Most encouragingly, there is no dramatic difference in shape or distance between the training and validation curves for the majority of the training process, indicating that the model suffers from neither overfitting nor underfitting. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/best_metrics_5_qubits_biased.png}
+	% Place caption under the figure
+	\caption{Validation and Training curves for the 4 key metrics of the best 5-qubit biased classifier
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:5_qubits_best_metrics_biased}
+\end{figure}
+
+\section{Final Discussion} \label{final_disc}
+
+In the final steps of this examination, we present a summary and comparison of the results obtained from the top-performing models for both methods across all runs and qubit configurations. This analysis focuses on the scores of the four key metrics, accuracy, precision, recall, and F1-score, while also detailing the number of layers utilized by each best performer, the total count of trainable parameters, and the number of epochs required to reach the reported scores. Finally, we conduct a brief comparison between the average performance of the two quantum methods and the Logistic Regression classifier, which was determined to be the optimal classical model for solving this tumor classification problem.
+
+Starting with the unbiased case, we observe that the top-performing models exhibit an upward trend until reaching the 4-qubit configuration. Up to that point, all scores remained well above 90\%, indicating that the models were robust and efficient in their classification tasks. In the 5-qubit case, however, performance dropped significantly, and the model was unable to score above 90\% in any metric. This outcome was expected, as we have already noted that a considerably larger number of parameters is required to tackle the problem when it consists of 30 features. We remain confident that if we were to increase the number of trainable parameters further, the scores of the key metrics would improve. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/10_runs_unbiased_metrics_labeled.png}
+	% Place caption under the figure
+	\caption{Performance of best unbiased classifier per number of qubits across all runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:10_runs_best_unbiased_performers}
+\end{figure}
+
+In the biased case, we observe a similar pattern where the majority of the configurations maintain consistently high scores, only to drop below the 90\% threshold for the 5-qubit case. It appears that the presence of the classical bias parameter is insufficient to push the model beyond this 90\% mark as initially hoped, which suggests that the introduction of more layers and a higher number of trainable parameters is necessary to achieve better performance.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/10_runs_biased_metrics_labeled.png}
+	% Place caption under the figure
+	\caption{Performance of best biased classifier per number of qubits across all runs
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:10_runs_best_biased_performers}
+\end{figure}
+
+Regarding the circuit depth for each method's best-performing model, we can observe that with the exception of the 3-qubit and 5-qubit configurations, the two methods require a similar number of layers. Notably, the biased method requires more layers for the simpler 3-qubit case where the number of trainable parameters per layer is lower, whereas the unbiased method requires more layers for the 5-qubit case where each layer is more costly in terms of parameter count. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/10_runs_vqc_depth_comparison.png}
+	% Place caption under the figure
+	\caption{Circuit depth in respect to the number of qubits for biased and unbiased classifiers
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:10_runs_depth}
+\end{figure} 	
+
+The aforementioned trend becomes clearer when focusing on the number of parameters each top-performing model must train. For the majority of the configurations, the primary difference between the two methods is the single classical bias parameter introduced by the biased method. The only two instances where this does not hold true are the 3-qubit and 5-qubit cases. In the 3-qubit scenario, the biased method trains an additional 23 parameters; in contrast, the unbiased method must optimize an extra 149 parameters in the 5-qubit case. Consequently, the introduction of the classical parameter appears to have been beneficial in terms of efficiency, especially considering that each classifier in the 5-qubit paradigm requires a considerable amount of training time. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/10_runs_vqc_params_comparison.png}
+	% Place caption under the figure
+	\caption{Number of trainable parameters in respect to the number of qubits for biased and unbiased classifiers
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:10_runs_params}
+\end{figure}
+
+In terms of epochs, it is evident that the biased models reached their optimal parameter values faster than the unbiased models in almost every instance, with the 4-qubit configuration being the only exception. This provides further evidence that the introduction of the classical bias parameter effectively benefits the performance and convergence of our quantum classifier. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/10_runs_vqc_epochs_comparison.png}
+	% Place caption under the figure
+	\caption{Number of epochs required to reach the best results in respect to the number of qubits for biased and unbiased classifiers
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:10_runs_epochs}
+\end{figure}
+
+To ensure the final comparison between the quantum methods and Logistic Regression is equitable, an evaluation process similar to that of the quantum approaches was adopted. The classical method was trained and tested using the same datasets as the quantum models, with the process repeated across ten runs and various hyperparameter values for the Logistic Regression model. Although this approach is less rigorous than the exhaustive repeated nested cross-validation technique employed previously, it is appropriate here as the primary objective is to provide a fair and direct comparison between the models.
+
+For the quantum methods, we report only the highest average results across all layers for each configuration and method. For instance, in the 5-qubit case, we consider the results of both the unbiased and biased classifiers comprised of 30 layers, and we apply this same logic to the remaining configurations. In essence, we set aside the number of parameters required to achieve these results and focus exclusively on the best average performance attained by each model.
+
+With that in mind, we can see that our quantum approach demonstrates clear superiority only in the 1-qubit configuration, where the dataset consists of only 2 features. In this instance, the biased classifier clearly outperforms the Logistic Regression model across all key metrics while performing slightly better than its unbiased counterpart. In all other scenarios, the Logistic Regression model remains superior in terms of accuracy. Interestingly, it is not always more effective than its quantum counterparts regarding recall and maintains a similar performance in terms of F1-score for the most part. While the dimensionality remains relatively low, the difference between the classical and quantum approaches is not particularly severe. However, this shifts significantly when addressing the complete original problem comprising 30 features; in this case, the quantum methods are not comparable to the classical model, as they consistently fail to surpass the 85\% threshold across most performance metrics.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{./figures/vqc_vs_classical.png}
+	% Place caption under the figure
+	\caption{Average performance of the Quantum Models and the classical Logistic Regression model across 10 different runs for all the different number of qubits
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:vqc_vs_classical}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% STOPED HERE 
+
+This \LaTeX{} example is a template showing how to format postgraduate theses.
+This sample focuses on theses written in English, where some pages and titles are changed from their Greek counterparts.
+Make sure you pass the \emph{en} option in the \verb|\documentclass| on the top of the .tex file.
+
+In order to make the gray bibliography uniform throughout the library---including postgraduate thesis---this document class uses formatting enforced by the Department of Informatics \& Telecommunication.
+Formatting details are as follows:
+
+\subsection{Page size} \label{page_size}
+
+Page size shall be \textbf{A4}.
+
+\subsection{Printing pages} \label{printing_pages}
+
+Page margin sizes, and header and footer placement depend on whether printing will be two-sided, like in a standard book, or one-sided.
+
+\subsubsection{Two-sided printing} \label{two-sided_printing}
+
+This document class assumes two-sided printing by default.
+On odd pages, which are on the right of the book, the right margins are narrower than the left margins.
+On even pages, on the left side of the book, the reverse is true: left margins are narrower than the right.
+
+The header contains the thesis title, and is placed on the right of odd right-facing pages, and on the left of even left-facing pages.
+The footer contains the page number on the center of all pages.
+
+\subsection{Dates} \label{dates}
+
+The dates in the pages, such as the month and year, refer to the examination date.
+
+\subsection{Cover and front matter pages} \label{cover_and_front_matter_pages}
+
+Formatted like in this sample, centered unless noted otherwise, in order:
+
+\begin{enumerate}
+    \item Emblem of Athena: top-center
+    \item Name of university (NATIONAL AND KAPODISTRIAN UNIVERSITY OF ATHENS): Arial, bold, uppercase, 14pt.
+    \item Name of school (SCHOOL OF SCIENCES): Arial, bold, uppercase, 12pt.
+    \item Name of department (DEPARTMENT OF INFORMATICS AND TELECOMMUNICATIONS): Arial, bold, uppercase, 12pt.
+    \item Name of postgraduate program: Arial, bold, uppercase, 12pt.
+    \item Type of thesis (MSc THESIS): Arial, bold, uppercase (except the 'c' in "MSc"), 12pt.
+    \item Title of thesis: Arial, bold, 16pt.
+    \item First name, Middle initial, and Last name of author: Arial, bold, 12pt.
+    \item Left-aligned Supervisor (or Supervisors if more than one): First and Last name: Arial, bold, 12pt.; Supervisor's title: Arial, 12pt.\\
+    If there are non-staff supervisors, they are placed right after staff supervisors with their appropriate titles.
+    \item Place where thesis was completed (ATHENS): Arial, bold, uppercase, 12pt.
+    \item Month and year of completion: Arial, bold, uppercase, 12pt.
+    \item Line spacing: 1pt.
+    \item Page numbering starts at 1 from the cover page, but not printed on any of the cover or front matter pages.
+    \item The back of those pages shall remain blank.
+\end{enumerate}
+
+\subsection{2nd front matter page (Examination committee page)} \label{second_front_matter_page}
+
+Formatted like in this sample, center-aligned unless stated otherwise, in order:
+
+\begin{enumerate}
+    \item Type of thesis (MSc THESIS): Arial, bold, uppercase (except the 'c' in "MSc"), 12pt.
+    \item Title: Arial, 12pt.
+    \item First \& last name of author: Arial, bold, 12pt.
+    \item Author's serial number: Arial, uppercase, 12pt.
+    \item Left-aligned: Supervisor(s) and 3-member examination committee: Arial, bold, uppsercase, 12pt.\\
+    Both sections contain:
+    \begin{itemize}
+        \item Name of committee member: Arial, bold, 12pt.
+        \item Title of committee member: Arial, 12pt.
+        \item Committee signatures
+    \end{itemize}
+    \item Examination Date: Arial, bold, 12pt.
+\end{enumerate}
+
+Their reverse pages are left blank.
+
+\subsection{Abstract} \label{abstract}
+
+Two abstracts, one in English and one in Greek, follow.
+The abstract contains the purpose and scope of this thesis, methodology, the experiments and result thereof.
+
+The abstract text is followed by the subject area and up to 5 keywords, in English and Greek after their respective abstracts.
+Each abstract plus subject area and keyword definition can span no more than 2 pages.
+Even-numbered pages are left blank if abstracts span only 1 page.
+
+\subsection{Other front matter pages} \label{other_front_matter_pages}
+
+The rest of the front matter pages are as follows:
+
+\begin{enumerate}
+    \item Inscription.
+    Optional, can be included by passing \emph{inscr} in the \verb|\documentclass| options.
+    Reverse page is left blank.
+    \item Acknowledgements.
+    Optional, can be included by passing \emph{ack} in the \verb|\documentclass| options.
+    Reverse page is left blank.
+    \item Table of contents.
+    Mandatory, contains the chapters, sections and any subdivisions, as well as a list of figures and a list of tables, if any.
+    \item Preface.
+    Optional, can be included by passing \emph{preface} in the \verb|\documentclass| options.
+\end{enumerate}
+
+\subsection{Page numbering} \label{page_numbering}
+
+Page numbering starts at 1 from the front cover, the English title page in this case, without printing the numbers.
+When printing on both sides of the sheet (two-sided by default), any blank pages are included towards the page count, but do not include any headers or footers including page numbers.
+If printing on one side of the page (done by including the \emph{oneside} option in the \verb|\documentclass|), only the pages on the right are printed and any blank pages (including those on the left side) are not included towards the page count.
+Numbering always finishes on the last printed page.
+
+On two-sided theses, numbers are printed on the center of each footer.
+On one-sided theses, numbers are printed on the right side of each footer.
+
+\subsection{Page formatting} \label{page_formatting}
+
+Pages are formatted as in this sample:
+
+\begin{itemize}
+    \item \textbf{Margins:} 2cm on all sides, plus a 0.5cm gutter on the center of the book where the pages are bound (i.e, on the left side for printed odd pages and on the right for printed even pages).
+    \item \textbf{Header:} 1.25cm from the top of the page.
+    Contains the title of the thesis, on the right side for odd pages, on the left for even pages, if printed two-side.
+    Appears only in the main matter, that is not in the cover pages or the front matter (abstract, inscription, table of contents, ...), and not in blank pages.
+    \item \textbf{Footer:} 1.25cm from the bottom of the page.
+    Contains the name(s) of the author(s)
+    \begin{itemize}
+        \item on the right side for odd pages, on the left for even pages, if printed two-side.
+        \item on the left side of all pages if printed one-side.
+    \end{itemize}
+    Appears only in the main matter, that is not in the cover pages or the front matter (abstract, inscription, table of contents, ...), and not in blank pages.
+    \item \textbf{Page number:} included in the footer
+    \begin{itemize}
+        \item at the center if printed two-side.
+        \item on the right if printed one-side.
+    \end{itemize}
+    \item \textbf{Paragraph formatting:}
+    \begin{itemize}
+        \item \textbf{Justification:} Justified, each non paragraph-breaking line covers the entire line width spaced as necessary.
+        \item \textbf{Paragraph spacing:} 0pt for the first, 6pt between all paragraphs.
+        \item \textbf{Line spacing:} 1 line.
+    \end{itemize}
+    \item \textbf{Font:} Arial, 12pt, Normal or Regular style
+    \item \textbf{Chapter numbering:} Arial, bold, 12pt or 14 pt
+    \item \textbf{Chapter title:} Arial, bold, uppercase, 14pt., centered
+    \item \textbf{Section and further division title:} Arial, bold, 12pt.
+    \item \textbf{Figures:} Each figure must be uniquely numbered either by chapter or by the whole document.
+    They must also include a caption below them, as in this sample.
+    \item \textbf{Tables:} Each table must be uniquely numbered either by chapter or by the whole document.
+    They must also include a caption above them, as in this sample.
+\end{itemize}
+
+\section{Sample section}
+
+The section title will appear in the Table of Contents.
+
+\subsection{Sample Subsection}
+
+The subsection title will appear in the Table of Contents.
+
+\subsubsection{Sample subsubsection}
+
+The subsubsection title will appear in the Table of Contents.
+
+\paragraph{Sample paragraph}
+
+The paragraph title will not appear in the Table of Contents.
+
+\subparagraph{Sample subparagraph}
+
+The subparagraph title will not appear in the Table of Contents.
+
+\chapter{A BRIEF INTRODUCTION TO \LaTeX} \label{introduction_to_latex}
+
+\LaTeX{} is a typesetting system.
+The authors compose a \textbf{.tex} file which is then compiled to produce a document, nowadays a PDF file.
+This chapter will give a brief, non-exhaustive introduction to the system.
+
+\section{Installing \LaTeX} \label{installing_latex}
+
+If you use macOS or Linux as your operating system, chances are \LaTeX{} is already included.
+Windows does not include \LaTeX{} out-of-the-box.
+If not, just install one of the following:
+\begin{itemize}
+    \item TeX Live (\url{https://www.tug.org/texlive/}).
+    Contains a comprehensive \LaTeX{} installation with most packages included.
+    Thus, it also requires a few GB worth of space in a typical installation.
+    Supports most if not all packages used in this sample.
+    \item MiKTeX (\url{https://miktex.org/}) is a more minimalist installation.
+    Typical installations only include the essential packages, with the option of downloading more, either from the console or automatically when compiling.
+    This document uses packages that are not included in the typical MiKTeX installation, but it will offer you to install them upon first compilation.
+\end{itemize}
+
+Both of these are cross-platform, they can install under Windows, macOS, or Linux.
+
+\section{Editing} \label{editing}
+
+\TeX{} files can be modified by any plain text processor program, such as Notepad.
+Compilation to PDF is traditionally done via the terminal.
+Nonetheless, it is recommended to use a dedicated \TeX{} IDE, a program designed to edit, compile and view the resulting PDF all in one program.
+
+Some IDEs one could use to edit and compile \TeX{} files are:
+\begin{itemize}
+    \item \textbf{TeXworks} (\url{https://tug.org/texworks/}).
+    Very basic functionality.
+    This is bundled with both TeX Live and MiKTeX, so by installing any of those you don't have to install this program as well.
+    \item \textbf{Texmaker} (\url{https://www.xm1math.net/texmaker/}).
+    More advanced functionality.
+    Includes document structure, symbol insertion, and other \LaTeX{} commands that can be added to the document with the push of a button.
+    \item \textbf{TeXstudio} (\url{https://www.texstudio.org/}).
+    Forked from Texmaker.
+    Functions almost the same as Texmaker.
+    \item \textbf{Kile} (\url{https://kile.sourceforge.io/}).
+    Built by KDE.
+\end{itemize}
+
+\section{Compiling} \label{compiling}
+
+Before we begin with the commands, I should mention that this project---either in English or Greek---uses the XeLaTeX engine to compile.
+This is because while LaTeX uses the ASCII character set to typeset, XeLaTeX uses Unicode, which includes a lot more characters than ASCII.
+
+The compilation recipe will typically consist of:
+\begin{enumerate}
+    \item Running xelatex
+    \item Running bibtex to compile the references
+    \item Running xelatex
+    \item Running xelatex
+\end{enumerate}
+
+It appears that \textit{xelatex} runs a total of 3 times, once before then twice after \textit{bibtex}.
+This is to ensure all \verb|\label|s have been scanned and paired with their \verb|\ref|.
+
+\section{Formatting} \label{formatting}
+
+\subsection{Basics} \label{basics}
+
+Take at look at the following excerpt:
+
+\begin{verbatim}
+This is the first paragraph.
+This is the next line, but is still part of the first paragraph.
+
+This is the second paragraph. Notice the blank line between the two.
+% This is a comment. Comments are not rendered in the final file.
+% Comments begin with the percent symbol(%)
+% and extend to the end of the line.
+\end{verbatim}
+
+In \LaTeX{}, it's rendered like this:
+
+This is the first paragraph.
+This is the next line, but is still part of the first paragraph.
+
+This is the second paragraph. Notice the blank line between the two.
+% This is a comment. Comments are not rendered in the typeset file.
+% Comments begin with the percent symbol(%) and extend to the end of the line.
+
+As we can see, if we type something onto the next line it will remain part of that paragraph.
+But if we leave one line blank between texts, the next part of the text will appear on a new paragraph.
+
+You might have also noticed that the lines starting with '\%' did not print.
+That's because the \% symbol works like the // in C-inspired languages: it begins a comment until the next line.
+"But wait", you might ask, "how did you type the '\%' just now"?
+Simple: if you type \verb|\%| in \LaTeX{} you'll get a \% character.
+Most commands begin with the backslash (\textbackslash) character, which is also used in escaping other special characters, as we'll see in \ref{escaping}.
+
+\subsection{Escaping} \label{escaping}
+Some characters like the \% are special, and behave differently in \LaTeX{} than in text documents.
+For example:
+\begin{itemize}
+    \item The \textbf{\%} starts comments.
+    \item The \textbf{\&} is used to separate columns in a row in tables.
+    \item The \textbf{\textbackslash\textbackslash} either creates a new line without breaking the paragraph or starts a new row in a table environment.
+    \item \textbf{\{} and \textbf{\}} to enclose into a group.
+    \item \textbf{\$} to write some math.
+    \item \textbf{\# \_ \~{} \^{}} as other reserved characters.
+\end{itemize}
+
+Most of these are escaped by adding the backslash character next to them (e.g. \textbackslash\&).
+But to print the backslash itself, only the \verb|\textbackslash| command will print the '\textbackslash'.
+
+\subsection{Formatting commands} \label{formatting_commands}
+
+Some \LaTeX{} commands act like their word processor equivalents.
+For example:
+
+\begin{center}
+    \begin{tabular}{c|c}
+        This... & will print this \\
+        \hline
+        \verb|\textbf{bold}| & \textbf{bold} \\
+        \verb|\textit{italics}| & \textit{italics} \\
+        \verb|\underline{underline}| & \underline{underline} \\
+        \verb|\textbf{\textit{bold and italics}}| & \textbf{\textit{bold and italics}}
+    \end{tabular}
+\end{center}
+
+Want to center something like the table above?
+Just type something like:
+\begin{verbatim}
+\begin{center}
+    I'm a centered section!
+    I start in the .tex file with \verb|\begin{center}|
+    and end with \verb|\end{center}|.
+\end{center}
+\end{verbatim}
+
+and you'll get:
+
+\begin{center}
+    I'm a centered section!
+    I start in the .tex file with \verb|\begin{center}|
+    and end with \verb|\end{center}|.
+\end{center}
+
+Want to make a list?
+For unordered (bulleted) lists:
+\begin{verbatim}
+\begin{itemize}
+    \item This is an item in an \textit{itemize} environment.
+    \item Each item starts with \verb|\item|
+          and continues until the next \verb|\item|
+          or \verb|\end{itemize}|.
+    \item You can also nest lists.
+          \begin{itemize}
+              \item Just open another \textit{itemize}
+                    environment inside.
+          \end{itemize}
+\end{itemize}
+\end{verbatim}
+
+will produce:
+\begin{itemize}
+    \item This is an item.
+    \item Each item starts with \verb|\item|
+    and continues until the next \verb|\item|
+    or \verb|\end{itemize}|.
+\item You can also nest lists.
+    \begin{itemize}
+        \item Just open another \textit{itemize} environment inside.
+    \end{itemize}
+\end{itemize}
+
+\clearpage
+
+If you want to make ordered lists, with numbers:
+\begin{verbatim}
+\begin{enumerate}
+    \item This is an ordered item
+          in an \textit{enumerate} environment.
+    \item It behaves like in the \textit{itemize} environment.
+          But instead of bullets that are the same for each item,
+          you see sequences of numbers or letters.
+    \item Once again, you may nest lists.
+          \begin{enumerate}
+              \item Just like that.
+              \item But you can go deeper:
+                    \begin{itemize}
+                        \item You can even nest unordered lists.
+                              \begin{enumerate}
+                                  \item Just how deep can this
+                                        rabbit hole go?
+                              \end{enumerate}
+                    \end{itemize}
+          \end{enumerate}
+    \item Phew, back at last!
+\end{enumerate}
+\end{verbatim}
+
+this is what you get:
+\begin{enumerate}
+    \item This is an ordered item in an \textit{enumerate} environment.
+    \item It behaves like in the \textit{itemize} environment.
+    But instead of bullets that are the same for each item,
+    you see sequences of numbers or letters.
+    \item Once again, you may nest lists.
+    \begin{enumerate}
+        \item Just like that.
+        \item But you can go deeper:
+        \begin{itemize}
+            \item You can even nest unordered lists.
+            \begin{enumerate}
+                \item Just how deep can this rabbit hole go?
+            \end{enumerate}
+        \end{itemize}
+    \end{enumerate}
+    \item Phew, back at last!
+\end{enumerate}
+
+To add footnotes, you can do something like this:
+
+\begin{verbatim}
+Hello there!\footnote{General Kenobi!}
+\end{verbatim}
+
+to get:
+
+Hello there!\footnote{General Kenobi!}
+
+Want to add URLs in your document? Simple! Just type:
+
+\begin{verbatim}
+\TeX{} Users Group homepage: \url{https://www.tug.org/}
+\end{verbatim}
+
+to get:
+
+\TeX{} Users Group homepage: \url{https://www.tug.org/}
+
+And speaking of links, if you wish to add a bibliographical reference as it's declared in the \textbf{references.bib} file, type:
+
+\begin{verbatim}
+The K-means algorithm\cite{bib:k_means_clustering_algorithm}
+is a well-known clustering algorithm.
+\end{verbatim}
+
+to render:
+
+The K-means algorithm\cite{bib:k_means_clustering_algorithm}
+is a well-known clustering algorithm.
+
+Just pay attention to the label as it is given in the corresponding \textbf{references.bib} entry.
+A sample has been given in this project.
+Bibliographical entries don't have to begin with "bib:", but it helps in organizing labels.
+
+Finally, if you want to link to another reference:
+\begin{verbatim}
+Go to Chapter \ref{figures_and_tables}.
+\end{verbatim}
+
+will show up as:
+
+Go to Chapter \ref{figures_and_tables}.
+
+As you can see, this not only displays the number of the "FIGURES AND TABLES" chapter, but clicking on it navigates to the start of that chapter.
+This can be used to reference anything with the \verb|\label{label_key}| command.
+Just tag something with \verb|\label{key}|, then refer (link) to it with \verb|\ref{key}|.
+
+Tables and figures are analyzed in the next sample chapter.
+If you want to know more about advanced \LaTeX{} commands, there are a few tutorials online.
+
+\subsection{Adding math equations} \label{adding_math_equations}
+
+\LaTeX{} also supports adding math formulae and equations.
+These expressions tend to use a different notation and font than the rest of the document.
+
+There are two ways to add a math expression: \emph{inline} and \emph{display}.
+
+In inline mode, the math expression is written on the same paragraph as the text.
+For example, typing:
+\begin{verbatim}
+One of Albert Einstein's famous equations is \(E = mc^2\),
+where \(E\) is energy,
+\(m\) is mass,
+\(c\) is the speed of light (approx. 300,000,000 m/s).
+\end{verbatim}
+
+will yield:
+
+One of Albert Einstein's famous equations is \(E = mc^2\),
+where \(E\) is energy,
+\(m\) is mass,
+\(c\) is the speed of light (approx. 300,000,000 m/s).
+
+In display mode, math expressions are rendered in their own blocks, usually centered.
+For instance, if one types:
+\begin{verbatim}
+Ohm's law is expressed as:
+\[V = I R \quad \textrm{or} \quad
+I = \frac{V}{R} \quad \textrm{or} \quad
+R = \frac{V}{I} \]
+where \(V\) is voltage, \(I\) is current, \(R\) is resistance.
+\end{verbatim}
+
+this will output:
+
+Ohm's law is expressed as:
+\[V = I R \quad \textrm{or} \quad
+I = \frac{V}{R} \quad \textrm{or} \quad
+R = \frac{V}{I} \]
+where \(V\) is voltage, \(I\) is current, \(R\) is resistance.
+
+And if you want numbered equations:
+\begin{verbatim}
+The ideal gas law is defined as:
+\begin{equation}
+    p V = n R T
+\end{equation}
+where \(p\) is pressure of the gas,
+\(V\) is the volume,
+\(n\) the number of moles (not the animal kind),
+\(R\) the gas constant,
+\(T\) the temperature expressed in the Kelvin scale.
+\end{verbatim}
+
+to display:
+
+The ideal gas law is defined as:
+\begin{equation}
+    p V = n R T
+\end{equation}
+where \(p\) is pressure of the gas,
+\(V\) is the volume,
+\(n\) the number of moles (not the animal kind),
+\(R\) the gas constant,
+\(T\) the temperature expressed in the Kelvin scale.
+
+\chapter{FIGURES AND TABLES} \label{figures_and_tables}
+
+\section{Inserting tables} \label{inserting_tables}
+
+Below is a sample table with its caption.
+Make sure you put the caption \textbf{over} the table.
+For instance, this code in \LaTeX{}:
+
+\begin{verbatim}
+\begin{table}
+    % this is before the table
+    \caption{A sample event log, sorted by timestamp}
+    % this is to label and include it in our list of tables
+    \label{tbl:event_log_sample}
+    \begin{center} % center the table
+    \begin{tabular}{c|c|c}
+        \textbf{Case Id} & \textbf{Activity} & \textbf{Timestamp} \\
+        \hline
+        1 & Activity A & 2021-05-24T12:30:00Z \\
+        1 & Activity B & 2021-05-24T12:30:26Z \\
+        1 & Activity C & 2021-05-24T12:31:04Z \\
+        2 & Activity A & 2021-05-24T13:19:39Z \\
+        2 & Activity B & 2021-05-24T13:19:50Z \\
+        3 & Activity A & 2021-05-24T13:19:59Z \\
+        2 & Activity C & 2021-05-24T13:22:14Z \\
+        3 & Activity B & 2021-05-24T13:24:24Z \\
+        4 & Activity A & 2021-05-24T13:25:06Z \\
+        3 & Activity C & 2021-05-24T13:25:27Z \\
+        4 & Activity B & 2021-05-24T13:25:53Z \\
+        4 & Activity C & 2021-05-24T13:27:48Z \\
+        \hline
+    \end{tabular}
+    \end{center}
+\end{table}
+\end{verbatim}
+
+renders table \ref{tbl:event_log_sample}:
+
+\begin{table}
+    % this is before the table
+    \caption{A sample event log, sorted by timestamp}
+    % this is to label and include it in our list of tables
+    \label{tbl:event_log_sample}
+    \begin{center} % center the table
+        \begin{tabular}{c|c|c}
+            \textbf{Case Id} & \textbf{Activity} & \textbf{Timestamp} \\
+            \hline
+            1 & Activity A & 2021-05-24T12:30:00Z \\
+            1 & Activity B & 2021-05-24T12:30:26Z \\
+            1 & Activity C & 2021-05-24T12:31:04Z \\
+            2 & Activity A & 2021-05-24T13:19:39Z \\
+            2 & Activity B & 2021-05-24T13:19:50Z \\
+            3 & Activity A & 2021-05-24T13:19:59Z \\
+            2 & Activity C & 2021-05-24T13:22:14Z \\
+            3 & Activity B & 2021-05-24T13:24:24Z \\
+            4 & Activity A & 2021-05-24T13:25:06Z \\
+            3 & Activity C & 2021-05-24T13:25:27Z \\
+            4 & Activity B & 2021-05-24T13:25:53Z \\
+            4 & Activity C & 2021-05-24T13:27:48Z \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\pagebreak
+
+\section{Inserting figures} \label{inserting_figures}
+
+Below is an example of inserting a figure with its caption.
+Make sure you put the caption \textbf{under} the figure.
+For example, this \LaTeX{} code:
+
+\begin{verbatim}
+\begin{figure}
+    % Define the figure file in the \includegraphics command
+    % Must be relative to one of the paths
+    % in the \graphicspath command at the top
+    \includegraphics[width=\linewidth]{k-means_steps}
+    % Place caption under the figure
+    \caption{The steps of a k-means clustering algorithm.
+        \cite{bib:k_means_clustering_algorithm}}
+    % Label the caption to include in the list of figures
+    \label{fig:k-means_steps}
+\end{figure}
+\end{verbatim}
+
+renders Figure \ref{fig:k-means_steps}:
+
+\begin{figure}
+    % Define the figure file in the \includegraphics command
+    % Must be relative to one of the paths
+    % in the \graphicspath command at the top
+    \includegraphics[width=\linewidth]{k-means_steps}
+    % Place caption under the figure
+    \caption{The steps of a k-means clustering algorithm.
+        \cite{bib:k_means_clustering_algorithm}}
+    % Label the caption to include in the list of figures
+    \label{fig:k-means_steps}
+\end{figure}
+
+\backmatter
+
+% abbreviations table
+\abbreviations
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{longtable}{ l @{\qquad} l }
+        \toprule
+        AI    & Artificial Intelligence         \\
+        SPARQL & SPARQL Protocol and RDF Query Language \\
+        OWL    & Web Ontology Language                  \\
+        OGC    & Open Geospatial Consortium             \\
+        \bottomrule
+    \end{longtable}
+\end{center}
+
+% appendix
+\begin{appendix}
+    % mark the beginning of the appendix
+    \appendixstartedtrue
+
+    \chapter{FIRST APPENDIX}
+
+    \chapter{SECOND APPENDIX}
+
+    % add appendix line to ToC
+    \phantomsection
+    \addcontentsline{toc}{chapter}{APPENDICES}
+\end{appendix}
+
+% manually include the bibliography
+\bibliographystyle{IEEEtran}
+{\footnotesize \bibliography{IEEEabrv,references}}
+% include it also in ToC (do sth on your own)
+\addcontentsline{toc}{chapter}{REFERENCES}
+
+\end{document}

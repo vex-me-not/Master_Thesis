@@ -1,0 +1,76 @@
+\babel@toc {greek}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {greek}{}\relax 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A VQC configuration comprising of two qubits and six layers }}{37}{figure.caption.8}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pairplot of the 2 PCs for the training subset }}{42}{figure.caption.9}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces A single layer of the 1-qubit VQC }}{44}{figure.caption.10}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Performance Results for 1-qubit classifiers after 10 runs }}{45}{figure.caption.11}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Efficiency Results for 1-qubit classifiers after 10 runs }}{46}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Performance and Efficiency Trends of Biased and Unbiased Classifier for 1-Qubit }}{47}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces VQC of the best 1-qubit biased classifier }}{48}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Evolution of the loss function of the best 1-qubit biased classifier }}{48}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 1-qubit biased classifier }}{49}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces VQC of the best 1-qubit unbiased classifier }}{50}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Evolution of the loss function of the best 1-qubit unbiased classifier }}{50}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 1-qubit unbiased classifier }}{51}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Pairplot of the 4 PCs for the training subset }}{52}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces A single layer of the 2-qubit VQC }}{53}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Performance Results for 2-qubit classifiers after 10 runs }}{54}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Efficiency Results for 2-qubit classifiers after 10 runs }}{55}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Performance and Efficiency Trends of Biased and Unbiased Classifier for 2 Qubits }}{56}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces VQC of the best 2-qubit unbiased classifier }}{56}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Evolution of the loss function of the best 2-qubit unbiased classifier }}{57}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 2-qubit unbiased classifier }}{58}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces VQC of the best 2-qubit biased classifier }}{58}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Evolution of the loss function of the best 2-qubit biased classifier }}{59}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 2-qubit biased classifier }}{60}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Pairplot of the 8 PCs for the training subset }}{61}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces A single layer of the 3-qubit VQC }}{62}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Performance Results for 3-qubit classifiers after 10 runs }}{63}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Efficiency Results for 3-qubit classifiers after 10 runs }}{64}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Performance and Efficiency Trends of Biased and Unbiased Classifier for 3 Qubits }}{65}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces VQC of the best 3-qubit unbiased classifier }}{65}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Evolution of the loss function of the best 3-qubit unbiased classifier }}{66}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 3-qubit unbiased classifier }}{67}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.32}{\ignorespaces VQC of the best 3-qubit biased classifier }}{67}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Evolution of the loss function of the best 3-qubit biased classifier }}{68}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.34}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 3-qubit biased classifier }}{69}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.35}{\ignorespaces Pairplot of the 16 PCs for the training subset }}{70}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.36}{\ignorespaces A single layer of the 4-qubit VQC }}{71}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.37}{\ignorespaces Performance Results for 4-qubit classifiers after 10 runs }}{72}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.38}{\ignorespaces Efficiency Results for 4-qubit classifiers after 10 runs }}{73}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.39}{\ignorespaces Performance and Efficiency Trends of Biased and Unbiased Classifier for 4 Qubits }}{74}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.40}{\ignorespaces VQC of the best 4-qubit unbiased classifier }}{74}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.41}{\ignorespaces Evolution of the loss function of the best 4-qubit unbiased classifier }}{75}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.42}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 4-qubit unbiased classifier }}{76}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.43}{\ignorespaces VQC of the best 4-qubit biased classifier }}{76}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.44}{\ignorespaces Evolution of the loss function of the best 4-qubit biased classifier }}{77}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.45}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 4-qubit biased classifier }}{78}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.46}{\ignorespaces A single layer of the 5-qubit VQC }}{79}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.47}{\ignorespaces Performance Results for 5-qubit classifiers after 10 runs }}{80}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.48}{\ignorespaces Efficiency Results for 5-qubit classifiers after 10 runs }}{81}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.49}{\ignorespaces Performance and Efficiency Trends of Biased and Unbiased Classifier for 5 Qubits }}{82}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.50}{\ignorespaces VQC of the best 5-qubit unbiased classifier }}{82}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.51}{\ignorespaces Evolution of the loss function of the best 5-qubit unbiased classifier }}{83}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.52}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 5-qubit unbiased classifier }}{84}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.53}{\ignorespaces VQC of the best 5-qubit biased classifier }}{84}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.54}{\ignorespaces Evolution of the loss function of the best 5-qubit biased classifier }}{85}{figure.caption.61}%
+\contentsline {figure}{\numberline {5.55}{\ignorespaces Validation and Training curves for the 4 key metrics of the best 5-qubit biased classifier }}{86}{figure.caption.62}%
+\contentsline {figure}{\numberline {5.56}{\ignorespaces Performance of best unbiased classifier per number of qubits across all runs }}{87}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.57}{\ignorespaces Performance of best biased classifier per number of qubits across all runs }}{88}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.58}{\ignorespaces Circuit depth in respect to the number of qubits for biased and unbiased classifiers }}{89}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.59}{\ignorespaces Number of trainable parameters in respect to the number of qubits for biased and unbiased classifiers }}{90}{figure.caption.66}%
+\contentsline {figure}{\numberline {5.60}{\ignorespaces Number of epochs required to reach the best results in respect to the number of qubits for biased and unbiased classifiers }}{91}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.61}{\ignorespaces Average performance of the Quantum Models and the classical Logistic Regression model across 10 different runs for all the different number of qubits }}{92}{figure.caption.68}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces The steps of a k-means clustering algorithm. \cite {bib:k_means_clustering_algorithm}}}{109}{figure.caption.72}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

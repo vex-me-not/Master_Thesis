@@ -27,3 +27,7 @@
 !*.png
 !*.docx
 # Add anything that you should be included but it's not
+Mastet_Thesis/greek/*
+Mastet_Thesis/english/emblems/*
+Mastet_Thesis/english/figures/*
+!Mastet_Thesis/english/*
