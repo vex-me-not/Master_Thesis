@@ -68,6 +68,7 @@
 \usepackage{listings}
 
 \usepackage{float}
+\usepackage{amsmath}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% User-specific configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -214,30 +215,430 @@
 
 % add main chapters (should be given in capital letters)
 \chapter{INTRODUCTION} \label{introduction}
-\chapter{CLASSICAL MACHINE LEARNING METHODS} \label{clml}
-\section{Logistic Regression} \label{lr}
-\section{Naive Bayes Classifier} \label{nvb}
-\section{Support Vector Machines} \label{svms}
-\section{Linear Discriminant Analysis} \label{LDA}
-\section{Random Forests} \label{rfs}
-\section{Light Gradient Boosting Machine} \label{lightgbm}
+
+Machine learning is the art and science of enabling computers to learn from data to solve problems, rather than relying on explicit programming. Conversely, quantum computing involves processing information using devices governed by the laws of quantum theory. As both fields are expected to play a pivotal role in the future of information technology, exploring their integration is a natural progression. This synergy is the core focus of the emerging discipline known as quantum machine learning.
+
+Computers are physical devices that process information using electronic circuits. Algorithms, or software, act as instructions for manipulating information represented by electrical currents within these circuits. While these processes involve microscopic particles such as electrons, they can generally be described using classical macroscopic theories of electronics. However, when microscopic systems like photons or atoms are used directly to process information, a different mathematical framework is required to account for the counterintuitive behavior of nature at small scales. This framework, known as quantum theory, has been recognized since the early twentieth century as the most comprehensive description of microscopic physics. A computer that operates according to these principles is defined as a quantum computer.
+
+Since the 1990s, quantum physicists and computer scientists have explored the construction and potential applications of quantum computers. During this time, they have developed various frameworks to describe computations in quantum systems, allowing for the theoretical investigation of these devices. This has led to the proposal of a vast array of quantum algorithms, currently awaiting implementation on physical hardware. The most prominent model for formulating these algorithms is the circuit model. Its foundational concepts include the qubit, which replaces the classical bit, and quantum gates, which are used to perform computations on those qubits.
+
+Building a quantum computer in a laboratory is a formidable challenge, as it requires the precise control of infinitesimal systems. Maintaining the fragile state of quantum coherence is essential; any disturbance can destroy the quantum effects necessary for computation. To preserve this coherence across thousands of operations, error correction is vital. However, quantum error correction is significantly more complex than its classical counterpart, representing one of the primary engineering hurdles in the development of full-scale quantum computers. Consequently, the implementation of most existing quantum algorithms must await further hardware advancements.
+
+The endeavor to bring quantum technologies to market has ushered in the era of "near-term" quantum computing, fundamentally reshaping research in the field over recent years. Quantum computing has transitioned from a purely academic pursuit into a strategic priority for numerous startups and major IT corporations. This shift has attracted a growing number of computer scientists and engineers who contribute diverse expertise to the community. Furthermore, software toolboxes and quantum programming languages, built upon major classical frameworks, are increasingly available, with new developments emerging annually. Consequently, the realization of quantum technology has evolved into an international, interdisciplinary, and primarily commercial effort.
+
+Significant progress has been made in developing Noisy Intermediate-Scale Quantum (NISQ) devices, which serve as the initial prototypes for future full-scale quantum computers. These devices typically feature between 10 and 100 qubits that may not be fully interconnected. Because they lack error correction, NISQ devices produce only approximate computational results.
+
+Quantum devices in the NISQ era theoretically possess the power to demonstrate the advantages of quantum computing; however, the requirement to restrict algorithms to a limited number of qubits and gates profoundly impacts algorithmic design. The primary objective is to identify practical computational problems that small-scale quantum devices can solve while achieving significant, ideally exponential and provable, speedups over the best classical algorithms. Consequently, there is an intense search for a "killer app": a compact yet powerful algorithm specifically tailored for early quantum hardware. Machine learning and its foundational component, optimization, are frequently cited as leading candidates, which accounts for the massive momentum in quantum machine learning research over recent years.
+
+This brings us to the other parent discipline: machine learning. Situated at the intersection of statistics, mathematics, and computer science, machine learning analyzes how computers can learn from prior examples, typically large datasets characterized by complex, nonlinear relationships, to make predictions or solve new problem instances. Originally developed as the data-driven branch of artificial intelligence, it seeks to provide machines with human-like capabilities such as image recognition, language processing, and decision-making. While these tasks are intuitive for humans, codifying how a machine might acquire similar skills is difficult. For instance, when viewing a mountain panorama, it is not immediately clear how the data from a single dark blue pixel relates to the broader concept of a mountain. Machine learning addresses this by enabling computers to extract patterns from data that inherently represent concepts like a "mountain range".
+
+Machine learning transitioned into an industry-driven research discipline earlier and on a much larger scale than quantum computing. This shift was primarily fueled by the success of deep learning, a paradigm that involves stacking modular algorithms known as neural networks to create expansive architectures. These systems are fed massive datasets and trained using high-performance computing. Consequently, machine learning is often characterized as a "dark art" of empirical engineering, frequently associated with substantial professional compensation.
+
+Machine learning also possesses a rigorous academic and theoretical dimension. The rise of deep learning presents one of the most compelling challenges in modern research: determining exactly why it works. Traditional learning theory, rooted in statistics, originally posited a fundamental trade-off between a model's expressivity and its ability to learn effectively. However, modern neural networks are exceptionally expressive, featuring millions or even billions of trainable parameters; empirical evidence suggests that as these models grow larger, their performance actually improves. This leads to a central theoretical question: why do these heavily overparameterized models avoid overfitting the data they encounter?
+
+Recent years have seen impressive progress in theoretical development, and while the broader mystery remains unsolved, it is increasingly evident that effective machine learning relies on a complex interplay between data, models, and optimization algorithms. These continuous advancements place quantum machine learning on a rapidly shifting foundation, creating a landscape that is as exhilarating as it is difficult to navigate.
+
+\section{Classical Machine Learning Methods} \label{clml}
+
+Generally speaking, machine learning is categorized into two primary types: unsupervised and supervised learning. The objective of unsupervised learning is to identify inherent structures and patterns within unlabeled data. The term "unsupervised" signifies that these algorithms discover hidden patterns independently, without requiring human intervention or pre-existing labels. These methods are typically utilized for three core tasks: clustering, anomaly detection, and dimensionality reduction.
+
+Supervised learning is primarily characterized by the use of labeled datasets, where a model learns by processing inputs paired with their corresponding correct outputs. Using a mechanism known as a loss function, the algorithm evaluates its accuracy and iteratively adjusts its parameters until the error is sufficiently minimized. The two primary subcategories of supervised learning are regression and classification; this thesis specifically focuses on the latter.
+
+Classification algorithms are designed to accurately categorize test data into distinct groups, such as identifying whether an image depicts a dog or a cat, or determining if an email is spam. These methods are generally divided into two categories: binary and multi-class classification. As the names imply, binary classification involves choosing between two categories, while multi-class classification involves more than two. To address the tumor binary classification task at hand, we will briefly outline six of the most prominent and effective classification methods developed over the years.
+
+\subsection{Logistic Regression} \label{lr}
+
+Logistic Regression is a widely used linear classification algorithm that models the probability of a binary outcome as a function of the input features. Despite its name, Logistic Regression is a discriminative classifier rather than a regression model. It operates by computing a linear combination of the input variables and mapping this value to the interval [0,1] using the logistic (sigmoid) function. The output is interpreted as the probability that a sample belongs to the positive class, and a decision threshold, typically 0.5, is used to assign class labels.
+
+The model is trained by maximizing the likelihood of the observed data, which is equivalent to minimizing the log-loss (cross-entropy) function. To prevent overfitting, especially in high-dimensional settings, regularization terms such as L1 (lasso), L2 (ridge), or elastic net penalties are often incorporated. These penalties constrain the magnitude of the model coefficients and can also induce sparsity, improving generalization and interpretability. Logistic Regression is particularly valued in biomedical applications due to its transparency, as the learned coefficients directly reflect the direction and strength of each feature’s contribution to the class prediction.
+
+\subsection{Naive Bayes Classifier} \label{nvb}
+
+The Naive Bayes classifier is a probabilistic generative model based on Bayes’ theorem. It estimates the posterior probability of a class given a set of features by combining prior class probabilities with class-conditional feature likelihoods. The defining assumption of Naive Bayes is conditional independence: all features are assumed to be independent of each other given the class label. While this assumption is often violated in real-world data, the classifier frequently performs well in practice due to its robustness and low variance.
+
+Different variants of Naive Bayes exist depending on the assumed distribution of the features, such as Gaussian Naive Bayes for continuous data and Multinomial Naive Bayes for count-based features. During training, the model estimates class priors and distribution parameters directly from the data, making it computationally efficient and well-suited for small datasets. In classification, the model assigns a sample to the class with the highest posterior probability. Naive Bayes is particularly attractive when interpretability, speed, and probabilistic outputs are desired.
+
+\subsection{Support Vector Machines} \label{svms}
+
+Support Vector Machines (SVM) are powerful margin-based classifiers that aim to find an optimal decision boundary separating classes with the largest possible margin. In the case of linearly separable data, SVM identifies a hyperplane that maximizes the distance between the closest data points of each class, known as support vectors. By focusing on these critical samples, SVM achieves strong generalization performance.
+
+For non-linearly separable data, SVM employs kernel functions, such as linear, polynomial, or radial basis function (RBF) kernels, to implicitly project the data into a higher-dimensional feature space where a linear separation becomes possible. The trade-off between margin maximization and classification error is controlled by a regularization parameter, which balances model complexity and misclassification tolerance. SVMs are particularly effective in high-dimensional spaces and are widely used in biomedical classification tasks, although their lack of probabilistic output and sensitivity to hyperparameter selection can be considered limitations.
+
+\subsection{Linear Discriminant Analysis} \label{LDA}
+
+Linear Discriminant Analysis (LDA) is a generative classification method that models each class as a multivariate Gaussian distribution with a shared covariance matrix. The objective of LDA is to find a linear combination of features that maximizes the separation between class means while minimizing within-class variance. This results in a linear decision boundary between classes.
+
+LDA relies on relatively strong assumptions, including normality of features and homoscedasticity (equal covariance across classes). When these assumptions are approximately satisfied, LDA can be highly effective and statistically efficient, particularly for small sample sizes. In addition to classification, LDA also performs dimensionality reduction, projecting data onto a lower-dimensional space that preserves class separability. Due to its interpretability and computational simplicity, LDA remains a popular baseline method in biomedical and statistical pattern recognition tasks.
+
+\subsection{Random Forests} \label{rfs}
+
+Random Forests are ensemble learning methods based on the aggregation of multiple decision trees. Each tree is trained on a bootstrap sample of the training data, while at each split only a random subset of features is considered. This dual randomness, both in data sampling and feature selection, reduces correlation among individual trees and improves overall model robustness.
+
+Classification is performed by majority voting across all trees in the ensemble. Random Forests are capable of modeling complex, non-linear relationships and interactions between features without requiring explicit feature engineering. They are relatively resistant to overfitting, particularly compared to single decision trees, and can handle noisy and high-dimensional data effectively. Additionally, Random Forests provide measures of feature importance, offering insights into which variables contribute most strongly to classification decisions.
+
+\subsection{Light Gradient Boosting Machine} \label{lightgbm}
+
+LightGBM is a gradient boosting framework based on decision trees that is designed for high efficiency and scalability. Gradient boosting builds models sequentially, where each new tree is trained to correct the errors made by the previous ensemble. LightGBM introduces several algorithmic optimizations, including histogram-based feature binning and leaf-wise tree growth, which significantly reduce training time while maintaining high predictive accuracy.
+
+Unlike traditional level-wise tree growth, LightGBM expands the leaf with the greatest loss reduction, allowing it to capture complex patterns with fewer trees. Regularization techniques such as learning rate control, tree depth constraints, and feature subsampling are employed to mitigate overfitting. LightGBM is particularly well-suited for large, high-dimensional datasets and often achieves state-of-the-art performance in classification tasks, albeit at the cost of reduced interpretability compared to linear models.
+
 % \chapter{INTRODUCTION} \label{introduction}
-\chapter{QUANTUM COMPUTING AND QUANTUM MACHINE LEARNING} \label{quantum}
-\section{The Qubit} \label{qbt}
-\section{Quantum Entanglement} \label{entanglement}
-\section{Quantum Gates} \label{qgates}
-\section{Data Encoding} \label{encoding}
-\section{Qunatum Ciruits} \label{circuits}
+\section{Quantum Computing and Quantum Machine Learning} \label{quantum}
+\subsection{The Qubit} \label{qbt}
+
+One of the fundamental building blocks of quantum computers is the qubit (short for quantum bit), which serves as the quantum mechanical analogue of a classical bit. In classical computing, information is represented by bits, each restricted to a value of either zero or one. In contrast, quantum computing utilizes qubits to store and encode information, allowing for a more complex representation of data.
+
+Generally, qubits are created by manipulating and measuring systems that exhibit quantum mechanical behavior, such as superconducting circuits, photons, electrons, trapped ions, and atoms. Today, qubits can be synthesized through various physical implementations, each offering distinct advantages for specific computational tasks. Some of the most common types of qubits include:
+
+\begin{itemize}
+	\item \textbf{Superconducting qubits}: Fabricated from superconducting materials and operated at cryogenic temperatures, these qubits are preferred for their rapid gate speeds and precise control.
+	\item \textbf{Trapped ion qubits}: These consist of individual ions confined by electromagnetic fields. They are recognized for their long coherence times and high-fidelity measurements, though they typically operate at slower speeds than superconducting variants.
+	\item \textbf{Quantum dots}: These tiny semiconductors capture a single electron to serve as a qubit. They offer significant potential for scalability due to their compatibility with existing semiconductor manufacturing processes.
+	\item Photons: As individual particles of light, photons can encode quantum information and transmit it over long distances via optical fibers. Consequently, they are essential for applications in quantum communication and cryptography.
+	
+\end{itemize}
+
+\subsection{Quantum Entanglement} \label{entanglement}
+
+It is essential to recognize that the state of a composite system, such as a two-qubit system, cannot always be expressed as a tensor product of individual states. A system can only be written in product form if the qubits are prepared separately and kept in isolation, effectively acting as independent closed systems. However, if the qubits are permitted to interact, they form a single integrated closed system, making a product state representation unfeasible. In such cases, the qubits are described as entangled, a fundamental phenomenon and a vital resource for quantum computation.
+
+One of the most profound phenomena in quantum theory is quantum entanglement, the concept that particles sharing a common origin remain fundamentally linked regardless of the distance between them. Even when separated by vast stretches of time and space, these particles transcend a simple connection; they relinquish their individual quantum identities to form a single, unified quantum state. Consequently, any measurement or interaction involving one particle instantaneously influences the state of its entangled partners.
+
+In 1935, Albert Einstein and his colleagues first identified the "spooky" action of quantum entanglement. This phenomenon appeared to conflict with Einstein’s theory of special relativity, which postulates that nothing can travel faster than the speed of light, a principle mathematically represented by the famous equation \(E=mc^2\).
+
+The ability to instantaneously determine the quantum state of one particle by measuring its entangled partner elsewhere in the universe suggests that information must be transmitted faster than the speed of light. This apparent instantaneous influence contradicts the principles of Einstein’s theory of special relativity. Furthermore, it remains a profound mystery how these particles interact across such vast distances to maintain this shared connection.
+
+Three decades passed before another scientist, John Stewart Bell, developed a method to test this phenomenon. His work ultimately provided the theoretical framework that enabled subsequent researchers to experimentally confirm the existence of quantum entanglement. 
+
+\subsection{Quantum Gates} \label{qgates}
+\subsection{Data Encoding} \label{encoding}
+\subsection{Qunatum Ciruits} \label{circuits}
 \chapter{RESULTS FROM CLASSICAL MACHINE LEARNING METHODS} \label{mlres}
+
+Breast cancer is the most common malignancy among women worldwide, accounting for approximately 36\% of all oncological cases [1] with numerous machine learning algorithms have been applied to support the prognosis of breast cancer tissues [2]. Breast cancer is also the most prevalent malignant tumor worldwide, with an estimated 2.089 million women diagnosed in 2018, and its incidence continues to rise across all regions of the globe [1]. The highest incidence rates are observed in industrialized countries, a trend commonly associated with factors such as unhealthy dietary habits, nicotine use, chronic stress, and low levels of physical activity.
+
+In addition to these lifestyle-related factors, several other risk factors have been identified, including but not limited to: advanced age (with risk increasing from approximately 35 years of age), a family history of breast cancer, infection with oncogenic viruses, early onset of menstruation, late menopause, first pregnancy at an advanced age or the absence of pregnancy, and the use of hormone replacement therapy.
+
+Fine Needle Aspiration (FNA) is a minimally invasive technique used to collect liquid or tissue samples from patients presenting with newly identified growths or masses that require diagnostic evaluation. When the lesion is superficial and palpable, the procedure can be performed by directly inserting the needle and gently aspirating the sample. In cases where the lesion is non-palpable or not externally visible, ultrasound guidance is required. This typically involves the use of a specialized endoscopic device equipped with an ultrasound probe and a needle-deployment mechanism at its tip. FNA is primarily employed for diagnostic purposes, but it also serves prognostic roles, such as identifying genetic or molecular markers that indicate susceptibility to specific chemotherapeutic or biological treatments. Additionally, it can be used therapeutically to drain abscess contents in conjunction with antibiotic therapy [3].
+
+In recent years, various classical machine learning approaches have been proposed for predicting malignancy based on different sets of features, depending on the experimental design and methodology of each study [2], [4], [5]. In this work, we utilize a dataset derived from measurements obtained from fine needle aspirates to evaluate the predictive power of its features. A range of machine learning algorithms is examined, including Logistic Regression, Support Vector Machines, Linear Discriminant Analysis, Gaussian Naïve Bayes, LightGBM, and Random Forest classifiers, as implemented in the scikit-learn library, to distinguish between benign and malignant breast tissue samples [6].
+
+Our analysis consists of three main steps. First, we perform an exploratory data analysis to examine the provided data, determining the number of features, their numerical ranges, and their distributions. We also check for missing values and potential class imbalances; this process allows us to understand the underlying patterns within the data and assess the complexity of the classification problem. The second step involves identifying which of the six proposed models classifies the breast cancer tumors most accurately. To achieve this, we employ repeated nested cross-validation, splitting the dataset into training and validation subsets. All necessary data cleaning and preprocessing are performed within this stage to prevent data leakage between the subsets. Finally, once the best-performing model is identified, we fine-tune it using bootstrapping to gain a better understanding of its generalization potential. The resulting model is then trained on the entire dataset and saved. For future inference, the saved model can be loaded and applied to unseen data.
+
 \section{Exploratory Data Analysis} \label{eda}
+
+Loading the dataset using the pandas Python library, we observe that it contains 569 entries across 32 columns. One column contains the tumor prognosis, indicating whether it is malignant or benign, while another represents a unique identification number for each sample. The remaining 30 columns constitute the features, which consist of measurements taken from masses drawn via fine-needle aspirates. Specifically, these features describe the cell nuclei and are based on properties such as the radius, defined as the mean distance from the center to perimeter points; texture, representing the standard deviation of grayscale values; perimeter; area; smoothness, or the local variation in radius lengths; compactness, calculated as perimeter squared divided by area minus one; concavity, the severity of concave portions of the contour; concave points, the number of concave portions of the contour; symmetry; and fractal dimension, a measure of complexity using coastline approximation. Each of these properties is characterized in three ways: the mean value, the standard error, and the worst value, which is the mean of the three largest recorded values.
+
+Upon loading the dataset, we find that it contains no missing or duplicate values. This is highly advantageous, as the presence of missing data would otherwise necessitate an imputation strategy to fill gaps or the removal of duplicate entries. While several reliable imputation methods exist for datasets of this nature, none can guarantee that synthesized values reflect the true underlying data; consequently, such adjustments could inadvertently skew the evaluation results. Furthermore, the absence of duplicates ensures that the sample size remains intact, as any further reduction of entries would only hinder the evaluation by making the available data even more scarce.
+
+Examining the distribution of the two classes across the 569 samples, we notice a class imbalance between the malignant and benign categories. There are 357 instances of benign tumors and 212 instances of malignant tumors, meaning that benign cases account for 62.74\% of the samples while malignant cases cover the remaining 37.25\%. This imbalance must be carefully considered when splitting the dataset and creating subsets. To address this, we ensure that every split of the data is stratified, maintaining the original class proportions across all subsets.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/class_distro.png}
+	% Place caption under the figure
+	\caption{Distribution of the two tumor classes with "B" standing for benign and "M" standing for malignant
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:class_distro}
+\end{figure}
+
+Observing the distribution of each feature, we notice that the majority of them exist on different scales. To account for this, we will scale them using appropriate methods during the application of the repeated nested cross-validation technique. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering
+	\includegraphics[scale=0.295]{figures/feature_distro.png}
+	% Place caption under the figure
+	\caption{Distribution of each of the 30 features
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:feature_distro}
+\end{figure}
+
+Following this, we proceed to inspect the correlation between the features and the diagnosis label. Based on Pearson’s correlation coefficient, we find that 15 out of the 30 features are heavily correlated, either positively or negatively, with the class label. These features include $radius_mean$, $perimeter_mean$, $area_mean$, $compactness_mean$, $concavity_mean$, $concave points_mean$, $radius_se$, $perimeter_se$, $area_se$, $radius_worst$, $perimeter_worst$, $area_worst$, $compactness_worst$, $concavity_worst$, and $concave points_worst$. While we could elect to retain only these features and significantly reduce the dimensionality of the problem, we believe that in a critical task like breast cancer detection, every feature provides valuable information. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/feature_corr_with_diagno.png}
+	% Place caption under the figure
+	\caption{Heatmap of the correlation of each feature with the diagnosis label
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:feature_corr_with_diagno}
+\end{figure}
+
+Regarding the feature-wise correlation, we detect no significant linear relationships between features that are not naturally expected to be correlated. For instance, $radius_mean$ is heavily correlated with $perimeter_mean$, and $radius_worst$ shows a strong correlation with $perimeter_worst$. Such relationships are expected, as the radius is fundamentally used to calculate the perimeter in most circular or near-circular shapes.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/heatmap_correlation_between_feats.png}
+	% Place caption under the figure
+	\caption{Heatmap of the pairwise feature correlation
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:feature_corr_between_feats}
+\end{figure} 
+
+As a final step of this analysis, we also perform principal component analysis on the entire dataset. Our purpose here is twofold. First and foremost, for our quantum implementation, we must perform some form of dimensionality reduction, as the number of features we can encode into the quantum circuit is limited. Therefore, we need to gain a rough understanding of how much information from our problem is preserved when we utilize 2, 4, 8, and 16 principal components.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/cum_variance_PCA.png}
+	% Place caption under the figure
+	\caption{Cumulative Variance our tumor data explained by Principal Components
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:cum_variance}
+\end{figure} 
+
+Secondly, PCA allows us to gain a general understanding of class separability. If only two principal components are utilized and no significant linear class separability is observed, it is likely that the classes are not linearly separable. 
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/pca_2_components.png}
+	% Place caption under the figure
+	\caption{Scatterplot of the 2 principal components used to describe the entirety of our data
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:pca_2_components}
+\end{figure}
+
+As a final step of the exploratory data analysis and to prepare for the evaluation of the proposed methods, we perform an 80-20 split of our dataset while ensuring that the class imbalance is preserved across both subsets. Additionally, since the models require numerical rather than categorical values, we encode our classes accordingly: the benign class, originally denoted by the letter B, is assigned the number 0, while the malignant class, originally denoted by the letter M, is assigned the number 1. Any further data processing will be conducted within the folds of the repeated nested cross-validation.
+
 \section{Evaluation of Classical Machine Learning Methods} \label{clas_eval}
-\section{Classical Models and their Respective Hyperparameters} \label{clas_models}
-\section{Evaluation Metrics} \label{eval_metr}
-\section{Repeated Nested Cross Validation} \label{rncv}
+
+To determine which classical machine learning method is most suitable for our tumor classification task, we evaluate the generalization capabilities of Logistic Regression, Support Vector Machines, Linear Discriminant Analysis, Gaussian Naive Bayes, LightGBM, and Random Forest classifiers across nine key metrics. Since each model is characterized by its own unique set of hyperparameters, we utilize the Optuna [CITE] library in conjunction with repeated nested cross-validation, employing ten repetitions, five outer folds, and three inner folds, to obtain the scores for these metrics.
+
+\subsection{Classical Models and their Respective Hyperparameters} \label{clas_models}
+
+To determine the most effective classifier for the tumor classification task, six well-established supervised learning algorithms were evaluated. These models were deliberately chosen to span a broad spectrum of learning paradigms, including linear, probabilistic, discriminant, kernel-based, ensemble, and gradient boosting approaches, thereby enabling a comprehensive comparison of modeling strategies. For each classifier, hyperparameter optimization was carried out using Optuna, a Bayesian optimization framework that efficiently explores high-dimensional search spaces. This tuning process was embedded within the inner loop of a repeated nested cross-validation (rnCV) pipeline, ensuring that hyperparameter selection was strictly separated from performance estimation and thereby preventing information leakage. The first five models were implemented using the scikit-learn  [CITE] library, while the gradient boosting model was implemented using the dedicated LightGBM [CITE] library.
+
+Logistic Regression (LR) was employed as a representative linear classifier. This model estimates the log-odds of the binary target variable as a linear combination of the input features and is particularly effective when the classes are approximately linearly separable. Beyond its predictive capability, Logistic Regression offers strong interpretability, as model coefficients can be directly linked to feature influence. Hyperparameter tuning focused on the type of regularization applied to mitigate overfitting, including ($l_1$), ($l_2$), and elastic net penalties. The inverse regularization strength was also optimized, allowing control over the bias–variance trade-off, while the elastic net mixing parameter was tuned when applicable. The saga solver was selected due to its compatibility with elastic net regularization and its efficiency on larger datasets.
+
+Gaussian Naive Bayes (GNB) was included as a probabilistic baseline model. This classifier assumes that features are conditionally independent given the class label and that each feature follows a Gaussian distribution within each class. Despite the simplicity and often unrealistic nature of these assumptions, GNB is computationally efficient and can perform surprisingly well in practice, particularly on smaller datasets. Hyperparameter tuning was limited to the variance smoothing parameter, which adds a small constant to feature variances in order to enhance numerical stability and prevent division-by-zero errors during likelihood estimation.
+
+Linear Discriminant Analysis (LDA) was used as a classical generative model that assumes normally distributed classes with equal covariance matrices. LDA seeks a linear projection of the data that maximizes class separability by optimizing the ratio of between-class to within-class variance. This projection can also be interpreted as a dimensionality reduction step that preserves discriminative information. During tuning, different solvers for parameter estimation were explored, along with the convergence tolerance, which governs numerical precision and computational stability.
+
+Support Vector Machines (SVMs) were applied as a powerful kernel-based classification method capable of modeling both linear and highly non-linear decision boundaries. SVMs operate by identifying the hyperplane that maximizes the margin between classes in a transformed feature space. The flexibility of the model arises from the choice of kernel function, which was treated as a tunable parameter alongside the regularization parameter controlling the trade-off between margin maximization and classification error. Probability estimation was enabled to allow the computation of threshold-independent performance metrics such as the area under the ROC curve.
+
+Random Forests (RF) were included as an ensemble learning method based on aggregating the predictions of multiple decision trees trained on bootstrapped subsets of the data. By combining many weak learners, Random Forests are able to capture complex non-linear relationships while reducing variance and mitigating overfitting. Hyperparameter optimization targeted the number of trees in the ensemble, the maximum depth of each tree, and the minimum number of samples required to split an internal node, all of which directly influence model complexity and generalization performance.
+
+Finally, LightGBM was employed as a state-of-the-art gradient boosting framework based on decision trees. Unlike traditional level-wise tree growth, LightGBM adopts a leaf-wise growth strategy, which often leads to improved accuracy and faster convergence. This model is particularly well suited for tabular data and large-scale learning problems. Hyperparameter tuning focused on the number of boosting iterations, the maximum tree depth, and the learning rate, which controls the contribution of each individual tree to the ensemble. Logging verbosity was disabled to ensure clean execution during large-scale cross-validation.
+
+\subsection{Evaluation Metrics} \label{eval_metr}
+
+Balanced Accuracy is a performance metric designed to address the limitations of standard accuracy in the presence of class imbalance. Instead of weighting all samples equally, it computes the average of the classification accuracy obtained on each class separately. In binary classification, this corresponds to the mean of sensitivity (recall) and specificity. By treating positive and negative classes symmetrically, Balanced Accuracy ensures that correct classification of the minority class contributes equally to the final score. This makes it particularly suitable for biomedical, anomaly detection, and rare-event classification tasks, where the majority class can otherwise dominate the evaluation. For reasons of brevity, it will therefore be referred to as simply Accuracy.
+
+\begin{equation}
+	\text{Balanced Accuracy}
+	= \frac{1}{2}
+	\left(
+	\frac{TP}{TP + FN}
+	+
+	\frac{TN}{TN + FP}
+	\right)
+\end{equation}
+
+Precision, also known as the positive predictive value, measures the proportion of predicted positive instances that are truly positive. It reflects the reliability of positive predictions made by the classifier. High precision indicates that the model produces few false positives, which is crucial in applications where incorrectly labeling a negative instance as positive is costly, such as medical diagnosis, fraud detection, or spam filtering. Precision alone, however, does not capture how many true positive instances are missed. 
+
+\begin{equation}
+	\text{Precision}
+	= \frac{TP}{TP + FP}
+\end{equation}
+
+Recall, also referred to as sensitivity or true positive rate, measures the proportion of actual positive instances that are correctly identified by the classifier. It quantifies the model’s ability to detect positive cases and is particularly important when false negatives are undesirable. High recall indicates that the classifier successfully captures most of the positive samples, even if this comes at the cost of an increased number of false positives. As a result, recall is often prioritized in safety-critical and medical screening applications. 
+
+\begin{equation}
+	\text{Recall}
+	= \frac{TP}{TP + FN}
+\end{equation}
+
+The F1 score is a single metric that combines precision and recall through their harmonic mean. Unlike the arithmetic mean, the harmonic mean penalizes extreme values, meaning that the F1 score will be low if either precision or recall is low. This property makes the F1 score especially useful when a balance between false positives and false negatives is required. It is widely used in scenarios where class distributions are skewed and where both types of classification errors carry significant importance. 
+
+\begin{equation}
+	\text{F1 Score}
+	= 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}
+	{\text{Precision} + \text{Recall}}
+	= \frac{2TP}{2TP + FP + FN}
+\end{equation}
+
+The Matthews Correlation Coefficient (MCC) is a comprehensive metric that measures the correlation between observed and predicted class labels. Unlike accuracy or F1 score, MCC incorporates all four elements of the confusion matrix, providing a balanced evaluation even when class sizes are highly unequal. Its values range from −1, indicating complete disagreement, through 0, corresponding to random prediction, to +1, representing perfect classification. Due to its robustness and interpretability, MCC is often considered one of the most reliable single-number metrics for binary classification
+
+\begin{equation}
+	\text{MCC}
+	= \frac{TP \cdot TN - FP \cdot FN}
+	{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}
+\end{equation}
+
+Area Under the Receiver Operating Characteristic Curve, or ROC AUC, evaluates the ability of a classifier to distinguish between classes across all possible decision thresholds. The Receiver Operating Characteristic (ROC) curve is constructed by plotting the true positive rate against the false positive rate as the classification threshold varies. The area under this curve represents the probability that the classifier assigns a higher score to a randomly chosen positive instance than to a randomly chosen negative one. ROC AUC is threshold-independent and provides a global view of discriminative performance, although it can be overly optimistic in heavily imbalanced datasets. 
+
+\begin{equation}
+	\text{ROC AUC}
+	= \int_{0}^{1} \text{TPR}(\text{FPR}) \, d(\text{FPR}),
+	\quad
+	\text{where }
+	\text{TPR} = \frac{TP}{TP + FN},
+	\;
+	\text{FPR} = \frac{FP}{FP + TN}
+\end{equation}
+
+Area Under the Precision–Recall Curve, or PR AUC, summarizes the relationship between precision and recall across different classification thresholds. The Precision–Recall curve focuses explicitly on the performance of the positive class, making it more informative than ROC AUC when dealing with strong class imbalance. In such settings, PR AUC provides a clearer picture of how well the model identifies positive samples without generating excessive false positives. Higher PR AUC values indicate better overall performance in detecting the minority class. 
+
+\begin{equation}
+	\text{PR AUC}
+	= \int_{0}^{1} \text{Precision}(\text{Recall}) \, d(\text{Recall})
+\end{equation}
+
+Specificity, also known as the true negative rate, measures the proportion of actual negative instances that are correctly classified as negative. It reflects the model’s ability to avoid false positive predictions. High specificity is critical in applications where falsely labeling a negative instance as positive can lead to unnecessary interventions or costs. Specificity complements recall, which focuses on the positive class, and together they provide a complete view of class-wise performance. 
+
+\begin{equation}
+	\text{Specificity}
+	= \frac{TN}{TN + FP}
+\end{equation}
+
+Negative Predictive Value (NPV) measures the proportion of predicted negative instances that are truly negative. It reflects the reliability of negative predictions produced by the classifier. NPV is particularly important in decision-making contexts where ruling out a condition or event with confidence is essential. Unlike specificity, which conditions on actual negatives, NPV conditions on predicted negatives, making it sensitive to class prevalence in the dataset. 
+
+\begin{equation}
+	\text{NPV}
+	= \frac{TN}{TN + FN}
+\end{equation}
+
+\subsection{Repeated Nested Cross Validation} \label{rncv}
+
+A central challenge in supervised machine learning is the reliable estimation of a model’s generalization performance, particularly in settings where model hyperparameters must be tuned using the available data. Hyperparameter optimization is an inherently data-driven process, and if performance is evaluated on data that has influenced this optimization, the resulting estimates are optimistically biased. This issue is especially pronounced in small or moderate-sized datasets, high-dimensional feature spaces, or when flexible models with many tunable parameters are employed. Repeated nested cross-validation (rnCV) has been developed to address these challenges by providing an evaluation framework that simultaneously minimizes bias and reduces variance in performance estimation.
+
+In conventional k-fold cross-validation, the dataset is partitioned into k subsets (folds), with each fold used once as a validation set while the remaining folds serve as training data. The performance metrics obtained across the $k$ folds are then averaged to yield an overall estimate. While this approach is appropriate when model hyperparameters are fixed a priori, it becomes problematic when the same cross-validation procedure is used both to select hyperparameters and to estimate predictive performance. In such cases, the model effectively “double dips” into the data: hyperparameters are chosen because they perform well on the validation folds, and the same folds are then used to report performance. This reuse of information leads to systematically inflated performance estimates and undermines the validity of model comparisons.
+
+Nested cross-validation was introduced as a principled solution to this problem by explicitly separating the processes of model selection and model evaluation. In nested cross-validation, two cross-validation loops are employed. The outer loop is responsible for estimating generalization performance, while the inner loop is dedicated exclusively to hyperparameter tuning. Specifically, the dataset is first split into $k$ folds for the outer cross-validation. For each outer fold, one fold is held out as a test set, and the remaining $k−1$ folds are used as training data. Within this outer training set, an inner cross-validation procedure with L folds is performed to evaluate different hyperparameter configurations. The hyperparameters that achieve the best performance in the inner loop are then selected, and a model with these hyperparameters is trained on the entire outer training set. Finally, this model is evaluated on the outer test fold. Repeating this procedure for all outer folds yields K independent estimates of test performance, which can be averaged to obtain an unbiased estimate of generalization ability.
+
+Although nested cross-validation effectively removes the optimistic bias associated with hyperparameter tuning, it still suffers from relatively high variance. The specific partitioning of the data into folds can substantially influence both the selected hyperparameters and the resulting performance estimates. This variability is particularly evident in small datasets or in problems characterized by noisy measurements or class imbalance. As a result, conclusions drawn from a single run of nested cross-validation may be sensitive to the random choice of data splits, potentially leading to unstable model rankings or irreproducible findings.
+
+Repeated nested cross-validation extends the nested cross-validation framework by incorporating an additional repetition layer, thereby addressing the variance issue. In rnCV, the entire nested cross-validation procedure is repeated $R$ times, each time with a different random reshuffling of the dataset prior to fold construction. For each repetition, $K$-fold outer cross-validation is performed, and within each outer fold, $L$-fold inner cross-validation is used for hyperparameter optimization. Across all repetitions, this results in R×K independent performance estimates obtained from strictly held-out test sets. The final performance is summarized by aggregating these estimates, typically by computing their mean and standard deviation, and optionally confidence intervals.
+
+An important conceptual aspect of repeated nested cross-validation is the interpretation of what is being estimated. rnCV does not evaluate the performance of a single trained model instance; rather, it estimates the expected generalization performance of the entire model selection procedure. That is, it answers the question of how well one should expect the modeling pipeline, including data splitting, hyperparameter tuning, and training, to perform when applied to new, unseen data drawn from the same underlying distribution. This distinction is critical in scientific and applied settings, where the goal is often to assess the robustness and reliability of a methodological approach rather than to optimize a single model realization.
+
+The primary motivation for using repeated nested cross-validation lies in its ability to provide both unbiased and statistically stable performance estimates. By strictly separating training, validation, and testing phases, rnCV eliminates information leakage from the hyperparameter tuning process into the performance evaluation. At the same time, repetition across multiple random data partitions substantially reduces the variance associated with any single split. This combination makes rnCV particularly well suited for fair model comparison, as it mitigates the risk of falsely declaring one algorithm superior due to favorable data partitioning or chance effects.
+
+Repeated nested cross-validation is especially valuable in research domains such as bioinformatics, medical machine learning, and neuroscience, where datasets are often limited in size, class distributions may be imbalanced, and model interpretability and reliability are of paramount importance. In such contexts, performance estimates are frequently used to support scientific claims, guide experimental decisions, or inform clinical applications. The rigorous evaluation provided by rnCV therefore enhances the credibility and reproducibility of reported results.
+
+Despite its methodological advantages, rnCV is computationally demanding. The total number of model trainings scales with the number of repetitions, outer folds, inner folds, and the size of the hyperparameter search space. Consequently, rnCV may be impractical for very large datasets or computationally expensive models unless sufficient computational resources are available. For this reason, rnCV is typically employed during the model assessment and comparison phase rather than for training the final model intended for deployment. Once a model class and hyperparameter ranges have been selected based on rnCV results, a final model is usually trained on the full dataset.
+
+In summary, repeated nested cross-validation represents a rigorous and statistically sound framework for model evaluation in supervised learning. By combining the unbiased estimation properties of nested cross-validation with the variance-reducing benefits of repetition, rnCV provides a reliable estimate of the generalization performance of a complete model selection pipeline. For studies in which methodological validity, fairness of comparison, and reproducibility are critical, rnCV constitutes a gold-standard evaluation strategy.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering
+	\includegraphics[scale=0.248]{figures/nested_cv_flowchart_edited.png}
+	% Place caption under the figure
+	\caption{Flowchart of the nested cross validation technique
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:nested}
+\end{figure}
+
 \section{Finding the Best Classical Model} \label{find_best}
+
+Upon completing the rnCV technique in approximately 25 minutes, we were able to identify the optimal model by observing the number of metrics for which each model was the top performer. As the results indicate, Logistic Regression was the superior model in eight of the nine metrics, lagging only in ROC AUC, where it was marginally surpassed by SVM. This is a particularly advantageous outcome, as Logistic Regression allows us not only to achieve high classification performance but also to gain meaningful insights into which features contribute to the classification process and to what degree.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/model_comparison_faceted_horizontal_colored.png}
+	% Place caption under the figure
+	\caption{Qualitative performance of the 6 models across the 9 metrics
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:model_faceted_boxplot}
+\end{figure}
+
+Taking a more quantitative look into our rnCV results, we report that Logistic Regression scored 97.06\% in accuracy, 95.59\% in recall, 100\% in precision, 96.97\% in F1-score, 100\% in specificity, 97.40\% in NPV, 99.56\% in PR AUC, 99.69\% in ROC AUC, and 95.33\% in MCC. GNB achieved 92.81\% in accuracy, 88.24\% in recall, 96.49\% in precision, 92.06\% in F1-score, 98.25\% in specificity, 93.33\% in NPV, 98.45\% in PR AUC, 98.79\% in ROC AUC, and 88.28\% in MCC. LDA scored 94.71\% in accuracy, 91.18\% in recall, 100\% in precision, 93.94\% in F1-score, 100\% in specificity, 94.92\% in NPV, 99.33\% in PR AUC, 99.56\% in ROC AUC, and 90.80\% in MCC. SVM reached 97.06\% in accuracy, 95.59\% in recall, 97.06\% in precision, 96.97\% in F1-score, 98.25\% in specificity, 97.36\% in NPV, 99.53\% in PR AUC, 99.72\% in ROC AUC, and 95.30\% in MCC. Random Forest recorded 95.01\% in accuracy, 94.12\% in recall, 94.29\% in precision, 94.03\% in F1-score, 96.49\% in specificity, 96.40\% in NPV, 98.70\% in PR AUC, 98.94\% in ROC AUC, and 90.61\% in MCC. Finally, LightGBM scored 96.18\% in accuracy, 94.12\% in recall, 96.97\% in precision, 95.52\% in F1-score, 98.25\% in specificity, 96.55\% in NPV, 99.28\% in PR AUC, 99.46\% in ROC AUC, and 92.94\% in MCC.
+
+We can observe that while Logistic Regression is the top performer across most metrics, SVM remains highly competitive. In fact, SVM slightly surpasses Logistic Regression in the ROC AUC metric and achieves identical scores for accuracy, recall, and F1-score. However, Logistic Regression maintains a slight edge in the other key metrics. Two particularly noteworthy points are the perfect scores it achieves in precision and specificity, as well as its superior performance in MCC, which is a critical metric for evaluating the quality of binary classification tasks.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/model_comparison_heatmap.png}
+	% Place caption under the figure
+	\caption{Quantitative performance of the 6 models across the 9 metrics
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:model_heatmap}
+\end{figure}
+
 \section{Finetuning the Best Model} \label{finetune_best}
-\section{Bootstrapping} \label{bootstrap}
-\section{95\% Confidence Intervals based on bootstrapping} \label{ci}
+
+Since we have determined that Logistic Regression is the most suitable model for our tumor classification task, we utilize bootstrapping to further assess its performance. For this purpose, we use the validation subset to generate five thousand bootstrap samples and produce 95\% confidence intervals for each metric. Finally, this top-performing model is trained and fine-tuned on the entirety of the original dataset before being saved for future inference.
+
+\subsection{Bootstrapping} \label{bootstrap}
+
+Bootstrapping is a resampling-based statistical technique that is widely used to quantify the uncertainty of an estimated statistic when only a single dataset is available. In the context of machine learning model evaluation, bootstrapping is primarily employed to approximate the sampling distribution of a performance metric, such as accuracy, area under the ROC curve (AUC), F1-score, or mean squared error, without relying on parametric assumptions about the underlying data distribution. The fundamental principle of bootstrapping is that the empirical dataset can be treated as a proxy for the unknown population, allowing repeated resampling with replacement to simulate the process of drawing new datasets from the same population.
+
+The main motivation for using bootstrapping lies in its ability to provide insight into the variability and reliability of a model’s performance. A single evaluation on a validation set yields only a point estimate, which may be highly dependent on the particular samples included in that set. Bootstrapping addresses this limitation by generating a distribution of performance estimates, thereby allowing the researcher to assess how sensitive the reported performance is to variations in the validation data. This is especially important in machine learning applications where datasets are often limited in size and where performance metrics may exhibit substantial variability.
+
+Unlike classical statistical approaches, bootstrapping does not assume that performance estimates follow a normal distribution, nor does it rely on large-sample asymptotic properties. This makes it particularly suitable for complex machine learning models and non-standard evaluation metrics, whose sampling distributions are often unknown or skewed. As a result, bootstrapping is frequently preferred in applied settings such as biomedical data analysis, where strict parametric assumptions are difficult to justify and where robust uncertainty estimation is essential.
+
+In practical model evaluation, bootstrapping is typically applied after the best-performing model has already been selected. Model selection, including hyperparameter tuning and architecture choice, should be performed using training and validation data, often through cross-validation. Once the final model configuration has been fixed, bootstrapping is used solely for performance assessment and uncertainty quantification. Importantly, during the bootstrapping procedure the model remains unchanged and is not retrained; only the validation data are resampled.
+
+The bootstrapping procedure begins by drawing multiple bootstrap samples from the validation set. Each bootstrap sample is created by sampling with replacement and has the same size as the original validation set. Due to the nature of sampling with replacement, some observations appear multiple times in a given bootstrap sample, while others may be omitted entirely. On average, approximately 36.8\% of the original validation samples are excluded from any single bootstrap sample. For each resampled dataset, the fixed model is evaluated and the chosen performance metric is computed.
+
+Repeating this process a large number of times, typically between 1,000 and 10,000 iterations, yields an empirical distribution of the performance metric. This distribution provides a direct estimate of the variability of the model’s performance and enables the computation of summary statistics such as the mean, standard deviation, and confidence intervals. A commonly reported measure is the 95\% confidence interval, which is usually obtained using the percentile method by taking the 2.5th and 97.5th percentiles of the bootstrap distribution. The resulting interval represents a range within which the true performance metric is expected to lie with 95\% confidence.
+
+Reporting a 95\% confidence interval alongside the mean performance provides a much more informative assessment than a single point estimate alone. For example, stating that a model achieves an AUC of 0.87 with a 95\% confidence interval of [0.84, 0.90] conveys both the expected performance and the associated uncertainty. Narrow confidence intervals indicate a stable and robust model, whereas wide intervals may suggest sensitivity to data variability or insufficient sample size.
+
+It is important to emphasize that bootstrapping is not intended to replace cross-validation or improve model performance. Instead, it complements model selection procedures by offering a principled way to assess the reliability of the final model’s evaluation. Furthermore, bootstrapping should be applied to the validation set rather than the test set, as the latter is typically reserved for a single, unbiased estimate of generalization performance. Using bootstrapping appropriately ensures that performance claims are statistically grounded and scientifically credible.
+
+In summary, bootstrapping provides a powerful and flexible framework for estimating the uncertainty of machine learning model performance. By generating an empirical distribution of evaluation metrics through repeated resampling of the validation data, it enables the computation of meaningful statistics such as 95\% confidence intervals. This approach is particularly well suited for small or complex datasets and is strongly recommended in rigorous academic work, where transparent reporting of uncertainty is as important as reporting performance itself.
+
+\subsection{95\% Confidence Intervals based on bootstrapping} \label{ci}
+
+After bootstrapping five thousand sets on our Logistic Regression model using the validation subset, we obtained the 95\% confidence intervals for the nine key metrics. Accuracy lies within the [0.9595, 1] interval, while precision and specificity both maintain a perfect [1, 1] interval. Recall is situated between [0.9189, 1.000], and the F1-score falls within [0.9577, 1]. Additionally, the NPV is in the [0.9552, 1] range, and the MCC, a crucial metric for binary classification, lies within [0.9395, 1]. Both the ROC AUC and PR AUC remain exceptionally high, with intervals of [0.9919, 1] and [0.9877, 1], respectively. Notably, every metric reaches a perfect upper bound of 1.0, while the lower bounds remain consistently above 91\%. Furthermore, those metrics that demonstrated perfect mean scores during the rnCV process continue to exhibit high performance throughout the bootstrapping analysis.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/violin_plot_boot_lr.png}
+	% Place caption under the figure
+	\caption{Violin plot of the confidence intervals
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:violin_plot}
+\end{figure} 
+
+As a final step in our classical approach, we utilize the entire dataset to train and fine-tune the Logistic Regression model, from which we extract the 16 most influential features based on the descending absolute values of their coefficients. These features, in order of impact, are $texture_worst$, $area_se$, $texture_mean$, $concave points_mean$, $concavity_worst$, $symmetry_worst$, $concavity_mean$, $compactness_se$, $area_worst$, $smoothness_worst$, $radius_se$, $symmetry_se$, $concave points_worst$, $radius_worst$, $perimeter_worst$, and $fractal_dimension_se$. Upon examining the coefficients, we observe that $compactness_se$, $symmetry_se$, and $fractal_dimension_se$ are negative, indicating that higher values in these features are associated with the majority class—the benign tumors. Conversely, the remaining 13 features possess positive coefficients, suggesting that higher measurements in these areas correlate with an increased likelihood of the minority class, which corresponds to malignant tumors.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/top_16_influential_lr.png}
+	% Place caption under the figure
+	\caption{Top 16 influential features according to Logistic Regression
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:top_16}
+\end{figure}  
+
+By saving our final fine-tuned model for future inference on unseen data, we conclude our investigation into classical machine learning methods. This marks the transition from establishing a robust performance benchmark with traditional algorithms to exploring quantum approaches for the same classification task.
+
 \chapter{RESULTS FROM QUANTUM MACHINE LEARNING METHODS} \label{qml}
 
 Following the determination that Logistic Regression represents the most efficacious classical machine learning approach for the current tumor classification problem, the research transitions toward the implementation of Quantum Machine Learning (QML) paradigms. Specifically, this study investigates the Variational Quantum Classifier (VQC) to identify optimal sets of trainable parameters that provide a robust and satisfactory solution to the diagnostic task. This exploration involves a systematic evaluation of the VQC's classification capabilities across architectures consisting of 1, 2, 3, 4, and 5 qubits, respectively. To facilitate this, Principal Component Analysis (PCA) is employed to perform the necessary dimensionality reduction, ensuring the input features are structurally compatible with the constraints of the quantum circuits. The computational implementation of this framework is supported by the PennyLane \textbf{[CITE]} Python library for quantum circuit simulation and differentiable programming, while NumPy facilitates essential numerical manipulations. Furthermore, pandas and scikit-learn are utilized for data orchestration and dimensionality reduction, while Seaborn \textbf{[CITE]} and Matplotlib \textbf{[CITE]} are employed for high-fidelity data visualization and statistical plotting.
@@ -260,7 +661,7 @@ This specific configuration of gates allows the model to navigate the Hilbert sp
 
 The third and final component of the Variational Quantum Classifier architecture is the measurement stage, during which the quantum state is collapsed to extract classical information. To maintain a streamlined and interpretable framework, the measurement is restricted to the first qubit of the circuit. The integration of Controlled-NOT gates in the preceding layers is critical at this stage, as the entanglement generated by these multi-qubit operations ensures that the state of the primary qubit is inextricably linked to the states of all other qubits in the register. Consequently, the expectation value derived from the first qubit, typically obtained through measurement in the Z basis, reflects a global state influenced by the entire circuit. This approach exploits the intrinsic properties of quantum entanglement, where a measurement on a single subsystem provides representative insights into the collective quantum state of the system. An illustrative representation of a VQC configuration comprising two qubits and six layers is provided in Figure\textbf{~\ref{fig:2_qbts_6_layers}} to clarify this architectural design.
 
-\begin{figure}
+\begin{figure}[H]
 % Define the figure file in the \includegraphics command
 % Must be relative to one of the paths
 % in the \graphicspath command at the top
@@ -1231,7 +1632,7 @@ With that in mind, we can see that our quantum approach demonstrates clear super
 	\label{fig:vqc_vs_classical}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% STOPED HERE 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FROM TEMPLATE
 
 This \LaTeX{} example is a template showing how to format postgraduate theses.
 This sample focuses on theses written in English, where some pages and titles are changed from their Greek counterparts.
