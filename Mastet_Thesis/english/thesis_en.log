@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.10)  12 FEB 2026 20:44
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.10)  12 FEB 2026 21:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1271,6 +1271,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [33]
+Underfull \vbox (badness 3525) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 24.67816pt, for example:
@@ -1401,7 +1404,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [44]
-Overfull \hbox (12.06427pt too wide) in paragraph at lines 432--433
+Overfull \hbox (12.06427pt too wide) in paragraph at lines 438--439
 \TU/Arial(0)/m/n/12 To determine the most effective classifier for the tumor cl
 assification task, six well-established
  []
@@ -1519,7 +1522,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 File: figures/violin_plot_boot_lr.png Graphic file (type bmp)
 <figures/violin_plot_boot_lr.png>
 
-Overfull \hbox (49.06476pt too wide) in paragraph at lines 631--632
+Overfull \hbox (49.06476pt too wide) in paragraph at lines 637--638
 \OML/cmm/m/it/12 symmetry[]orst$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 concavi
 ty[]ean$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 compactness[]e$\TU/Arial(0)/m/n
 /12 , $\OML/cmm/m/it/12 area[]orst$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 smoo
@@ -1586,7 +1589,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [61]
-Overfull \hbox (0.33028pt too wide) in paragraph at lines 691--692
+Overfull \hbox (0.33028pt too wide) in paragraph at lines 697--698
 []\TU/Arial(0)/m/n/12 The specific parameters associated with the highest valid
 ation performance are preserved,
  []
@@ -1603,7 +1606,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [62]
-Overfull \hbox (0.18054pt too wide) in paragraph at lines 707--708
+Overfull \hbox (0.18054pt too wide) in paragraph at lines 713--714
 \TU/Arial(0)/m/n/12 mentation utilizes a single-qubit Variational Quantum Class
 ifier as a baseline model. Given
  []
@@ -2307,7 +2310,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 File: ./figures/vqc_vs_classical.png Graphic file (type bmp)
 <./figures/vqc_vs_classical.png>
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 1644.
+(Font)              scaled to size 11.39996pt on input line 1650.
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -2333,7 +2336,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [118]
-Overfull \hbox (12.79724pt too wide) in paragraph at lines 1730--1733
+Overfull \hbox (12.79724pt too wide) in paragraph at lines 1736--1739
 []\TU/Arial(0)/m/n/12 Acknowledgements. Optional, can be included by passing \T
 U/Arial(0)/m/it/12 ack \TU/Arial(0)/m/n/12 in the [][]\TU/CourierNew(0)/m/n/12 
 \documentclass
