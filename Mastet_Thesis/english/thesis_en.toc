@@ -15,10 +15,10 @@
 \contentsline {subsection}{\numberline {1.1.6}Light Gradient Boosting Machine}{33}{subsection.1.1.6}%
 \contentsline {section}{\numberline {1.2}Quantum Computing and Quantum Machine Learning}{34}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}The Qubit}{34}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Quantum Entanglement}{34}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Quantum Gates}{35}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Data Encoding}{35}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Qunatum Ciruits}{35}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.2}Quantum Entanglement}{35}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Quantum Gates}{36}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Data Encoding}{36}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Qunatum Ciruits}{36}{subsection.1.2.5}%
 \contentsline {chapter}{\numberline {2}RESULTS FROM CLASSICAL MACHINE LEARNING METHODS}{37}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Exploratory Data Analysis}{38}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Evaluation of Classical Machine Learning Methods}{44}{section.2.2}%
