@@ -15,56 +15,56 @@
 \contentsline {subsection}{\numberline {1.1.6}Light Gradient Boosting Machine}{33}{subsection.1.1.6}%
 \contentsline {section}{\numberline {1.2}Quantum Computing and Quantum Machine Learning}{34}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}The Qubit}{35}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Quantum Entanglement}{35}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Quantum Gates}{36}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Data Encoding}{36}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Qunatum Ciruits}{36}{subsection.1.2.5}%
-\contentsline {chapter}{\numberline {2}RESULTS FROM CLASSICAL MACHINE LEARNING METHODS}{37}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Exploratory Data Analysis}{38}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Evaluation of Classical Machine Learning Methods}{44}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Classical Models and their Respective Hyperparameters}{45}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Evaluation Metrics}{46}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Repeated Nested Cross Validation}{48}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Finding the Best Classical Model}{52}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Finetuning the Best Model}{54}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Bootstrapping}{54}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}95\% Confidence Intervals based on bootstrapping}{55}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}RESULTS FROM QUANTUM MACHINE LEARNING METHODS}{59}{chapter.3}%
-\contentsline {section}{\numberline {3.1}1-qubit Results}{64}{section.3.1}%
-\contentsline {section}{\numberline {3.2}2-qubits Results}{76}{section.3.2}%
-\contentsline {section}{\numberline {3.3}3-qubits Results}{84}{section.3.3}%
-\contentsline {section}{\numberline {3.4}4-qubits Results}{93}{section.3.4}%
-\contentsline {section}{\numberline {3.5}5-qubits Results}{102}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Final Discussion}{110}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Page size}{116}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Printing pages}{117}{subsection.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.2.1}Two-sided printing}{117}{subsubsection.3.6.2.1}%
-\contentsline {subsection}{\numberline {3.6.3}Dates}{117}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}Cover and front matter pages}{117}{subsection.3.6.4}%
-\contentsline {subsection}{\numberline {3.6.5}2nd front matter page (Examination committee page)}{118}{subsection.3.6.5}%
-\contentsline {subsection}{\numberline {3.6.6}Abstract}{118}{subsection.3.6.6}%
-\contentsline {subsection}{\numberline {3.6.7}Other front matter pages}{119}{subsection.3.6.7}%
-\contentsline {subsection}{\numberline {3.6.8}Page numbering}{119}{subsection.3.6.8}%
-\contentsline {subsection}{\numberline {3.6.9}Page formatting}{119}{subsection.3.6.9}%
-\contentsline {section}{\numberline {3.7}Sample section}{120}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Sample Subsection}{120}{subsection.3.7.1}%
-\contentsline {subsubsection}{\numberline {3.7.1.1}Sample subsubsection}{120}{subsubsection.3.7.1.1}%
-\contentsline {paragraph}{Sample paragraph}{121}{section*.80}%
-\contentsline {subparagraph}{Sample subparagraph}{121}{section*.81}%
-\contentsline {chapter}{\numberline {4}A BRIEF INTRODUCTION TO \LaTeX }{123}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Installing \LaTeX }{123}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Editing}{123}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Compiling}{124}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Formatting}{124}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Basics}{124}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Escaping}{125}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Formatting commands}{125}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Adding math equations}{128}{subsection.4.4.4}%
-\contentsline {chapter}{\numberline {5}FIGURES AND TABLES}{131}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Inserting tables}{131}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Inserting figures}{132}{section.5.2}%
-\contentsline {chapter}{ABBREVIATIONS - ACRONYMS}{135}{chapter*.84}%
-\contentsline {chapter}{\numberline {A}FIRST APPENDIX}{137}{appendix.A}%
-\contentsline {chapter}{\numberline {B}SECOND APPENDIX}{139}{appendix.B}%
-\contentsline {chapter}{APPENDICES}{139}{section*.85}%
-\contentsline {chapter}{REFERENCES}{141}{appendix*.86}%
+\contentsline {subsection}{\numberline {1.2.2}Quantum Entanglement}{37}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Quantum Gates}{38}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Data Encoding}{38}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Qunatum Ciruits}{38}{subsection.1.2.5}%
+\contentsline {chapter}{\numberline {2}RESULTS FROM CLASSICAL MACHINE LEARNING METHODS}{39}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Exploratory Data Analysis}{40}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Evaluation of Classical Machine Learning Methods}{46}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Classical Models and their Respective Hyperparameters}{47}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Evaluation Metrics}{48}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Repeated Nested Cross Validation}{50}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Finding the Best Classical Model}{54}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Finetuning the Best Model}{56}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Bootstrapping}{56}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}95\% Confidence Intervals based on bootstrapping}{57}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}RESULTS FROM QUANTUM MACHINE LEARNING METHODS}{61}{chapter.3}%
+\contentsline {section}{\numberline {3.1}1-qubit Results}{66}{section.3.1}%
+\contentsline {section}{\numberline {3.2}2-qubits Results}{78}{section.3.2}%
+\contentsline {section}{\numberline {3.3}3-qubits Results}{86}{section.3.3}%
+\contentsline {section}{\numberline {3.4}4-qubits Results}{95}{section.3.4}%
+\contentsline {section}{\numberline {3.5}5-qubits Results}{104}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Final Discussion}{112}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Page size}{118}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Printing pages}{119}{subsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.1}Two-sided printing}{119}{subsubsection.3.6.2.1}%
+\contentsline {subsection}{\numberline {3.6.3}Dates}{119}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Cover and front matter pages}{119}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.5}2nd front matter page (Examination committee page)}{120}{subsection.3.6.5}%
+\contentsline {subsection}{\numberline {3.6.6}Abstract}{120}{subsection.3.6.6}%
+\contentsline {subsection}{\numberline {3.6.7}Other front matter pages}{121}{subsection.3.6.7}%
+\contentsline {subsection}{\numberline {3.6.8}Page numbering}{121}{subsection.3.6.8}%
+\contentsline {subsection}{\numberline {3.6.9}Page formatting}{121}{subsection.3.6.9}%
+\contentsline {section}{\numberline {3.7}Sample section}{122}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Sample Subsection}{122}{subsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.1.1}Sample subsubsection}{122}{subsubsection.3.7.1.1}%
+\contentsline {paragraph}{Sample paragraph}{123}{section*.81}%
+\contentsline {subparagraph}{Sample subparagraph}{123}{section*.82}%
+\contentsline {chapter}{\numberline {4}A BRIEF INTRODUCTION TO \LaTeX }{125}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Installing \LaTeX }{125}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Editing}{125}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Compiling}{126}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Formatting}{126}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Basics}{126}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Escaping}{127}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Formatting commands}{127}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Adding math equations}{130}{subsection.4.4.4}%
+\contentsline {chapter}{\numberline {5}FIGURES AND TABLES}{133}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Inserting tables}{133}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Inserting figures}{134}{section.5.2}%
+\contentsline {chapter}{ABBREVIATIONS - ACRONYMS}{137}{chapter*.85}%
+\contentsline {chapter}{\numberline {A}FIRST APPENDIX}{139}{appendix.A}%
+\contentsline {chapter}{\numberline {B}SECOND APPENDIX}{141}{appendix.B}%
+\contentsline {chapter}{APPENDICES}{141}{section*.86}%
+\contentsline {chapter}{REFERENCES}{143}{appendix*.87}%

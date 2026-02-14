@@ -69,6 +69,8 @@
 
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{braket}
+\usepackage{amssymb}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% User-specific configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -308,6 +310,66 @@ Generally, qubits are created by manipulating and measuring systems that exhibit
 	\item Photons: As individual particles of light, photons can encode quantum information and transmit it over long distances via optical fibers. Consequently, they are essential for applications in quantum communication and cryptography.
 	
 \end{itemize}
+
+More specifically in quantum computing, a qubit is a two-state quantum system defined by the basis vectors $\ket{0}$ and $\ket{1}$. Beyond the binary limitations of classical bits, a qubit possesses the capacity to exist in a superposition, a mathematical linear combination of both basis states.
+
+In general, a qubit, which is a quantum state of two dimensions, can be represented in the following manner:
+
+\begin{equation}
+	\ket{\psi} = \alpha \ket{0} + \beta \ket{1}
+	\label{eq:state}
+\end{equation}
+
+where $\alpha$ and $\beta$ are probability amplitudes with complex values. The primary basis states are expressed via Dirac (bra-ket) notation, corresponding to the column vectors $\bigl( \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \bigr)$ and $\bigl( \begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \bigr)$. Within this framework, the "$\ket{\cdot}$" notation denotes a ket, while its adjoint, the "$\bra{\cdot}$", is known as a bra. This bra serves as the Hermitian conjugate of the ket and is represented as a row vector, such as:
+
+\begin{equation}
+	\bra{\psi} = \begin{pmatrix} \alpha^* & \beta^* \end{pmatrix}
+	\label{eq:herm_conj}
+\end{equation}
+
+Upon measurement, a qubit is restricted to its basis states, which in this instance are $\ket{0}$ and $\ket{1}$. The specific state to which $\ket{\psi}$ "collapses" is determined by the Born rule; specifically, the likelihood of observing $\ket{0}$ is $\left|\alpha\right|^2$, while the likelihood of observing $\ket{1}$ is $\left|\beta\right|^2$. Because these squared amplitudes dictate the probabilities of the only two available measurement results, they are required to satisfy the following constraint:
+
+\begin{equation}
+	\left|\alpha\right|^2 + \left|\beta\right|^2 = 1
+	\label{eq:prob_cond}
+\end{equation}
+
+Should this requirement remain unfulfilled, the state is considered unnormalized. An alternative method for verifying normalization involves calculating the vector's norm, defined as the square root of the state's inner product with itself, and checking if it equals unity. A result of exactly one confirms that the state is properly normalized. Accordingly, this criterion may be expressed as follows:
+
+\begin{equation}
+	\left\| \psi \right\|= \sqrt{\braket{\psi|\psi}} = 1
+	\label{eq:norm_cond}
+\end{equation}
+
+If a state fails to satisfy the aforementioned criteria, we can derive its normalized form by dividing the vector by its own norm, as shown below:
+
+\begin{equation}
+	\ket{\tilde{\psi}} = \frac{\ket{\psi}}{\left\| \psi \right\|}
+	\label{eq:compute_normalized}
+\end{equation}
+
+Finally, a vector space equipped with an inner product is known as a Hilbert space. In this context, a qubit is defined as a vector residing in a two-dimensional complex Hilbert space, denoted as $\mathbb{C}^2$. Excluding the global phase, a state vector may also be represented in the following manner: 
+
+\begin{equation}
+	\ket{\psi} = \cos\left(\frac{\theta}{2}\right) \ket{0} + e^{i\phi} \sin\left(\frac{\theta}{2}\right) \ket{1}
+	\label{eq:trig_qubit}
+\end{equation}
+
+This representation allows for the visualization of a qubit via the Bloch sphere. Every two-level quantum system can be mapped to a point on the surface of this unit-radius sphere ($r = 1$), uniquely determined by the angular coordinates $\theta$ and $\phi$. Provided the vector remains normalized, these two parameters are sufficient to define the state. Within this geometric model, the primary basis states are positioned at antipodal points: $\ket{\psi} = \ket{0}$ occurs at $\theta = 0$, while $\ket{\psi} = \ket{1}$ occurs at $\theta = \pi$.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering % This centers the image horizontally
+	\includegraphics[scale=1.0]{figures/qubit_bloch_sphere.png}
+	% Place caption under the figure
+	\caption{Bloch sphere representation of a qubit
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:bloch_sphere}
+\end{figure}
+
 
 \subsection{Quantum Entanglement} \label{entanglement}
 
