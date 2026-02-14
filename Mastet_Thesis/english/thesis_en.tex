@@ -640,6 +640,106 @@ The remaining three Pauli operators, $\hat{I}$, $\hat{Y}$, and $\hat{Z}$, likewi
 
 A critical component in quantum computation is the Hadamard gate, which transforms the standard basis states into a balanced superposition. The operation of the Hadamard gate on these basis states is defined as follows:
 
+\begin{equation}
+	\hat{H}\ket{0} = \frac{1}{\sqrt{2}} (\ket{0} + \ket{1}) = \ket{+} 
+	\label{eq:ket_plus}
+\end{equation}
+
+\begin{equation}
+	\hat{H}\ket{1} = \frac{1}{\sqrt{2}} (\ket{0} - \ket{1}) = \ket{-} 
+	\label{eq:ket_minus}
+\end{equation}
+
+\begin{equation}
+	\hat{H} = \frac{1}{\sqrt{2}} \begin{pmatrix} 
+		1 & 1 \\ 
+		1 & -1 
+	\end{pmatrix} 
+	\label{eq:hadamard_matrix}
+\end{equation}
+
+\begin{equation}
+	e^{-i\theta \hat{U} } = \cos(\theta)\hat{U} - i\sin(\theta)\hat{U}
+	\label{eq:exp_theta}
+\end{equation}
+
+\begin{equation}
+	\hat{R}_{x}(\theta) = e^{-i\theta\frac{X}{2}}	
+	= \begin{pmatrix} 
+		\cos(\frac{\theta}{2}) & -i\sin(\frac{\theta}{2}) \\ 
+		-i\sin(\frac{\theta}{2}) & 	\cos(\frac{\theta}{2}) 
+	\end{pmatrix} 
+	\label{eq:Rx}
+\end{equation}
+
+\begin{equation}
+	\hat{R}_{y}(\theta) = e^{-i\theta\frac{Y}{2}}	
+	= \begin{pmatrix} 
+		\cos(\frac{\theta}{2}) & -\sin(\frac{\theta}{2}) \\ 
+		\sin(\frac{\theta}{2}) & 	\cos(\frac{\theta}{2}) 
+	\end{pmatrix} 
+	\label{eq:Ry}
+\end{equation}
+
+\begin{equation}
+	\hat{R}_{z}(\theta) = e^{-i\theta\frac{Z}{2}}	
+	= \begin{pmatrix} 
+		e^{-i\frac{\theta}{2} } & 0 \\ 
+		0 & 	e^{-i\frac{\theta}{2} } 
+	\end{pmatrix} 
+	\label{eq:Rz}
+\end{equation}
+
+\begin{equation}
+	\hat{U} =e^{ia}\hat{R}_{z}(b)\hat{R}_{y}(c)\hat{R}_{z}(d) 
+	\label{eq:gate_decomp}
+\end{equation}
+
+\begin{equation}
+	\hat{U} = \begin{pmatrix}
+		%first line 
+		\braket{00 |\hat{U}|00} & \braket{00|\hat{U}|01} & \braket{00|\hat{U}|10} & \braket{00|\hat{U}|11} \\ 
+		%second line
+		\braket{01|\hat{U}|00} & \braket{01|\hat{U}|01} & \braket{01|\hat{U}|10} & \braket{01|\hat{U}|11} \\ 
+		%third line
+		\braket{10|\hat{U}|00} & \braket{10|\hat{U}|01} & \braket{10|\hat{U}|10} & \braket{10|\hat{U}|11} \\ 		
+		%fourth line
+		\braket{11|\hat{U}|00} & \braket{11|\hat{U}|01} & \braket{11|\hat{U}|10} & \braket{11|\hat{U}|11} \\ 
+	\end{pmatrix} 
+	\label{eq:big_matrix}
+\end{equation}
+
+
+\[
+	CNOT\ket{00} = \ket{00} 
+\]
+
+\[
+CNOT\ket{01} = \ket{01} 
+\]
+
+\[
+CNOT\ket{10} = \ket{11} 
+\]
+
+\[
+CNOT\ket{11} = \ket{10} 
+\]
+
+\begin{equation}
+	CNOT = \begin{pmatrix}
+		%first line 
+		1 & 0 & 0 & 0 \\ 
+		%second line
+		0 & 1 & 0 & 0 \\ 
+		%third line
+		0 & 0 & 0 & 1 \\ 		
+		%fourth line
+		0 & 0 & 1 & 0 \\ 
+	\end{pmatrix} 
+	\label{eq:cnot_matrix}
+\end{equation}
+
 \subsection{Data Encoding} \label{encoding}
 \subsection{Variational Quantum Classifier} \label{circuits}
 \chapter{RESULTS FROM CLASSICAL MACHINE LEARNING METHODS} \label{mlres}

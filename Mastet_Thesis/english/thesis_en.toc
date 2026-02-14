@@ -19,8 +19,8 @@
 \contentsline {subsection}{\numberline {1.2.3}Manipulation of Multiple Qubits}{40}{subsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.2.4}Quantum Entanglement}{41}{subsection.1.2.4}%
 \contentsline {subsection}{\numberline {1.2.5}Quantum Gates}{42}{subsection.1.2.5}%
-\contentsline {subsection}{\numberline {1.2.6}Data Encoding}{43}{subsection.1.2.6}%
-\contentsline {subsection}{\numberline {1.2.7}Variational Quantum Classifier}{43}{subsection.1.2.7}%
+\contentsline {subsection}{\numberline {1.2.6}Data Encoding}{44}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}Variational Quantum Classifier}{44}{subsection.1.2.7}%
 \contentsline {chapter}{\numberline {2}RESULTS FROM CLASSICAL MACHINE LEARNING METHODS}{45}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Exploratory Data Analysis}{46}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Evaluation of Classical Machine Learning Methods}{52}{section.2.2}%

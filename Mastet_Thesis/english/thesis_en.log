@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.10)  14 FEB 2026 19:16
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.10)  14 FEB 2026 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1363,9 +1363,15 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
-[43] [44
+[43]
 
-]
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 24.67816pt, for example:
+(fancyhdr)                \setlength{\headheight}{24.67816pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
+
+[44]
 Chapter 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1378,7 +1384,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
-[45]
+[45
+
+]
 File: figures/class_distro.png Graphic file (type bmp)
 <figures/class_distro.png>
 
@@ -1470,7 +1478,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [52]
-Overfull \hbox (12.06427pt too wide) in paragraph at lines 754--755
+Overfull \hbox (12.06427pt too wide) in paragraph at lines 856--857
 \TU/Arial(0)/m/n/12 To determine the most effective classifier for the tumor cl
 assification task, six well-established
  []
@@ -1588,7 +1596,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 File: figures/violin_plot_boot_lr.png Graphic file (type bmp)
 <figures/violin_plot_boot_lr.png>
 
-Overfull \hbox (49.06476pt too wide) in paragraph at lines 953--954
+Overfull \hbox (49.06476pt too wide) in paragraph at lines 1055--1056
 \OML/cmm/m/it/12 symmetry[]orst$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 concavi
 ty[]ean$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 compactness[]e$\TU/Arial(0)/m/n
 /12 , $\OML/cmm/m/it/12 area[]orst$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 smoo
@@ -1655,7 +1663,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [69]
-Overfull \hbox (0.33028pt too wide) in paragraph at lines 1013--1014
+Overfull \hbox (0.33028pt too wide) in paragraph at lines 1115--1116
 []\TU/Arial(0)/m/n/12 The specific parameters associated with the highest valid
 ation performance are preserved,
  []
@@ -1672,7 +1680,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [70]
-Overfull \hbox (0.18054pt too wide) in paragraph at lines 1029--1030
+Overfull \hbox (0.18054pt too wide) in paragraph at lines 1131--1132
 \TU/Arial(0)/m/n/12 mentation utilizes a single-qubit Variational Quantum Class
 ifier as a baseline model. Given
  []
@@ -2376,7 +2384,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 File: ./figures/vqc_vs_classical.png Graphic file (type bmp)
 <./figures/vqc_vs_classical.png>
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 1966.
+(Font)              scaled to size 11.39996pt on input line 2068.
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -2402,7 +2410,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [126]
-Overfull \hbox (12.79724pt too wide) in paragraph at lines 2052--2055
+Overfull \hbox (12.79724pt too wide) in paragraph at lines 2154--2157
 []\TU/Arial(0)/m/n/12 Acknowledgements. Optional, can be included by passing \T
 U/Arial(0)/m/it/12 ack \TU/Arial(0)/m/n/12 in the [][]\TU/CourierNew(0)/m/n/12 
 \documentclass
@@ -2578,10 +2586,10 @@ Package rerunfilecheck Info: File `thesis_en.out' has not changed.
 (rerunfilecheck)             Checksum: 3CE9D8A64802E84CA8370383AE1DBD0F;10672.
  ) 
 Here is how much of TeX's memory you used:
- 23496 strings out of 402982
- 447561 string characters out of 5448680
- 917250 words of memory out of 5000000
- 51847 multiletter control sequences out of 15000+600000
+ 23506 strings out of 402982
+ 447690 string characters out of 5448680
+ 917690 words of memory out of 5000000
+ 51857 multiletter control sequences out of 15000+600000
  636322 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,13n,130p,1566b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
