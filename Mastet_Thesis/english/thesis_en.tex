@@ -370,6 +370,242 @@ This representation allows for the visualization of a qubit via the Bloch sphere
 	\label{fig:bloch_sphere}
 \end{figure}
 
+\subsection{Qubit Manipulation} \label{manipulation}
+
+Analogous to classical bits, qubits can be transitioned between different states. The mechanisms used to perform these transformations are known as operators. If an operator $\hat{A}$ is applied to a state $\ket{\psi}$, it produces a new state:
+
+\begin{equation}
+	\hat{A}\ket{\psi} = \ket{\phi}
+	\label{eq:operator_A_ket}
+\end{equation}
+
+This principle applies not only to "kets" but also to "bras" in a similar fashion:
+
+\begin{equation}
+	\hat{A}\bra{\psi} = \bra{\phi}
+	\label{eq:operator_A_bra}
+\end{equation}
+
+Among the most fundamental and straightforward operators are the identity operator ($\hat{I}$), which preserves the state's original form, and the zero operator ($\hat{0}$), which maps the state onto the zero vector:
+
+\begin{equation}
+	\hat{I}\ket{\psi} = \ket{\psi}
+	\label{eq:operator_A_I}
+\end{equation}
+
+\begin{equation}
+	\hat{0}\ket{\psi} = 0
+	\label{eq:operator_A_zero}
+\end{equation}
+
+A particularly vital set of operators in the field of quantum computing are the Pauli operators. This group of four includes the identity operator previously mentioned. Among the three others, the first is commonly known as the $NOT$ operator, as it swaps the basis states. It is represented by the symbols $\sigma_1$, $\sigma_x$, or $\hat{X}$:
+
+\begin{equation}
+	\hat{X}\ket{0} = \ket{1},   \hat{X}\ket{1} = \ket{0}
+	\label{eq:operator_X}
+\end{equation}
+
+Following this, we encounter the $\sigma_2$, $\sigma_y$, or $\hat{Y}$ operator, which transforms the basis states according to the following rules:
+
+\begin{equation}
+	\hat{Y}\ket{0} = -i\ket{1},   \hat{X}\ket{1} = i\ket{0}
+	\label{eq:operator_Y}
+\end{equation}
+
+Lastly, we define $\sigma_3$, $\sigma_z$, or $\hat{Z}$, which performs the following operations:
+
+\begin{equation}
+	\hat{Z}\ket{0} = \ket{0},   \hat{Z}\ket{1} = -\ket{1}
+	\label{eq:operator_Z}
+\end{equation}
+
+In addition to its operation on basis states, an operator can be expressed in various other formats. One such method is the outer product. An outer product involving a ket and a bra is denoted as $\ket{\psi}\bra{\phi}$. Applying this resulting product to a general state yields:
+
+\begin{equation}
+	(\ket{\psi}\bra{\phi})\ket{\chi} = \ket{\psi}\braket{\phi|\chi} = \braket{\phi|\chi}\ket{\psi}
+	\label{eq:product_state}
+\end{equation}
+
+We can observe that our initial state $\ket{\chi}$ has been mapped to a new state proportional to $\ket{\psi}$, given that the inner product $\braket{\phi|\chi}$ simply evaluates to a complex scalar.
+
+Another method for representing an operator is through matrix notation. Within an $n$-dimensional vector space, these operators take the form of $n \times n$ matrices. For the scope of this work, we focus on operators acting upon qubits within the two-dimensional Hilbert space $\mathbb{C}^2$; consequently, the operators under consideration are $2 \times 2$ matrices.
+
+To determine the individual components of the matrix representation for an operator $\hat{A}$ within the standard basis, we employ the following expression:
+
+\begin{equation}
+	\hat{A} = \begin{pmatrix} 
+		\braket{0 | \hat{A} | 0} & \braket{0 | \hat{A} | 1} \\ 
+		\braket{1 | \hat{A} | 0} & \braket{1 | \hat{A} | 1} 
+	\end{pmatrix}
+	\label{eq:matrix_rep}
+\end{equation}
+
+By performing the necessary calculations for the Pauli operators, we arrive at the following matrix representations:
+
+\begin{equation}
+	\hat{I} = \begin{pmatrix} 
+		1 & 0 \\ 
+		0 & 1 
+	\end{pmatrix}
+	\label{eq:matrix_I}
+\end{equation}
+
+\begin{equation}
+	\hat{X} = \begin{pmatrix} 
+		0 & 1 \\ 
+		1 & 0 
+	\end{pmatrix}
+	\label{eq:matrix_X}
+\end{equation}
+
+\begin{equation}
+	\hat{Y} = \begin{pmatrix} 
+		0 & -i \\ 
+		i & 0 
+	\end{pmatrix}
+	\label{eq:matrix_Y}
+\end{equation}
+
+\begin{equation}
+	\hat{Z} = \begin{pmatrix} 
+		1 & 0 \\ 
+		0 & -1 
+	\end{pmatrix}
+	\label{eq:matrix_Z}
+\end{equation}
+
+Within the framework of quantum mechanics and quantum computing, two specific categories of operators are of primary importance: Hermitian and unitary operators. A given operator $\hat{A}$ is classified as Hermitian if it satisfies the following condition:
+
+\begin{equation}
+	\hat{A} = \hat{A}^\dagger
+	\label{eq:matrix_A_dagger}
+\end{equation}
+
+The term $\hat{A}^\dagger$ denotes the Hermitian adjoint, which is obtained by transposing the matrix and taking the complex conjugate of every entry. An operator is classified as Hermitian if its diagonal entries consist of real numbers. A further defining trait of Hermitian operators is that they possess real eigenvalues. Due to these attributes, Hermitian operators are utilized in quantum mechanics to represent physical observables.
+
+For an operator to be classified as unitary, its inverse must be equivalent to its Hermitian adjoint. Unitary operators are typically denoted by the symbol $\hat{U}$. Thus, by definition:
+
+\begin{equation}
+	\hat{U}\hat{U}^\dagger =\hat{U}^\dagger\hat{U} = \hat{I}
+	\label{eq:matrix_U_dagger}
+\end{equation}
+
+Unitary operators are of great importance as they characterize the temporal evolution of a quantum state. It is worth noting that the Pauli operators belong to both the Hermitian and unitary classes.
+
+We shall now examine the spectral decomposition theorem, which asserts that any normal operator defined on a vector space admits a diagonal matrix representation relative to a specific orthonormal basis of that space. An operator $\hat{A}$ is categorized as normal provided it fulfills the following relationship:
+
+\begin{equation}
+	\hat{A}\hat{A}^\dagger =\hat{A}^\dagger\hat{A}
+	\label{eq:matrix_normal}
+\end{equation}
+
+Following from this theorem, the operator can be represented in the subsequent form:
+
+\begin{equation}
+	\hat{A}\hat{A}^\dagger =\hat{A}^\dagger\hat{A}
+	\label{eq:infite_sum}
+\end{equation}
+
+\begin{equation}
+	\hat{A} = \sum_{i}^{} \lambda_i \ket{u_i}\bra{u_i}
+	\label{eq:finite_sum}
+\end{equation}
+
+where $\lambda_i$ are the eigenvalues of $\hat{A}$ and $\ket{u_i}$ is a basis.
+
+Operators are also capable of serving as inputs for functions. By applying a Taylor series expansion, we obtain:
+
+\begin{equation}
+	f(\hat{A}) = \sum_{n=0}^{\infty} \alpha_i A^n
+	\label{eq:infinite_sum}
+\end{equation}
+
+The spectral decomposition theorem allows for the simplification of expressions involving functions of operators. If an operator $\hat{A}$ is normal, its spectral decomposition enables the preceding formula to be rewritten as:
+
+\begin{equation}
+	f(\hat{A}) = \sum_{i}^{} f(\lambda_i) \ket{u_i}\bra{u_i}
+	\label{eq:normal_theorem}
+\end{equation}
+
+Finally, due to the probabilistic nature of quantum mechanics, when measuring an observable represented by an operator, we do not rely on a single measurement. Instead, we prepare the quantum state $\ket{\psi}$ multiple times and average the results of these measurements. This average value, known as the expectation value of the operator, is denoted as:
+
+\begin{equation}
+	\braket{\hat{A}} = \braket{\psi|\hat{A}|\psi}
+	\label{eq:expectation_value}
+\end{equation}
+
+\subsection{Manipulation of Multiple Qubits} \label{mult_qubit}
+
+Up to this point, our focus has been limited to individual qubits, their characteristics, and their role in basic computations. To explore more sophisticated and advantageous quantum algorithms, it is vital to understand the principles of quantum mechanics as they apply to systems of multiple interacting qubits. Achieving this requires the construction of a composite Hilbert space derived from the individual Hilbert spaces of each qubit. The mathematical operation used to perform this construction is the Kronecker or tensor product, denoted by the symbol $\otimes$.
+
+Let $H_1$ and $H_2$ denote two Hilbert spaces with dimensions $N_1$ and $N_2$, respectively. By applying the tensor product to these spaces, we can form a composite Hilbert space $H$ with dimension $N_1N_2$, defined such that:
+
+\begin{equation}
+	H = H_1 \otimes H_2
+	\label{eq:tensor}
+\end{equation}
+
+In a similar fashion, the tensor product can be employed to construct a state residing within the composite space $H$. If $\ket{\phi} \in H_1$ and $\ket{\chi} \in H_2$ are state vectors from the respective Hilbert spaces used to form $H$, then the following relationship holds:
+
+\begin{equation}
+	\ket{\psi} = \ket{\phi} \otimes \ket{\chi}
+	\label{eq:tensor_states}
+\end{equation}
+
+Given that spaces composed of two-dimensional subspaces are our primary focus, the following procedure is employed to calculate the product:
+
+\begin{equation}
+	\ket{\psi} = \ket{\phi} \otimes \ket{\chi} 
+	= \begin{pmatrix} 
+		a \\ 
+		b 
+	\end{pmatrix} 
+	\otimes
+	\begin{pmatrix} 
+		c \\ 
+		d
+	\end{pmatrix} 
+	= \begin{pmatrix} 
+		ac \\ 
+		ad \\
+		bc \\
+		bd
+	\end{pmatrix}
+	\label{eq:constr_states}
+\end{equation}
+
+Similarly, by utilizing the tensor product, we can construct a basis for our composite Hilbert space $H$. If $\ket{u_i}$ and $\ket{v_i}$ represent the basis vectors of $H_1$ and $H_2$, respectively, then the resulting basis for the joint space is defined as:
+
+\begin{equation}
+	\ket{w_i} = \ket{u_i} \otimes \ket{v_i}
+	\label{eq:wi}
+\end{equation}
+
+In many instances, the $\otimes$ symbol is omitted; for example, the tensor product $\ket{\phi} \otimes \ket{\chi}$ may be written as $\ket{\phi} \ket{\chi}$, or even more compactly as $\ket{\phi\chi}$.
+
+Furthermore, we can define operators that act upon our composite system. Let $\ket{\phi} \in H_1$ and $\ket{\chi} \in H_2$, and consider an operator $A$ acting on $\ket{\phi}$ and an operator $B$ acting on $\ket{\chi}$. We can construct a new operator as the tensor product of these two, which acts on a state $\ket{\psi} \in H$ in the following manner:
+
+\begin{equation}
+	(A \otimes B) \ket{\psi} = (A \otimes B)(\ket{\phi} \otimes \ket{\chi}) = (A\ket{\phi}) \otimes (B\ket{\chi})
+	\label{eq:comp_systems}
+\end{equation}
+
+Assuming that the operators $A$ and $B$ act on a two-dimensional Hilbert space, the matrix representation of their tensor product is computed as follows:
+
+\begin{equation}
+	A \otimes B 
+	= 	\begin{pmatrix} 
+		\alpha_{11}B &  \alpha_{12}B\\ 
+		\alpha_{21}B &  \alpha_{22}B
+	\end{pmatrix}  
+	= 	\begin{pmatrix} 
+	\alpha_{11}\beta_{11} &  \alpha_{11}\beta_{12} & \alpha_{12}\beta_{11} &\alpha_{12}\beta_{12}\\ 
+	\alpha_{11}\beta_{21} &  \alpha_{11}\beta_{22} & \alpha_{12}\beta_{21} &\alpha_{12}\beta_{22}\\
+	\alpha_{21}\beta_{11} &  \alpha_{21}\beta_{12} & \alpha_{22}\beta_{11} &\alpha_{22}\beta_{12}\\
+	\alpha_{21}\beta_{21} &  \alpha_{21}\beta_{22} & \alpha_{22}\beta_{21} &\alpha_{22}\beta_{22}
+	\end{pmatrix}
+	\label{eq:comp_systems_matrix}
+\end{equation}
 
 \subsection{Quantum Entanglement} \label{entanglement}
 
@@ -384,8 +620,28 @@ The ability to instantaneously determine the quantum state of one particle by me
 Three decades passed before another scientist, John Stewart Bell, developed a method to test this phenomenon. His work ultimately provided the theoretical framework that enabled subsequent researchers to experimentally confirm the existence of quantum entanglement. 
 
 \subsection{Quantum Gates} \label{qgates}
+
+In classical computing, the fundamental operations performed on a bit of information involve moving it between memory locations or transforming it through logic gates. These gates serve as the building blocks for digital circuits, which facilitate complex calculations. Analogously, in the realm of quantum computing, transformations applied to qubit states are referred to as quantum gates, and a sequence of such operations forms a quantum circuit.
+
+Quantum gates represent unitary operations performed on qubits; consequently, the terms "gate" and "unitary operator" are used interchangeably. Since operators can be described by matrices, each quantum gate corresponds to a specific unitary matrix. A gate processing $n$ inputs and outputs is represented by a $2^n \times 2^n$ matrix. For instance, a single-qubit gate is depicted as a $2 \times 2$ matrix, whereas a quantum gate acting on two qubits requires a $4 \times 4$ matrix representation.
+
+The most fundamental single-qubit operation is the quantum $NOT$ gate, which is equivalent to the Pauli $X$ operator. This gate effectively swaps the basis states. Represented as a matrix in the computational basis, we have:
+
+\begin{equation}
+	\hat{U}_{NOT} = \hat{X} 
+	= \begin{pmatrix} 
+		0 & 1 \\ 
+		1 & 0 
+	\end{pmatrix} 
+	\label{eq:Unot}
+\end{equation}
+
+The remaining three Pauli operators, $\hat{I}$, $\hat{Y}$, and $\hat{Z}$, likewise function as quantum gates, given their unitary nature. The specific operations these gates perform on a qubit have been previously detailed in Section~\ref{manipulation} and Section~\ref{mult_qubit}.
+
+A critical component in quantum computation is the Hadamard gate, which transforms the standard basis states into a balanced superposition. The operation of the Hadamard gate on these basis states is defined as follows:
+
 \subsection{Data Encoding} \label{encoding}
-\subsection{Qunatum Ciruits} \label{circuits}
+\subsection{Variational Quantum Classifier} \label{circuits}
 \chapter{RESULTS FROM CLASSICAL MACHINE LEARNING METHODS} \label{mlres}
 
 Breast cancer is the most common malignancy among women worldwide, accounting for approximately 36\% of all oncological cases [1] with numerous machine learning algorithms have been applied to support the prognosis of breast cancer tissues [2]. Breast cancer is also the most prevalent malignant tumor worldwide, with an estimated 2.089 million women diagnosed in 2018, and its incidence continues to rise across all regions of the globe [1]. The highest incidence rates are observed in industrialized countries, a trend commonly associated with factors such as unhealthy dietary habits, nicotine use, chronic stress, and low levels of physical activity.
@@ -728,7 +984,7 @@ Following the completion of the data preprocessing phase for all three subsets, 
 
 In cases where the number of features is less than \(2^n\), the input vector is padded with a constant value of 0.1 to satisfy the dimensionality requirements of the encoding scheme. This padding ensures that the input dimensions remain consistent with the Hilbert space of the chosen qubit configuration. This segment is crucial as it defines the initial state of the quantum system before any transformations occur in the variational layers.
 
-The second component comprises the variational segment, which incorporates the system's trainable parameters. Drawing inspiration from the work of Schuld et al.\textbf{[CITE]} and contemporary methodologies in classical neural networks, this architectural section consists of layers that are repeated for a predetermined number of iterations. Each layer is composed of a sequence of single-qubit rotation gates followed by Controlled-NOT (CNOT) gates to facilitate multi-qubit entanglement. Adopting the notation utilized by the PennyLane library, the single-qubit rotation gates are implemented as arbitrary rotations, defined mathematically as $R(\phi, \theta, \omega) = R_Z(\omega) R_Y(\theta) R_Z(\phi)$. This sequence represents a rotation around the z-axis by an angle $\omega$, followed by a rotation around the y-axis by $\theta$, and a final rotation around the z-axis by $\phi$.
+The second component comprises the variational segment, which incorporates the system's trainable parameters. Drawing inspiration from the work of Schuld et al.\textbf{[CITE]} and contemporary methodologies in classical neural networks, this architectural section consists of layers that are repeated for a predetermined number of iterations. Each layer is composed of a sequence of single-qubit rotation gates followed by Controlled-NOT ($CNOT$) gates to facilitate multi-qubit entanglement. Adopting the notation utilized by the PennyLane library, the single-qubit rotation gates are implemented as arbitrary rotations, defined mathematically as $Rot(\phi, \theta, \omega) = R_Z(\omega) R_Y(\theta) R_Z(\phi)$. This sequence represents a rotation around the $z$-axis by an angle $\omega$, followed by a rotation around the $y$-axis by $\theta$, and a final rotation around the $z$-axis by $\phi$.
 
 This specific configuration of gates allows the model to navigate the Hilbert space effectively, with these rotation angles serving as the primary trainable quantum parameters. Consequently, the number of trainable parameters per layer scales linearly with the number of qubits: three for a single qubit, six for two qubits, nine for three qubits, twelve for four qubits, and fifteen for a five-qubit configuration. Crucially, these parameter values are unique to each layer; for instance, a single-qubit classifier utilizing two variational layers would comprise six distinct trainable parameters. As such, the total parameter space expands rapidly in relation to both circuit width and depth
 
@@ -816,7 +1072,7 @@ From a theoretical standpoint, the non-enveloping case corresponds to a lower Ba
 
 Shifting focus to the off-diagonal cells of the pairplot, we examine the bivariate relationship between the first and second principal components. It is evident that, despite localized class overlap or "spillage," the two categories appear largely linearly separable within this two-dimensional projection. This observation is particularly encouraging, as it suggests that even the most fundamental Variational Quantum Classifiers may achieve satisfactory performance. This structural behavior, including the marginal distribution overlaps, is consistent with expectations: the first component accounts for 42.34\% of the total variance, while the second describes the remaining 20.63\%. While the variance explained by each individual component typically decreases as the number of components increases, the current level of separation provides confidence that the quantum approach will yield robust results.
 
-As previously stated, we investigate the impact of the circuit depth on classifier performance and evaluate whether the introduction of a classical bias parameter enhances or inhibits the model's classification capabilities. Given that the dimension of the associated Hilbert space is $4^n-1$, we restrict our experimentation to configurations with one and two layers. Since the architecture utilizes a single qubit, each layer consists exclusively of a single Rot gate, comprising three trainable parameters, without the possibility of quantum entanglement. This structural constraint further justifies limiting the depth to two layers, as empirical evidence indicates that successive rotations in the absence of entangling CNOT gates offer no additional expressive advantage. Each model configuration is trained for 150 epochs, a duration considered sufficient for the proper optimization of the variational and classical parameters.
+As previously stated, we investigate the impact of the circuit depth on classifier performance and evaluate whether the introduction of a classical bias parameter enhances or inhibits the model's classification capabilities. Given that the dimension of the associated Hilbert space is $4^n-1$, we restrict our experimentation to configurations with one and two layers. Since the architecture utilizes a single qubit, each layer consists exclusively of a single $Rot$ gate, comprising three trainable parameters, without the possibility of quantum entanglement. This structural constraint further justifies limiting the depth to two layers, as empirical evidence indicates that successive rotations in the absence of entangling $CNOT$ gates offer no additional expressive advantage. Each model configuration is trained for 150 epochs, a duration considered sufficient for the proper optimization of the variational and classical parameters.
 
 \begin{figure}[H]
 % Define the figure file in the \includegraphics command
@@ -987,7 +1243,7 @@ A close inspection of the pairplot in Figure\textbf{~\ref{fig:pairplot_4_PCs}} f
 
 Turning our attention to the pairwise scatterplots, we observe that feature pairs involving the fourth component, when analyzed without the influence of the first, lack clear linear separability. In the $PC_2$–$PC_4$ pairing specifically, the majority of samples cluster within the same spatial region, with the negative class distribution effectively eclipsing the positive one. Consequently, we anticipate that the classification task will increase in complexity, as these higher-order components are less inherently informative and the classes become increasingly difficult to distinguish.
 
-Utilizing two qubits allows us to leverage quantum entanglement to our advantage. Consequently, the Rot gates in each layer are followed by a ring of CNOT gates that entangle the qubits. This introduction of entanglement is intended to enhance the classifier's expressive power, assisting the model in navigating the increased dimensionality of the feature space. Reflecting on the limitations and empirical findings discussed previously, we evaluate both biased and unbiased versions of the classifier across configurations of 1, 4, 5, 6, and 7 layers. This results in 6, 24, 30, 36, and 42 trainable parameters for the unbiased cases, respectively, while the biased counterparts require 7, 25, 31, 37, and 43 parameters. To accommodate this expanded parameter space, we have extended the training duration to 200 epochs to ensure sufficient optimization. 
+Utilizing two qubits allows us to leverage quantum entanglement to our advantage. Consequently, the $Rot$ gates in each layer are followed by a ring of $CNOT$ gates that entangle the qubits. This introduction of entanglement is intended to enhance the classifier's expressive power, assisting the model in navigating the increased dimensionality of the feature space. Reflecting on the limitations and empirical findings discussed previously, we evaluate both biased and unbiased versions of the classifier across configurations of 1, 4, 5, 6, and 7 layers. This results in 6, 24, 30, 36, and 42 trainable parameters for the unbiased cases, respectively, while the biased counterparts require 7, 25, 31, 37, and 43 parameters. To accommodate this expanded parameter space, we have extended the training duration to 200 epochs to ensure sufficient optimization. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1154,7 +1410,7 @@ A closer examination of the pairplot in Figure\textbf{~\ref{fig:pairplot_8_PCs}}
 
 Inspecting the remaining scatterplot cells reveals a distinct lack of linear separability, particularly in pairs involving the newly introduced components. For instance, the pairwise scatterplot between the fourth and fifth principal components exhibits little to no separability. Interestingly, all scatterplot pairs involving the first principal component appear to maintain a clear class distinction, which is a direct result of the significant amount of variance this component captures. Ultimately, we expect the classification task to become more challenging as the new features, while providing a more descriptive representation of the dataset, appear to be less informative for discriminating between classes.
 
-To address our problem, we evaluate both biased and unbiased variational quantum classifiers across configurations of 1, 5, 6, and 8 layers. These configurations involve 9, 45, 54, and 72 trainable parameters for the unbiased version, and 10, 46, 55, and 73 parameters for the biased variant, respectively. The layer architecture remains consistent with our previous models, utilizing a combination of rotation gates and CNOT gates. Although several three-qubit gates are available, we maintain simplicity by using only single-qubit rotations and two-qubit CNOT gates. To accommodate the increased number of trainable parameters relative to earlier experiments, we have extended the training duration to 250 epochs. 
+To address our problem, we evaluate both biased and unbiased variational quantum classifiers across configurations of 1, 5, 6, and 8 layers. These configurations involve 9, 45, 54, and 72 trainable parameters for the unbiased version, and 10, 46, 55, and 73 parameters for the biased variant, respectively. The layer architecture remains consistent with our previous models, utilizing a combination of rotation gates and $CNOT$ gates. Although several three-qubit gates are available, we maintain simplicity by using only single-qubit rotations and two-qubit $CNOT$ gates. To accommodate the increased number of trainable parameters relative to earlier experiments, we have extended the training duration to 250 epochs. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1319,7 +1575,7 @@ Our 4-qubit implementation allows us, through the use of the Amplitude-Efficient
 
 As with the eight-principal-component case, each subsequent component becomes less informative. A close examination of the main diagonal reveals that the primary body of the positive class distribution is entirely enveloped by the negative distribution across the eight newly added components. This is expected, given that several of these components account for less than 1\% of the total explained variance ratio. Consequently, the introduction of these features is unlikely to contribute significantly to the classification of the input. This effect becomes even more apparent when focusing on the scatterplots involving these eight new features. No linear class separability is visible, as the blue negative class and the orange positive class conglomerate at the center of each corresponding cell. 
 
-To address the problem, we maintain the existing layer architecture, where each layer consists exclusively of rotation gates and CNOT gates. To account for the increased complexity of the classification task, we evaluate biased and unbiased classifiers with variational quantum circuit depths of 1, 5, 10, and 15 layers. Consequently, the unbiased configurations require training 12, 60, 120, and 180 parameters, while the biased versions involve 13, 61, 121, and 181 trainable parameters, respectively. Given the increase in trainable parameters and the larger Hilbert space, each model is trained for 300 epochs, representing a slight increase over previous experiments.
+To address the problem, we maintain the existing layer architecture, where each layer consists exclusively of rotation gates and $CNOT$ gates. To account for the increased complexity of the classification task, we evaluate biased and unbiased classifiers with variational quantum circuit depths of 1, 5, 10, and 15 layers. Consequently, the unbiased configurations require training 12, 60, 120, and 180 parameters, while the biased versions involve 13, 61, 121, and 181 trainable parameters, respectively. Given the increase in trainable parameters and the larger Hilbert space, each model is trained for 300 epochs, representing a slight increase over previous experiments.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1468,7 +1724,7 @@ Finally, we move on to tackle the problem using a 5-qubit configuration, an appr
 
 The use of 5 qubits allows us, through the Amplitude-Efficient State Preparation routine, to encode a total of 32 features ($2^5$). Since we have 30 features at our disposal, we incorporate two latent dimensions by padding each normalized input vector with 0.1. Because we are not performing PCA for this approach, no further exploratory data analysis is required beyond the initial analysis conducted during our classical assessment of the problem.
 
-Consistent with our previous methodology, the layer composition remains unchanged, consisting exclusively of Rot and CNOT gates. To address the increased dimensionality of the 5-qubit problem, we employ a significantly larger number of trainable parameters by evaluating biased and unbiased classifiers at circuit depths of 1, 20, and 30 layers. Consequently, the unbiased configurations require the optimization of 15, 300, and 450 parameters, respectively, while the biased versions involve 16, 301, and 451 parameters. Given the substantial increase in parameter counts, we have extended the training duration for each model to 400 epochs to ensure sufficient convergence. 
+Consistent with our previous methodology, the layer composition remains unchanged, consisting exclusively of $Rot$ and $CNOT$ gates. To address the increased dimensionality of the 5-qubit problem, we employ a significantly larger number of trainable parameters by evaluating biased and unbiased classifiers at circuit depths of 1, 20, and 30 layers. Consequently, the unbiased configurations require the optimization of 15, 300, and 450 parameters, respectively, while the biased versions involve 16, 301, and 451 parameters. Given the substantial increase in parameter counts, we have extended the training duration for each model to 400 epochs to ensure sufficient convergence. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
