@@ -696,7 +696,7 @@ This implies that by exponentiating a matrix, we can construct a new quantum gat
 	\label{eq:Rz}
 \end{equation}
 
-By utilizing the rotation matrices defined in Equations\textbf{~\ref{eq:Rx}}, \textbf{\ref{eq:Ry}}, and \textbf{\ref{ref:Rz}}, any arbitrary single-qubit gate can be represented as a specific sequence of rotations around the $z$ and $y$ axes. This approach is referred to as the $Z$-$Y$ decomposition. Although these axes are frequently selected, they are not unique; any pair of non-parallel axes on the Bloch sphere could be utilized for such a decomposition. For any unitary operator $U$, there exist real-valued parameters $a$, $b$, $c$, and $d$ such that:
+By utilizing the rotation matrices defined in Equations\textbf{~\ref{eq:Rx}}, \textbf{\ref{eq:Ry}}, and \textbf{\ref{eq:Rz}}, any arbitrary single-qubit gate can be represented as a specific sequence of rotations around the $z$ and $y$ axes. This approach is referred to as the $Z$-$Y$ decomposition. Although these axes are frequently selected, they are not unique; any pair of non-parallel axes on the Bloch sphere could be utilized for such a decomposition. For any unitary operator $U$, there exist real-valued parameters $a$, $b$, $c$, and $d$ such that:
 
 \begin{equation}
 	\hat{U} =e^{ia}\hat{R}_{z}(b)\hat{R}_{y}(c)\hat{R}_{z}(d) 
@@ -709,8 +709,8 @@ Quantum gate operations can be visualized through circuit diagrams, where the in
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
-	\centering
-	\includegraphics[scale=1.0]{figures/circuit_diagram.png}
+	%\centering
+	\includegraphics[width=\linewidth]{figures/circuit_diagram.png}
 	% Place caption under the figure
 	\caption{An example of a quantum circuit diagram
 	}
@@ -770,6 +770,27 @@ Given the general matrix representation of a two-qubit gate and the specific tra
 
 \subsection{Data Encoding} \label{encoding}
 \subsection{Variational Quantum Classifier} \label{circuits}
+
+Significant research and development have been dedicated to the creation of early-stage quantum processors, collectively referred to as NISQ devices. These systems currently operate with approximately 50 to 100 qubits and lack robust error correction mechanisms, meaning they can only provide approximate computational results. Furthermore, connectivity is limited, as not all qubits in these devices can interact directly with one another. While NISQ-era hardware serves as a theoretical platform for exploring the advantages of quantum computing, the necessity of limiting algorithms to a restricted number of qubits and gates poses a major challenge to algorithmic design. To circumvent these constraints, a specialized class of hybrid protocols known as variational quantum algorithms (VQAs) has been developed.[CITE]
+
+These algorithms are characterized not by a fixed sequence of operations, but by an "ansatz"—a structural template that defines the arrangement of gates across specific qubits. This modular framework is scalable, as it can be extended to an arbitrary number of qubits by repeating the pattern in successive layers. The term "variational" stems from the fact that specific gates within the ansatz, typically Pauli rotations, are governed by continuous, adjustable parameters. These parameters are iteratively refined through a classical optimization process designed to minimize or maximize a cost function derived from the specific problem being addressed.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/general_variational.png}
+	% Place caption under the figure
+	\caption{General structure of a variational quantum circuit
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:general_variational}
+\end{figure}
+
+A graphical representation of a variational quantum circuit is provided in Figure\textbf{~\ref{fig:general_variational}}. The process begins with an input vector $x$ consisting of $n$ features. Initially, the classical data must be transformed into a quantum-compatible format through a procedure known as state preparation, denoted by the $S_x$ block. Following this, the state undergoes unitary transformations within the $U_\theta$ block, which utilizes a combination of parameterized and non-parameterized gates. Once the transformations are complete, the system is measured. The resulting output is then processed by a classical optimizer to determine updated parameters. These new values are used to adjust the $U_\theta$ block, and the entire cycle is iterated until an optimal solution is achieved.
+
+Variational quantum circuits can be conceptualized as a class of machine learning models [CITE] [CITE]. By applying a quantum circuit $U(x, \theta)$, which is dependent on both the input features $x$ and the trainable parameters $\theta$, to an initial state, the circuit functions as a model whose output is derived from the expectation value of an observable $O$. In the context of a classification task, this expectation value $\braket{O} \in \mathbb{R}$ is typically interpreted as the probability of the input belonging to a specific category. The discrepancy between the predicted expectation value and the actual label is subsequently utilized to define the cost function for optimization [CITE] [CITE].
+
 \chapter{RESULTS FROM CLASSICAL MACHINE LEARNING METHODS} \label{mlres}
 
 Breast cancer is the most common malignancy among women worldwide, accounting for approximately 36\% of all oncological cases [1] with numerous machine learning algorithms have been applied to support the prognosis of breast cancer tissues [2]. Breast cancer is also the most prevalent malignant tumor worldwide, with an estimated 2.089 million women diagnosed in 2018, and its incidence continues to rise across all regions of the globe [1]. The highest incidence rates are observed in industrialized countries, a trend commonly associated with factors such as unhealthy dietary habits, nicotine use, chronic stress, and low levels of physical activity.
