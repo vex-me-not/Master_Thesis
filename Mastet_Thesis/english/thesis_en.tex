@@ -768,7 +768,41 @@ Given the general matrix representation of a two-qubit gate and the specific tra
 	\label{eq:cnot_matrix}
 \end{equation}
 
-\subsection{Data Encoding} \label{encoding}
+\subsection{Input Encoding Techniques} \label{encoding}
+
+There are different ways to encode or embed information into an $n$-qubit system described by a quantum state, and we will introduce some relevant strategies in this section. While for machine learning the question of information encoding becomes
+central, this is not true for many other topics in quantum computing, which is presumably why quantum computing has not had much specific terminology for such strategies. Here, we will refer to them as \textbf{basis} encoding, \textbf{amplitude} encoding, \textbf{time-evolution} encoding and \textbf{Hamiltonian} encoding.
+
+Basis encoding associates a computational basis state of an $n$-qubit system (such as $\ket{3} = \ket{0011}$) with a classical $n$-bit string ($0011$). In a way, this is the most straightforward way of encoding, since each bit gets literally replaced by a qubit, and a computation acts in parallel on all bit sequences in a superposition.
+
+If the output of the algorithm is likewise encoded into a computational basis state, the value of the amplitudes $\alpha_i$ of each basis state has the role to mark the result of the computation with a high enough probability of being measured. For example,
+if the basis state $\ket{0011}$ with amplitude $\alpha_3$ has a probability $|\alpha_3|^2 > 0.5$ of being measured, repeated execution of the algorithm and measurement of the final state in the computational basis will reveal it as the most likely measurement result, and hence the overall result of the algorithm. The goal of a quantum algorithm is therefore to increase the probability or absolute square of the amplitude that corresponds to the basis state encoding the solution.
+
+As in classical computers, basis encoding uses a binary representation of numbers. A quantum state $\ket{\chi}$ with $\chi \in \mathbb{R}$ will therefore refer to a binary representation of $\chi$ with the number $n$ of bits that the qubit register encoding $\ket{\chi}$ provides. There are different ways to represent a real number in binary form, for example, by fixed or floating point representations. In the following, it is always assumed that such a strategy is given, and we will elaborate more on this point where the need arises.
+
+Time-evolution encoding prescribes to associate a scalar value $\chi \in \mathbb{R}$ with the time $t$ in the unitary evolution by a Hamiltonian $H$, resulting in Equation\textbf{~\ref{eq:time_evol}}
+
+\begin{equation}
+	U(\chi) = e^{-i\chi H}
+	\label{eq:time_evol}
+\end{equation}
+
+Thusly,the state after the evolution, $\ket{\psi(\chi)} = U(\chi)\ket{\psi_0}$, depends on $\chi$ in a way that is defined by the Hamiltonian $H$. In quantum machine learning, this kind of encoding is particularly popular when encoding classical trainable parameters into a quantum circuit. The most common choice are the Pauli rotation gates in which $H = \frac{1}{2} \sigma_\alpha$ and $\alpha \in {x,y,z}$. Successive gates or evolutions of the form $U(\chi)$ can be used to encode a real-valued vector $\chi \in \mathbb{R}^N$.
+
+For some applications, it can be useful to encode matrices into the Hamiltonian of a time evolution, as used in the famous HHL algorithm for matrix inversion. The basic idea is to associate a Hamiltonian $H$ with a square matrix $\mathbf{A}$. In case $\mathbf{A}$ is not Hermitian, one can sometimes use the trick of encoding in Equation\textbf{~\ref{eq:ham_trick}}. 
+
+\begin{equation}
+	U(\chi) = \begin{pmatrix}
+		%first line 
+		0 & \mathbf{A} \\ 
+		%second line
+		\mathbf{A^\dagger} & 0  
+	\end{pmatrix} 
+	\label{eq:ham_trick}
+\end{equation}
+
+This allows us to perform the computations in two subspaces of the Hilbert space. Hamiltonian encoding allows us to extract and process the eigenvalues of $\mathbf{A}$, for example, to multiply $\mathbf{A}$ or $\mathbf{A^{−1}}$ with an amplitude-encoded vector. Strategies of applying operations with a custom Hamiltonian are called \textbf{Hamiltonian simulation}.
+
 \subsection{Variational Quantum Classifier} \label{circuits}
 
 Significant research and development have been dedicated to the creation of early-stage quantum processors, collectively referred to as NISQ devices. These systems currently operate with approximately 50 to 100 qubits and lack robust error correction mechanisms, meaning they can only provide approximate computational results. Furthermore, connectivity is limited, as not all qubits in these devices can interact directly with one another. While NISQ-era hardware serves as a theoretical platform for exploring the advantages of quantum computing, the necessity of limiting algorithms to a restricted number of qubits and gates poses a major challenge to algorithmic design. To circumvent these constraints, a specialized class of hybrid protocols known as variational quantum algorithms (VQAs) has been developed.[CITE]

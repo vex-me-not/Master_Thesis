@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.10)  15 FEB 2026 11:51
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.10)  15 FEB 2026 16:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1380,6 +1380,14 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [45]
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 24.67816pt, for example:
+(fancyhdr)                \setlength{\headheight}{24.67816pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
+
+[46]
 File: figures/general_variational.png Graphic file (type bmp)
 <figures/general_variational.png>
 
@@ -1390,7 +1398,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
-[46]
+[47]
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 24.67816pt, for example:
@@ -1398,9 +1406,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
-[47] [48
-
-]
+[48]
 Chapter 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1413,7 +1419,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
-[49]
+[49
+
+]
 File: figures/class_distro.png Graphic file (type bmp)
 <figures/class_distro.png>
 
@@ -1505,7 +1513,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [56]
-Overfull \hbox (12.06427pt too wide) in paragraph at lines 905--906
+Overfull \hbox (12.06427pt too wide) in paragraph at lines 939--940
 \TU/Arial(0)/m/n/12 To determine the most effective classifier for the tumor cl
 assification task, six well-established
  []
@@ -1623,7 +1631,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 File: figures/violin_plot_boot_lr.png Graphic file (type bmp)
 <figures/violin_plot_boot_lr.png>
 
-Overfull \hbox (49.06476pt too wide) in paragraph at lines 1104--1105
+Overfull \hbox (49.06476pt too wide) in paragraph at lines 1138--1139
 \OML/cmm/m/it/12 symmetry[]orst$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 concavi
 ty[]ean$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 compactness[]e$\TU/Arial(0)/m/n
 /12 , $\OML/cmm/m/it/12 area[]orst$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 smoo
@@ -1690,7 +1698,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [73]
-Overfull \hbox (0.33028pt too wide) in paragraph at lines 1164--1165
+Overfull \hbox (0.33028pt too wide) in paragraph at lines 1198--1199
 []\TU/Arial(0)/m/n/12 The specific parameters associated with the highest valid
 ation performance are preserved,
  []
@@ -1707,7 +1715,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [74]
-Overfull \hbox (0.18054pt too wide) in paragraph at lines 1180--1181
+Overfull \hbox (0.18054pt too wide) in paragraph at lines 1214--1215
 \TU/Arial(0)/m/n/12 mentation utilizes a single-qubit Variational Quantum Class
 ifier as a baseline model. Given
  []
@@ -2411,7 +2419,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 File: ./figures/vqc_vs_classical.png Graphic file (type bmp)
 <./figures/vqc_vs_classical.png>
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 2117.
+(Font)              scaled to size 11.39996pt on input line 2151.
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -2437,7 +2445,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.67816pt}.
 
 [130]
-Overfull \hbox (12.79724pt too wide) in paragraph at lines 2203--2206
+Overfull \hbox (12.79724pt too wide) in paragraph at lines 2237--2240
 []\TU/Arial(0)/m/n/12 Acknowledgements. Optional, can be included by passing \T
 U/Arial(0)/m/it/12 ack \TU/Arial(0)/m/n/12 in the [][]\TU/CourierNew(0)/m/n/12 
 \documentclass
@@ -2610,14 +2618,14 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `thesis_en.out' has not changed.
-(rerunfilecheck)             Checksum: 4A0B6897E9838146D2FA000815B447E3;10672.
+(rerunfilecheck)             Checksum: C3723D9884B1694D66E9D38EB62ECEF5;10735.
  ) 
 Here is how much of TeX's memory you used:
- 23526 strings out of 402982
- 448338 string characters out of 5448680
- 917853 words of memory out of 5000000
- 51875 multiletter control sequences out of 15000+600000
- 636322 words of font info for 117 fonts, out of 8000000 for 9000
+ 23532 strings out of 402982
+ 448526 string characters out of 5448680
+ 918040 words of memory out of 5000000
+ 51879 multiletter control sequences out of 15000+600000
+ 636338 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,13n,130p,1566b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
