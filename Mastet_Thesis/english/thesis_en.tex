@@ -770,26 +770,24 @@ Given the general matrix representation of a two-qubit gate and the specific tra
 
 \subsection{Input Encoding Techniques} \label{encoding}
 
-There are different ways to encode or embed information into an $n$-qubit system described by a quantum state, and we will introduce some relevant strategies in this section. While for machine learning the question of information encoding becomes
-central, this is not true for many other topics in quantum computing, which is presumably why quantum computing has not had much specific terminology for such strategies. Here, we will refer to them as \textbf{basis} encoding, \textbf{amplitude} encoding, \textbf{time-evolution} encoding and \textbf{Hamiltonian} encoding.
+In this section, we present several techniques for encoding or embedding classical data into an $n$-qubit quantum system. While the strategy for data encoding is of paramount importance in the field of quantum machine learning, it often remains a secondary consideration in other areas of quantum computation; consequently, specialized terminology for these methods has not been widely standardized. For the purposes of this discussion, we will categorize these approaches as \textbf{basis} encoding, \textbf{amplitude} encoding, \textbf{time-evolution} encoding, and \textbf{Hamiltonian} encoding.
 
-Basis encoding associates a computational basis state of an $n$-qubit system (such as $\ket{3} = \ket{0011}$) with a classical $n$-bit string ($0011$). In a way, this is the most straightforward way of encoding, since each bit gets literally replaced by a qubit, and a computation acts in parallel on all bit sequences in a superposition.
+Basis encoding establishes a direct correspondence between an $n$-bit classical string, such as $0011$, and its equivalent computational basis state in an $n$-qubit system, denoted as $\ket{0011}$ or $\ket{3}$. This method represents the most intuitive form of data embedding, as it essentially replaces each classical bit with its corresponding qubit. A primary advantage of this approach is that it allows quantum operations to act in parallel across all bit sequences within a quantum superposition.
 
-If the output of the algorithm is likewise encoded into a computational basis state, the value of the amplitudes $\alpha_i$ of each basis state has the role to mark the result of the computation with a high enough probability of being measured. For example,
-if the basis state $\ket{0011}$ with amplitude $\alpha_3$ has a probability $|\alpha_3|^2 > 0.5$ of being measured, repeated execution of the algorithm and measurement of the final state in the computational basis will reveal it as the most likely measurement result, and hence the overall result of the algorithm. The goal of a quantum algorithm is therefore to increase the probability or absolute square of the amplitude that corresponds to the basis state encoding the solution.
+In scenarios where the output of an algorithm is similarly encoded into a computational basis state, the amplitudes $\alpha_i$ of each basis state serve to identify the computational result with a sufficiently high measurement probability. For instance, if the basis state $\ket{0011}$ possesses an amplitude $\alpha_3$ such that the probability $|\alpha_3|^2 > 0.5$, then repeated execution and measurement of the final state in the computational basis will identify it as the most probable outcome, representing the algorithm's result. Consequently, the primary objective of a quantum algorithm is to amplify the probability—or the squared magnitude of the amplitude—associated with the specific basis state that encodes the correct solution..
 
-As in classical computers, basis encoding uses a binary representation of numbers. A quantum state $\ket{\chi}$ with $\chi \in \mathbb{R}$ will therefore refer to a binary representation of $\chi$ with the number $n$ of bits that the qubit register encoding $\ket{\chi}$ provides. There are different ways to represent a real number in binary form, for example, by fixed or floating point representations. However, basis encoding requires a lot of qubits, and it is therefore not a strategy typically found in near-term quantum algorithms.
+Consistent with classical computing, basis encoding utilizes a binary representation of numerical values. In this framework, a quantum state $\ket{\chi}$ for a real number $\chi \in \mathbb{R}$ corresponds to the binary representation of $\chi$ within a qubit register of size $n$. Various methods exist for translating real numbers into binary format, such as fixed-point or floating-point representations. Nevertheless, because basis encoding necessitates a high qubit count, it is generally not a practical strategy for implementation on near-term quantum hardware.
 
-Time-evolution encoding prescribes to associate a scalar value $\chi \in \mathbb{R}$ with the time $t$ in the unitary evolution by a Hamiltonian $H$, resulting in Equation\textbf{~\ref{eq:time_evol}}
+Time-evolution encoding involves associating a scalar value $\chi \in \mathbb{R}$ with the temporal parameter $t$ in the unitary evolution governed by a Hamiltonian $H$. This relationship is expressed in Equation~\ref{eq:time_evol}.
 
 \begin{equation}
 	U(\chi) = e^{-i\chi H}
 	\label{eq:time_evol}
 \end{equation}
 
-Thusly,the state after the evolution, $\ket{\psi(\chi)} = U(\chi)\ket{\psi_0}$, depends on $\chi$ in a way that is defined by the Hamiltonian $H$. In quantum machine learning, this kind of encoding is particularly popular when encoding classical trainable parameters into a quantum circuit. The most common choice are the Pauli rotation gates in which $H = \frac{1}{2} \sigma_\alpha$ and $\alpha \in {x,y,z}$. Successive gates or evolutions of the form $U(\chi)$ can be used to encode a real-valued vector $\chi \in \mathbb{R}^N$.
+Consequently, the state resulting from the evolution, $\ket{\psi(\chi)} = U(\chi)\ket{\psi_0}$, depends on the parameter $\chi$ in a manner determined by the Hamiltonian $H$. In the field of quantum machine learning, this encoding method is frequently employed to map classical trainable parameters onto a quantum circuit. The most prevalent implementation involves Pauli rotation gates, where the Hamiltonian is defined as $H = \frac{1}{2} \sigma_\alpha$ for $\alpha \in \{x, y, z\}$. By applying a sequence of such unitary operations $U(\chi)$, one can effectively encode a real-valued vector $\chi \in \mathbb{R}^N$.
 
-For some applications, it can be useful to encode matrices into the Hamiltonian of a time evolution, as used in the famous HHL algorithm for matrix inversion. The basic idea is to associate a Hamiltonian $H$ with a square matrix $\mathbf{A}$. In case $\mathbf{A}$ is not Hermitian, one can sometimes use the trick of encoding in Equation\textbf{~\ref{eq:ham_trick}}. 
+For certain applications, it is advantageous to encode matrices directly into the Hamiltonian governing a quantum system's time evolution, a technique central to the HHL algorithm for matrix inversion. This method involves mapping a square matrix $\mathbf{A}$ to a corresponding Hamiltonian $H$. In instances where $\mathbf{A}$ is not Hermitian, a standard procedure is to employ the encoding transformation detailed in Equation~\ref{eq:ham_trick} to ensure hermiticity. 
 
 \begin{equation}
 	U(\chi) = \begin{pmatrix}
@@ -801,9 +799,9 @@ For some applications, it can be useful to encode matrices into the Hamiltonian 
 	\label{eq:ham_trick}
 \end{equation}
 
-This allows us to perform the computations in two subspaces of the Hilbert space. Hamiltonian encoding allows us to extract and process the eigenvalues of $\mathbf{A}$, for example, to multiply $\mathbf{A}$ or $\mathbf{A^{−1}}$ with an amplitude-encoded vector. Strategies of applying operations with a custom Hamiltonian are called \textbf{Hamiltonian simulation}.
+This approach enables the execution of computations within two distinct subspaces of the Hilbert space. Hamiltonian encoding facilitates the extraction and processing of the eigenvalues of $\mathbf{A}$, which can then be utilized to perform operations such as multiplying $\mathbf{A}$ or its inverse $\mathbf{A}^{-1}$ by an amplitude-encoded vector. The methodologies employed to apply operations governed by a specific, custom Hamiltonian are formally referred to as \textbf{Hamiltonian simulation}.
 
-Amplitude encoding is much less common in quantum computing, as it associates classical information such as a real vector with quantum amplitudes, and there are different options to do so. A normalised classical vector $\mathbf{x} \in \mathbb{C}^{2^N}, \sum_{k} |x_k|^2 = 1$ can be represented by the amplitudes of a quantum state $\ket{\psi} \in \mathcal{H}$ via Equation \textbf{~\ref{eq:stacked_dots}}
+Amplitude encoding is significantly less prevalent in general quantum computing, as it maps classical information—such as a real-valued vector—directly onto quantum amplitudes; several methods exist for this mapping. A normalized classical vector $\mathbf{x} \in \mathbb{C}^{2^N}$, satisfying $\sum_{k} |x_k|^2 = 1$, can be represented by the probability amplitudes of a quantum state $\ket{\psi} \in \mathcal{H}$ as defined in Equation~\ref{eq:stacked_dots}:
 
 \begin{equation}
 	\mathbf{x} = \begin{pmatrix}
@@ -817,33 +815,30 @@ Amplitude encoding is much less common in quantum computing, as it associates cl
 \end{equation}
 
 
-In the same fashion, a matrix $\mathbf{A} \in \mathbb{C}^{2^n \times 2^m}$ with entries $a_{ij}$ that fulfill $\sum_{ij} |a_{ij}|^2 = 1$, can be encoded as seen in Equation \textbf{~\ref{eq:double_sum}} and enlarge the Hilbert space accordingly. 
+In a similar manner, a matrix $\mathbf{A} \in \mathbb{C}^{2^n \times 2^m}$ containing elements $a_{ij}$ that satisfy the normalization condition $\sum_{ij} |a_{ij}|^2 = 1$ can be represented as shown in Equation~\ref{eq:double_sum}. This encoding requires a proportional expansion of the Hilbert space to accommodate the matrix dimensions.
 
 \begin{equation}
 	\ket{\psi_A} =\sum_{i=0}^{2^m-1} \sum_{j=0}^{2^n-1} a_{ij}\ket{i}\ket{j}
 	\label{eq:double_sum}
 \end{equation}
 
-This turns out to be rather useful for quantum algorithms, since the “index registers” $\ket{i}$, $\ket{j}$ refer to the $i$th row and the $j$th column, respectively. By fixing either of the registers, we can therefore address a row or column of the matrix. For Hermitian positive trace-1 matrices  $\mathbf{A} \in \mathbb{C}^{2^n \times 2^n}$, another option arises: One can associate its entries with the entries of a density matrix $\rho_A$, so that $a_{ij}	\leftrightarrow \rho_{ij}$.
+This representation is particularly advantageous for quantum algorithms, as the index registers $\ket{i}$ and $\ket{j}$ correspond to the $i$-th row and $j$-th column of the matrix, respectively. By holding one register constant, it is possible to isolate and address specific rows or columns. Furthermore, for Hermitian positive matrices $\mathbf{A} \in \mathbb{C}^{2^n \times 2^n}$ with unit trace, an alternative encoding exists: the elements of the matrix can be mapped directly to the entries of a density matrix $\rho_A$, such that $a_{ij}$ corresponds to $\rho_{ij}$.
 
-Encoding information into the probabilistic description of a quantum system necessarily poses severe limitations on which mathematical operations can be executed to transform the input. This becomes particularly important when wewant to perform a nonlinear map on the amplitudes, which is impossible to implement in a unitary fashion (at least without tricks that use measurements or marginalisation). This has been extensively debated under the keyword of “nonlinear quantum theories” [CITE,
-CITE], and it has been demonstrated that assumptions of nonlinear operators would immediately negate fundamental principles of nature that are widely believed to be true [CITE, CITE].
+The act of encoding information within the probabilistic framework of a quantum system inherently restricts the types of mathematical transformations that can be applied to the input. This limitation is especially significant when attempting to implement nonlinear mappings of probability amplitudes, as such operations cannot be realized through unitary evolution alone—unless specialized techniques involving measurements or marginalization are employed. This constraint has been a subject of extensive discourse within the context of "nonlinear quantum theories." Research has shown that the existence of nonlinear operators would fundamentally conflict with established physical principles, which are widely accepted as cornerstones of our understanding of nature.
 
-Another obvious restriction of thismethod is that only normalised classical vectors can be processed. Effectively thismeans that quantum states represent the data in one less dimension orwith one less degree of freedom: a classical two-dimensional vector
-$\left( \begin{matrix} x_1 & x_2 \end{matrix} \right)^{\top}$ can only be associated with an amplitude vector $\left( \begin{matrix} \alpha_1 & \alpha_2 \end{matrix} \right)^{\top}$ of a qubit which fulfils $|\alpha_0|^2 + |\alpha_1|^2 = 1$. This means that it lies on a unit circle, a one-dimensional manifold in a two-dimensional space. Three-dimensional vectors encoded in three amplitudes of a 2-qubit quantum system (where the last of the four amplitudes is redundant and set to zero) will reduce the three-dimensional space to the surface of a sphere, and so on. A remedy can be to increase the space of the classical vector
-by one element set to 1 and, to normalise the resulting vector. After normalisation, this new element will carry full information about the normalisation constant, and hence about the original length of the vector.
+An additional inherent constraint of this method is the requirement that only normalized classical vectors can be processed. Consequently, quantum states represent data with one fewer dimension or degree of freedom: a classical two-dimensional vector $\begin{pmatrix} x_1 & x_2 \end{pmatrix}^\top$ must be mapped to an amplitude vector $\begin{pmatrix} \alpha_1 & \alpha_2 \end{pmatrix}^\top$ that satisfies $|\alpha_1|^2 + |\alpha_2|^2 = 1$. This restriction confines the representation to a unit circle, which is a one-dimensional manifold within a two-dimensional space. Similarly, encoding a three-dimensional vector into the amplitudes of a two-qubit system (where the fourth amplitude is set to zero) reduces the dimensionality to a spherical surface. To address this, the classical vector can be augmented with an additional element set to 1 before being normalized. Following normalization, this auxiliary element retains the information regarding the normalization constant, thereby preserving the original magnitude of the vector.
 
-While amplitude encoding uses much less qubits than basis encoding, we will see that the routines preparing the dense amplitude vectors are very costly (in some sense trading space for time). One such routine is the Amplitude-Efficient State Preparation, that we will be using in this thesis to encode our data and we will discuss briefly.
+Although amplitude encoding requires significantly fewer qubits compared to basis encoding, the procedures for preparing dense amplitude vectors are computationally intensive, essentially trading spatial efficiency for temporal complexity. One such method, which we utilize for data encoding in this thesis and will discuss briefly, is Amplitude-Efficient State Preparation.
 
-In general, Given an $n$-qubit quantum computer, the theoretical lower bound of the depth of an arbitrary state preparation circuit is known to be $\frac{2^n}{n}$. Current algorithms perform slightly worse with a bit less than $2^n$ parallel operations, most of which are expensive 2-qubit gates.
+Broadly speaking, for a quantum processor with $n$ qubits, the theoretical minimum depth required for a circuit to prepare an arbitrary quantum state is established as $\frac{2^n}{n}$. Contemporary algorithms generally exceed this lower bound, requiring nearly $2^n$ operations executed in parallel. The majority of these operations consist of resource-intensive two-qubit gates.
 
-To illustrate one way of doing state preparation in linear time, let us have a look at the routine presented by Möttönen et al. [CITE]. They consider the reverse problem, namely to map an arbitrary state $\ket{\psi}$ to the ground state $\ket{0\cdots0}$. In order to use this algorithm for our purpose, we simply need to invert each and every operation and apply them in reverse order.
+To demonstrate a method for achieving state preparation in linear time, we consider the routine introduced by Möttönen et al. [CITE]. Their approach addresses the inverse problem: transforming an arbitrary quantum state $\ket{\psi}$ into the computational ground state $\ket{0\cdots0}$. To utilize this algorithm for our objectives, we must invert every individual operation and apply the resulting sequence in reverse order.
 
-The basic idea is to control a rotation on qubit $q_s$  by all possible states of the previous qubits $q_1,\cdots,q_{s−1}$, using sequences of so-called \textbf{multi-controlled rotations}. In other words, we explicitly do a different rotation for each possible branch of the superposition, the one in which the previous qubits were in state $\ket{0\cdots0}$ to the branch in which they are in $\ket{1\cdots1}$. This is comparable to tossing $s − 1$ coins and manipulating the $s$th coin differently depending on the measurement outcome via a lookup table.
+The fundamental concept involves conditioning a rotation on qubit $q_s$ based on every possible configuration of the preceding qubits $q_1, \dots, q_{s-1}$, utilizing a sequence of \textbf{multi-controlled rotations}. Specifically, this requires performing a distinct rotation for every individual branch of the superposition, ranging from the state where all previous qubits are $\ket{0\dots0}$ to the state where they are $\ket{1\dots1}$. This process is analogous to flipping $s-1$ coins and applying a specific manipulation to the $s$-th coin that is determined by the collective outcome of those flips via a lookup table.
 
-A full sequence of multi-controlled rotations with angles $\beta_i$ (and where we do not specify the rotation axis $x$, $y$, $z$) consists of the successive application of the $2^{s−1}$ gates. Of course, we need a prescription to decompose sequences of multi-controlled rotations into elementary gates. If there are $s − 1$ control qubits, this is possible with $2^s$ $CNOT$s and $2^s$ single-qubit gates [CITE].
+A complete sequence of multi-controlled rotations, defined by angles $\beta_i$ (where the specific rotation axis $x$, $y$, or $z$ remains general), entails the sequential application of $2^{s-1}$ gates. Naturally, a method is required to decompose these multi-controlled rotations into a series of elementary gates. When $s-1$ control qubits are involved, this decomposition can be achieved using $2^s$ $CNOT$ gates and $2^s$ single-qubit rotations [CITE].
 
-For a general quantum state, one has to apply two cascades of such operations, where each cascade is a sequences of multi-controlled rotations that run trough all qubits $q_1$ to $q_n$. The first cascade uses $R_z$-rotations and has the effect of equalising the signs of the amplitudes until the state only has one global phase which we can ignore (remember, we are doing reverse state preparation). The second cascade applies $R_y$ rotations and has the effect of equalising all amplitudes to result in the ground state. 
+To prepare a general quantum state, two distinct sequences of operations must be applied, with each sequence consisting of multi-controlled rotations spanning all qubits from $q_1$ to $q_n$. The first sequence utilizes $R_z$ rotations to align the phases of the amplitudes, effectively reducing the state to a single ignorable global phase—consistent with the process of inverse state preparation. The second sequence employs $R_y$ rotations to equalize the magnitudes of all amplitudes, ultimately transforming the system into the computational ground state.
 
 \subsection{Variational Quantum Classifier} \label{circuits}
 
@@ -2188,406 +2183,10 @@ With that in mind, we can see that our quantum approach demonstrates clear super
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FROM TEMPLATE
 
-This \LaTeX{} example is a template showing how to format postgraduate theses.
-This sample focuses on theses written in English, where some pages and titles are changed from their Greek counterparts.
-Make sure you pass the \emph{en} option in the \verb|\documentclass| on the top of the .tex file.
-
-In order to make the gray bibliography uniform throughout the library---including postgraduate thesis---this document class uses formatting enforced by the Department of Informatics \& Telecommunication.
-Formatting details are as follows:
-
-\subsection{Page size} \label{page_size}
-
-Page size shall be \textbf{A4}.
-
-\subsection{Printing pages} \label{printing_pages}
-
-Page margin sizes, and header and footer placement depend on whether printing will be two-sided, like in a standard book, or one-sided.
-
-\subsubsection{Two-sided printing} \label{two-sided_printing}
-
-This document class assumes two-sided printing by default.
-On odd pages, which are on the right of the book, the right margins are narrower than the left margins.
-On even pages, on the left side of the book, the reverse is true: left margins are narrower than the right.
-
-The header contains the thesis title, and is placed on the right of odd right-facing pages, and on the left of even left-facing pages.
-The footer contains the page number on the center of all pages.
-
-\subsection{Dates} \label{dates}
-
-The dates in the pages, such as the month and year, refer to the examination date.
-
-\subsection{Cover and front matter pages} \label{cover_and_front_matter_pages}
-
-Formatted like in this sample, centered unless noted otherwise, in order:
-
-\begin{enumerate}
-    \item Emblem of Athena: top-center
-    \item Name of university (NATIONAL AND KAPODISTRIAN UNIVERSITY OF ATHENS): Arial, bold, uppercase, 14pt.
-    \item Name of school (SCHOOL OF SCIENCES): Arial, bold, uppercase, 12pt.
-    \item Name of department (DEPARTMENT OF INFORMATICS AND TELECOMMUNICATIONS): Arial, bold, uppercase, 12pt.
-    \item Name of postgraduate program: Arial, bold, uppercase, 12pt.
-    \item Type of thesis (MSc THESIS): Arial, bold, uppercase (except the 'c' in "MSc"), 12pt.
-    \item Title of thesis: Arial, bold, 16pt.
-    \item First name, Middle initial, and Last name of author: Arial, bold, 12pt.
-    \item Left-aligned Supervisor (or Supervisors if more than one): First and Last name: Arial, bold, 12pt.; Supervisor's title: Arial, 12pt.\\
-    If there are non-staff supervisors, they are placed right after staff supervisors with their appropriate titles.
-    \item Place where thesis was completed (ATHENS): Arial, bold, uppercase, 12pt.
-    \item Month and year of completion: Arial, bold, uppercase, 12pt.
-    \item Line spacing: 1pt.
-    \item Page numbering starts at 1 from the cover page, but not printed on any of the cover or front matter pages.
-    \item The back of those pages shall remain blank.
-\end{enumerate}
-
-\subsection{2nd front matter page (Examination committee page)} \label{second_front_matter_page}
-
-Formatted like in this sample, center-aligned unless stated otherwise, in order:
-
-\begin{enumerate}
-    \item Type of thesis (MSc THESIS): Arial, bold, uppercase (except the 'c' in "MSc"), 12pt.
-    \item Title: Arial, 12pt.
-    \item First \& last name of author: Arial, bold, 12pt.
-    \item Author's serial number: Arial, uppercase, 12pt.
-    \item Left-aligned: Supervisor(s) and 3-member examination committee: Arial, bold, uppsercase, 12pt.\\
-    Both sections contain:
-    \begin{itemize}
-        \item Name of committee member: Arial, bold, 12pt.
-        \item Title of committee member: Arial, 12pt.
-        \item Committee signatures
-    \end{itemize}
-    \item Examination Date: Arial, bold, 12pt.
-\end{enumerate}
-
-Their reverse pages are left blank.
-
-\subsection{Abstract} \label{abstract}
-
-Two abstracts, one in English and one in Greek, follow.
-The abstract contains the purpose and scope of this thesis, methodology, the experiments and result thereof.
-
-The abstract text is followed by the subject area and up to 5 keywords, in English and Greek after their respective abstracts.
-Each abstract plus subject area and keyword definition can span no more than 2 pages.
-Even-numbered pages are left blank if abstracts span only 1 page.
-
-\subsection{Other front matter pages} \label{other_front_matter_pages}
-
-The rest of the front matter pages are as follows:
-
-\begin{enumerate}
-    \item Inscription.
-    Optional, can be included by passing \emph{inscr} in the \verb|\documentclass| options.
-    Reverse page is left blank.
-    \item Acknowledgements.
-    Optional, can be included by passing \emph{ack} in the \verb|\documentclass| options.
-    Reverse page is left blank.
-    \item Table of contents.
-    Mandatory, contains the chapters, sections and any subdivisions, as well as a list of figures and a list of tables, if any.
-    \item Preface.
-    Optional, can be included by passing \emph{preface} in the \verb|\documentclass| options.
-\end{enumerate}
-
-\subsection{Page numbering} \label{page_numbering}
-
-Page numbering starts at 1 from the front cover, the English title page in this case, without printing the numbers.
-When printing on both sides of the sheet (two-sided by default), any blank pages are included towards the page count, but do not include any headers or footers including page numbers.
-If printing on one side of the page (done by including the \emph{oneside} option in the \verb|\documentclass|), only the pages on the right are printed and any blank pages (including those on the left side) are not included towards the page count.
-Numbering always finishes on the last printed page.
-
-On two-sided theses, numbers are printed on the center of each footer.
-On one-sided theses, numbers are printed on the right side of each footer.
-
-\subsection{Page formatting} \label{page_formatting}
-
-Pages are formatted as in this sample:
-
-\begin{itemize}
-    \item \textbf{Margins:} 2cm on all sides, plus a 0.5cm gutter on the center of the book where the pages are bound (i.e, on the left side for printed odd pages and on the right for printed even pages).
-    \item \textbf{Header:} 1.25cm from the top of the page.
-    Contains the title of the thesis, on the right side for odd pages, on the left for even pages, if printed two-side.
-    Appears only in the main matter, that is not in the cover pages or the front matter (abstract, inscription, table of contents, ...), and not in blank pages.
-    \item \textbf{Footer:} 1.25cm from the bottom of the page.
-    Contains the name(s) of the author(s)
-    \begin{itemize}
-        \item on the right side for odd pages, on the left for even pages, if printed two-side.
-        \item on the left side of all pages if printed one-side.
-    \end{itemize}
-    Appears only in the main matter, that is not in the cover pages or the front matter (abstract, inscription, table of contents, ...), and not in blank pages.
-    \item \textbf{Page number:} included in the footer
-    \begin{itemize}
-        \item at the center if printed two-side.
-        \item on the right if printed one-side.
-    \end{itemize}
-    \item \textbf{Paragraph formatting:}
-    \begin{itemize}
-        \item \textbf{Justification:} Justified, each non paragraph-breaking line covers the entire line width spaced as necessary.
-        \item \textbf{Paragraph spacing:} 0pt for the first, 6pt between all paragraphs.
-        \item \textbf{Line spacing:} 1 line.
-    \end{itemize}
-    \item \textbf{Font:} Arial, 12pt, Normal or Regular style
-    \item \textbf{Chapter numbering:} Arial, bold, 12pt or 14 pt
-    \item \textbf{Chapter title:} Arial, bold, uppercase, 14pt., centered
-    \item \textbf{Section and further division title:} Arial, bold, 12pt.
-    \item \textbf{Figures:} Each figure must be uniquely numbered either by chapter or by the whole document.
-    They must also include a caption below them, as in this sample.
-    \item \textbf{Tables:} Each table must be uniquely numbered either by chapter or by the whole document.
-    They must also include a caption above them, as in this sample.
-\end{itemize}
-
-\section{Sample section}
-
-The section title will appear in the Table of Contents.
-
-\subsection{Sample Subsection}
-
-The subsection title will appear in the Table of Contents.
-
-\subsubsection{Sample subsubsection}
-
-The subsubsection title will appear in the Table of Contents.
-
-\paragraph{Sample paragraph}
-
-The paragraph title will not appear in the Table of Contents.
-
-\subparagraph{Sample subparagraph}
-
-The subparagraph title will not appear in the Table of Contents.
-
 \chapter{A BRIEF INTRODUCTION TO \LaTeX} \label{introduction_to_latex}
 
-\LaTeX{} is a typesetting system.
-The authors compose a \textbf{.tex} file which is then compiled to produce a document, nowadays a PDF file.
-This chapter will give a brief, non-exhaustive introduction to the system.
-
-\section{Installing \LaTeX} \label{installing_latex}
-
-If you use macOS or Linux as your operating system, chances are \LaTeX{} is already included.
-Windows does not include \LaTeX{} out-of-the-box.
-If not, just install one of the following:
-\begin{itemize}
-    \item TeX Live (\url{https://www.tug.org/texlive/}).
-    Contains a comprehensive \LaTeX{} installation with most packages included.
-    Thus, it also requires a few GB worth of space in a typical installation.
-    Supports most if not all packages used in this sample.
-    \item MiKTeX (\url{https://miktex.org/}) is a more minimalist installation.
-    Typical installations only include the essential packages, with the option of downloading more, either from the console or automatically when compiling.
-    This document uses packages that are not included in the typical MiKTeX installation, but it will offer you to install them upon first compilation.
-\end{itemize}
-
-Both of these are cross-platform, they can install under Windows, macOS, or Linux.
-
-\section{Editing} \label{editing}
-
-\TeX{} files can be modified by any plain text processor program, such as Notepad.
-Compilation to PDF is traditionally done via the terminal.
-Nonetheless, it is recommended to use a dedicated \TeX{} IDE, a program designed to edit, compile and view the resulting PDF all in one program.
-
-Some IDEs one could use to edit and compile \TeX{} files are:
-\begin{itemize}
-    \item \textbf{TeXworks} (\url{https://tug.org/texworks/}).
-    Very basic functionality.
-    This is bundled with both TeX Live and MiKTeX, so by installing any of those you don't have to install this program as well.
-    \item \textbf{Texmaker} (\url{https://www.xm1math.net/texmaker/}).
-    More advanced functionality.
-    Includes document structure, symbol insertion, and other \LaTeX{} commands that can be added to the document with the push of a button.
-    \item \textbf{TeXstudio} (\url{https://www.texstudio.org/}).
-    Forked from Texmaker.
-    Functions almost the same as Texmaker.
-    \item \textbf{Kile} (\url{https://kile.sourceforge.io/}).
-    Built by KDE.
-\end{itemize}
-
-\section{Compiling} \label{compiling}
-
-Before we begin with the commands, I should mention that this project---either in English or Greek---uses the XeLaTeX engine to compile.
-This is because while LaTeX uses the ASCII character set to typeset, XeLaTeX uses Unicode, which includes a lot more characters than ASCII.
-
-The compilation recipe will typically consist of:
-\begin{enumerate}
-    \item Running xelatex
-    \item Running bibtex to compile the references
-    \item Running xelatex
-    \item Running xelatex
-\end{enumerate}
-
-It appears that \textit{xelatex} runs a total of 3 times, once before then twice after \textit{bibtex}.
-This is to ensure all \verb|\label|s have been scanned and paired with their \verb|\ref|.
 
 \section{Formatting} \label{formatting}
-
-\subsection{Basics} \label{basics}
-
-Take at look at the following excerpt:
-
-\begin{verbatim}
-This is the first paragraph.
-This is the next line, but is still part of the first paragraph.
-
-This is the second paragraph. Notice the blank line between the two.
-% This is a comment. Comments are not rendered in the final file.
-% Comments begin with the percent symbol(%)
-% and extend to the end of the line.
-\end{verbatim}
-
-In \LaTeX{}, it's rendered like this:
-
-This is the first paragraph.
-This is the next line, but is still part of the first paragraph.
-
-This is the second paragraph. Notice the blank line between the two.
-% This is a comment. Comments are not rendered in the typeset file.
-% Comments begin with the percent symbol(%) and extend to the end of the line.
-
-As we can see, if we type something onto the next line it will remain part of that paragraph.
-But if we leave one line blank between texts, the next part of the text will appear on a new paragraph.
-
-You might have also noticed that the lines starting with '\%' did not print.
-That's because the \% symbol works like the // in C-inspired languages: it begins a comment until the next line.
-"But wait", you might ask, "how did you type the '\%' just now"?
-Simple: if you type \verb|\%| in \LaTeX{} you'll get a \% character.
-Most commands begin with the backslash (\textbackslash) character, which is also used in escaping other special characters, as we'll see in \ref{escaping}.
-
-\subsection{Escaping} \label{escaping}
-Some characters like the \% are special, and behave differently in \LaTeX{} than in text documents.
-For example:
-\begin{itemize}
-    \item The \textbf{\%} starts comments.
-    \item The \textbf{\&} is used to separate columns in a row in tables.
-    \item The \textbf{\textbackslash\textbackslash} either creates a new line without breaking the paragraph or starts a new row in a table environment.
-    \item \textbf{\{} and \textbf{\}} to enclose into a group.
-    \item \textbf{\$} to write some math.
-    \item \textbf{\# \_ \~{} \^{}} as other reserved characters.
-\end{itemize}
-
-Most of these are escaped by adding the backslash character next to them (e.g. \textbackslash\&).
-But to print the backslash itself, only the \verb|\textbackslash| command will print the '\textbackslash'.
-
-\subsection{Formatting commands} \label{formatting_commands}
-
-Some \LaTeX{} commands act like their word processor equivalents.
-For example:
-
-\begin{center}
-    \begin{tabular}{c|c}
-        This... & will print this \\
-        \hline
-        \verb|\textbf{bold}| & \textbf{bold} \\
-        \verb|\textit{italics}| & \textit{italics} \\
-        \verb|\underline{underline}| & \underline{underline} \\
-        \verb|\textbf{\textit{bold and italics}}| & \textbf{\textit{bold and italics}}
-    \end{tabular}
-\end{center}
-
-Want to center something like the table above?
-Just type something like:
-\begin{verbatim}
-\begin{center}
-    I'm a centered section!
-    I start in the .tex file with \verb|\begin{center}|
-    and end with \verb|\end{center}|.
-\end{center}
-\end{verbatim}
-
-and you'll get:
-
-\begin{center}
-    I'm a centered section!
-    I start in the .tex file with \verb|\begin{center}|
-    and end with \verb|\end{center}|.
-\end{center}
-
-Want to make a list?
-For unordered (bulleted) lists:
-\begin{verbatim}
-\begin{itemize}
-    \item This is an item in an \textit{itemize} environment.
-    \item Each item starts with \verb|\item|
-          and continues until the next \verb|\item|
-          or \verb|\end{itemize}|.
-    \item You can also nest lists.
-          \begin{itemize}
-              \item Just open another \textit{itemize}
-                    environment inside.
-          \end{itemize}
-\end{itemize}
-\end{verbatim}
-
-will produce:
-\begin{itemize}
-    \item This is an item.
-    \item Each item starts with \verb|\item|
-    and continues until the next \verb|\item|
-    or \verb|\end{itemize}|.
-\item You can also nest lists.
-    \begin{itemize}
-        \item Just open another \textit{itemize} environment inside.
-    \end{itemize}
-\end{itemize}
-
-\clearpage
-
-If you want to make ordered lists, with numbers:
-\begin{verbatim}
-\begin{enumerate}
-    \item This is an ordered item
-          in an \textit{enumerate} environment.
-    \item It behaves like in the \textit{itemize} environment.
-          But instead of bullets that are the same for each item,
-          you see sequences of numbers or letters.
-    \item Once again, you may nest lists.
-          \begin{enumerate}
-              \item Just like that.
-              \item But you can go deeper:
-                    \begin{itemize}
-                        \item You can even nest unordered lists.
-                              \begin{enumerate}
-                                  \item Just how deep can this
-                                        rabbit hole go?
-                              \end{enumerate}
-                    \end{itemize}
-          \end{enumerate}
-    \item Phew, back at last!
-\end{enumerate}
-\end{verbatim}
-
-this is what you get:
-\begin{enumerate}
-    \item This is an ordered item in an \textit{enumerate} environment.
-    \item It behaves like in the \textit{itemize} environment.
-    But instead of bullets that are the same for each item,
-    you see sequences of numbers or letters.
-    \item Once again, you may nest lists.
-    \begin{enumerate}
-        \item Just like that.
-        \item But you can go deeper:
-        \begin{itemize}
-            \item You can even nest unordered lists.
-            \begin{enumerate}
-                \item Just how deep can this rabbit hole go?
-            \end{enumerate}
-        \end{itemize}
-    \end{enumerate}
-    \item Phew, back at last!
-\end{enumerate}
-
-To add footnotes, you can do something like this:
-
-\begin{verbatim}
-Hello there!\footnote{General Kenobi!}
-\end{verbatim}
-
-to get:
-
-Hello there!\footnote{General Kenobi!}
-
-Want to add URLs in your document? Simple! Just type:
-
-\begin{verbatim}
-\TeX{} Users Group homepage: \url{https://www.tug.org/}
-\end{verbatim}
-
-to get:
-
-\TeX{} Users Group homepage: \url{https://www.tug.org/}
 
 And speaking of links, if you wish to add a bibliographical reference as it's declared in the \textbf{references.bib} file, type:
 
@@ -2604,190 +2203,6 @@ is a well-known clustering algorithm.
 Just pay attention to the label as it is given in the corresponding \textbf{references.bib} entry.
 A sample has been given in this project.
 Bibliographical entries don't have to begin with "bib:", but it helps in organizing labels.
-
-Finally, if you want to link to another reference:
-\begin{verbatim}
-Go to Chapter \ref{figures_and_tables}.
-\end{verbatim}
-
-will show up as:
-
-Go to Chapter \ref{figures_and_tables}.
-
-As you can see, this not only displays the number of the "FIGURES AND TABLES" chapter, but clicking on it navigates to the start of that chapter.
-This can be used to reference anything with the \verb|\label{label_key}| command.
-Just tag something with \verb|\label{key}|, then refer (link) to it with \verb|\ref{key}|.
-
-Tables and figures are analyzed in the next sample chapter.
-If you want to know more about advanced \LaTeX{} commands, there are a few tutorials online.
-
-\subsection{Adding math equations} \label{adding_math_equations}
-
-\LaTeX{} also supports adding math formulae and equations.
-These expressions tend to use a different notation and font than the rest of the document.
-
-There are two ways to add a math expression: \emph{inline} and \emph{display}.
-
-In inline mode, the math expression is written on the same paragraph as the text.
-For example, typing:
-\begin{verbatim}
-One of Albert Einstein's famous equations is \(E = mc^2\),
-where \(E\) is energy,
-\(m\) is mass,
-\(c\) is the speed of light (approx. 300,000,000 m/s).
-\end{verbatim}
-
-will yield:
-
-One of Albert Einstein's famous equations is \(E = mc^2\),
-where \(E\) is energy,
-\(m\) is mass,
-\(c\) is the speed of light (approx. 300,000,000 m/s).
-
-In display mode, math expressions are rendered in their own blocks, usually centered.
-For instance, if one types:
-\begin{verbatim}
-Ohm's law is expressed as:
-\[V = I R \quad \textrm{or} \quad
-I = \frac{V}{R} \quad \textrm{or} \quad
-R = \frac{V}{I} \]
-where \(V\) is voltage, \(I\) is current, \(R\) is resistance.
-\end{verbatim}
-
-this will output:
-
-Ohm's law is expressed as:
-\[V = I R \quad \textrm{or} \quad
-I = \frac{V}{R} \quad \textrm{or} \quad
-R = \frac{V}{I} \]
-where \(V\) is voltage, \(I\) is current, \(R\) is resistance.
-
-And if you want numbered equations:
-\begin{verbatim}
-The ideal gas law is defined as:
-\begin{equation}
-    p V = n R T
-\end{equation}
-where \(p\) is pressure of the gas,
-\(V\) is the volume,
-\(n\) the number of moles (not the animal kind),
-\(R\) the gas constant,
-\(T\) the temperature expressed in the Kelvin scale.
-\end{verbatim}
-
-to display:
-
-The ideal gas law is defined as:
-\begin{equation}
-    p V = n R T
-\end{equation}
-where \(p\) is pressure of the gas,
-\(V\) is the volume,
-\(n\) the number of moles (not the animal kind),
-\(R\) the gas constant,
-\(T\) the temperature expressed in the Kelvin scale.
-
-\chapter{FIGURES AND TABLES} \label{figures_and_tables}
-
-\section{Inserting tables} \label{inserting_tables}
-
-Below is a sample table with its caption.
-Make sure you put the caption \textbf{over} the table.
-For instance, this code in \LaTeX{}:
-
-\begin{verbatim}
-\begin{table}
-    % this is before the table
-    \caption{A sample event log, sorted by timestamp}
-    % this is to label and include it in our list of tables
-    \label{tbl:event_log_sample}
-    \begin{center} % center the table
-    \begin{tabular}{c|c|c}
-        \textbf{Case Id} & \textbf{Activity} & \textbf{Timestamp} \\
-        \hline
-        1 & Activity A & 2021-05-24T12:30:00Z \\
-        1 & Activity B & 2021-05-24T12:30:26Z \\
-        1 & Activity C & 2021-05-24T12:31:04Z \\
-        2 & Activity A & 2021-05-24T13:19:39Z \\
-        2 & Activity B & 2021-05-24T13:19:50Z \\
-        3 & Activity A & 2021-05-24T13:19:59Z \\
-        2 & Activity C & 2021-05-24T13:22:14Z \\
-        3 & Activity B & 2021-05-24T13:24:24Z \\
-        4 & Activity A & 2021-05-24T13:25:06Z \\
-        3 & Activity C & 2021-05-24T13:25:27Z \\
-        4 & Activity B & 2021-05-24T13:25:53Z \\
-        4 & Activity C & 2021-05-24T13:27:48Z \\
-        \hline
-    \end{tabular}
-    \end{center}
-\end{table}
-\end{verbatim}
-
-renders table \ref{tbl:event_log_sample}:
-
-\begin{table}
-    % this is before the table
-    \caption{A sample event log, sorted by timestamp}
-    % this is to label and include it in our list of tables
-    \label{tbl:event_log_sample}
-    \begin{center} % center the table
-        \begin{tabular}{c|c|c}
-            \textbf{Case Id} & \textbf{Activity} & \textbf{Timestamp} \\
-            \hline
-            1 & Activity A & 2021-05-24T12:30:00Z \\
-            1 & Activity B & 2021-05-24T12:30:26Z \\
-            1 & Activity C & 2021-05-24T12:31:04Z \\
-            2 & Activity A & 2021-05-24T13:19:39Z \\
-            2 & Activity B & 2021-05-24T13:19:50Z \\
-            3 & Activity A & 2021-05-24T13:19:59Z \\
-            2 & Activity C & 2021-05-24T13:22:14Z \\
-            3 & Activity B & 2021-05-24T13:24:24Z \\
-            4 & Activity A & 2021-05-24T13:25:06Z \\
-            3 & Activity C & 2021-05-24T13:25:27Z \\
-            4 & Activity B & 2021-05-24T13:25:53Z \\
-            4 & Activity C & 2021-05-24T13:27:48Z \\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-
-\pagebreak
-
-\section{Inserting figures} \label{inserting_figures}
-
-Below is an example of inserting a figure with its caption.
-Make sure you put the caption \textbf{under} the figure.
-For example, this \LaTeX{} code:
-
-\begin{verbatim}
-\begin{figure}
-    % Define the figure file in the \includegraphics command
-    % Must be relative to one of the paths
-    % in the \graphicspath command at the top
-    \includegraphics[width=\linewidth]{k-means_steps}
-    % Place caption under the figure
-    \caption{The steps of a k-means clustering algorithm.
-        \cite{bib:k_means_clustering_algorithm}}
-    % Label the caption to include in the list of figures
-    \label{fig:k-means_steps}
-\end{figure}
-\end{verbatim}
-
-renders Figure \ref{fig:k-means_steps}:
-
-\begin{figure}
-    % Define the figure file in the \includegraphics command
-    % Must be relative to one of the paths
-    % in the \graphicspath command at the top
-    \includegraphics[width=\linewidth]{k-means_steps}
-    % Place caption under the figure
-    \caption{The steps of a k-means clustering algorithm.
-        \cite{bib:k_means_clustering_algorithm}}
-    % Label the caption to include in the list of figures
-    \label{fig:k-means_steps}
-\end{figure}
-
-\backmatter
 
 % abbreviations table
 \abbreviations
