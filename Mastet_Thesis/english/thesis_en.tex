@@ -636,7 +636,7 @@ The most fundamental single-qubit operation is the quantum $NOT$ gate, which is 
 	\label{eq:Unot}
 \end{equation}
 
-The remaining three Pauli operators, $\hat{I}$, $\hat{Y}$, and $\hat{Z}$, likewise function as quantum gates, given their unitary nature. The specific operations these gates perform on a qubit have been previously detailed in Section~\ref{manipulation} and Section~\ref{mult_qubit}.
+The remaining three Pauli operators, $\hat{I}$, $\hat{Y}$, and $\hat{Z}$, likewise function as quantum gates, given their unitary nature. The specific operations these gates perform on a qubit have been previously detailed in Section~\ref{manipulation} and Section\textbf{~\ref{mult_qubit}}.
 
 A critical component in quantum computation is the Hadamard gate, which transforms the standard basis states into a balanced superposition. The operation of the Hadamard gate on these basis states is defined as follows:
 
@@ -650,6 +650,8 @@ A critical component in quantum computation is the Hadamard gate, which transfor
 	\label{eq:ket_minus}
 \end{equation}
 
+Relative to the standard basis, the Hadamard gate can be represented in the following matrix form:
+
 \begin{equation}
 	\hat{H} = \frac{1}{\sqrt{2}} \begin{pmatrix} 
 		1 & 1 \\ 
@@ -658,10 +660,14 @@ A critical component in quantum computation is the Hadamard gate, which transfor
 	\label{eq:hadamard_matrix}
 \end{equation}
 
+We shall now investigate the method of using exponentiation to derive additional single-qubit gates. For any matrix $\hat{U}$ that is both unitary and Hermitian, it can be demonstrated via Taylor series expansion that:
+
 \begin{equation}
 	e^{-i\theta \hat{U} } = \cos(\theta)\hat{U} - i\sin(\theta)\hat{U}
 	\label{eq:exp_theta}
 \end{equation}
+
+This implies that by exponentiating a matrix, we can construct a new quantum gate. For instance, exponentiating the Pauli matrices generates gates that perform rotations of a qubit along the $x$, $y$, and $z$ axes of the Bloch sphere. These rotation matrices are defined as follows:
 
 \begin{equation}
 	\hat{R}_{x}(\theta) = e^{-i\theta\frac{X}{2}}	
@@ -690,10 +696,29 @@ A critical component in quantum computation is the Hadamard gate, which transfor
 	\label{eq:Rz}
 \end{equation}
 
+By utilizing the rotation matrices defined in Equations\textbf{~\ref{eq:Rx}}, \textbf{\ref{eq:Ry}}, and \textbf{\ref{ref:Rz}}, any arbitrary single-qubit gate can be represented as a specific sequence of rotations around the $z$ and $y$ axes. This approach is referred to as the $Z$-$Y$ decomposition. Although these axes are frequently selected, they are not unique; any pair of non-parallel axes on the Bloch sphere could be utilized for such a decomposition. For any unitary operator $U$, there exist real-valued parameters $a$, $b$, $c$, and $d$ such that:
+
 \begin{equation}
 	\hat{U} =e^{ia}\hat{R}_{z}(b)\hat{R}_{y}(c)\hat{R}_{z}(d) 
 	\label{eq:gate_decomp}
 \end{equation}
+
+Quantum gate operations can be visualized through circuit diagrams, where the inputs and outputs of each unitary operator are represented by horizontal lines known as "wires," and the gates themselves are depicted as rectangular blocks. A representative example of such a graphical representation is shown in Figure\textbf{~\ref{fig:circuit_diagram}}. The process is read from left to right: the left side indicates the initial state of the qubits prior to any operations, and gates are applied sequentially until the final output is reached on the right. In the illustrated example, a Hadamard gate and a Pauli-$X$ gate are initially applied to the first and third qubits, respectively. Subsequently, a two-qubit $U$ gate acts upon the first and second qubits, followed by a $Z$-axis rotation applied to the first qubit. Finally, a measurement is performed on the first and third qubits, represented by a meter symbol within a rectangle.
+
+\begin{figure}[H]
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\centering
+	\includegraphics[scale=1.0]{figures/circuit_diagram.png}
+	% Place caption under the figure
+	\caption{An example of a quantum circuit diagram
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:circuit_diagram}
+\end{figure}
+
+We shall now examine two-qubit gates, similar to the one illustrated in Figure\textbf{~\ref{fig:circuit_diagram}}. Gates involving multiple qubits are frequently referred to as controlled gates, as they consist of control and target qubits. In the specific case of a two-qubit gate, one qubit acts as the control while the other serves as the target. The state of the target qubit remains unchanged if the control qubit is in the state $\ket{0}$; conversely, if the control qubit is in the state $\ket{1}$, a specified unitary operation is applied to the target. The matrix representation of such a two-qubit controlled gate can be expressed as the following $4 \times 4$ matrix:
 
 \begin{equation}
 	\hat{U} = \begin{pmatrix}
@@ -709,6 +734,7 @@ A critical component in quantum computation is the Hadamard gate, which transfor
 	\label{eq:big_matrix}
 \end{equation}
 
+The specific two-qubit gate essential for the objectives of this thesis is the $controlled\text{-}NOT$ or $CNOT$ gate. Under this operation, the target qubit remains unchanged if the control qubit is in the state $\ket{0}$; however, if the control qubit is in the state $\ket{1}$, the target qubit undergoes a bit-flip, as if a $NOT$ gate had been applied. The transformations performed by the $CNOT$ gate on the complete set of basis input states are defined as follows:
 
 \[
 	CNOT\ket{00} = \ket{00} 
@@ -725,6 +751,8 @@ CNOT\ket{10} = \ket{11}
 \[
 CNOT\ket{11} = \ket{10} 
 \]
+
+Given the general matrix representation of a two-qubit gate and the specific transformations of the $CNOT$ gate on the qubit states, it follows that the $CNOT$ matrix is defined as:
 
 \begin{equation}
 	CNOT = \begin{pmatrix}
