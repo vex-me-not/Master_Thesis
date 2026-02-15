@@ -778,7 +778,7 @@ Basis encoding associates a computational basis state of an $n$-qubit system (su
 If the output of the algorithm is likewise encoded into a computational basis state, the value of the amplitudes $\alpha_i$ of each basis state has the role to mark the result of the computation with a high enough probability of being measured. For example,
 if the basis state $\ket{0011}$ with amplitude $\alpha_3$ has a probability $|\alpha_3|^2 > 0.5$ of being measured, repeated execution of the algorithm and measurement of the final state in the computational basis will reveal it as the most likely measurement result, and hence the overall result of the algorithm. The goal of a quantum algorithm is therefore to increase the probability or absolute square of the amplitude that corresponds to the basis state encoding the solution.
 
-As in classical computers, basis encoding uses a binary representation of numbers. A quantum state $\ket{\chi}$ with $\chi \in \mathbb{R}$ will therefore refer to a binary representation of $\chi$ with the number $n$ of bits that the qubit register encoding $\ket{\chi}$ provides. There are different ways to represent a real number in binary form, for example, by fixed or floating point representations. In the following, it is always assumed that such a strategy is given, and we will elaborate more on this point where the need arises.
+As in classical computers, basis encoding uses a binary representation of numbers. A quantum state $\ket{\chi}$ with $\chi \in \mathbb{R}$ will therefore refer to a binary representation of $\chi$ with the number $n$ of bits that the qubit register encoding $\ket{\chi}$ provides. There are different ways to represent a real number in binary form, for example, by fixed or floating point representations. However, basis encoding requires a lot of qubits, and it is therefore not a strategy typically found in near-term quantum algorithms.
 
 Time-evolution encoding prescribes to associate a scalar value $\chi \in \mathbb{R}$ with the time $t$ in the unitary evolution by a Hamiltonian $H$, resulting in Equation\textbf{~\ref{eq:time_evol}}
 
@@ -802,6 +802,48 @@ For some applications, it can be useful to encode matrices into the Hamiltonian 
 \end{equation}
 
 This allows us to perform the computations in two subspaces of the Hilbert space. Hamiltonian encoding allows us to extract and process the eigenvalues of $\mathbf{A}$, for example, to multiply $\mathbf{A}$ or $\mathbf{A^{−1}}$ with an amplitude-encoded vector. Strategies of applying operations with a custom Hamiltonian are called \textbf{Hamiltonian simulation}.
+
+Amplitude encoding is much less common in quantum computing, as it associates classical information such as a real vector with quantum amplitudes, and there are different options to do so. A normalised classical vector $\mathbf{x} \in \mathbb{C}^{2^N}, \sum_{k} |x_k|^2 = 1$ can be represented by the amplitudes of a quantum state $\ket{\psi} \in \mathcal{H}$ via Equation \textbf{~\ref{eq:stacked_dots}}
+
+\begin{equation}
+	\mathbf{x} = \begin{pmatrix}
+		x_1 \\
+		\vdots \\
+		x_{2^n}
+	\end{pmatrix}
+	\leftrightarrow
+	\ket{\psi_x} = \sum_{j=0}^{2^n-1} x_j\ket{j}
+	\label{eq:stacked_dots}
+\end{equation}
+
+
+In the same fashion, a matrix $\mathbf{A} \in \mathbb{C}^{2^n \times 2^m}$ with entries $a_{ij}$ that fulfill $\sum_{ij} |a_{ij}|^2 = 1$, can be encoded as seen in Equation \textbf{~\ref{eq:double_sum}} and enlarge the Hilbert space accordingly. 
+
+\begin{equation}
+	\ket{\psi_A} =\sum_{i=0}^{2^m-1} \sum_{j=0}^{2^n-1} a_{ij}\ket{i}\ket{j}
+	\label{eq:double_sum}
+\end{equation}
+
+This turns out to be rather useful for quantum algorithms, since the “index registers” $\ket{i}$, $\ket{j}$ refer to the $i$th row and the $j$th column, respectively. By fixing either of the registers, we can therefore address a row or column of the matrix. For Hermitian positive trace-1 matrices  $\mathbf{A} \in \mathbb{C}^{2^n \times 2^n}$, another option arises: One can associate its entries with the entries of a density matrix $\rho_A$, so that $a_{ij}	\leftrightarrow \rho_{ij}$.
+
+Encoding information into the probabilistic description of a quantum system necessarily poses severe limitations on which mathematical operations can be executed to transform the input. This becomes particularly important when wewant to perform a nonlinear map on the amplitudes, which is impossible to implement in a unitary fashion (at least without tricks that use measurements or marginalisation). This has been extensively debated under the keyword of “nonlinear quantum theories” [CITE,
+CITE], and it has been demonstrated that assumptions of nonlinear operators would immediately negate fundamental principles of nature that are widely believed to be true [CITE, CITE].
+
+Another obvious restriction of thismethod is that only normalised classical vectors can be processed. Effectively thismeans that quantum states represent the data in one less dimension orwith one less degree of freedom: a classical two-dimensional vector
+$\left( \begin{matrix} x_1 & x_2 \end{matrix} \right)^{\top}$ can only be associated with an amplitude vector $\left( \begin{matrix} \alpha_1 & \alpha_2 \end{matrix} \right)^{\top}$ of a qubit which fulfils $|\alpha_0|^2 + |\alpha_1|^2 = 1$. This means that it lies on a unit circle, a one-dimensional manifold in a two-dimensional space. Three-dimensional vectors encoded in three amplitudes of a 2-qubit quantum system (where the last of the four amplitudes is redundant and set to zero) will reduce the three-dimensional space to the surface of a sphere, and so on. A remedy can be to increase the space of the classical vector
+by one element set to 1 and, to normalise the resulting vector. After normalisation, this new element will carry full information about the normalisation constant, and hence about the original length of the vector.
+
+While amplitude encoding uses much less qubits than basis encoding, we will see that the routines preparing the dense amplitude vectors are very costly (in some sense trading space for time). One such routine is the Amplitude-Efficient State Preparation, that we will be using in this thesis to encode our data and we will discuss briefly.
+
+In general, Given an $n$-qubit quantum computer, the theoretical lower bound of the depth of an arbitrary state preparation circuit is known to be $\frac{2^n}{n}$. Current algorithms perform slightly worse with a bit less than $2^n$ parallel operations, most of which are expensive 2-qubit gates.
+
+To illustrate one way of doing state preparation in linear time, let us have a look at the routine presented by Möttönen et al. [CITE]. They consider the reverse problem, namely to map an arbitrary state $\ket{\psi}$ to the ground state $\ket{0\cdots0}$. In order to use this algorithm for our purpose, we simply need to invert each and every operation and apply them in reverse order.
+
+The basic idea is to control a rotation on qubit $q_s$  by all possible states of the previous qubits $q_1,\cdots,q_{s−1}$, using sequences of so-called \textbf{multi-controlled rotations}. In other words, we explicitly do a different rotation for each possible branch of the superposition, the one in which the previous qubits were in state $\ket{0\cdots0}$ to the branch in which they are in $\ket{1\cdots1}$. This is comparable to tossing $s − 1$ coins and manipulating the $s$th coin differently depending on the measurement outcome via a lookup table.
+
+A full sequence of multi-controlled rotations with angles $\beta_i$ (and where we do not specify the rotation axis $x$, $y$, $z$) consists of the successive application of the $2^{s−1}$ gates. Of course, we need a prescription to decompose sequences of multi-controlled rotations into elementary gates. If there are $s − 1$ control qubits, this is possible with $2^s$ $CNOT$s and $2^s$ single-qubit gates [CITE].
+
+For a general quantum state, one has to apply two cascades of such operations, where each cascade is a sequences of multi-controlled rotations that run trough all qubits $q_1$ to $q_n$. The first cascade uses $R_z$-rotations and has the effect of equalising the signs of the amplitudes until the state only has one global phase which we can ignore (remember, we are doing reverse state preparation). The second cascade applies $R_y$ rotations and has the effect of equalising all amplitudes to result in the ground state. 
 
 \subsection{Variational Quantum Classifier} \label{circuits}
 
