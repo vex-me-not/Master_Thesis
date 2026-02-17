@@ -102,8 +102,8 @@
 %
 % The title of the thesis
 %
-\titleGr{Συγκριτική Ανάλυση Κλασικών Μεθόδων Μηχανικής Μάθησης και Mεταβλητών Kβαντικών Tαξινομητών για την Ταξινόμηση Όγκων Μαστού με Χρήση Δεδομένων Παρακέντησης με λεπτή βελόνα }
-\titleEn{A Comparative Analysis of Classical Machine Learning and Variational Quantum Classifiers for Breast Tumor Classification Using Fine Needle Aspiration Data}
+\titleGr{Συγκριτική Ανάλυση Κλασικών Μεθόδων Μηχανικής Μάθησης και Mεταβλητών Kβαντικών Μεθόδων για την Ταξινόμηση Όγκων Μαστού }
+\titleEn{A Comparative Analysis of Classical Machine Learning Methods and Variational Quantum Methods for Breast Tumor Classification}
 
 %
 % Month followed by Year
@@ -251,7 +251,7 @@ Classification algorithms are designed to accurately categorize test data into d
 
 \subsection{Logistic Regression} \label{lr}
 
-Logistic Regression is a widely used linear classification algorithm that models the probability of a binary outcome as a function of the input features. Despite its name, Logistic Regression is a discriminative classifier rather than a regression model. It operates by computing a linear combination of the input variables and mapping this value to the interval [0,1] using the logistic (sigmoid) function. The output is interpreted as the probability that a sample belongs to the positive class, and a decision threshold, typically 0.5, is used to assign class labels.
+Logistic Regression is a widely used linear classification algorithm that models the probability of a binary outcome as a function of the input features. Despite its name, Logistic Regression is a discriminative classifier rather than a regression model. It operates by computing a linear combination of the input variables and mapping this value to the interval $[0,1]$ using the logistic (sigmoid) function. The output is interpreted as the probability that a sample belongs to the positive class, and a decision threshold, typically 0.5, is used to assign class labels.
 
 The model is trained by maximizing the likelihood of the observed data, which is equivalent to minimizing the log-loss (cross-entropy) function. To prevent overfitting, especially in high-dimensional settings, regularization terms such as L1 (lasso), L2 (ridge), or elastic net penalties are often incorporated. These penalties constrain the magnitude of the model coefficients and can also induce sparsity, improving generalization and interpretability. Logistic Regression is particularly valued in biomedical applications due to its transparency, as the learned coefficients directly reflect the direction and strength of each feature’s contribution to the class prediction.
 
@@ -302,7 +302,7 @@ It is broadly believed that, if large-scale quantum computers can be realized, t
 
 One of the fundamental building blocks of quantum computers is the qubit (short for quantum bit), which serves as the quantum mechanical analogue of a classical bit. In classical computing, information is represented by bits, each restricted to a value of either zero or one. In contrast, quantum computing utilizes qubits to store and encode information, allowing for a more complex representation of data.
 
-Generally, qubits are created by manipulating and measuring systems that exhibit quantum mechanical behavior, such as superconducting circuits, photons, electrons, trapped ions, and atoms. Today, qubits can be synthesized through various physical implementations, each offering distinct advantages for specific computational tasks. Some of the most common types of qubits include:
+Generally, qubits are created by manipulating and measuring systems that exhibit quantum mechanical behavior, such as superconducting circuits, photons, electrons, trapped ions, and atoms. Today, qubits can be synthesized through various physical implementations, each offering distinct advantages for specific computational tasks. Some of the most common types of qubits include \cite{bib:IBM}:
 
 \begin{itemize}
 	\item \textbf{Superconducting qubits}: Fabricated from superconducting materials and operated at cryogenic temperatures, these qubits are preferred for their rapid gate speeds and precise control.
@@ -365,7 +365,7 @@ This representation allows for the visualization of a qubit via the Bloch sphere
 	\centering % This centers the image horizontally
 	\includegraphics[scale=1.0]{figures/qubit_bloch_sphere.png}
 	% Place caption under the figure
-	\caption{Bloch sphere representation of a qubit
+	\caption{Bloch sphere representation of a qubit \cite{bib:schuld_petruccione}
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:bloch_sphere}
@@ -713,7 +713,7 @@ Quantum gate operations can be visualized through circuit diagrams, where the in
 	%\centering
 	\includegraphics[width=\linewidth]{figures/circuit_diagram.png}
 	% Place caption under the figure
-	\caption{An example of a quantum circuit diagram
+	\caption{An example of a quantum circuit diagram \cite{bib:bsc_thesis}
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:circuit_diagram}
@@ -860,7 +860,7 @@ These algorithms are characterized not by a fixed sequence of operations, but by
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{figures/general_variational.png}
 	% Place caption under the figure
-	\caption{General structure of a variational quantum circuit
+	\caption{General structure of a variational quantum circuit \cite{bib:bsc_thesis}
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:general_variational}
@@ -884,19 +884,19 @@ Fine Needle Aspiration (FNA) is a minimally invasive technique used to collect l
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{figures/fna_nuclei.png}
 	% Place caption under the figure
-	\caption{A magnified image of a malignant breast FNA with the visible cell nuclei having been outlined with the help of a curve fitting program.
+	\caption{A magnified image of a malignant breast FNA with the visible cell nuclei having been outlined with the help of a curve fitting program \cite{bib:fna_image}.
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:nuclei}
 \end{figure}
 
-In recent years, various classical machine learning approaches have been proposed for predicting malignancy based on different sets of features, depending on the experimental design and methodology of each study [2], [4], [5]. In this work, we utilize a dataset derived from measurements obtained from fine needle aspirates to evaluate the predictive power of its features. A range of machine learning algorithms is examined, including Logistic Regression, Support Vector Machines, Linear Discriminant Analysis, Gaussian Naïve Bayes, LightGBM, and Random Forest classifiers, as implemented in the scikit-learn library, to distinguish between benign and malignant breast tissue samples [6].
+In recent years, various classical machine learning approaches have been proposed for predicting malignancy based on different sets of features, depending on the experimental design and methodology of each study [2], [4], [5]. In this work, we utilize a dataset derived from measurements obtained from fine needle aspirates to evaluate the predictive power of its features. A range of machine learning algorithms is examined, including Logistic Regression, Support Vector Machines, Linear Discriminant Analysis, Gaussian Naïve Bayes, LightGBM, and Random Forest classifiers, as implemented in the scikit-learn \cite{bib:scikit-learn,bib:sklearn_api} library, to distinguish between benign and malignant breast tissue samples [6].
 
 Our analysis consists of three main steps. First, we perform an exploratory data analysis to examine the provided data, determining the number of features, their numerical ranges, and their distributions. We also check for missing values and potential class imbalances; this process allows us to understand the underlying patterns within the data and assess the complexity of the classification problem. The second step involves identifying which of the six proposed models classifies the breast cancer tumors most accurately. To achieve this, we employ repeated nested cross-validation, splitting the dataset into training and validation subsets. All necessary data cleaning and preprocessing are performed within this stage to prevent data leakage between the subsets. Finally, once the best-performing model is identified, we fine-tune it using bootstrapping to gain a better understanding of its generalization potential. The resulting model is then trained on the entire dataset and saved. For future inference, the saved model can be loaded and applied to unseen data.
 
 \section{Exploratory Data Analysis} \label{eda}
 
-Loading the dataset using the pandas Python library, we observe that it contains 569 entries across 32 columns. One column contains the tumor prognosis, indicating whether it is malignant or benign, while another represents a unique identification number for each sample. The remaining 30 columns constitute the features, which consist of measurements taken from masses drawn via fine-needle aspirates. Specifically, these features describe the cell nuclei and are based on properties such as the radius, defined as the mean distance from the center to perimeter points; texture, representing the standard deviation of grayscale values; perimeter; area; smoothness, or the local variation in radius lengths; compactness, calculated as perimeter squared divided by area minus one; concavity, the severity of concave portions of the contour; concave points, the number of concave portions of the contour; symmetry; and fractal dimension, a measure of complexity using coastline approximation. Each of these properties is characterized in three ways: the mean value, the standard error, and the worst value, which is the mean of the three largest recorded values.
+Loading the dataset using the pandas \cite{bib:pandas,bib:pandas_software} Python library, we observe that it contains 569 entries across 32 columns. One column contains the tumor prognosis, indicating whether it is malignant or benign, while another represents a unique identification number for each sample. The remaining 30 columns constitute the features, which consist of measurements taken from masses drawn via fine-needle aspirates. Specifically, these features describe the cell nuclei and are based on properties such as the radius, defined as the mean distance from the center to perimeter points; texture, representing the standard deviation of grayscale values; perimeter; area; smoothness, or the local variation in radius lengths; compactness, calculated as perimeter squared divided by area minus one; concavity, the severity of concave portions of the contour; concave points, the number of concave portions of the contour; symmetry; and fractal dimension, a measure of complexity using coastline approximation. Each of these properties is characterized in three ways: the mean value, the standard error, and the worst value, which is the mean of the three largest recorded values.
 
 Upon loading the dataset, we find that it contains no missing or duplicate values. This is highly advantageous, as the presence of missing data would otherwise necessitate an imputation strategy to fill gaps or the removal of duplicate entries. While several reliable imputation methods exist for datasets of this nature, none can guarantee that synthesized values reflect the true underlying data; consequently, such adjustments could inadvertently skew the evaluation results. Furthermore, the absence of duplicates ensures that the sample size remains intact, as any further reduction of entries would only hinder the evaluation by making the available data even more scarce.
 
@@ -929,7 +929,7 @@ Observing the distribution of each feature, we notice that the majority of them 
 	\label{fig:feature_distro}
 \end{figure}
 
-Following this, we proceed to inspect the correlation between the features and the diagnosis label. Based on Pearson’s correlation coefficient, we find that 15 out of the 30 features are heavily correlated, either positively or negatively, with the class label. These features include $radius_mean$, $perimeter_mean$, $area_mean$, $compactness_mean$, $concavity_mean$, $concave points_mean$, $radius_se$, $perimeter_se$, $area_se$, $radius_worst$, $perimeter_worst$, $area_worst$, $compactness_worst$, $concavity_worst$, and $concave points_worst$. While we could elect to retain only these features and significantly reduce the dimensionality of the problem, we believe that in a critical task like breast cancer detection, every feature provides valuable information. 
+Following this, we proceed to inspect the correlation between the features and the diagnosis label. Based on Pearson’s correlation coefficient, we find that 15 out of the 30 features are heavily correlated, either positively or negatively, with the class label. These features include $radius mean$, $perimeter mean$, $area mean$, $compactness mean$, $concavity mean$, $concave points mean$, $radius se$, $perimeter se$, $area se$, $radius worst$, $perimeter worst$, $area worst$, $compactness worst$, $concavity worst$, and $concave points worst$. While we could elect to retain only these features and significantly reduce the dimensionality of the problem, we believe that in a critical task like breast cancer detection, every feature provides valuable information. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -943,7 +943,7 @@ Following this, we proceed to inspect the correlation between the features and t
 	\label{fig:feature_corr_with_diagno}
 \end{figure}
 
-Regarding the feature-wise correlation, we detect no significant linear relationships between features that are not naturally expected to be correlated. For instance, $radius_mean$ is heavily correlated with $perimeter_mean$, and $radius_worst$ shows a strong correlation with $perimeter_worst$. Such relationships are expected, as the radius is fundamentally used to calculate the perimeter in most circular or near-circular shapes.
+Regarding the feature-wise correlation, we detect no significant linear relationships between features that are not naturally expected to be correlated. For instance, $radius mean$ is heavily correlated with $perimeter mean$, and $radius worst$ shows a strong correlation with $perimeter worst$. Such relationships are expected, as the radius is fundamentally used to calculate the perimeter in most circular or near-circular shapes.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -993,9 +993,9 @@ To determine which classical machine learning method is most suitable for our tu
 
 \subsection{Classical Models and their Respective Hyperparameters} \label{clas_models}
 
-To determine the most effective classifier for the tumor classification task, six well-established supervised learning algorithms were evaluated. These models were deliberately chosen to span a broad spectrum of learning paradigms, including linear, probabilistic, discriminant, kernel-based, ensemble, and gradient boosting approaches, thereby enabling a comprehensive comparison of modeling strategies. For each classifier, hyperparameter optimization was carried out using Optuna, a Bayesian optimization framework that efficiently explores high-dimensional search spaces. This tuning process was embedded within the inner loop of a repeated nested cross-validation (rnCV) pipeline, ensuring that hyperparameter selection was strictly separated from performance estimation and thereby preventing information leakage. The first five models were implemented using the scikit-learn  [CITE] library, while the gradient boosting model was implemented using the dedicated LightGBM [CITE] library.
+To determine the most effective classifier for the tumor classification task, six well-established supervised learning algorithms were evaluated. These models were deliberately chosen to span a broad spectrum of learning paradigms, including linear, probabilistic, discriminant, kernel-based, ensemble, and gradient boosting approaches, thereby enabling a comprehensive comparison of modeling strategies. For each classifier, hyperparameter optimization was carried out using Optuna \cite{bib:optuna}, a Bayesian optimization framework that efficiently explores high-dimensional search spaces. This tuning process was embedded within the inner loop of a repeated nested cross-validation (rnCV) pipeline, ensuring that hyperparameter selection was strictly separated from performance estimation and thereby preventing information leakage. The first five models were implemented using the scikit-learn \cite{bib:sklearn_api} library, while the gradient boosting model was implemented using the dedicated LightGBM \cite{bib:lightgbm_library} library.
 
-Logistic Regression (LR) was employed as a representative linear classifier. This model estimates the log-odds of the binary target variable as a linear combination of the input features and is particularly effective when the classes are approximately linearly separable. Beyond its predictive capability, Logistic Regression offers strong interpretability, as model coefficients can be directly linked to feature influence. Hyperparameter tuning focused on the type of regularization applied to mitigate overfitting, including ($l_1$), ($l_2$), and elastic net penalties. The inverse regularization strength was also optimized, allowing control over the bias–variance trade-off, while the elastic net mixing parameter was tuned when applicable. The saga solver was selected due to its compatibility with elastic net regularization and its efficiency on larger datasets.
+Logistic Regression (LR) was employed as a representative linear classifier. This model estimates the log-odds of the binary target variable as a linear combination of the input features and is particularly effective when the classes are approximately linearly separable. Beyond its predictive capability, Logistic Regression offers strong interpretability, as model coefficients can be directly linked to feature influence. Hyperparameter tuning focused on the type of regularization applied to mitigate overfitting, including ($l_1$), ($l_2$), and $elastic net$ penalties. The inverse regularization strength was also optimized, allowing control over the bias–variance trade-off, while the elastic net mixing parameter was tuned when applicable. The saga solver was selected due to its compatibility with elastic net regularization and its efficiency on larger datasets.
 
 Gaussian Naive Bayes (GNB) was included as a probabilistic baseline model. This classifier assumes that features are conditionally independent given the class label and that each feature follows a Gaussian distribution within each class. Despite the simplicity and often unrealistic nature of these assumptions, GNB is computationally efficient and can perform surprisingly well in practice, particularly on smaller datasets. Hyperparameter tuning was limited to the variance smoothing parameter, which adds a small constant to feature variances in order to enhance numerical stability and prevent division-by-zero errors during likelihood estimation.
 
@@ -1178,7 +1178,7 @@ In summary, bootstrapping provides a powerful and flexible framework for estimat
 
 \subsection{95\% Confidence Intervals based on bootstrapping} \label{ci}
 
-After bootstrapping five thousand sets on our Logistic Regression model using the validation subset, we obtained the 95\% confidence intervals for the nine key metrics. Accuracy lies within the [0.9595, 1] interval, while precision and specificity both maintain a perfect [1, 1] interval. Recall is situated between [0.9189, 1.000], and the F1-score falls within [0.9577, 1]. Additionally, the NPV is in the [0.9552, 1] range, and the MCC, a crucial metric for binary classification, lies within [0.9395, 1]. Both the ROC AUC and PR AUC remain exceptionally high, with intervals of [0.9919, 1] and [0.9877, 1], respectively. Notably, every metric reaches a perfect upper bound of 1.0, while the lower bounds remain consistently above 91\%. Furthermore, those metrics that demonstrated perfect mean scores during the rnCV process continue to exhibit high performance throughout the bootstrapping analysis.
+After bootstrapping five thousand sets on our Logistic Regression model using the validation subset, we obtained the 95\% confidence intervals for the nine key metrics. Accuracy lies within the $[0.9595, 1]$ interval, while precision and specificity both maintain a perfect $[1, 1]$ interval. Recall is situated between $[0.9189, 1.000]$, and the F1-score falls within $[0.9577, 1]$. Additionally, the NPV is in the $[0.9552, 1]$ range, and the MCC, a crucial metric for binary classification, lies within $[0.9395, 1]$. Both the ROC AUC and PR AUC remain exceptionally high, with intervals of $[0.9919, 1]$ and $[0.9877, 1]$, respectively. Notably, every metric reaches a perfect upper bound of 1.0, while the lower bounds remain consistently above 91\%. Furthermore, those metrics that demonstrated perfect mean scores during the rnCV process continue to exhibit high performance throughout the bootstrapping analysis.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1192,7 +1192,7 @@ After bootstrapping five thousand sets on our Logistic Regression model using th
 	\label{fig:violin_plot}
 \end{figure} 
 
-As a final step in our classical approach, we utilize the entire dataset to train and fine-tune the Logistic Regression model, from which we extract the 16 most influential features based on the descending absolute values of their coefficients. These features, in order of impact, are $texture_worst$, $area_se$, $texture_mean$, $concave points_mean$, $concavity_worst$, $symmetry_worst$, $concavity_mean$, $compactness_se$, $area_worst$, $smoothness_worst$, $radius_se$, $symmetry_se$, $concave points_worst$, $radius_worst$, $perimeter_worst$, and $fractal_dimension_se$. Upon examining the coefficients, we observe that $compactness_se$, $symmetry_se$, and $fractal_dimension_se$ are negative, indicating that higher values in these features are associated with the majority class—the benign tumors. Conversely, the remaining 13 features possess positive coefficients, suggesting that higher measurements in these areas correlate with an increased likelihood of the minority class, which corresponds to malignant tumors.
+As a final step in our classical approach, we utilize the entire dataset to train and fine-tune the Logistic Regression model, from which we extract the 16 most influential features based on the descending absolute values of their coefficients. These features, in order of impact, are $texture worst$, $area se$, $texture mean$, $concave points mean$, $concavity worst$, $symmetry worst$, $concavity mean$, $compactness se$, $area worst$, $smoothness worst$, $radius se$, $symmetry se$, $concave points_worst$, $radius worst$, $perimeter worst$, and $fractal dimension se$. Upon examining the coefficients, we observe that $compactness se$, $symmetry se$, and $fractal dimension se$ are negative, indicating that higher values in these features are associated with the majority class—the benign tumors. Conversely, the remaining 13 features possess positive coefficients, suggesting that higher measurements in these areas correlate with an increased likelihood of the minority class, which corresponds to malignant tumors.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1208,9 +1208,9 @@ As a final step in our classical approach, we utilize the entire dataset to trai
 
 By saving our final fine-tuned model for future inference on unseen data, we conclude our investigation into classical machine learning methods. This marks the transition from establishing a robust performance benchmark with traditional algorithms to exploring quantum approaches for the same classification task.
 
-\chapter{RESULTS FROM QUANTUM MACHINE LEARNING METHODS} \label{qml}
+\chapter{RESULTS FROM VARIATIONAL QUANTUM METHODS} \label{qml}
 
-Following the determination that Logistic Regression represents the most efficacious classical machine learning approach for the current tumor classification problem, the research transitions toward the implementation of Quantum Machine Learning (QML) paradigms. Specifically, this study investigates the Variational Quantum Classifier (VQC) to identify optimal sets of trainable parameters that provide a robust and satisfactory solution to the diagnostic task. This exploration involves a systematic evaluation of the VQC's classification capabilities across architectures consisting of 1, 2, 3, 4, and 5 qubits, respectively. To facilitate this, Principal Component Analysis (PCA) is employed to perform the necessary dimensionality reduction, ensuring the input features are structurally compatible with the constraints of the quantum circuits. The computational implementation of this framework is supported by the PennyLane \textbf{[CITE]} Python library for quantum circuit simulation and differentiable programming, while NumPy facilitates essential numerical manipulations. Furthermore, pandas and scikit-learn are utilized for data orchestration and dimensionality reduction, while Seaborn \textbf{[CITE]} and Matplotlib \textbf{[CITE]} are employed for high-fidelity data visualization and statistical plotting.
+Following the determination that Logistic Regression represents the most efficacious classical machine learning approach for the current tumor classification problem, the research transitions toward the implementation of Quantum Machine Learning (QML) paradigms. Specifically, this study investigates the Variational Quantum Classifier (VQC) to identify optimal sets of trainable parameters that provide a robust and satisfactory solution to the diagnostic task. This exploration involves a systematic evaluation of the VQC's classification capabilities across architectures consisting of 1, 2, 3, 4, and 5 qubits, respectively. To facilitate this, Principal Component Analysis (PCA) is employed to perform the necessary dimensionality reduction, ensuring the input features are structurally compatible with the constraints of the quantum circuits. The computational implementation of this framework is supported by the PennyLane \cite{bib:pennylane} Python library for quantum circuit simulation and differentiable programming, while NumPy facilitates essential numerical manipulations. Furthermore, pandas and scikit-learn are utilized for data orchestration and dimensionality reduction, while Seaborn \cite{bib:seaborn} and Matplotlib \cite{bib:matplotlib} are employed for high-fidelity data visualization and statistical plotting.
 
 A critical component of this transition involves a refined approach to data management and integrity, starting with a tripartite division of the dataset. Unlike the previous classical approach, we utilize a 60-20-20 split, wherein 60\% of the original data is allocated for model training, 20\% is reserved for validation to guide the optimization of variational parameters, and the remaining 20\% serves as a dedicated test set for final, unbiased model evaluation. To maintain the statistical integrity of the dataset, class imbalance is meticulously accounted for through stratified sampling across all three subsets, ensuring that the proportional representation of benign and malignant cases remains consistent. Furthermore, to mitigate the significant risks associated with data leakage, we ensure that no information from the validation or test sets influences the training phase. In practical terms, this necessitates that any preprocessing transformers or feature scalers, including the PCA model, are fitted exclusively on the training subset and subsequently applied to the validation and test sets only after the initial stratified split has been performed.
 
@@ -2109,7 +2109,7 @@ Should we observe the progression of the four key metrics for the training and v
 	\label{fig:5_qubits_best_metrics_biased}
 \end{figure}
 
-\section{Final Discussion} \label{final_disc}
+\chapter{COMPARISON OF THE RESULTS} \label{final_disc}
 
 In the final steps of this examination, we present a summary and comparison of the results obtained from the top-performing models for both methods across all runs and qubit configurations. This analysis focuses on the scores of the four key metrics, accuracy, precision, recall, and F1-score, while also detailing the number of layers utilized by each best performer, the total count of trainable parameters, and the number of epochs required to reach the reported scores. Finally, we conduct a brief comparison between the average performance of the two quantum methods and the Logistic Regression classifier, which was determined to be the optimal classical model for solving this tumor classification problem.
 
@@ -2201,28 +2201,9 @@ With that in mind, we can see that our quantum approach demonstrates clear super
 	\label{fig:vqc_vs_classical}
 \end{figure}
 
+
+\chapter{CONCLUSION} \label{conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FROM TEMPLATE
-
-\chapter{A BRIEF INTRODUCTION TO \LaTeX} \label{introduction_to_latex}
-
-
-\section{Formatting} \label{formatting}
-
-And speaking of links, if you wish to add a bibliographical reference as it's declared in the \textbf{references.bib} file, type:
-
-\begin{verbatim}
-The K-means algorithm\cite{bib:k_means_clustering_algorithm}
-is a well-known clustering algorithm.
-\end{verbatim}
-
-to render:
-
-The K-means algorithm\cite{bib:k_means_clustering_algorithm}
-is a well-known clustering algorithm.
-
-Just pay attention to the label as it is given in the corresponding \textbf{references.bib} entry.
-A sample has been given in this project.
-Bibliographical entries don't have to begin with "bib:", but it helps in organizing labels.
 
 % abbreviations table
 \abbreviations
@@ -2254,6 +2235,7 @@ Bibliographical entries don't have to begin with "bib:", but it helps in organiz
 
 % manually include the bibliography
 \bibliographystyle{IEEEtran}
+\nocite{*}
 {\footnotesize \bibliography{IEEEabrv,references}}
 % include it also in ToC (do sth on your own)
 \addcontentsline{toc}{chapter}{BIBLIOGRAPHY}

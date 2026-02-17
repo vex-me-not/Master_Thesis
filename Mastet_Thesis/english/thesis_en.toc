@@ -35,17 +35,16 @@
 \contentsline {section}{\numberline {2.4}Finetuning the Best Model}{61}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Bootstrapping}{61}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}95\% Confidence Intervals based on bootstrapping}{62}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}RESULTS FROM QUANTUM MACHINE LEARNING METHODS}{65}{chapter.3}%
+\contentsline {chapter}{\numberline {3}RESULTS FROM VARIATIONAL QUANTUM METHODS}{65}{chapter.3}%
 \contentsline {section}{\numberline {3.1}1-qubit Results}{70}{section.3.1}%
 \contentsline {section}{\numberline {3.2}2-qubits Results}{82}{section.3.2}%
 \contentsline {section}{\numberline {3.3}3-qubits Results}{90}{section.3.3}%
 \contentsline {section}{\numberline {3.4}4-qubits Results}{99}{section.3.4}%
 \contentsline {section}{\numberline {3.5}5-qubits Results}{108}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Final Discussion}{116}{section.3.6}%
-\contentsline {chapter}{\numberline {4}A BRIEF INTRODUCTION TO \LaTeX }{123}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Formatting}{123}{section.4.1}%
-\contentsline {chapter}{ABBREVIATIONS - ACRONYMS}{125}{chapter*.82}%
-\contentsline {chapter}{\numberline {A}FIRST APPENDIX}{127}{appendix.A}%
-\contentsline {chapter}{\numberline {B}SECOND APPENDIX}{129}{appendix.B}%
-\contentsline {chapter}{APPENDICES}{129}{section*.83}%
-\contentsline {chapter}{BIBLIOGRAPHY}{131}{appendix*.84}%
+\contentsline {chapter}{\numberline {4}COMPARISON OF THE RESULTS}{117}{chapter.4}%
+\contentsline {chapter}{\numberline {5}CONCLUSION}{125}{chapter.5}%
+\contentsline {chapter}{ABBREVIATIONS - ACRONYMS}{127}{chapter*.82}%
+\contentsline {chapter}{\numberline {A}FIRST APPENDIX}{129}{appendix.A}%
+\contentsline {chapter}{\numberline {B}SECOND APPENDIX}{131}{appendix.B}%
+\contentsline {chapter}{APPENDICES}{131}{section*.83}%
+\contentsline {chapter}{BIBLIOGRAPHY}{135}{appendix*.84}%
