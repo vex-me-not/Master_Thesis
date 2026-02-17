@@ -755,7 +755,7 @@ includehead,includefoot]{geometry} % add option showframe=true for debugging
 % Rename Bibliography to References
 %
 %\renewcommand{\bibname}{REFERENCES}
-\setlocalecaption{english}{bib}{REFERENCES}
+\setlocalecaption{english}{bib}{BIBLIOGRAPHY}
 \setlocalecaption{greek}{bib}{ΑΝΑΦΟΡΕΣ}
 
 %

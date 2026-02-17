@@ -36,7 +36,8 @@
 %		only one side of each page, the other side being left blank.
 %		Default is "twoside", which is used when this option is omitted.
 %
-\documentclass[en,inscr,ack,preface]{dimscthesis}
+\documentclass[en]{dimscthesis}
+%\documentclass[en,inscr,ack,preface]{dimscthesis}
 
 % Scans for figures relative to this file
 \graphicspath{ {./figures/} }
@@ -284,7 +285,7 @@ LightGBM is a gradient boosting framework based on decision trees that is design
 
 Unlike traditional level-wise tree growth, LightGBM expands the leaf with the greatest loss reduction, allowing it to capture complex patterns with fewer trees. Regularization techniques such as learning rate control, tree depth constraints, and feature subsampling are employed to mitigate overfitting. LightGBM is particularly well-suited for large, high-dimensional datasets and often achieves state-of-the-art performance in classification tasks, albeit at the cost of reduced interpretability compared to linear models.
 
-% \chapter{INTRODUCTION} \label{introduction}
+
 \section{Quantum Computing and Quantum Machine Learning} \label{quantum}
 
 Quantum theory, often used interchangeably with the term quantum mechanics, acts primarily as a mathematical framework for calculating the statistical likelihood of specific results when measuring what are known as quantum systems. These systems generally consist of microscopic entities that exhibit behaviors that cannot be explained by the traditional laws of Newtonian mechanics. Practical instances where these classical rules fail, and where quantum calculus must be applied, include the study of the hydrogen atom, the analysis of light at very low intensities, or the behavior of a few electrons within a magnetic field.
@@ -307,7 +308,7 @@ Generally, qubits are created by manipulating and measuring systems that exhibit
 	\item \textbf{Superconducting qubits}: Fabricated from superconducting materials and operated at cryogenic temperatures, these qubits are preferred for their rapid gate speeds and precise control.
 	\item \textbf{Trapped ion qubits}: These consist of individual ions confined by electromagnetic fields. They are recognized for their long coherence times and high-fidelity measurements, though they typically operate at slower speeds than superconducting variants.
 	\item \textbf{Quantum dots}: These tiny semiconductors capture a single electron to serve as a qubit. They offer significant potential for scalability due to their compatibility with existing semiconductor manufacturing processes.
-	\item Photons: As individual particles of light, photons can encode quantum information and transmit it over long distances via optical fibers. Consequently, they are essential for applications in quantum communication and cryptography.
+	\item \textbf{Photons}: As individual particles of light, photons can encode quantum information and transmit it over long distances via optical fibers. Consequently, they are essential for applications in quantum communication and cryptography.
 	
 \end{itemize}
 
@@ -772,11 +773,15 @@ Given the general matrix representation of a two-qubit gate and the specific tra
 
 In this section, we present several techniques for encoding or embedding classical data into an $n$-qubit quantum system. While the strategy for data encoding is of paramount importance in the field of quantum machine learning, it often remains a secondary consideration in other areas of quantum computation; consequently, specialized terminology for these methods has not been widely standardized. For the purposes of this discussion, we will categorize these approaches as \textbf{basis} encoding, \textbf{amplitude} encoding, \textbf{time-evolution} encoding, and \textbf{Hamiltonian} encoding.
 
+\subsubsection{Basis Encoding}
+
 Basis encoding establishes a direct correspondence between an $n$-bit classical string, such as $0011$, and its equivalent computational basis state in an $n$-qubit system, denoted as $\ket{0011}$ or $\ket{3}$. This method represents the most intuitive form of data embedding, as it essentially replaces each classical bit with its corresponding qubit. A primary advantage of this approach is that it allows quantum operations to act in parallel across all bit sequences within a quantum superposition.
 
 In scenarios where the output of an algorithm is similarly encoded into a computational basis state, the amplitudes $\alpha_i$ of each basis state serve to identify the computational result with a sufficiently high measurement probability. For instance, if the basis state $\ket{0011}$ possesses an amplitude $\alpha_3$ such that the probability $|\alpha_3|^2 > 0.5$, then repeated execution and measurement of the final state in the computational basis will identify it as the most probable outcome, representing the algorithm's result. Consequently, the primary objective of a quantum algorithm is to amplify the probability—or the squared magnitude of the amplitude—associated with the specific basis state that encodes the correct solution..
 
 Consistent with classical computing, basis encoding utilizes a binary representation of numerical values. In this framework, a quantum state $\ket{\chi}$ for a real number $\chi \in \mathbb{R}$ corresponds to the binary representation of $\chi$ within a qubit register of size $n$. Various methods exist for translating real numbers into binary format, such as fixed-point or floating-point representations. Nevertheless, because basis encoding necessitates a high qubit count, it is generally not a practical strategy for implementation on near-term quantum hardware.
+
+\subsubsection{Time-evolution Encoding}
 
 Time-evolution encoding involves associating a scalar value $\chi \in \mathbb{R}$ with the temporal parameter $t$ in the unitary evolution governed by a Hamiltonian $H$. This relationship is expressed in Equation~\ref{eq:time_evol}.
 
@@ -786,6 +791,8 @@ Time-evolution encoding involves associating a scalar value $\chi \in \mathbb{R}
 \end{equation}
 
 Consequently, the state resulting from the evolution, $\ket{\psi(\chi)} = U(\chi)\ket{\psi_0}$, depends on the parameter $\chi$ in a manner determined by the Hamiltonian $H$. In the field of quantum machine learning, this encoding method is frequently employed to map classical trainable parameters onto a quantum circuit. The most prevalent implementation involves Pauli rotation gates, where the Hamiltonian is defined as $H = \frac{1}{2} \sigma_\alpha$ for $\alpha \in \{x, y, z\}$. By applying a sequence of such unitary operations $U(\chi)$, one can effectively encode a real-valued vector $\chi \in \mathbb{R}^N$.
+
+\subsubsection{Hamiltonian Encoding}
 
 For certain applications, it is advantageous to encode matrices directly into the Hamiltonian governing a quantum system's time evolution, a technique central to the HHL algorithm for matrix inversion. This method involves mapping a square matrix $\mathbf{A}$ to a corresponding Hamiltonian $H$. In instances where $\mathbf{A}$ is not Hermitian, a standard procedure is to employ the encoding transformation detailed in Equation~\ref{eq:ham_trick} to ensure hermiticity. 
 
@@ -801,6 +808,8 @@ For certain applications, it is advantageous to encode matrices directly into th
 
 This approach enables the execution of computations within two distinct subspaces of the Hilbert space. Hamiltonian encoding facilitates the extraction and processing of the eigenvalues of $\mathbf{A}$, which can then be utilized to perform operations such as multiplying $\mathbf{A}$ or its inverse $\mathbf{A}^{-1}$ by an amplitude-encoded vector. The methodologies employed to apply operations governed by a specific, custom Hamiltonian are formally referred to as \textbf{Hamiltonian simulation}.
 
+\subsubsection{Amplitude Encoding}
+
 Amplitude encoding is significantly less prevalent in general quantum computing, as it maps classical information—such as a real-valued vector—directly onto quantum amplitudes; several methods exist for this mapping. A normalized classical vector $\mathbf{x} \in \mathbb{C}^{2^N}$, satisfying $\sum_{k} |x_k|^2 = 1$, can be represented by the probability amplitudes of a quantum state $\ket{\psi} \in \mathcal{H}$ as defined in Equation~\ref{eq:stacked_dots}:
 
 \begin{equation}
@@ -813,7 +822,6 @@ Amplitude encoding is significantly less prevalent in general quantum computing,
 	\ket{\psi_x} = \sum_{j=0}^{2^n-1} x_j\ket{j}
 	\label{eq:stacked_dots}
 \end{equation}
-
 
 In a similar manner, a matrix $\mathbf{A} \in \mathbb{C}^{2^n \times 2^m}$ containing elements $a_{ij}$ that satisfy the normalization condition $\sum_{ij} |a_{ij}|^2 = 1$ can be represented as shown in Equation~\ref{eq:double_sum}. This encoding requires a proportional expansion of the Hilbert space to accommodate the matrix dimensions.
 
@@ -869,6 +877,18 @@ Breast cancer is the most common malignancy among women worldwide, accounting fo
 In addition to these lifestyle-related factors, several other risk factors have been identified, including but not limited to: advanced age (with risk increasing from approximately 35 years of age), a family history of breast cancer, infection with oncogenic viruses, early onset of menstruation, late menopause, first pregnancy at an advanced age or the absence of pregnancy, and the use of hormone replacement therapy.
 
 Fine Needle Aspiration (FNA) is a minimally invasive technique used to collect liquid or tissue samples from patients presenting with newly identified growths or masses that require diagnostic evaluation. When the lesion is superficial and palpable, the procedure can be performed by directly inserting the needle and gently aspirating the sample. In cases where the lesion is non-palpable or not externally visible, ultrasound guidance is required. This typically involves the use of a specialized endoscopic device equipped with an ultrasound probe and a needle-deployment mechanism at its tip. FNA is primarily employed for diagnostic purposes, but it also serves prognostic roles, such as identifying genetic or molecular markers that indicate susceptibility to specific chemotherapeutic or biological treatments. Additionally, it can be used therapeutically to drain abscess contents in conjunction with antibiotic therapy [3].
+
+\begin{figure}
+	% Define the figure file in the \includegraphics command
+	% Must be relative to one of the paths
+	% in the \graphicspath command at the top
+	\includegraphics[width=\linewidth]{figures/fna_nuclei.png}
+	% Place caption under the figure
+	\caption{A magnified image of a malignant breast FNA with the visible cell nuclei having been outlined with the help of a curve fitting program.
+	}
+	% Label the caption to include in the list of figures
+	\label{fig:nuclei}
+\end{figure}
 
 In recent years, various classical machine learning approaches have been proposed for predicting malignancy based on different sets of features, depending on the experimental design and methodology of each study [2], [4], [5]. In this work, we utilize a dataset derived from measurements obtained from fine needle aspirates to evaluate the predictive power of its features. A range of machine learning algorithms is examined, including Logistic Regression, Support Vector Machines, Linear Discriminant Analysis, Gaussian Naïve Bayes, LightGBM, and Random Forest classifiers, as implemented in the scikit-learn library, to distinguish between benign and malignant breast tissue samples [6].
 
@@ -2236,6 +2256,6 @@ Bibliographical entries don't have to begin with "bib:", but it helps in organiz
 \bibliographystyle{IEEEtran}
 {\footnotesize \bibliography{IEEEabrv,references}}
 % include it also in ToC (do sth on your own)
-\addcontentsline{toc}{chapter}{REFERENCES}
+\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
 
 \end{document}
