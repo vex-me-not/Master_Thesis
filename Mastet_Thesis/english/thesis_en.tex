@@ -55,9 +55,9 @@
     citecolor=black,                  % color of links to bibliography
     filecolor=black,                  % color of file links
     urlcolor=black,                   % color of external links
-    pdftitle={A Comparative Analysis of Classical Machine Learning and Variational Quantum Classifiers for Breast Tumor Classification Using Fine Needle Aspiration Data},          % title
+    pdftitle={A Comparative Analysis of Classical Machine Learning Methods and Variational Quantum Methods for Breast Tumor Classification},          % title
     pdfauthor={Charisis Nikolaos},    % author
-    pdfsubject={Master Thesis}               % subject of the document
+    pdfsubject={Master Thesis on Quantum Machine Learning}               % subject of the document
 }
 \urlstyle{same}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,10 +115,10 @@
 % Advisor info
 %
 \advisorGr{Μανδηλαρά Αικατερίνη}
-\advisorRankGr{Ερευνητής}
+\advisorRankGr{Δόκτωρ, Ερευνήτρια}
 \advisorOrgGr{ΕΚΠΑ}
 \advisorEn{Mandilara Aikaterini}
-\advisorRankEn{Researcher}
+\advisorRankEn{Doctor, Researcher}
 \advisorOrgEn{NKUA}
 
 %
@@ -142,18 +142,18 @@
 %
 % The examination date of the thesis
 %
-\examinationDateGr{1 Φεβρουαρίου 2026}
-\examinationDateEn{1 February, 2026}
+\examinationDateGr{27 Φεβρουαρίου 2026}
+\examinationDateEn{27 February, 2026}
 
 %
 % Supervisors[heading(optional, defaluts to ΕΠΙΒΛΕΠΩΝ/SUPERVISOR)]{people} (greek and english)
 %
-\supervisorsGr[Επιβλέποντες]{
-    {\bfseries Μανδηλαρά Αικατερίνη}, Ερευνητής ΕΚΠΑ\\
+\supervisorsGr[Επιβλέπουσα]{
+    {\bfseries Μανδηλαρά Αικατερίνη}, Δόκτωρ, Ερευνήτρια ΕΚΠΑ\\
     % {\bfseries Επιβλέπων Δεύτερος}, Καθηγητής ΕΚΠΑ
 }
-\supervisorsEn[Supervisors]{
-    {\bfseries Mandilara Aikaterini}, Researcher NKUA\\
+\supervisorsEn[Supervisor]{
+    {\bfseries Mandilara Aikaterini}, Doctor, Researcher NKUA\\
     % {\bfseries Board Second}, Professor NKUA
 }
 
@@ -872,7 +872,7 @@ Variational quantum circuits can be conceptualized as a class of machine learnin
 
 \chapter{RESULTS FROM CLASSICAL MACHINE LEARNING METHODS} \label{mlres}
 
-Breast cancer is the most common malignancy among women worldwide, accounting for approximately 36\% of all oncological cases [1] with numerous machine learning algorithms have been applied to support the prognosis of breast cancer tissues [2]. Breast cancer is also the most prevalent malignant tumor worldwide, with an estimated 2.089 million women diagnosed in 2018, and its incidence continues to rise across all regions of the globe [1]. The highest incidence rates are observed in industrialized countries, a trend commonly associated with factors such as unhealthy dietary habits, nicotine use, chronic stress, and low levels of physical activity.
+Breast cancer is the most common malignancy among women worldwide, accounting for approximately 36\% of all oncological cases \cite{bib:who} with numerous machine learning algorithms have been applied to support the prognosis of breast cancer tissues [2]. Breast cancer is also the most prevalent malignant tumor worldwide, with an estimated 2.089 million women diagnosed in 2018, and its incidence continues to rise across all regions of the globe \cite{bib:who}. The highest incidence rates are observed in industrialized countries, a trend commonly associated with factors such as unhealthy dietary habits, nicotine use, chronic stress, and low levels of physical activity.
 
 In addition to these lifestyle-related factors, several other risk factors have been identified, including but not limited to: advanced age (with risk increasing from approximately 35 years of age), a family history of breast cancer, infection with oncogenic viruses, early onset of menstruation, late menopause, first pregnancy at an advanced age or the absence of pregnancy, and the use of hormone replacement therapy.
 
@@ -890,13 +890,13 @@ Fine Needle Aspiration (FNA) is a minimally invasive technique used to collect l
 	\label{fig:nuclei}
 \end{figure}
 
-In recent years, various classical machine learning approaches have been proposed for predicting malignancy based on different sets of features, depending on the experimental design and methodology of each study [2], [4], [5]. In this work, we utilize a dataset derived from measurements obtained from fine needle aspirates to evaluate the predictive power of its features. A range of machine learning algorithms is examined, including Logistic Regression, Support Vector Machines, Linear Discriminant Analysis, Gaussian Naïve Bayes, LightGBM, and Random Forest classifiers, as implemented in the scikit-learn \cite{bib:scikit-learn,bib:sklearn_api} library, to distinguish between benign and malignant breast tissue samples [6].
+In recent years, various classical machine learning approaches have been proposed for predicting malignancy based on different sets of features, depending on the experimental design and methodology of each study [2], [4], [5]. In this work, we utilize a dataset derived from measurements obtained from fine needle aspirates to evaluate the predictive power of its features. A range of machine learning algorithms is examined, including Logistic Regression, Support Vector Machines, Linear Discriminant Analysis, Gaussian Naïve Bayes, LightGBM, and Random Forest classifiers, as implemented in the scikit-learn \cite{bib:scikit-learn}, \cite{bib:sklearn_api} library, to distinguish between benign and malignant breast tissue samples [6].
 
 Our analysis consists of three main steps. First, we perform an exploratory data analysis to examine the provided data, determining the number of features, their numerical ranges, and their distributions. We also check for missing values and potential class imbalances; this process allows us to understand the underlying patterns within the data and assess the complexity of the classification problem. The second step involves identifying which of the six proposed models classifies the breast cancer tumors most accurately. To achieve this, we employ repeated nested cross-validation, splitting the dataset into training and validation subsets. All necessary data cleaning and preprocessing are performed within this stage to prevent data leakage between the subsets. Finally, once the best-performing model is identified, we fine-tune it using bootstrapping to gain a better understanding of its generalization potential. The resulting model is then trained on the entire dataset and saved. For future inference, the saved model can be loaded and applied to unseen data.
 
 \section{Exploratory Data Analysis} \label{eda}
 
-Loading the dataset using the pandas \cite{bib:pandas,bib:pandas_software} Python library, we observe that it contains 569 entries across 32 columns. One column contains the tumor prognosis, indicating whether it is malignant or benign, while another represents a unique identification number for each sample. The remaining 30 columns constitute the features, which consist of measurements taken from masses drawn via fine-needle aspirates. Specifically, these features describe the cell nuclei and are based on properties such as the radius, defined as the mean distance from the center to perimeter points; texture, representing the standard deviation of grayscale values; perimeter; area; smoothness, or the local variation in radius lengths; compactness, calculated as perimeter squared divided by area minus one; concavity, the severity of concave portions of the contour; concave points, the number of concave portions of the contour; symmetry; and fractal dimension, a measure of complexity using coastline approximation. Each of these properties is characterized in three ways: the mean value, the standard error, and the worst value, which is the mean of the three largest recorded values.
+Loading the dataset using the pandas \cite{bib:pandas}, \cite{bib:pandas_software} Python library, we observe that it contains 569 entries across 32 columns. One column contains the tumor prognosis, indicating whether it is malignant or benign, while another represents a unique identification number for each sample. The remaining 30 columns constitute the features, which consist of measurements taken from masses drawn via fine-needle aspirates. Specifically, these features describe the cell nuclei and are based on properties such as the radius, defined as the mean distance from the center to perimeter points; texture, representing the standard deviation of grayscale values; perimeter; area; smoothness, or the local variation in radius lengths; compactness, calculated as perimeter squared divided by area minus one; concavity, the severity of concave portions of the contour; concave points, the number of concave portions of the contour; symmetry; and fractal dimension, a measure of complexity using coastline approximation. Each of these properties is characterized in three ways: the mean value, the standard error, and the worst value, which is the mean of the three largest recorded values.
 
 Upon loading the dataset, we find that it contains no missing or duplicate values. This is highly advantageous, as the presence of missing data would otherwise necessitate an imputation strategy to fill gaps or the removal of duplicate entries. While several reliable imputation methods exist for datasets of this nature, none can guarantee that synthesized values reflect the true underlying data; consequently, such adjustments could inadvertently skew the evaluation results. Furthermore, the absence of duplicates ensures that the sample size remains intact, as any further reduction of entries would only hinder the evaluation by making the available data even more scarce.
 
@@ -929,7 +929,7 @@ Observing the distribution of each feature, we notice that the majority of them 
 	\label{fig:feature_distro}
 \end{figure}
 
-Following this, we proceed to inspect the correlation between the features and the diagnosis label. Based on Pearson’s correlation coefficient, we find that 15 out of the 30 features are heavily correlated, either positively or negatively, with the class label. These features include $radius mean$, $perimeter mean$, $area mean$, $compactness mean$, $concavity mean$, $concave points mean$, $radius se$, $perimeter se$, $area se$, $radius worst$, $perimeter worst$, $area worst$, $compactness worst$, $concavity worst$, and $concave points worst$. While we could elect to retain only these features and significantly reduce the dimensionality of the problem, we believe that in a critical task like breast cancer detection, every feature provides valuable information. 
+Following this, we proceed to inspect the correlation between the features and the diagnosis label. Based on Pearson’s correlation coefficient, we find that 15 out of the 30 features are heavily correlated, either positively or negatively, with the class label. These features include \textit{radius mean}, \textit{perimeter mean}, \textit{area mean}, \textit{compactness mean},\textit{ concavity mean}, \textit{concave points mean}, \textit{radius se}, \textit{perimeter se}, \textit{area se}, \textit{radius worst}, \textit{perimeter worst}, \textit{area worst}, \textit{compactness worst}, \textit{concavity worst}, and \textit{concave points worst}. While we could elect to retain only these features and significantly reduce the dimensionality of the problem, we believe that in a critical task like breast cancer detection, every feature provides valuable information. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -943,7 +943,7 @@ Following this, we proceed to inspect the correlation between the features and t
 	\label{fig:feature_corr_with_diagno}
 \end{figure}
 
-Regarding the feature-wise correlation, we detect no significant linear relationships between features that are not naturally expected to be correlated. For instance, $radius mean$ is heavily correlated with $perimeter mean$, and $radius worst$ shows a strong correlation with $perimeter worst$. Such relationships are expected, as the radius is fundamentally used to calculate the perimeter in most circular or near-circular shapes.
+Regarding the feature-wise correlation, we detect no significant linear relationships between features that are not naturally expected to be correlated. For instance, \textit{radius mean} is heavily correlated with \textit{perimeter mean}, and \textit{radius worst} shows a strong correlation with \textit{perimeter worst}. Such relationships are expected, as the radius is fundamentally used to calculate the perimeter in most circular or near-circular shapes.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1192,7 +1192,7 @@ After bootstrapping five thousand sets on our Logistic Regression model using th
 	\label{fig:violin_plot}
 \end{figure} 
 
-As a final step in our classical approach, we utilize the entire dataset to train and fine-tune the Logistic Regression model, from which we extract the 16 most influential features based on the descending absolute values of their coefficients. These features, in order of impact, are $texture worst$, $area se$, $texture mean$, $concave points mean$, $concavity worst$, $symmetry worst$, $concavity mean$, $compactness se$, $area worst$, $smoothness worst$, $radius se$, $symmetry se$, $concave points_worst$, $radius worst$, $perimeter worst$, and $fractal dimension se$. Upon examining the coefficients, we observe that $compactness se$, $symmetry se$, and $fractal dimension se$ are negative, indicating that higher values in these features are associated with the majority class—the benign tumors. Conversely, the remaining 13 features possess positive coefficients, suggesting that higher measurements in these areas correlate with an increased likelihood of the minority class, which corresponds to malignant tumors.
+As a final step in our classical approach, we utilize the entire dataset to train and fine-tune the Logistic Regression model, from which we extract the 16 most influential features based on the descending absolute values of their coefficients. These features, in order of impact, are \textit{texture worst}, \textit{area se}, \textit{texture mean}, \textit{concave points mean}, \textit{concavity worst}, \textit{symmetry worst}, \textit{concavity mean}, \textit{compactness se}, \textit{area worst}, \textit{smoothness worst}, \textit{radius se}, \textit{symmetry se}, \textit{concave points worst}, \textit{radius worst}, \textit{perimeter worst}, and \textit{fractal dimension se}. Upon examining the coefficients, we observe that \textit{compactness se}, \textit{symmetry se}, and \textit{fractal dimension se} are negative, indicating that higher values in these features are associated with the majority class—the benign tumors. Conversely, the remaining 13 features possess positive coefficients, suggesting that higher measurements in these areas correlate with an increased likelihood of the minority class, which corresponds to malignant tumors.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command

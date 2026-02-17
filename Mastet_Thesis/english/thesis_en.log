@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.17)  17 FEB 2026 17:21
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.17)  18 FEB 2026 00:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1053,8 +1053,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--215
  []
 
 
-Overfull \hbox (77.24902pt too wide) in paragraph at lines 215--215
-[]\TU/Arial(0)/b/n/12 Supervisors: [] 
+Overfull \hbox (70.5752pt too wide) in paragraph at lines 215--215
+[]\TU/Arial(0)/b/n/12 Supervisor: [] 
  []
 
 
@@ -1075,8 +1075,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--215
  []
 
 
-Overfull \hbox (87.97168pt too wide) in paragraph at lines 215--215
-[]\TU/Arial(0)/b/n/12 Επιβλέποντες: [] 
+Overfull \hbox (86.57715pt too wide) in paragraph at lines 215--215
+[]\TU/Arial(0)/b/n/12 Επιβλέπουσα: [] 
  []
 
 
@@ -1092,8 +1092,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--215
  []
 
 
-Overfull \hbox (92.6914pt too wide) in paragraph at lines 215--215
-[]\TU/Arial(0)/b/n/12 SUPERVISORS: []
+Overfull \hbox (84.6875pt too wide) in paragraph at lines 215--215
+[]\TU/Arial(0)/b/n/12 SUPERVISOR: []
  []
 
 
@@ -1119,8 +1119,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--215
  []
 
 
-Overfull \hbox (100.09766pt too wide) in paragraph at lines 215--215
-[]\TU/Arial(0)/b/n/12 ΕΠΙΒΛΕΠΟΝΤΕΣ: []
+Overfull \hbox (92.4336pt too wide) in paragraph at lines 215--215
+[]\TU/Arial(0)/b/n/12 ΕΠΙΒΛΕΠΟΥΣΑ: []
  []
 
 
@@ -1281,14 +1281,6 @@ Overfull \vbox (30.33893pt too high) has occurred while \output is active []
 
 
 [47]
-Overfull \hbox (11.6101pt too wide) in paragraph at lines 932--933
-\OML/cmm/m/it/12 concavepointsmean$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 radi
-usse$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 perimeterse$\TU/Arial(0)/m/n/12 , 
-$\OML/cmm/m/it/12 arease$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 radiusworst$\T
-U/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 perimeterworst$\TU/Arial(0)/m/n/12 , $\OM
-L/cmm/m/it/12 areaworst$\TU/Arial(0)/m/n/12 ,
- []
-
 File: figures/feature_corr_with_diagno.png Graphic file (type bmp)
 <figures/feature_corr_with_diagno.png>
 File: figures/heatmap_correlation_between_feats.png Graphic file (type bmp)
@@ -1342,17 +1334,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [61] [62]
 File: figures/violin_plot_boot_lr.png Graphic file (type bmp)
 <figures/violin_plot_boot_lr.png>
-
-Overfull \hbox (67.0608pt too wide) in paragraph at lines 1195--1196
-\TU/Arial(0)/m/n/12 Upon examining the coefficients, we observe that $\OML/cmm/
-m/it/12 compactnessse$\TU/Arial(0)/m/n/12 , $\OML/cmm/m/it/12 symmetryse$\TU/Ar
-ial(0)/m/n/12 , and $\OML/cmm/m/it/12 fractaldimensionse$
- []
-
 File: figures/top_16_influential_lr.png Graphic file (type bmp)
 <figures/top_16_influential_lr.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6691) has occurred while \output is active []
 
  [63]
 [64]
@@ -1716,22 +1701,15 @@ Underfull \hbox (badness 2253) in paragraph at lines 275--278
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-Package rerunfilecheck Warning: File `thesis_en.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis_en.out':
-(rerunfilecheck)             Before: 1B8A1831C2ACB99791B41EC98B8259CF;8182
-(rerunfilecheck)             After:  5581668989352E94DA73722655FCF54E;7876.
+Package rerunfilecheck Info: File `thesis_en.out' has not changed.
+(rerunfilecheck)             Checksum: 5581668989352E94DA73722655FCF54E;7876.
  ) 
 Here is how much of TeX's memory you used:
- 23498 strings out of 402982
- 447516 string characters out of 5448680
- 923730 words of memory out of 5000000
- 51847 multiletter control sequences out of 15000+600000
- 634777 words of font info for 111 fonts, out of 8000000 for 9000
+ 23497 strings out of 402982
+ 447554 string characters out of 5448680
+ 923405 words of memory out of 5000000
+ 51845 multiletter control sequences out of 15000+600000
+ 634785 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,13n,130p,1566b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
