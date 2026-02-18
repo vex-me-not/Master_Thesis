@@ -233,6 +233,11 @@ A.~Botev, G.~Lever, and D.~Barber, ``Nesterov's accelerated gradient and
   Available: \url{https://arxiv.org/abs/1607.01981}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:breast_cancer_wisconsin_(diagnostic)_17}
+W.~Wolberg, O.~Mangasarian, N.~Street, and W.~Street, ``{Breast Cancer
+  Wisconsin (Diagnostic)},'' UCI Machine Learning Repository, 1993, {DOI}:
+  https://doi.org/10.24432/C5DW2B.
+
 \bibitem{bib:farhi2018}
 \BIBentryALTinterwordspacing
 E.~Farhi and H.~Neven, ``Classification with quantum neural networks on near
@@ -270,11 +275,6 @@ J.~L. Hintze and R.~D. Nelson, ``Violin plots: A box plot-density trace
   1998. [Online]. Available:
   \url{https://www.tandfonline.com/doi/abs/10.1080/00031305.1998.10480559}
 \BIBentrySTDinterwordspacing
-
-\bibitem{bib:breast_cancer_wisconsin_(diagnostic)_17}
-W.~Wolberg, O.~Mangasarian, N.~Street, and W.~Street, ``{Breast Cancer
-  Wisconsin (Diagnostic)},'' UCI Machine Learning Repository, 1993, {DOI}:
-  https://doi.org/10.24432/C5DW2B.
 
 \bibitem{bib:bishop}
 C.~M. Bishop, \emph{Pattern Recognition and Machine Learning (Information

@@ -688,8 +688,8 @@ includehead,includefoot]{geometry} % add option showframe=true for debugging
     \endgroup
 
     % list of tables
-    \listoftables
-    \thispagestyle{empty}
+    %\listoftables
+    %\thispagestyle{empty}
 
     % preface page (OPTIONAL)
     \ifprefacepage

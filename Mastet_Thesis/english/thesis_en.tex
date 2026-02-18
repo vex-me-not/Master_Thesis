@@ -2204,6 +2204,25 @@ With that in mind, we can see that our quantum approach demonstrates clear super
 
 \chapter{CONCLUSION} \label{conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FROM TEMPLATE
+Breast cancer remains one of the most serious and increasingly frequent malignancies worldwide. While numerous methods and complex machine learning models have been developed for the diagnosis and prognosis of these cases, there remains a need to evaluate simpler machine learning algorithms. Furthermore, the emergence of quantum computers opens up new possibilities through the utilization of VQCs.
+
+This thesis first examines the application of six distinct machine learning approaches, LightGBM, Random Forest, Logistic Regression, SVMs, LDA, and Gaussian Naïve Bayes, to predict malignant samples within a population of benign tumors and masses from breast tissue. The training features for these models are derived from fine-needle aspirates and detail 30 physical characteristics of cell nuclei. Reflecting empirical data, the dataset is imbalanced, with a higher frequency of the benign class.
+
+Following a brief exploratory data analysis and the application of rnCV, we determined that Logistic Regression was the top-performing model across nine key metrics. To gain a more robust understanding of its generalization capabilities, we performed bootstrapping with five thousand samples to calculate 95\% confidence intervals. Overall, the Logistic Regression model achieved exceptionally strong results, scoring above 95\% across all nine evaluated metrics.
+
+Next, we approached the problem from a quantum perspective, streamlining our evaluation by focusing on four key metrics. To achieve this, we employed VQCs and tested an increasing number of qubits, ranging up to five. Because we were limited to encoding $2^n$ features for every  qubits, we had to reduce the dimensionality of our dataset. We utilized PCA to perform this reduction, resulting in specific datasets consisting of 2, 4, 8, 16, and 30 features respectively.
+
+We then bifurcated our VQC approach into two distinct techniques: biased and unbiased. In the unbiased technique, classification results depended solely on the circuit measurement, whereas the biased technique incorporated a classical trainable parameter to influence the final output. As the number of qubits increased, we evaluated the performance of these two methods across four key metrics and assessed their overall efficiency. We also investigated how circuit depth, and the resulting increase in trainable parameters, impacted the VQCs. To ensure a robust analysis of these effects, we executed the training procedure ten times and averaged the results, while also recording the top-performing model from each set of runs.
+
+Finally, we compared the outcomes of these two quantum techniques against one another and against the results from our top-performing classical model, Logistic Regression, using the same ten-run methodology. Regarding the quantum comparison, it was evident that both approaches yielded satisfactory results, particularly in lower dimensions where both achieved scores exceeding 95\%. Furthermore, the differences between them were not particularly stark, as any minor superiority of one over the other could be attributed to statistical error. However, an interesting finding emerged as the number of features increased: the biased approach became explicitly more efficient. It required fewer trainable parameters, and consequently less training time, to achieve results that were equal to, or better than, those of the unbiased approach. This suggests that the classical trainable parameter effectively simplified the navigation of the Hilbert space.
+
+When compared to the classical model, however, it is evident that quantum approaches still have considerable progress to make. Specifically, while VQCs can compete with or even outperform the Logistic Regression model in low-dimensional problems, they lag significantly behind when addressing the original 30-feature problem. In that context, the quantum models are unable to surpass the 90\% threshold across any of the four metrics, whereas Logistic Regression consistently scores above 92\% in most metrics. 
+
+This suggests that increasing the number of trainable parameters within the VQCs is necessary to achieve more comprehensive coverage of the Hilbert space. However, this adjustment raises significant practical concerns, as the current training procedures already require a substantial amount of time. Furthermore, the required computational power is a major consideration, as there is no guarantee that standard hardware can efficiently manage such demanding processes.
+
+Ultimately, we contend that VQCs demonstrate genuine promise in addressing classification problems, even in imbalanced scenarios such as breast tumor classification. In the context of low-qubit circuits and low-dimensionality problems, the VQC approach remains competitive with well-established classical methods. However, challenges arise as the size of the Hilbert space increases. To remain comparable to classical techniques, VQCs require a significantly higher number of trainable parameters, leading to increased demands on time and resources. Furthermore, there is no guarantee that these more complex quantum models will ultimately surpass the performance of their classical counterparts.
+
+It is certain that as quantum hardware advances and processors offer a growing number of qubits, VQC technology will evolve, demonstrating enhanced capabilities for addressing real-world challenges such as breast tumor classification. In the meantime, continued research into the application of VQCs within the NISQ era remains essential.
 
 % abbreviations table
 \abbreviations
@@ -2221,16 +2240,21 @@ With that in mind, we can see that our quantum approach demonstrates clear super
 
 % appendix
 \begin{appendix}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{APPENDICES}
     % mark the beginning of the appendix
     \appendixstartedtrue
 
-    \chapter{FIRST APPENDIX}
+    \chapter{CODE AND DATA AVAILABILITY}
+	The breast tumor data used for this thesis can be found at this \href{https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic}{repository}  \cite{bib:breast_cancer_wisconsin_(diagnostic)_17} or at \href{https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data}{Kaggle}.
+	
 
-    \chapter{SECOND APPENDIX}
+    \chapter{AI USAGE DISCLAIMER}
+  
+	In the preparation of this thesis, the generative artificial intelligence model \textbf{Gemini 3 Flash} by Google was utilized solely as a sophisticated editing tool to enhance the clarity and professional quality of the manuscript. Specifically, the AI was employed to identify and correct grammatical, spelling, and punctuation errors, as well as to improve the overall syntactical flow and readability of the text. It is important to emphasize that all original ideas, research methodologies, data analyses, and final conclusions presented in this work were independently conceived and executed by the author. The AI did not contribute to the intellectual content or the derivation of the results; its role was strictly limited to language refinement and proofreading of the author's original work.
 
     % add appendix line to ToC
-    \phantomsection
-    \addcontentsline{toc}{chapter}{APPENDICES}
+
 \end{appendix}
 
 % manually include the bibliography
