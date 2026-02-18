@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.17)  18 FEB 2026 00:09
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  18 FEB 2026 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1218,7 +1218,7 @@ gorize test data into distinct groups,
  []
 
 [23]
-Underfull \vbox (badness 6316) has occurred while \output is active []
+Underfull \vbox (badness 2726) has occurred while \output is active []
 
  [24]
 Overfull \hbox (13.43817pt too wide) in paragraph at lines 274--275
@@ -1683,14 +1683,14 @@ Appendix B.
 (thesis_en.bbl [131] [132
 
 ] [133] [134]
-Underfull \hbox (badness 6188) in paragraph at lines 270--273
+Underfull \hbox (badness 6188) in paragraph at lines 320--323
 []\TU/Arial(0)/m/n/10 World Health Organization, “Breast cancer,” [][]$[][][][]
 [] [] [] [] [][][] [] [][][] [] [][][] [] [][][][][][][][][][] [] [][][][][][][
 ][][][][][] [] [][][][][][] []
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 275--278
+Underfull \hbox (badness 2253) in paragraph at lines 325--328
 []\TU/Arial(0)/m/n/10 Cleveland Clinic, “Fine-needle aspiration (fna),” [][]$[]
 [][][][] [] [] [] [][] [] [][][][][][][][][][][][][][][] [] [][][] [] [][][][][
 ][] [] [][][][][][][][][][][] []
@@ -1705,10 +1705,10 @@ Package rerunfilecheck Info: File `thesis_en.out' has not changed.
 (rerunfilecheck)             Checksum: 5581668989352E94DA73722655FCF54E;7876.
  ) 
 Here is how much of TeX's memory you used:
- 23497 strings out of 402982
- 447554 string characters out of 5448680
- 923405 words of memory out of 5000000
- 51845 multiletter control sequences out of 15000+600000
+ 23503 strings out of 402982
+ 447628 string characters out of 5448680
+ 923532 words of memory out of 5000000
+ 51851 multiletter control sequences out of 15000+600000
  634785 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,13n,130p,1566b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s

@@ -21,23 +21,140 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{bib:logistic_regression}
+J.~Cramer, ``The origins of logistic regression,'' \emph{Tinbergen Institute,
+  Tinbergen Institute Discussion Papers}, 01 2002.
+
+\bibitem{bib:naive_bayes}
+D.~Hand and K.~Yu, ``Idiot's bayes: Not so stupid after all?''
+  \emph{International Statistical Review}, vol.~69, pp. 385 -- 398, 05 2007.
+
+\bibitem{bib:svm}
+M.~Hearst, S.~Dumais, E.~Osuna, J.~Platt, and B.~Scholkopf, ``Support vector
+  machines,'' \emph{IEEE Intelligent Systems and their Applications}, vol.~13,
+  no.~4, pp. 18--28, 1998.
+
+\bibitem{bib:lda}
+B.~Ghojogh and M.~Crowley, ``Fisher and linear discriminant analysis,'' 01
+  2021.
+
+\bibitem{bib:random_forest}
+\BIBentryALTinterwordspacing
+G.~Louppe, ``Understanding random forests: From theory to practice,'' 2015.
+  [Online]. Available: \url{https://arxiv.org/abs/1407.7502}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:lightgbm}
+\BIBentryALTinterwordspacing
+G.~Ke, Q.~Meng, T.~Finley, T.~Wang, W.~Chen, W.~Ma, Q.~Ye, and T.-Y. Liu,
+  ``Lightgbm: A highly efficient gradient boosting decision tree,'' in
+  \emph{Advances in Neural Information Processing Systems}, I.~Guyon, U.~V.
+  Luxburg, S.~Bengio, H.~Wallach, R.~Fergus, S.~Vishwanathan, and R.~Garnett,
+  Eds., vol.~30.\hskip 1em plus 0.5em minus 0.4em\relax Curran Associates,
+  Inc., 2017. [Online]. Available:
+  \url{https://proceedings.neurips.cc/paper_files/paper/2017/file/6449f44a102fde848669bdd9eb6b76fa-Paper.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:IBM}
+{International Business Machines Corporation}, ``What is quantum computing?''
+  \url{https://www.ibm.com/think/topics/quantum-computing}, 10 2025, accessed:
+  2026-02-16.
+
 \bibitem{bib:schuld_petruccione}
 M.~Schuld and F.~Petruccione, \emph{Supervised learning with quantum
   computers}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2018, vol.~17.
 
+\bibitem{bib:nasa}
+{National Aeronautics and Space Administration}, ``What is the spooky science
+  of quantum entanglement?''
+  \url{https://science.nasa.gov/what-is-the-spooky-science-of-quantum-entanglement/},
+  n.d., accessed: 2026-02-16.
+
 \bibitem{bib:bsc_thesis}
 C.~DIMITRIOS, ``The effects of quantum entanglement on variational quantum
   classifiers,'' 2024.
+
+\bibitem{bib:mottonen}
+\BIBentryALTinterwordspacing
+M.~Mottonen, J.~J. Vartiainen, V.~Bergholm, and M.~M. Salomaa, ``Transformation
+  of quantum states using uniformly controlled rotations,'' 2004. [Online].
+  Available: \url{https://arxiv.org/abs/quant-ph/0407010}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:mottonen_2}
+\BIBentryALTinterwordspacing
+M.~M\"ott\"onen, J.~J. Vartiainen, V.~Bergholm, and M.~M. Salomaa, ``Quantum
+  circuits for general multiqubit gates,'' \emph{Phys. Rev. Lett.}, vol.~93, p.
+  130502, Sep 2004. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevLett.93.130502}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:VQA}
+\BIBentryALTinterwordspacing
+M.~Cerezo, A.~Arrasmith, R.~Babbush, S.~C. Benjamin, S.~Endo, K.~Fujii, J.~R.
+  McClean, K.~Mitarai, X.~Yuan, L.~Cincio, and P.~J. Coles, ``Variational
+  quantum algorithms,'' \emph{Nature Reviews Physics}, vol.~3, no.~9, p.
+  625–644, Aug. 2021. [Online]. Available:
+  \url{http://dx.doi.org/10.1038/s42254-021-00348-9}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:Schuld_2020}
+\BIBentryALTinterwordspacing
+M.~Schuld, A.~Bocharov, K.~M. Svore, and N.~Wiebe, ``Circuit-centric quantum
+  classifiers,'' \emph{Physical Review A}, vol. 101, no.~3, Mar. 2020.
+  [Online]. Available: \url{http://dx.doi.org/10.1103/PhysRevA.101.032308}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:cancer}
+\BIBentryALTinterwordspacing
+B.~Smolarz, A.~Z. Nowak, and H.~Romanowicz, ``Breast cancer—epidemiology,
+  classification, pathogenesis and treatment (review of literature),''
+  \emph{Cancers}, vol.~14, no.~10, 2022. [Online]. Available:
+  \url{https://www.mdpi.com/2072-6694/14/10/2569}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:cancer_prognosis}
+\BIBentryALTinterwordspacing
+J.~Xiao, M.~Mo, Z.~Wang, C.~Zhou, J.~Shen, J.~Yuan, Y.~He, and Y.~Zheng, ``The
+  application and comparison of machine learning models for the prediction of
+  breast cancer prognosis: Retrospective cohort study,'' \emph{JMIR Med
+  Inform}, vol.~10, no.~2, p. e33440, Feb 2022. [Online]. Available:
+  \url{http://www.ncbi.nlm.nih.gov/pubmed/35179504}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:FNA}
+\BIBentryALTinterwordspacing
+W.~N. Street, W.~H. Wolberg, and O.~L. Mangasarian, ``Nuclear feature
+  extraction for breast tumor diagnosis,'' in \emph{Electronic imaging}, 1993.
+  [Online]. Available: \url{https://api.semanticscholar.org/CorpusID:14922543}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:fine_needle}
+D.~F. Sigmon and S.~Fatima, ``Fine needle aspiration,'' in
+  \emph{StatPearls}.\hskip 1em plus 0.5em minus 0.4em\relax Treasure Island,
+  FL: StatPearls Publishing, 2025, [Online]. Available:
+  https://www.ncbi.nlm.nih.gov/books/NBK557486/.
 
 \bibitem{bib:fna_image}
 O.~Mangasarian, N.~Street, and W.~Wolberg, ``Breast cancer diagnosis and
   prognosis via linear programming,'' \emph{Operations Research}, vol.~43, 02
   1970.
 
-\bibitem{bib:IBM}
-{International Business Machines Corporation}, ``What is quantum computing?''
-  \url{https://www.ibm.com/think/topics/quantum-computing}, 10 2025, accessed:
-  2026-02-16.
+\bibitem{bib:ml_in_cancer}
+\BIBentryALTinterwordspacing
+C.~Boeri, C.~Chiappa, F.~Galli, V.~De~Berardinis, L.~Bardelli, G.~Carcano, and
+  F.~Rovera, ``Machine learning techniques in breast cancer prognosis
+  prediction: A primary evaluation,'' \emph{Cancer Medicine}, vol.~9, no.~9,
+  pp. 3234--3243, 2020. [Online]. Available:
+  \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/cam4.2811}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:Penn2020}
+A.~I. Penn, M.~Medved, V.~Dialani, E.~D. Pisano, E.~B. Cole, D.~Brousseau,
+  G.~S. Karczmar, G.~Gao, B.~D. Reich, and H.~Abe, ``Discrimination of benign
+  from malignant breast lesions in dense breasts with model-based analysis of
+  regions-of-interest using directional diffusion-weighted images,'' \emph{BMC
+  Medical Imaging}, vol.~20, no.~1, p.~61, 2020.
 
 \bibitem{bib:scikit-learn}
 F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
@@ -109,10 +226,11 @@ M.~L. Waskom, ``seaborn: statistical data visualization,'' \emph{Journal of
 J.~D. Hunter, ``Matplotlib: A 2d graphics environment,'' \emph{Computing in
   Science \& Engineering}, vol.~9, no.~3, pp. 90--95, 2007.
 
-\bibitem{bib:k_means_clustering_algorithm}
+\bibitem{bib:nesterov}
 \BIBentryALTinterwordspacing
-{K-Means Clustering Algorithm}. EDUCBA. Accessed Feb. 08, 2022. [Online].
-  Available: \url{https://www.educba.com/k-means-clustering-algorithm/}
+A.~Botev, G.~Lever, and D.~Barber, ``Nesterov's accelerated gradient and
+  momentum as approximations to regularised update descent,'' 2016. [Online].
+  Available: \url{https://arxiv.org/abs/1607.01981}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:farhi2018}
@@ -120,20 +238,6 @@ J.~D. Hunter, ``Matplotlib: A 2d graphics environment,'' \emph{Computing in
 E.~Farhi and H.~Neven, ``Classification with quantum neural networks on near
   term processors,'' 2018. [Online]. Available:
   \url{https://arxiv.org/abs/1802.06002}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:Schuld_2020}
-\BIBentryALTinterwordspacing
-M.~Schuld, A.~Bocharov, K.~M. Svore, and N.~Wiebe, ``Circuit-centric quantum
-  classifiers,'' \emph{Physical Review A}, vol. 101, no.~3, Mar. 2020.
-  [Online]. Available: \url{http://dx.doi.org/10.1103/PhysRevA.101.032308}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:mottonen}
-\BIBentryALTinterwordspacing
-M.~Mottonen, J.~J. Vartiainen, V.~Bergholm, and M.~M. Salomaa, ``Transformation
-  of quantum states using uniformly controlled rotations,'' 2004. [Online].
-  Available: \url{https://arxiv.org/abs/quant-ph/0407010}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:nielsen00}
@@ -146,47 +250,6 @@ M.~A. Nielsen and I.~L. Chuang, \emph{Quantum Computation and Quantum
 D.~McMahon, \emph{Quantum Computing Explained}, ser. IEEE Press.\hskip 1em plus
   0.5em minus 0.4em\relax Wiley, 2008. [Online]. Available:
   \url{https://books.google.gr/books?id=bDXwFHJNKFAC}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:nesterov}
-\BIBentryALTinterwordspacing
-A.~Botev, G.~Lever, and D.~Barber, ``Nesterov's accelerated gradient and
-  momentum as approximations to regularised update descent,'' 2016. [Online].
-  Available: \url{https://arxiv.org/abs/1607.01981}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:lightgbm}
-\BIBentryALTinterwordspacing
-G.~Ke, Q.~Meng, T.~Finley, T.~Wang, W.~Chen, W.~Ma, Q.~Ye, and T.-Y. Liu,
-  ``Lightgbm: A highly efficient gradient boosting decision tree,'' in
-  \emph{Advances in Neural Information Processing Systems}, I.~Guyon, U.~V.
-  Luxburg, S.~Bengio, H.~Wallach, R.~Fergus, S.~Vishwanathan, and R.~Garnett,
-  Eds., vol.~30.\hskip 1em plus 0.5em minus 0.4em\relax Curran Associates,
-  Inc., 2017. [Online]. Available:
-  \url{https://proceedings.neurips.cc/paper_files/paper/2017/file/6449f44a102fde848669bdd9eb6b76fa-Paper.pdf}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:svm}
-M.~Hearst, S.~Dumais, E.~Osuna, J.~Platt, and B.~Scholkopf, ``Support vector
-  machines,'' \emph{IEEE Intelligent Systems and their Applications}, vol.~13,
-  no.~4, pp. 18--28, 1998.
-
-\bibitem{bib:lda}
-B.~Ghojogh and M.~Crowley, ``Fisher and linear discriminant analysis,'' 01
-  2021.
-
-\bibitem{bib:logistic_regression}
-J.~Cramer, ``The origins of logistic regression,'' \emph{Tinbergen Institute,
-  Tinbergen Institute Discussion Papers}, 01 2002.
-
-\bibitem{bib:naive_bayes}
-D.~Hand and K.~Yu, ``Idiot's bayes: Not so stupid after all?''
-  \emph{International Statistical Review}, vol.~69, pp. 385 -- 398, 05 2007.
-
-\bibitem{bib:random_forest}
-\BIBentryALTinterwordspacing
-G.~Louppe, ``Understanding random forests: From theory to practice,'' 2015.
-  [Online]. Available: \url{https://arxiv.org/abs/1407.7502}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:numpy}
@@ -252,19 +315,6 @@ I.~Ozcan, H.~Aydin, and A.~Çetinkaya, ``Comparison of classification success
   rates of different machine learning algorithms in the diagnosis of breast
   cancer,'' \emph{Asian Pacific journal of cancer prevention : APJCP}, vol.~23,
   pp. 3287--3297, 10 2022.
-
-\bibitem{bib:FNA}
-\BIBentryALTinterwordspacing
-W.~N. Street, W.~H. Wolberg, and O.~L. Mangasarian, ``Nuclear feature
-  extraction for breast tumor diagnosis,'' in \emph{Electronic imaging}, 1993.
-  [Online]. Available: \url{https://api.semanticscholar.org/CorpusID:14922543}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:nasa}
-{National Aeronautics and Space Administration}, ``What is the spooky science
-  of quantum entanglement?''
-  \url{https://science.nasa.gov/what-is-the-spooky-science-of-quantum-entanglement/},
-  n.d., accessed: 2026-02-16.
 
 \bibitem{bib:who}
 {World Health Organization}, ``Breast cancer,''
