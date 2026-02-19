@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  19 FEB 2026 15:42
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  19 FEB 2026 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -886,34 +886,34 @@ Package babel Info: 'greek' activates 'greek' shorthands.
 )
 \openout1 = `thesis_en.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 217.
-LaTeX Font Info:    ... okay on input line 217.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 217.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 213.
 LaTeX Font Info:    Trying to load font information for T3+cmr on input line 21
-7.
+3.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    ... okay on input line 213.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -959,7 +959,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: xetex.def on input line 149.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 217.
+Package hyperref Info: Link coloring ON on input line 213.
 (thesis_en.out) (thesis_en.out)
 \@outlinefile=\write3
 \openout3 = `thesis_en.out'.
@@ -969,7 +969,7 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package babel Info: Importing data for greek
-(babel)             from babel-el.ini. Reported on input line 217.
+(babel)             from babel-el.ini. Reported on input line 213.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\puenc-gree
 k.def
@@ -991,74 +991,74 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 217.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 217.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 217.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 217.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 217.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 217.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 217.
-LaTeX Font Info:    Redeclaring math accent \check on input line 217.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 217.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 217.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 217.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 217.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 217.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 213.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 213.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 213.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 213.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 213.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 213.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 213.
+LaTeX Font Info:    Redeclaring math accent \check on input line 213.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 213.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 213.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 213.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 213.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 213.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 217.
+(Font)              `operators' in the math version `normal' on input line 213.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Arial(0)/m/n on input line 217.
+(Font)                  OT1/cmr/m/n --> TU/Arial(0)/m/n on input line 213.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 217.
+(Font)              `operators' in the math version `bold' on input line 213.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/Arial(0)/m/n on input line 217.
+(Font)                  OT1/cmr/bx/n --> TU/Arial(0)/m/n on input line 213.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/Arial(0)/m/n --> TU/Arial(0)/m/n on input line 217.
+(Font)                  TU/Arial(0)/m/n --> TU/Arial(0)/m/n on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Arial(0)/m/it on input line 217.
+(Font)                  OT1/cmr/m/it --> TU/Arial(0)/m/it on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Arial(0)/b/n on input line 217.
+(Font)                  OT1/cmr/bx/n --> TU/Arial(0)/b/n on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/Arial(1)/m/n on input line 217.
+(Font)                  OT1/cmss/m/n --> TU/Arial(1)/m/n on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/CourierNew(0)/m/n on input line 217
+(Font)                  OT1/cmtt/m/n --> TU/CourierNew(0)/m/n on input line 213
 .
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/Arial(0)/m/n --> TU/Arial(0)/b/n on input line 217.
+(Font)                  TU/Arial(0)/m/n --> TU/Arial(0)/b/n on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/Arial(0)/b/it on input line 217.
+(Font)                  OT1/cmr/bx/it --> TU/Arial(0)/b/it on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/Arial(1)/b/n on input line 217.
+(Font)                  OT1/cmss/bx/n --> TU/Arial(1)/b/n on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/CourierNew(0)/b/n on input line 217
+(Font)                  OT1/cmtt/m/n --> TU/CourierNew(0)/b/n on input line 213
 .
 \c@lstlisting=\count357
 File: emblems/athena-black.pdf Graphic file (type pdf)
 <use emblems/athena-black.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 
-Overfull \hbox (70.5752pt too wide) in paragraph at lines 219--219
+Overfull \hbox (70.5752pt too wide) in paragraph at lines 215--215
 []\TU/Arial(0)/b/n/12 Supervisor: [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
@@ -1070,78 +1070,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--219
 File: emblems/athena-black.pdf Graphic file (type pdf)
 <use emblems/athena-black.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 
-Overfull \hbox (86.57715pt too wide) in paragraph at lines 219--219
+Overfull \hbox (86.57715pt too wide) in paragraph at lines 215--215
 []\TU/Arial(0)/b/n/12 Επιβλέπουσα: [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 [3] [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 
-Overfull \hbox (84.6875pt too wide) in paragraph at lines 219--219
+Overfull \hbox (84.6875pt too wide) in paragraph at lines 215--215
 []\TU/Arial(0)/b/n/12 SUPERVISOR: []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 
-Overfull \hbox (163.54382pt too wide) in paragraph at lines 219--219
+Overfull \hbox (163.54382pt too wide) in paragraph at lines 215--215
 []\TU/Arial(0)/b/n/12 EXAMINATION COMMITTEE: []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 [5] [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 
-Overfull \hbox (92.4336pt too wide) in paragraph at lines 219--219
+Overfull \hbox (92.4336pt too wide) in paragraph at lines 215--215
 []\TU/Arial(0)/b/n/12 ΕΠΙΒΛΕΠΟΥΣΑ: []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 
-Overfull \hbox (144.47742pt too wide) in paragraph at lines 219--219
+Overfull \hbox (144.47742pt too wide) in paragraph at lines 215--215
 []\TU/Arial(0)/b/n/12 ΕΞΕΤΑΣΤΙΚΗ ΕΠΙΤΡΟΠΗ: []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
 [7] [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
@@ -1150,7 +1150,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--219
 ] [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
 
  []
 
@@ -1187,7 +1187,7 @@ Underfull \vbox (badness 1701) has occurred while \output is active []
 ]
 Chapter 1.
 
-Overfull \hbox (0.10919pt too wide) in paragraph at lines 234--235
+Overfull \hbox (0.10919pt too wide) in paragraph at lines 230--231
 \TU/Arial(0)/m/n/12 term” quantum computing, fundamentally reshaping research i
 n the field over recent years.
  []
@@ -1202,7 +1202,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-Overfull \hbox (6.56075pt too wide) in paragraph at lines 254--255
+Overfull \hbox (6.56075pt too wide) in paragraph at lines 250--251
 []\TU/Arial(0)/m/n/12 Classification algorithms are designed to accurately cate
 gorize test data into distinct groups,
  []
@@ -1211,7 +1211,7 @@ gorize test data into distinct groups,
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-Overfull \hbox (13.43817pt too wide) in paragraph at lines 278--279
+Overfull \hbox (13.43817pt too wide) in paragraph at lines 274--275
 []\TU/Arial(0)/m/n/12 LDA relies on relatively strong assumptions, including no
 rmality of features and homoscedas-
  []
@@ -1231,7 +1231,7 @@ Underfull \vbox (badness 1308) has occurred while \output is active []
 File: figures/circuit_diagram.png Graphic file (type bmp)
 <figures/circuit_diagram.png>
  [34] [35]
-Overfull \hbox (0.8075pt too wide) in paragraph at lines 801--802
+Overfull \hbox (0.8075pt too wide) in paragraph at lines 797--798
 \TU/Arial(0)/m/n/12 Hassidim-Lloyd algorithm for matrix inversion [[]]. This me
 thod involves mapping a square
  []
@@ -1294,7 +1294,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [48]
 [49]
-Overfull \hbox (12.06427pt too wide) in paragraph at lines 1000--1001
+Overfull \hbox (12.06427pt too wide) in paragraph at lines 996--997
 \TU/Arial(0)/m/n/12 To determine the most effective classifier for the tumor cl
 assification task, six well-established
  []
@@ -1347,7 +1347,7 @@ File: ./figures/best_VQC_2_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_2_qubits_biased.png>
 
 [65]
-Overfull \hbox (0.33028pt too wide) in paragraph at lines 1259--1260
+Overfull \hbox (0.33028pt too wide) in paragraph at lines 1255--1256
 []\TU/Arial(0)/m/n/12 The specific parameters associated with the highest valid
 ation performance are preserved,
  []
@@ -1702,7 +1702,7 @@ Package rerunfilecheck Info: File `thesis_en.out' has not changed.
 Here is how much of TeX's memory you used:
  23497 strings out of 402982
  447537 string characters out of 5448680
- 927078 words of memory out of 5000000
+ 926071 words of memory out of 5000000
  51848 multiletter control sequences out of 15000+600000
  634785 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
