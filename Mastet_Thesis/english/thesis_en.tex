@@ -73,9 +73,13 @@
 \usepackage{braket}
 \usepackage{amssymb}
 
+%\usepackage[acronym]{glossaries}
+%\makeglossaries
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% User-specific configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newacronym{NISQ}{NISQ}{Noisy Intermediate-Scale Quantum}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Required Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,9 +165,9 @@
 % Abstract in Greek
 %
 \abstractGr{%
-    Η περίληψη περιλαμβάνει το σκοπό-αντικείµενο της εργασίας, τη μεθοδολογία, τα κύρια βήματα που ακολουθήθηκαν και τέλος τα κύρια αποτελέσματα.
-    Μετά το τέλος της περίληψης δηλώνεται η επιστημονική περιοχή της εργασίας και 5 λέξεις κλειδιά.
-    Η συνολική έκταση της περίληψης και των λέξεων δήλωσης επιστημονικής περιοχής και λέξεων-κλειδιών θα είναι 1-2 σελίδες.
+Ο καρκίνος του μαστού αποτελεί την πιο συχνή κακοήθεια στον γυναικείο πληθυσμό παγκοσμίως, με τις ασθενείς αυτές να αντιπροσωπεύουν έως και το 36\% του συνόλου των ογκολογικών περιστατικών. Με την πάροδο των ετών, μια ευρεία ποικιλία αλγορίθμων μηχανικής μάθησης έχει επιστρατευτεί για να βοηθήσει στην πρόγνωση των ιστών του καρκίνου του μαστού. Πρόσφατα, η άνοδος της κβαντικής υπολογιστικής και των κβαντικών επεξεργαστών εισήγαγε μια πολλά υποσχόμενη νέα μέθοδο ταξινόμησης μέσω της χρήσης Μεταβλητών Κβαντικών Ταξινομητών (Variational Quantum Classifiers - VQCs).
+
+Σε αυτή τη μελέτη, χρησιμοποιώντας δεδομένα όγκων μαστού που προέρχονται από αναρροφήσεις με λεπτή βελόνα (FNA), εξετάζουμε την απόδοση ταξινόμησης των VQCs σε διαφορετικές διαμορφώσεις κβαντικών ψηφίων (qubits). Διερευνούμε τον αντίκτυπο της εισαγωγής μιας κλασικής εκπαιδεύσιμης παραμέτρου στα κυκλώματά μας, καθώς και τον βέλτιστο αριθμό εκπαιδεύσιμων παραμέτρων που απαιτούνται για την επίτευξη κορυφαίων αποτελεσμάτων. Τα ευρήματά μας δείχνουν ότι σε διαμορφώσεις έως και 4 qubits, οι κβαντικές προσεγγίσεις είναι ανταγωνιστικές ως προς τις κλασικές μεθόδους μηχανικής μάθησης, σημειώνοντας σταθερά βαθμολογία πάνω από 90\% σε τέσσερις κύριες μετρικές. Αν και η διαμόρφωση των 5 qubits αρχίζει να υστερεί έναντι της κορυφαίας κλασικής μεθόδου, εξακολουθεί να επιτυγχάνει βαθμολογίες άνω του 88\% σε όλες τις μετρικές. Τελικά, καθίσταται σαφές ότι, παρά τις προκλήσεις σχετικά με τον χρόνο και την αποδοτικότητα της υπολογιστικής ισχύος που απαιτείται, οι VQCs στην εποχή του NISQ (Ενδιάμεσης Κλίμακας Κβαντικοί Υπολογιστές με Θόρυβο) διαθέτουν απτή προοπτική για βιοϊατρικές εργασίες γενικότερα και για την ταξινόμηση όγκων ειδικότερα.
 }
 %
 % Subject area and keywords in Greek
@@ -172,9 +176,9 @@
 \keywordsGr{κβαντική, μηχανική, μάθηση, κατηγοριοποίηση, όγκος}
 
 \abstractEn{%
-    The abstract details the scope and purpose of this thesis, methodology, any experiments and the results thereof.
-    You also need to declare the subject area and up to 5 keywords to be included after the abstract.
-    The abstract and keywords should span no more than 2 pages.
+Breast cancer is the most frequent malignancy among the female population worldwide, with these patients accounting for up to 36\% of all oncological cases. Over the years, a wide variety of machine learning algorithms have been employed to assist in the prognosis of breast cancer tissues. Recently, the rise of quantum computing and quantum processors has introduced a promising new classification method through the use of Variational Quantum Classifiers (VQCs).
+
+In this study, using breast tumor data derived from fine-needle aspirates, we examine the classification performance of VQCs across different qubit configurations. We investigate the impact of introducing a classical trainable parameter into our circuits, as well as the optimal number of trainable parameters required to achieve peak results. Our findings show that up to a 4-qubit configuration, quantum approaches are competitive with classical machine learning methods, consistently scoring above 90\% across four key metrics. While the 5-qubit configuration begins to lag behind the top-performing classical method, it still achieves scores above 88\% across all evaluated metrics. Ultimately, it becomes evident that despite challenges regarding time and computing power efficiency, VQCs in the NISQ era possess tangible potential for biomedical tasks in general and tumor classification in particular.
 }
 
 %
@@ -219,7 +223,7 @@
 % add main chapters (should be given in capital letters)
 \chapter{INTRODUCTION} \label{introduction}
 
-Machine learning is the art and science of enabling computers to learn from data to solve problems, rather than relying on explicit programming. Conversely, quantum computing involves processing information using devices governed by the laws of quantum theory. As both fields are expected to play a pivotal role in the future of information technology, exploring their integration is a natural progression. This synergy is the core focus of the emerging discipline known as quantum machine learning.
+Machine learning is the art and science of enabling computers to learn from data to solve problems, rather than relying on explicit programming. Conversely, quantum computing involves processing information using devices governed by the laws of quantum theory. As both fields are expected to play a pivotal role in the future of information technology, exploring their integration is a natural progression. This synergy is the core focus of the emerging discipline known as Quantum Machine Learning (QML).
 
 Computers are physical devices that process information using electronic circuits. Algorithms, or software, act as instructions for manipulating information represented by electrical currents within these circuits. While these processes involve microscopic particles such as electrons, they can generally be described using classical macroscopic theories of electronics. However, when microscopic systems like photons or atoms are used directly to process information, a different mathematical framework is required to account for the counterintuitive behavior of nature at small scales. This framework, known as quantum theory, has been recognized since the early twentieth century as the most comprehensive description of microscopic physics. A computer that operates according to these principles is defined as a quantum computer.
 
@@ -231,7 +235,7 @@ The endeavor to bring quantum technologies to market has ushered in the era of "
 
 Significant progress has been made in developing Noisy Intermediate-Scale Quantum (NISQ) devices, which serve as the initial prototypes for future full-scale quantum computers. These devices typically feature between 10 and 100 qubits that may not be fully interconnected. Because they lack error correction, NISQ devices produce only approximate computational results.
 
-Quantum devices in the NISQ era theoretically possess the power to demonstrate the advantages of quantum computing; however, the requirement to restrict algorithms to a limited number of qubits and gates profoundly impacts algorithmic design. The primary objective is to identify practical computational problems that small-scale quantum devices can solve while achieving significant, ideally exponential and provable, speedups over the best classical algorithms. Consequently, there is an intense search for a "killer app": a compact yet powerful algorithm specifically tailored for early quantum hardware. Machine learning and its foundational component, optimization, are frequently cited as leading candidates, which accounts for the massive momentum in quantum machine learning research over recent years.
+Quantum devices in the NISQ era theoretically possess the power to demonstrate the advantages of quantum computing; however, the requirement to restrict algorithms to a limited number of qubits and gates profoundly impacts algorithmic design. The primary objective is to identify practical computational problems that small-scale quantum devices can solve while achieving significant, ideally exponential and provable, speedups over the best classical algorithms. Consequently, there is an intense search for a "killer app": a compact yet powerful algorithm specifically tailored for early quantum hardware. Machine learning and its foundational component, optimization, are frequently cited as leading candidates, which accounts for the massive momentum in QML research over recent years.
 
 This brings us to the other parent discipline: machine learning. Situated at the intersection of statistics, mathematics, and computer science, machine learning analyzes how computers can learn from prior examples, typically large datasets characterized by complex, nonlinear relationships, to make predictions or solve new problem instances. Originally developed as the data-driven branch of artificial intelligence, it seeks to provide machines with human-like capabilities such as image recognition, language processing, and decision-making. While these tasks are intuitive for humans, codifying how a machine might acquire similar skills is difficult. For instance, when viewing a mountain panorama, it is not immediately clear how the data from a single dark blue pixel relates to the broader concept of a mountain. Machine learning addresses this by enabling computers to extract patterns from data that inherently represent concepts like a "mountain range".
 
@@ -239,7 +243,7 @@ Machine learning transitioned into an industry-driven research discipline earlie
 
 Machine learning also possesses a rigorous academic and theoretical dimension. The rise of deep learning presents one of the most compelling challenges in modern research: determining exactly why it works. Traditional learning theory, rooted in statistics, originally posited a fundamental trade-off between a model's expressivity and its ability to learn effectively. However, modern neural networks are exceptionally expressive, featuring millions or even billions of trainable parameters; empirical evidence suggests that as these models grow larger, their performance actually improves. This leads to a central theoretical question: why do these heavily overparameterized models avoid overfitting the data they encounter?
 
-Recent years have seen impressive progress in theoretical development, and while the broader mystery remains unsolved, it is increasingly evident that effective machine learning relies on a complex interplay between data, models, and optimization algorithms. These continuous advancements place quantum machine learning on a rapidly shifting foundation, creating a landscape that is as exhilarating as it is difficult to navigate.
+Recent years have seen impressive progress in theoretical development, and while the broader mystery remains unsolved, it is increasingly evident that effective machine learning relies on a complex interplay between data, models, and optimization algorithms. These continuous advancements place QML on a rapidly shifting foundation, creating a landscape that is as exhilarating as it is difficult to navigate.
 
 \section{Classical Machine Learning Methods} \label{clml}
 
@@ -259,13 +263,13 @@ The model is trained by maximizing the likelihood of the observed data, which is
 
 The Naive Bayes classifier \cite{bib:naive_bayes} is a probabilistic generative model based on Bayes’ theorem. It estimates the posterior probability of a class given a set of features by combining prior class probabilities with class-conditional feature likelihoods. The defining assumption of Naive Bayes is conditional independence: all features are assumed to be independent of each other given the class label. While this assumption is often violated in real-world data, the classifier frequently performs well in practice due to its robustness and low variance.
 
-Different variants of Naive Bayes exist depending on the assumed distribution of the features, such as Gaussian Naive Bayes for continuous data and Multinomial Naive Bayes for count-based features. During training, the model estimates class priors and distribution parameters directly from the data, making it computationally efficient and well-suited for small datasets. In classification, the model assigns a sample to the class with the highest posterior probability. Naive Bayes is particularly attractive when interpretability, speed, and probabilistic outputs are desired.
+Different variants of Naive Bayes exist depending on the assumed distribution of the features, such as Gaussian Naive Bayes (GNB) for continuous data and Multinomial Naive Bayes for count-based features. During training, the model estimates class priors and distribution parameters directly from the data, making it computationally efficient and well-suited for small datasets. In classification, the model assigns a sample to the class with the highest posterior probability. Naive Bayes is particularly attractive when interpretability, speed, and probabilistic outputs are desired.
 
 \subsection{Support Vector Machines} \label{svms}
 
 Support Vector Machines (SVM) \cite{bib:svm} are powerful margin-based classifiers that aim to find an optimal decision boundary separating classes with the largest possible margin. In the case of linearly separable data, SVM identifies a hyperplane that maximizes the distance between the closest data points of each class, known as support vectors. By focusing on these critical samples, SVM achieves strong generalization performance.
 
-For non-linearly separable data, SVM employs kernel functions, such as linear, polynomial, or radial basis function (RBF) kernels, to implicitly project the data into a higher-dimensional feature space where a linear separation becomes possible. The trade-off between margin maximization and classification error is controlled by a regularization parameter, which balances model complexity and misclassification tolerance. SVMs are particularly effective in high-dimensional spaces and are widely used in biomedical classification tasks, although their lack of probabilistic output and sensitivity to hyperparameter selection can be considered limitations.
+For non-linearly separable data, SVM employs kernel functions, such as linear, polynomial, or radial basis function kernels, to implicitly project the data into a higher-dimensional feature space where a linear separation becomes possible. The trade-off between margin maximization and classification error is controlled by a regularization parameter, which balances model complexity and misclassification tolerance. SVMs are particularly effective in high-dimensional spaces and are widely used in biomedical classification tasks, although their lack of probabilistic output and sensitivity to hyperparameter selection can be considered limitations.
 
 \subsection{Linear Discriminant Analysis} \label{LDA}
 
@@ -771,7 +775,7 @@ Given the general matrix representation of a two-qubit gate and the specific tra
 
 \subsection{Input Encoding Techniques} \label{encoding}
 
-In this section, we present several techniques for encoding or embedding classical data into an $n$-qubit quantum system. While the strategy for data encoding is of paramount importance in the field of quantum machine learning, it often remains a secondary consideration in other areas of quantum computation; consequently, specialized terminology for these methods has not been widely standardized. For the purposes of this discussion, we will categorize these approaches as \textbf{basis} encoding, \textbf{amplitude} encoding, \textbf{time-evolution} encoding, and \textbf{Hamiltonian} encoding.
+In this section, we present several techniques for encoding or embedding classical data into an $n$-qubit quantum system. While the strategy for data encoding is of paramount importance in the field of QML, it often remains a secondary consideration in other areas of quantum computation; consequently, specialized terminology for these methods has not been widely standardized. For the purposes of this discussion, we will categorize these approaches as \textbf{basis} encoding, \textbf{amplitude} encoding, \textbf{time-evolution} encoding, and \textbf{Hamiltonian} encoding.
 
 \subsubsection{Basis Encoding}
 
@@ -790,11 +794,11 @@ Time-evolution encoding involves associating a scalar value $\chi \in \mathbb{R}
 	\label{eq:time_evol}
 \end{equation}
 
-Consequently, the state resulting from the evolution, $\ket{\psi(\chi)} = U(\chi)\ket{\psi_0}$, depends on the parameter $\chi$ in a manner determined by the Hamiltonian $H$. In the field of quantum machine learning, this encoding method is frequently employed to map classical trainable parameters onto a quantum circuit. The most prevalent implementation involves Pauli rotation gates, where the Hamiltonian is defined as $H = \frac{1}{2} \sigma_\alpha$ for $\alpha \in \{x, y, z\}$. By applying a sequence of such unitary operations $U(\chi)$, one can effectively encode a real-valued vector $\chi \in \mathbb{R}^N$.
+Consequently, the state resulting from the evolution, $\ket{\psi(\chi)} = U(\chi)\ket{\psi_0}$, depends on the parameter $\chi$ in a manner determined by the Hamiltonian $H$. In the field of QML, this encoding method is frequently employed to map classical trainable parameters onto a quantum circuit. The most prevalent implementation involves Pauli rotation gates, where the Hamiltonian is defined as $H = \frac{1}{2} \sigma_\alpha$ for $\alpha \in \{x, y, z\}$. By applying a sequence of such unitary operations $U(\chi)$, one can effectively encode a real-valued vector $\chi \in \mathbb{R}^N$.
 
 \subsubsection{Hamiltonian Encoding}
 
-For certain applications, it is advantageous to encode matrices directly into the Hamiltonian governing a quantum system's time evolution, a technique central to the HHL algorithm for matrix inversion. This method involves mapping a square matrix $\mathbf{A}$ to a corresponding Hamiltonian $H$. In instances where $\mathbf{A}$ is not Hermitian, a standard procedure is to employ the encoding transformation detailed in Equation~\ref{eq:ham_trick} to ensure hermiticity. 
+For certain applications, it is advantageous to encode matrices directly into the Hamiltonian governing a quantum system's time evolution, a technique central to the Harrow-Hassidim-Lloyd algorithm for matrix inversion \cite{bib:hhl}. This method involves mapping a square matrix $\mathbf{A}$ to a corresponding Hamiltonian $H$. In instances where $\mathbf{A}$ is not Hermitian, a standard procedure is to employ the encoding transformation detailed in Equation~\ref{eq:ham_trick} to ensure hermiticity. 
 
 \begin{equation}
 	U(\chi) = \begin{pmatrix}
@@ -850,7 +854,7 @@ To prepare a general quantum state, two distinct sequences of operations must be
 
 \subsection{Variational Quantum Classifier} \label{circuits}
 
-Significant research and development have been dedicated to the creation of early-stage quantum processors, collectively referred to as NISQ devices. These systems currently operate with approximately 50 to 100 qubits and lack robust error correction mechanisms, meaning they can only provide approximate computational results. Furthermore, connectivity is limited, as not all qubits in these devices can interact directly with one another. While NISQ-era hardware serves as a theoretical platform for exploring the advantages of quantum computing, the necessity of limiting algorithms to a restricted number of qubits and gates poses a major challenge to algorithmic design. To circumvent these constraints, a specialized class of hybrid protocols known as variational quantum algorithms (VQAs) has been developed \cite{bib:VQA}.
+Significant research and development have been dedicated to the creation of early-stage quantum processors, collectively referred to as NISQ devices. These systems currently operate with approximately 50 to 100 qubits and lack robust error correction mechanisms, meaning they can only provide approximate computational results. Furthermore, connectivity is limited, as not all qubits in these devices can interact directly with one another. While NISQ-era hardware serves as a theoretical platform for exploring the advantages of quantum computing, the necessity of limiting algorithms to a restricted number of qubits and gates poses a major challenge to algorithmic design. To circumvent these constraints, a specialized class of hybrid protocols known as variational quantum algorithms has been developed \cite{bib:VQA}.
 
 These algorithms are characterized not by a fixed sequence of operations, but by an "ansatz", a structural template that defines the arrangement of gates across specific qubits. This modular framework is scalable, as it can be extended to an arbitrary number of qubits by repeating the pattern in successive layers. The term "variational" stems from the fact that specific gates within the ansatz, typically Pauli rotations, are governed by continuous, adjustable parameters. These parameters are iteratively refined through a classical optimization process designed to minimize or maximize a cost function derived from the specific problem being addressed.
 
@@ -890,9 +894,9 @@ Fine Needle Aspiration (FNA) is a minimally invasive technique used to collect l
 	\label{fig:nuclei}
 \end{figure}
 
-In recent years, various classical machine learning approaches have been proposed for predicting malignancy based on different sets of features, depending on the experimental design and methodology of each study \cite{bib:cancer_prognosis}, \cite{bib:ml_in_cancer}, \cite{bib:Penn2020}. In this work, we utilize a dataset derived from measurements obtained from fine needle aspirates to evaluate the predictive power of its features. A range of machine learning algorithms is examined, including Logistic Regression, SVMs, LDA, Gaussian Naïve Bayes, LightGBM, and Random Forest classifiers, as implemented in the scikit-learn \cite{bib:scikit-learn}, \cite{bib:sklearn_api} library, to distinguish between benign and malignant breast tissue samples.
+In recent years, various classical machine learning approaches have been proposed for predicting malignancy based on different sets of features, depending on the experimental design and methodology of each study \cite{bib:cancer_prognosis}, \cite{bib:ml_in_cancer}, \cite{bib:Penn2020}. In this work, we utilize a dataset derived from measurements obtained from fine needle aspirates to evaluate the predictive power of its features. A range of machine learning algorithms is examined, including Logistic Regression, SVMs, LDA, GNB, LightGBM, and Random Forest classifiers, as implemented in the scikit-learn \cite{bib:scikit-learn}, \cite{bib:sklearn_api} library, to distinguish between benign and malignant breast tissue samples.
 
-Our analysis consists of three main steps. First, we perform an exploratory data analysis to examine the provided data, determining the number of features, their numerical ranges, and their distributions. We also check for missing values and potential class imbalances; this process allows us to understand the underlying patterns within the data and assess the complexity of the classification problem. The second step involves identifying which of the six proposed models classifies the breast cancer tumors most accurately. To achieve this, we employ repeated nested cross-validation, splitting the dataset into training and validation subsets. All necessary data cleaning and preprocessing are performed within this stage to prevent data leakage between the subsets. Finally, once the best-performing model is identified, we fine-tune it using bootstrapping to gain a better understanding of its generalization potential. The resulting model is then trained on the entire dataset and saved. For future inference, the saved model can be loaded and applied to unseen data.
+Our analysis consists of three main steps. First, we perform an exploratory data analysis to examine the provided data, determining the number of features, their numerical ranges, and their distributions. We also check for missing values and potential class imbalances; this process allows us to understand the underlying patterns within the data and assess the complexity of the classification problem. The second step involves identifying which of the six proposed models classifies the breast cancer tumors most accurately. To achieve this, we employ repeated nested cross-validation (rnCV), splitting the dataset into training and validation subsets. All necessary data cleaning and preprocessing are performed within this stage to prevent data leakage between the subsets. Finally, once the best-performing model is identified, we fine-tune it using bootstrapping to gain a better understanding of its generalization potential. The resulting model is then trained on the entire dataset and saved. For future inference, the saved model can be loaded and applied to unseen data.
 
 \section{Exploratory Data Analysis} \label{eda}
 
@@ -914,7 +918,7 @@ Examining the distribution of the two classes across the 569 samples, we notice 
 	\label{fig:class_distro}
 \end{figure}
 
-Observing the distribution of each feature, we notice that the majority of them exist on different scales. To account for this, we will scale them using appropriate methods during the application of the repeated nested cross-validation technique. 
+Observing the distribution of each feature, we notice that the majority of them exist on different scales. To account for this, we will scale them using appropriate methods during the application of the rnCV. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -957,7 +961,7 @@ Regarding the feature-wise correlation, we detect no significant linear relation
 	\label{fig:feature_corr_between_feats}
 \end{figure} 
 
-As a final step of this analysis, we also perform principal component analysis on the entire dataset. Our purpose here is twofold. First and foremost, for our quantum implementation, we must perform some form of dimensionality reduction, as the number of features we can encode into the quantum circuit is limited. Therefore, we need to gain a rough understanding of how much information from our problem is preserved when we utilize 2, 4, 8, and 16 principal components.
+As a final step of this analysis, we also perform Principal Component Analysis (PCA) on the entire dataset. Our purpose here is twofold. First and foremost, for our quantum implementation, we must perform some form of dimensionality reduction, as the number of features we can encode into the quantum circuit is limited. Therefore, we need to gain a rough understanding of how much information from our problem is preserved when we utilize 2, 4, 8, and 16 Principal Components (PC).
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -965,13 +969,13 @@ As a final step of this analysis, we also perform principal component analysis o
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{figures/cum_variance_PCA.png}
 	% Place caption under the figure
-	\caption{Cumulative Variance our tumor data explained by Principal Components
+	\caption{Cumulative Variance our tumor data explained by PCs
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:cum_variance}
 \end{figure} 
 
-Secondly, PCA allows us to gain a general understanding of class separability. If only two principal components are utilized and no significant linear class separability is observed, it is likely that the classes are not linearly separable. 
+Secondly, PCA allows us to gain a general understanding of class separability. If only two PCS are utilized and no significant linear class separability is observed, it is likely that the classes are not linearly separable. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -979,31 +983,31 @@ Secondly, PCA allows us to gain a general understanding of class separability. I
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{figures/pca_2_components.png}
 	% Place caption under the figure
-	\caption{Scatterplot of the 2 principal components used to describe the entirety of our data
+	\caption{Scatterplot of the 2 PCs used to describe the entirety of our data
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:pca_2_components}
 \end{figure}
 
-As a final step of the exploratory data analysis and to prepare for the evaluation of the proposed methods, we perform an 80-20 split of our dataset while ensuring that the class imbalance is preserved across both subsets. Additionally, since the models require numerical rather than categorical values, we encode our classes accordingly: the benign class, originally denoted by the letter B, is assigned the number 0, while the malignant class, originally denoted by the letter M, is assigned the number 1. Any further data processing will be conducted within the folds of the repeated nested cross-validation.
+As a final step of the exploratory data analysis and to prepare for the evaluation of the proposed methods, we perform an 80-20 split of our dataset while ensuring that the class imbalance is preserved across both subsets. Additionally, since the models require numerical rather than categorical values, we encode our classes accordingly: the benign class, originally denoted by the letter B, is assigned the number 0, while the malignant class, originally denoted by the letter M, is assigned the number 1. Any further data processing will be conducted within the folds of the rnCV.
 
 \section{Evaluation of Classical Machine Learning Methods} \label{clas_eval}
 
-To determine which classical machine learning method is most suitable for our tumor classification task, we evaluate the generalization capabilities of Logistic Regression, Support Vector Machines, Linear Discriminant Analysis, Gaussian Naive Bayes, LightGBM, and Random Forest classifiers across nine key metrics. Since each model is characterized by its own unique set of hyperparameters, we utilize the Optuna \cite{bib:optuna} library in conjunction with repeated nested cross-validation, employing ten repetitions, five outer folds, and three inner folds, to obtain the scores for these metrics.
+To determine which classical machine learning method is most suitable for our tumor classification task, we evaluate the generalization capabilities of Logistic Regression, SVM, LDA, GNB, LightGBM, and Random Forest classifiers across nine key metrics. Since each model is characterized by its own unique set of hyperparameters, we utilize the Optuna \cite{bib:optuna} library in conjunction with rnCV, employing ten repetitions, five outer folds, and three inner folds, to obtain the scores for these metrics.
 
 \subsection{Classical Models and their Respective Hyperparameters} \label{clas_models}
 
-To determine the most effective classifier for the tumor classification task, six well-established supervised learning algorithms were evaluated. These models were deliberately chosen to span a broad spectrum of learning paradigms, including linear, probabilistic, discriminant, kernel-based, ensemble, and gradient boosting approaches, thereby enabling a comprehensive comparison of modeling strategies. For each classifier, hyperparameter optimization was carried out using Optuna \cite{bib:optuna}, a Bayesian optimization framework that efficiently explores high-dimensional search spaces. This tuning process was embedded within the inner loop of a repeated nested cross-validation (rnCV) pipeline, ensuring that hyperparameter selection was strictly separated from performance estimation and thereby preventing information leakage. The first five models were implemented using the scikit-learn \cite{bib:sklearn_api} library, while the gradient boosting model was implemented using the dedicated LightGBM \cite{bib:lightgbm_library} library.
+To determine the most effective classifier for the tumor classification task, six well-established supervised learning algorithms were evaluated. These models were deliberately chosen to span a broad spectrum of learning paradigms, including linear, probabilistic, discriminant, kernel-based, ensemble, and gradient boosting approaches, thereby enabling a comprehensive comparison of modeling strategies. For each classifier, hyperparameter optimization was carried out using Optuna \cite{bib:optuna}, a Bayesian optimization framework that efficiently explores high-dimensional search spaces. This tuning process was embedded within the inner loop of a rnCV pipeline, ensuring that hyperparameter selection was strictly separated from performance estimation and thereby preventing information leakage. The first five models were implemented using the scikit-learn \cite{bib:sklearn_api} library, while the gradient boosting model was implemented using the dedicated LightGBM \cite{bib:lightgbm_library} library.
 
-Logistic Regression (LR) was employed as a representative linear classifier. This model estimates the log-odds of the binary target variable as a linear combination of the input features and is particularly effective when the classes are approximately linearly separable. Beyond its predictive capability, Logistic Regression offers strong interpretability, as model coefficients can be directly linked to feature influence. Hyperparameter tuning focused on the type of regularization applied to mitigate overfitting, including ($l_1$), ($l_2$), and $elastic net$ penalties. The inverse regularization strength was also optimized, allowing control over the bias–variance trade-off, while the elastic net mixing parameter was tuned when applicable. The saga solver was selected due to its compatibility with elastic net regularization and its efficiency on larger datasets.
+Logistic Regression was employed as a representative linear classifier. This model estimates the log-odds of the binary target variable as a linear combination of the input features and is particularly effective when the classes are approximately linearly separable. Beyond its predictive capability, Logistic Regression offers strong interpretability, as model coefficients can be directly linked to feature influence. Hyperparameter tuning focused on the type of regularization applied to mitigate overfitting, including ($l_1$), ($l_2$), and $elastic net$ penalties. The inverse regularization strength was also optimized, allowing control over the bias–variance trade-off, while the elastic net mixing parameter was tuned when applicable. The saga solver was selected due to its compatibility with elastic net regularization and its efficiency on larger datasets.
 
-Gaussian Naive Bayes (GNB) was included as a probabilistic baseline model. This classifier assumes that features are conditionally independent given the class label and that each feature follows a Gaussian distribution within each class. Despite the simplicity and often unrealistic nature of these assumptions, GNB is computationally efficient and can perform surprisingly well in practice, particularly on smaller datasets. Hyperparameter tuning was limited to the variance smoothing parameter, which adds a small constant to feature variances in order to enhance numerical stability and prevent division-by-zero errors during likelihood estimation.
+GNB was included as a probabilistic baseline model. This classifier assumes that features are conditionally independent given the class label and that each feature follows a Gaussian distribution within each class. Despite the simplicity and often unrealistic nature of these assumptions, GNB is computationally efficient and can perform surprisingly well in practice, particularly on smaller datasets. Hyperparameter tuning was limited to the variance smoothing parameter, which adds a small constant to feature variances in order to enhance numerical stability and prevent division-by-zero errors during likelihood estimation.
 
-Linear Discriminant Analysis (LDA) was used as a classical generative model that assumes normally distributed classes with equal covariance matrices. LDA seeks a linear projection of the data that maximizes class separability by optimizing the ratio of between-class to within-class variance. This projection can also be interpreted as a dimensionality reduction step that preserves discriminative information. During tuning, different solvers for parameter estimation were explored, along with the convergence tolerance, which governs numerical precision and computational stability.
+LDA was used as a classical generative model that assumes normally distributed classes with equal covariance matrices. LDA seeks a linear projection of the data that maximizes class separability by optimizing the ratio of between-class to within-class variance. This projection can also be interpreted as a dimensionality reduction step that preserves discriminative information. During tuning, different solvers for parameter estimation were explored, along with the convergence tolerance, which governs numerical precision and computational stability.
 
-Support Vector Machines (SVMs) were applied as a powerful kernel-based classification method capable of modeling both linear and highly non-linear decision boundaries. SVMs operate by identifying the hyperplane that maximizes the margin between classes in a transformed feature space. The flexibility of the model arises from the choice of kernel function, which was treated as a tunable parameter alongside the regularization parameter controlling the trade-off between margin maximization and classification error. Probability estimation was enabled to allow the computation of threshold-independent performance metrics such as the area under the ROC curve.
+SVMs were applied as a powerful kernel-based classification method capable of modeling both linear and highly non-linear decision boundaries. SVMs operate by identifying the hyperplane that maximizes the margin between classes in a transformed feature space. The flexibility of the model arises from the choice of kernel function, which was treated as a tunable parameter alongside the regularization parameter controlling the trade-off between margin maximization and classification error. Probability estimation was enabled to allow the computation of threshold-independent performance metrics such as the area under the ROC curve.
 
-Random Forests (RF) were included as an ensemble learning method based on aggregating the predictions of multiple decision trees trained on bootstrapped subsets of the data. By combining many weak learners, Random Forests are able to capture complex non-linear relationships while reducing variance and mitigating overfitting. Hyperparameter optimization targeted the number of trees in the ensemble, the maximum depth of each tree, and the minimum number of samples required to split an internal node, all of which directly influence model complexity and generalization performance.
+Random Forests were included as an ensemble learning method based on aggregating the predictions of multiple decision trees trained on bootstrapped subsets of the data. By combining many weak learners, Random Forests are able to capture complex non-linear relationships while reducing variance and mitigating overfitting. Hyperparameter optimization targeted the number of trees in the ensemble, the maximum depth of each tree, and the minimum number of samples required to split an internal node, all of which directly influence model complexity and generalization performance.
 
 Finally, LightGBM was employed as a state-of-the-art gradient boosting framework based on decision trees. Unlike traditional level-wise tree growth, LightGBM adopts a leaf-wise growth strategy, which often leads to improved accuracy and faster convergence. This model is particularly well suited for tabular data and large-scale learning problems. Hyperparameter tuning focused on the number of boosting iterations, the maximum tree depth, and the learning rate, which controls the contribution of each individual tree to the ensemble. Logging verbosity was disabled to ensure clean execution during large-scale cross-validation.
 
@@ -1052,7 +1056,7 @@ The Matthews Correlation Coefficient (MCC) is a comprehensive metric that measur
 	{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}
 \end{equation}
 
-Area Under the Receiver Operating Characteristic Curve, or ROC AUC, evaluates the ability of a classifier to distinguish between classes across all possible decision thresholds. The Receiver Operating Characteristic (ROC) curve is constructed by plotting the true positive rate against the false positive rate as the classification threshold varies. The area under this curve represents the probability that the classifier assigns a higher score to a randomly chosen positive instance than to a randomly chosen negative one. ROC AUC is threshold-independent and provides a global view of discriminative performance, although it can be overly optimistic in heavily imbalanced datasets. 
+Area Under the Receiver Operating Characteristic Curve (ROC AUC), evaluates the ability of a classifier to distinguish between classes across all possible decision thresholds. The Receiver Operating Characteristic (ROC) curve is constructed by plotting the true positive rate against the false positive rate as the classification threshold varies. The area under this curve represents the probability that the classifier assigns a higher score to a randomly chosen positive instance than to a randomly chosen negative one. ROC AUC is threshold-independent and provides a global view of discriminative performance, although it can be overly optimistic in heavily imbalanced datasets. 
 
 \begin{equation}
 	\text{ROC AUC}
@@ -1064,7 +1068,7 @@ Area Under the Receiver Operating Characteristic Curve, or ROC AUC, evaluates th
 	\text{FPR} = \frac{FP}{FP + TN}
 \end{equation}
 
-Area Under the Precision–Recall Curve, or PR AUC, summarizes the relationship between precision and recall across different classification thresholds. The Precision–Recall curve focuses explicitly on the performance of the positive class, making it more informative than ROC AUC when dealing with strong class imbalance. In such settings, PR AUC provides a clearer picture of how well the model identifies positive samples without generating excessive false positives. Higher PR AUC values indicate better overall performance in detecting the minority class. 
+Area Under the Precision–Recall Curve (PR AUC), summarizes the relationship between precision and recall across different classification thresholds. The Precision–Recall curve focuses explicitly on the performance of the positive class, making it more informative than ROC AUC when dealing with strong class imbalance. In such settings, PR AUC provides a clearer picture of how well the model identifies positive samples without generating excessive false positives. Higher PR AUC values indicate better overall performance in detecting the minority class. 
 
 \begin{equation}
 	\text{PR AUC}
@@ -1087,7 +1091,7 @@ Negative Predictive Value (NPV) measures the proportion of predicted negative in
 
 \subsection{Repeated Nested Cross Validation} \label{rncv}
 
-A central challenge in supervised machine learning is the reliable estimation of a model’s generalization performance, particularly in settings where model hyperparameters must be tuned using the available data. Hyperparameter optimization is an inherently data-driven process, and if performance is evaluated on data that has influenced this optimization, the resulting estimates are optimistically biased. This issue is especially pronounced in small or moderate-sized datasets, high-dimensional feature spaces, or when flexible models with many tunable parameters are employed. Repeated nested cross-validation (rnCV) has been developed to address these challenges by providing an evaluation framework that simultaneously minimizes bias and reduces variance in performance estimation.
+A central challenge in supervised machine learning is the reliable estimation of a model’s generalization performance, particularly in settings where model hyperparameters must be tuned using the available data. Hyperparameter optimization is an inherently data-driven process, and if performance is evaluated on data that has influenced this optimization, the resulting estimates are optimistically biased. This issue is especially pronounced in small or moderate-sized datasets, high-dimensional feature spaces, or when flexible models with many tunable parameters are employed. rnCV has been developed to address these challenges by providing an evaluation framework that simultaneously minimizes bias and reduces variance in performance estimation.
 
 In conventional k-fold cross-validation, the dataset is partitioned into k subsets (folds), with each fold used once as a validation set while the remaining folds serve as training data. The performance metrics obtained across the $k$ folds are then averaged to yield an overall estimate. While this approach is appropriate when model hyperparameters are fixed a priori, it becomes problematic when the same cross-validation procedure is used both to select hyperparameters and to estimate predictive performance. In such cases, the model effectively “double dips” into the data: hyperparameters are chosen because they perform well on the validation folds, and the same folds are then used to report performance. This reuse of information leads to systematically inflated performance estimates and undermines the validity of model comparisons.
 
@@ -1095,17 +1099,17 @@ Nested cross-validation was introduced as a principled solution to this problem 
 
 Although nested cross-validation effectively removes the optimistic bias associated with hyperparameter tuning, it still suffers from relatively high variance. The specific partitioning of the data into folds can substantially influence both the selected hyperparameters and the resulting performance estimates. This variability is particularly evident in small datasets or in problems characterized by noisy measurements or class imbalance. As a result, conclusions drawn from a single run of nested cross-validation may be sensitive to the random choice of data splits, potentially leading to unstable model rankings or irreproducible findings.
 
-Repeated nested cross-validation extends the nested cross-validation framework by incorporating an additional repetition layer, thereby addressing the variance issue. In rnCV, the entire nested cross-validation procedure is repeated $R$ times, each time with a different random reshuffling of the dataset prior to fold construction. For each repetition, $K$-fold outer cross-validation is performed, and within each outer fold, $L$-fold inner cross-validation is used for hyperparameter optimization. Across all repetitions, this results in R×K independent performance estimates obtained from strictly held-out test sets. The final performance is summarized by aggregating these estimates, typically by computing their mean and standard deviation, and optionally confidence intervals.
+rnCV extends the nested cross-validation framework by incorporating an additional repetition layer, thereby addressing the variance issue. In rnCV, the entire nested cross-validation procedure is repeated $R$ times, each time with a different random reshuffling of the dataset prior to fold construction. For each repetition, $K$-fold outer cross-validation is performed, and within each outer fold, $L$-fold inner cross-validation is used for hyperparameter optimization. Across all repetitions, this results in R×K independent performance estimates obtained from strictly held-out test sets. The final performance is summarized by aggregating these estimates, typically by computing their mean and standard deviation, and optionally confidence intervals.
 
-An important conceptual aspect of repeated nested cross-validation is the interpretation of what is being estimated. rnCV does not evaluate the performance of a single trained model instance; rather, it estimates the expected generalization performance of the entire model selection procedure. That is, it answers the question of how well one should expect the modeling pipeline, including data splitting, hyperparameter tuning, and training, to perform when applied to new, unseen data drawn from the same underlying distribution. This distinction is critical in scientific and applied settings, where the goal is often to assess the robustness and reliability of a methodological approach rather than to optimize a single model realization.
+An important conceptual aspect of rnCV is the interpretation of what is being estimated. rnCV does not evaluate the performance of a single trained model instance; rather, it estimates the expected generalization performance of the entire model selection procedure. That is, it answers the question of how well one should expect the modeling pipeline, including data splitting, hyperparameter tuning, and training, to perform when applied to new, unseen data drawn from the same underlying distribution. This distinction is critical in scientific and applied settings, where the goal is often to assess the robustness and reliability of a methodological approach rather than to optimize a single model realization.
 
-The primary motivation for using repeated nested cross-validation lies in its ability to provide both unbiased and statistically stable performance estimates. By strictly separating training, validation, and testing phases, rnCV eliminates information leakage from the hyperparameter tuning process into the performance evaluation. At the same time, repetition across multiple random data partitions substantially reduces the variance associated with any single split. This combination makes rnCV particularly well suited for fair model comparison, as it mitigates the risk of falsely declaring one algorithm superior due to favorable data partitioning or chance effects.
+The primary motivation for using rnCV lies in its ability to provide both unbiased and statistically stable performance estimates. By strictly separating training, validation, and testing phases, rnCV eliminates information leakage from the hyperparameter tuning process into the performance evaluation. At the same time, repetition across multiple random data partitions substantially reduces the variance associated with any single split. This combination makes rnCV particularly well suited for fair model comparison, as it mitigates the risk of falsely declaring one algorithm superior due to favorable data partitioning or chance effects.
 
-Repeated nested cross-validation is especially valuable in research domains such as bioinformatics, medical machine learning, and neuroscience, where datasets are often limited in size, class distributions may be imbalanced, and model interpretability and reliability are of paramount importance. In such contexts, performance estimates are frequently used to support scientific claims, guide experimental decisions, or inform clinical applications. The rigorous evaluation provided by rnCV therefore enhances the credibility and reproducibility of reported results.
+rnCV is especially valuable in research domains such as bioinformatics, medical machine learning, and neuroscience, where datasets are often limited in size, class distributions may be imbalanced, and model interpretability and reliability are of paramount importance. In such contexts, performance estimates are frequently used to support scientific claims, guide experimental decisions, or inform clinical applications. The rigorous evaluation provided by rnCV therefore enhances the credibility and reproducibility of reported results.
 
 Despite its methodological advantages, rnCV is computationally demanding. The total number of model trainings scales with the number of repetitions, outer folds, inner folds, and the size of the hyperparameter search space. Consequently, rnCV may be impractical for very large datasets or computationally expensive models unless sufficient computational resources are available. For this reason, rnCV is typically employed during the model assessment and comparison phase rather than for training the final model intended for deployment. Once a model class and hyperparameter ranges have been selected based on rnCV results, a final model is usually trained on the full dataset.
 
-In summary, repeated nested cross-validation represents a rigorous and statistically sound framework for model evaluation in supervised learning. By combining the unbiased estimation properties of nested cross-validation with the variance-reducing benefits of repetition, rnCV provides a reliable estimate of the generalization performance of a complete model selection pipeline. For studies in which methodological validity, fairness of comparison, and reproducibility are critical, rnCV constitutes a gold-standard evaluation strategy.
+In summary, rnCV represents a rigorous and statistically sound framework for model evaluation in supervised learning. By combining the unbiased estimation properties of nested cross-validation with the variance-reducing benefits of repetition, rnCV provides a reliable estimate of the generalization performance of a complete model selection pipeline. For studies in which methodological validity, fairness of comparison, and reproducibility are critical, rnCV constitutes a gold-standard evaluation strategy.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1158,7 +1162,7 @@ Since we have determined that Logistic Regression is the most suitable model for
 
 \subsection{Bootstrapping} \label{bootstrap}
 
-Bootstrapping is a resampling-based statistical technique that is widely used to quantify the uncertainty of an estimated statistic when only a single dataset is available. In the context of machine learning model evaluation, bootstrapping is primarily employed to approximate the sampling distribution of a performance metric, such as accuracy, area under the ROC curve (AUC), F1-score, or mean squared error, without relying on parametric assumptions about the underlying data distribution. The fundamental principle of bootstrapping is that the empirical dataset can be treated as a proxy for the unknown population, allowing repeated resampling with replacement to simulate the process of drawing new datasets from the same population.
+Bootstrapping is a resampling-based statistical technique that is widely used to quantify the uncertainty of an estimated statistic when only a single dataset is available. In the context of machine learning model evaluation, bootstrapping is primarily employed to approximate the sampling distribution of a performance metric, such as accuracy, ROC AUC,  or F1-score without relying on parametric assumptions about the underlying data distribution. The fundamental principle of bootstrapping is that the empirical dataset can be treated as a proxy for the unknown population, allowing repeated resampling with replacement to simulate the process of drawing new datasets from the same population.
 
 The main motivation for using bootstrapping lies in its ability to provide insight into the variability and reliability of a model’s performance. A single evaluation on a validation set yields only a point estimate, which may be highly dependent on the particular samples included in that set. Bootstrapping addresses this limitation by generating a distribution of performance estimates, thereby allowing the researcher to assess how sensitive the reported performance is to variations in the validation data. This is especially important in machine learning applications where datasets are often limited in size and where performance metrics may exhibit substantial variability.
 
@@ -1170,7 +1174,7 @@ The bootstrapping procedure begins by drawing multiple bootstrap samples from th
 
 Repeating this process a large number of times, typically between 1,000 and 10,000 iterations, yields an empirical distribution of the performance metric. This distribution provides a direct estimate of the variability of the model’s performance and enables the computation of summary statistics such as the mean, standard deviation, and confidence intervals. A commonly reported measure is the 95\% confidence interval, which is usually obtained using the percentile method by taking the 2.5th and 97.5th percentiles of the bootstrap distribution. The resulting interval represents a range within which the true performance metric is expected to lie with 95\% confidence.
 
-Reporting a 95\% confidence interval alongside the mean performance provides a much more informative assessment than a single point estimate alone. For example, stating that a model achieves an AUC of 0.87 with a 95\% confidence interval of [0.84, 0.90] conveys both the expected performance and the associated uncertainty. Narrow confidence intervals indicate a stable and robust model, whereas wide intervals may suggest sensitivity to data variability or insufficient sample size.
+Reporting a 95\% confidence interval alongside the mean performance provides a much more informative assessment than a single point estimate alone. For example, stating that a model achieves an AUC of 0.87 with a 95\% confidence interval of $[0.84, 0.90]$ conveys both the expected performance and the associated uncertainty. Narrow confidence intervals indicate a stable and robust model, whereas wide intervals may suggest sensitivity to data variability or insufficient sample size.
 
 It is important to emphasize that bootstrapping is not intended to replace cross-validation or improve model performance. Instead, it complements model selection procedures by offering a principled way to assess the reliability of the final model’s evaluation. Furthermore, bootstrapping should be applied to the validation set rather than the test set, as the latter is typically reserved for a single, unbiased estimate of generalization performance. Using bootstrapping appropriately ensures that performance claims are statistically grounded and scientifically credible.
 
@@ -1210,25 +1214,25 @@ By saving our final fine-tuned model for future inference on unseen data, we con
 
 \chapter{RESULTS FROM VARIATIONAL QUANTUM METHODS} \label{qml}
 
-Following the determination that Logistic Regression represents the most efficacious classical machine learning approach for the current tumor classification problem, the research transitions toward the implementation of Quantum Machine Learning (QML) paradigms. Specifically, this study investigates the Variational Quantum Classifier (VQC) to identify optimal sets of trainable parameters that provide a robust and satisfactory solution to the diagnostic task. This exploration involves a systematic evaluation of the VQC's classification capabilities across architectures consisting of 1, 2, 3, 4, and 5 qubits, respectively. To facilitate this, Principal Component Analysis (PCA) is employed to perform the necessary dimensionality reduction, ensuring the input features are structurally compatible with the constraints of the quantum circuits. The computational implementation of this framework is supported by the PennyLane \cite{bib:pennylane} Python library for quantum circuit simulation and differentiable programming, while NumPy facilitates essential numerical manipulations. Furthermore, pandas and scikit-learn are utilized for data orchestration and dimensionality reduction, while Seaborn \cite{bib:seaborn} and Matplotlib \cite{bib:matplotlib} are employed for high-fidelity data visualization and statistical plotting.
+Following the determination that Logistic Regression represents the most efficacious classical machine learning approach for the current tumor classification problem, the research transitions toward the implementation of QML paradigms. Specifically, this study investigates the Variational Quantum Classifier (VQC) to identify optimal sets of trainable parameters that provide a robust and satisfactory solution to the diagnostic task. This exploration involves a systematic evaluation of the VQC's classification capabilities across architectures consisting of 1, 2, 3, 4, and 5 qubits, respectively. To facilitate this, PCA is employed to perform the necessary dimensionality reduction, ensuring the input features are structurally compatible with the constraints of the quantum circuits. The computational implementation of this framework is supported by the PennyLane \cite{bib:pennylane} Python library for quantum circuit simulation and differentiable programming, while NumPy facilitates essential numerical manipulations. Furthermore, pandas and scikit-learn are utilized for data orchestration and dimensionality reduction, while Seaborn \cite{bib:seaborn} and Matplotlib \cite{bib:matplotlib} are employed for high-fidelity data visualization and statistical plotting.
 
 A critical component of this transition involves a refined approach to data management and integrity, starting with a tripartite division of the dataset. Unlike the previous classical approach, we utilize a 60-20-20 split, wherein 60\% of the original data is allocated for model training, 20\% is reserved for validation to guide the optimization of variational parameters, and the remaining 20\% serves as a dedicated test set for final, unbiased model evaluation. To maintain the statistical integrity of the dataset, class imbalance is meticulously accounted for through stratified sampling across all three subsets, ensuring that the proportional representation of benign and malignant cases remains consistent. Furthermore, to mitigate the significant risks associated with data leakage, we ensure that no information from the validation or test sets influences the training phase. In practical terms, this necessitates that any preprocessing transformers or feature scalers, including the PCA model, are fitted exclusively on the training subset and subsequently applied to the validation and test sets only after the initial stratified split has been performed.
 
-Another significant departure from the classical methodology is the modification of the target label encoding. Rather than the standard binary assignment of 0 for benign and 1 for malignant, we adopt a bipolar encoding scheme where the benign class is represented by -1 and the malignant class by 1. This preprocessing step is necessitated by the physical nature of the quantum classifier, which essentially utilizes the sign of the output measurement to assign a predicted label to each input vector. This encoding aligns with the measurement of a quantum bit in the computational basis, where expectation values naturally range within the interval [-1, 1]. Consequently, the Mean Square Error (MSE) is selected as the objective loss function for its simplicity and its compatibility with these continuous expectation values. Notably, during the optimization process, we utilize the raw measurement values rather than their discrete signs to preserve the granular gradient information required for effective training. The rationale behind this specific choice and its impact on the convergence of the model will be expanded upon in subsequent sections of this study.
+Another significant departure from the classical methodology is the modification of the target label encoding. Rather than the standard binary assignment of 0 for benign and 1 for malignant, we adopt a bipolar encoding scheme where the benign class is represented by -1 and the malignant class by 1. This preprocessing step is necessitated by the physical nature of the quantum classifier, which essentially utilizes the sign of the output measurement to assign a predicted label to each input vector. This encoding aligns with the measurement of a quantum bit in the computational basis, where expectation values naturally range within the interval $[-1, 1]$. Consequently, the Mean Squared Error (MSE) is selected as the objective loss function for its simplicity and its compatibility with these continuous expectation values. Notably, during the optimization process, we utilize the raw measurement values rather than their discrete signs to preserve the granular gradient information required for effective training. The rationale behind this specific choice and its impact on the convergence of the model will be expanded upon in subsequent sections of this study.
 
-As a concluding note on the experimental design, the evaluation of the VQC’s performance is streamlined to focus on four primary metrics: Accuracy, Recall, Precision, and the F1-score. By restricting the evaluation to these fundamental indicators, we aim to provide a clear and focused assessment of the VQC’s potential within a medical diagnostic context without the confounding variables introduced by a larger collection of comparative methods. This simplified evaluation framework is intended to illuminate the relative strengths of the quantum approach in comparison to established classical baselines. Having established these methodological differences and the underlying logic of our quantum framework, we now proceed to an in-depth explanation of the specific training, validation, and testing protocols designed for the Variational Quantum Classifier.
+As a concluding note on the experimental design, the evaluation of the VQC’s performance is streamlined to focus on four primary metrics: Accuracy, Recall, Precision, and the F1-score. By restricting the evaluation to these fundamental indicators, we aim to provide a clear and focused assessment of the VQC’s potential within a medical diagnostic context without the confounding variables introduced by a larger collection of comparative methods. This simplified evaluation framework is intended to illuminate the relative strengths of the quantum approach in comparison to established classical baselines. Having established these methodological differences and the underlying logic of our quantum framework, we now proceed to an in-depth explanation of the specific training, validation, and testing protocols designed for the VQC.
 
 The methodological framework adopted for this research remains consistent across all experimental trials involving Variational Quantum Classifiers (VQCs) of various qubit capacities. This framework is partitioned into two primary segments: the data preparation stage and the training and testing phase. The data preparation process is fundamentally guided by the specific number of qubits utilized in each iteration, primarily involving the implementation of dimensionality reduction techniques and the systematic scaling of the training, validation, and test datasets. Additionally, a preliminary exploratory data visualization of the processed data is conducted to evaluate the spatial separability of the two classes, thereby gauging the inherent complexity of the classification task.
 
-Following the completion of the data preprocessing phase for all three subsets, the training and evaluation stage focuses on optimizing the Variational Quantum Classifier using the training and validation sets, followed by a final assessment of its performance on the test set. The fundamental circuit architecture remains invariant regardless of the qubit count and is categorized into three specific components. The initial segment involves data encoding, wherein classical information is mapped into the quantum state. To achieve this, we employ the Amplitude Efficient State Preparation method proposed by Petruccione and Schuld \cite{bib:schuld_petruccione}, which facilitates the encoding of \(2^n\) features using n qubits by first normalizing the input vectors.
+Following the completion of the data preprocessing phase for all three subsets, the training and evaluation stage focuses on optimizing the VQC using the training and validation sets, followed by a final assessment of its performance on the test set. The fundamental circuit architecture remains invariant regardless of the qubit count and is categorized into three specific components. The initial segment involves data encoding, wherein classical information is mapped into the quantum state. To achieve this, we employ the Amplitude Efficient State Preparation method proposed by Petruccione and Schuld \cite{bib:schuld_petruccione}, which facilitates the encoding of \(2^n\) features using n qubits by first normalizing the input vectors.
 
 In cases where the number of features is less than \(2^n\), the input vector is padded with a constant value of 0.1 to satisfy the dimensionality requirements of the encoding scheme. This padding ensures that the input dimensions remain consistent with the Hilbert space of the chosen qubit configuration. This segment is crucial as it defines the initial state of the quantum system before any transformations occur in the variational layers.
 
-The second component comprises the variational segment, which incorporates the system's trainable parameters. Drawing inspiration from the work of Schuld et al.\cite{bib:Schuld_2020} and contemporary methodologies in classical neural networks, this architectural section consists of layers that are repeated for a predetermined number of iterations. Each layer is composed of a sequence of single-qubit rotation gates followed by Controlled-NOT ($CNOT$) gates to facilitate multi-qubit entanglement. Adopting the notation utilized by the PennyLane library, the single-qubit rotation gates are implemented as arbitrary rotations, defined mathematically as $Rot(\phi, \theta, \omega) = R_Z(\omega) R_Y(\theta) R_Z(\phi)$. This sequence represents a rotation around the $z$-axis by an angle $\omega$, followed by a rotation around the $y$-axis by $\theta$, and a final rotation around the $z$-axis by $\phi$.
+The second component comprises the variational segment, which incorporates the system's trainable parameters. Drawing inspiration from the work of Schuld et al.\cite{bib:Schuld_2020} and contemporary methodologies in classical neural networks, this architectural section consists of layers that are repeated for a predetermined number of iterations. Each layer is composed of a sequence of single-qubit rotation gates followed by $CNOT$ gates to facilitate multi-qubit entanglement. Adopting the notation utilized by the PennyLane library, the single-qubit rotation gates are implemented as arbitrary rotations, defined mathematically as $Rot(\phi, \theta, \omega) = R_Z(\omega) R_Y(\theta) R_Z(\phi)$. This sequence represents a rotation around the $z$-axis by an angle $\omega$, followed by a rotation around the $y$-axis by $\theta$, and a final rotation around the $z$-axis by $\phi$.
 
 This specific configuration of gates allows the model to navigate the Hilbert space effectively, with these rotation angles serving as the primary trainable quantum parameters. Consequently, the number of trainable parameters per layer scales linearly with the number of qubits: three for a single qubit, six for two qubits, nine for three qubits, twelve for four qubits, and fifteen for a five-qubit configuration. Crucially, these parameter values are unique to each layer; for instance, a single-qubit classifier utilizing two variational layers would comprise six distinct trainable parameters. As such, the total parameter space expands rapidly in relation to both circuit width and depth
 
-The third and final component of the Variational Quantum Classifier architecture is the measurement stage, during which the quantum state is collapsed to extract classical information. To maintain a streamlined and interpretable framework, the measurement is restricted to the first qubit of the circuit. The integration of Controlled-NOT gates in the preceding layers is critical at this stage, as the entanglement generated by these multi-qubit operations ensures that the state of the primary qubit is inextricably linked to the states of all other qubits in the register. Consequently, the expectation value derived from the first qubit, typically obtained through measurement in the Z basis, reflects a global state influenced by the entire circuit. This approach exploits the intrinsic properties of quantum entanglement, where a measurement on a single subsystem provides representative insights into the collective quantum state of the system. An illustrative representation of a VQC configuration comprising two qubits and six layers is provided in Figure\textbf{~\ref{fig:2_qbts_6_layers}} to clarify this architectural design.
+The third and final component of the VQC architecture is the measurement stage, during which the quantum state is collapsed to extract classical information. To maintain a streamlined and interpretable framework, the measurement is restricted to the first qubit of the circuit. The integration of $CNOT$ gates in the preceding layers is critical at this stage, as the entanglement generated by these multi-qubit operations ensures that the state of the primary qubit is inextricably linked to the states of all other qubits in the register. Consequently, the expectation value derived from the first qubit, typically obtained through measurement in the Z basis, reflects a global state influenced by the entire circuit. This approach exploits the intrinsic properties of quantum entanglement, where a measurement on a single subsystem provides representative insights into the collective quantum state of the system. An illustrative representation of a VQC configuration comprising two qubits and six layers is provided in Figure\textbf{~\ref{fig:2_qbts_6_layers}} to clarify this architectural design.
 
 \begin{figure}[H]
 % Define the figure file in the \includegraphics command
@@ -1236,57 +1240,57 @@ The third and final component of the Variational Quantum Classifier architecture
 % in the \graphicspath command at the top
 \includegraphics[width=\linewidth]{best_VQC_2_qubits_biased}
 % Place caption under the figure
-\caption{A VQC configuration comprising of two qubits and six layers
+\caption{A VQC's circuit configuration comprising of two qubits and six layers
 }
 % Label the caption to include in the list of figures
 \label{fig:2_qbts_6_layers}
 \end{figure}
 
-To derive the final predictive output of the circuit, we extract the expectation value from the measurement of the first qubit. To this result, we introduce a classical scalar known as a bias term, which is initially set to zero. Consequently, the decision function of the classifier is defined as the summation of the quantum circuit's measurement and this classical value. We distinguish between two primary configurations: the unbiased Variational Quantum Classifier, where the bias remains fixed at zero to evaluate a strictly quantum-mechanical approach, and the biased VQC, where the bias is integrated into the optimization pipeline as an additional trainable parameter.
+To derive the final predictive output of the circuit, we extract the expectation value from the measurement of the first qubit. To this result, we introduce a classical scalar known as a bias term, which is initially set to zero. Consequently, the decision function of the classifier is defined as the summation of the quantum circuit's measurement and this classical value. We distinguish between two primary configurations: the unbiased VQC, where the bias remains fixed at zero to evaluate a strictly quantum-mechanical approach, and the biased VQC, where the bias is integrated into the optimization pipeline as an additional trainable parameter.
 
 In the biased configuration, the parameter is optimized through classical gradient-based methods alongside the variational rotation angles. The objective of this distinction is to systematically observe the performance variance between a purely quantum model and a hybrid system, where the quantum output is either bolstered or refined by a classical offset. It is hypothesized that for architectures characterized by low qubit counts and minimal circuit depth,where the problem complexity is relatively low,the contribution of the bias term may be negligible. However, its utility is expected to become more pronounced as the system scales in complexity, specifically when increasing the number of qubits and variational layers.
 
-To identify the optimal configuration of trainable parameters, whether strictly quantum or a hybrid of quantum and classical, we evaluate various layer depths while training the Variational Classifier over a set number of epochs, adjusted according to the qubit count. The optimization process begins with the stochastic initialization of the circuit’s variational parameters to small random values, while the classical bias is initialized at zero. Subsequently, we utilize the objective loss function and a classical optimizer to iteratively update the quantum rotation angles; in the specific case of the biased classifier, the classical bias parameter is optimized concurrently.
+To identify the optimal configuration of trainable parameters, whether strictly quantum or a hybrid of quantum and classical, we evaluate various layer depths while training the VQC over a set number of epochs, adjusted according to the qubit count. The optimization process begins with the stochastic initialization of the circuit’s variational parameters to small random values, while the classical bias is initialized at zero. Subsequently, we utilize the objective loss function and a classical optimizer to iteratively update the quantum rotation angles; in the specific case of the biased classifier, the classical bias parameter is optimized concurrently.
 
 Throughout the optimization process, the classifier is evaluated using the previously unseen validation set to assess its generalization capability. Using a batch size consistent with the training phase, validation data is processed to generate predicted labels, from which the accuracy, precision, recall, and F1-score are calculated. To facilitate a comprehensive analysis of the model's evolution, performance metrics are simultaneously recorded for the training set
 
 This comparative approach allows for a detailed assessment of the model's learning trajectory and helps identify potential occurrences of overfitting or underfitting. Furthermore, tracking the progression of the cost function across both training and validation inputs is imperative for understanding convergence behavior and the stability of the optimization.
 
-The specific parameters associated with the highest validation performance are preserved, along with the epoch count required to achieve this optimal state. Ultimately, these optimized parameters are utilized to perform inference on the held-out test set, providing an unbiased evaluation of the Variational Quantum Classifier's performance and its efficacy in solving the tumor classification problem.
+The specific parameters associated with the highest validation performance are preserved, along with the epoch count required to achieve this optimal state. Ultimately, these optimized parameters are utilized to perform inference on the held-out test set, providing an unbiased evaluation of the VQC's performance and its efficacy in solving the tumor classification problem.
 
-To ensure a robust assessment of the generalization capabilities of the Variational Quantum Classifier, the aforementioned experimental procedure is repeated ten times for each specific layer configuration. This iterative approach facilitates a rigorous statistical analysis of the correlation between circuit depth, and the concomitant increase in the total number of trainable parameters, and the resulting model performance. By conducting multiple independent trials, the methodology accounts for the stochasticity inherent in parameter initialization and the non-convex nature of the optimization landscape, thereby providing a more statistically significant estimation of the model’s predictive stability and performance across different initial conditions.
+To ensure a robust assessment of the generalization capabilities of the VQC, the aforementioned experimental procedure is repeated ten times for each specific layer configuration. This iterative approach facilitates a rigorous statistical analysis of the correlation between circuit depth, and the concomitant increase in the total number of trainable parameters, and the resulting model performance. By conducting multiple independent trials, the methodology accounts for the stochasticity inherent in parameter initialization and the non-convex nature of the optimization landscape, thereby providing a more statistically significant estimation of the model’s predictive stability and performance across different initial conditions.
 
 Furthermore, the mean number of epochs required for achieving these results within each layer configuration is recorded to evaluate the efficiency and stability of the training process. The computational latency, measured in seconds, is also documented for each training cycle to provide a detailed perspective on the temporal requirements associated with scaling the quantum architecture. Ultimately, the specific parameters from the most efficacious model across all experimental iterations and layer depths are preserved for final evaluation, irrespective of the circuit depth at which they were attained. This comprehensive data collection enables a thorough characterization of the trade-offs between quantum circuit complexity, computational cost, and classification accuracy.
 
-Several technical considerations regarding the optimization protocol warrant further clarification. The Mean Squared Error (MSE) is employed as the objective function for the training process, subject to a specific methodological refinement. While the final classification labels are determined by the algebraic sign of the model's output, specifically the sum of the VQC measurement and the bias term, the loss function is calculated using the raw continuous values. This approach effectively treats the binary classification problem as a regression task where a zero-threshold is applied post-measurement. This choice is critical as it ensures a smooth and differentiable cost landscape, avoiding the discontinuous or step-like functions that typically arise when calculating loss based on discrete labels. Consequently, this allows for more effective monitoring of the training trajectory and provides a more granular signal for gradient updates.
+Several technical considerations regarding the optimization protocol warrant further clarification. The MSE is employed as the objective function for the training process, subject to a specific methodological refinement. While the final classification labels are determined by the algebraic sign of the model's output, specifically the sum of the VQC measurement and the bias term, the loss function is calculated using the raw continuous values. This approach effectively treats the binary classification problem as a regression task where a zero-threshold is applied post-measurement. This choice is critical as it ensures a smooth and differentiable cost landscape, avoiding the discontinuous or step-like functions that typically arise when calculating loss based on discrete labels. Consequently, this allows for more effective monitoring of the training trajectory and provides a more granular signal for gradient updates.
 
 The optimization of the parameters is executed using the Nesterov Momentum optimizer, also known as Nesterov Accelerated Gradient \cite{bib:nesterov}. This method is an advanced iteration of standard momentum-based gradient descent, frequently utilized in deep learning for its ability to anticipate the loss landscape and achieve superior convergence rates. The input data is processed in stochastic mini-batches of size five, with the order of samples randomized in each epoch. Given the relative scarcity of the dataset, a batch size of this magnitude is considered sufficient to provide stable gradient estimates while maintaining the stochasticity necessary for effective exploration of the parameter space.
 
 It is important to clarify that the comprehensive training procedure, which spans various layer depths across ten independent trials, is executed in two distinct phases. The initial phase involves the implementation of unbiased classifiers, followed by a secondary phase dedicated to biased models. Consequently, for each specific qubit configuration, we obtain two distinct model types: an unbiased model defined by purely quantum variational parameters and a biased model characterized by a combination of quantum and classical parameters.
 
-This dual-track approach is designed to elucidate which specific methodology provides the optimal solution for the tumor classification task at a given qubit count. Furthermore, it enables a comparative analysis of the respective advantages of each paradigm as the problem scales, providing deeper insight into the efficacy of hybrid quantum-classical optimization versus purely quantum strategies. This methodology ensures that the performance of the Variational Quantum Classifier is evaluated not only on its quantum depth but also on its ability to integrate classical components to improve diagnostic accuracy.
+This dual-track approach is designed to elucidate which specific methodology provides the optimal solution for the tumor classification task at a given qubit count. Furthermore, it enables a comparative analysis of the respective advantages of each paradigm as the problem scales, providing deeper insight into the efficacy of hybrid quantum-classical optimization versus purely quantum strategies. This methodology ensures that the performance of the VQC is evaluated not only on its quantum depth but also on its ability to integrate classical components to improve diagnostic accuracy.
 
 \section{1-qubit Results} \label{1qbt}
 
-Following the establishment of the overarching methodology, the initial phase of implementation utilizes a single-qubit Variational Quantum Classifier as a baseline model. Given the constraints of the Amplitude Efficient State Preparation method, a single-qubit register is limited to encoding a maximum of $2^1 = 2$ features. This necessitates a significant reduction in dimensionality from the original dataset, which initially comprised 30 distinct features. To address this while preserving the fundamental statistical characteristics of the data, Principal Component Analysis is performed across the training, validation, and testing subsets. To maintain the integrity of the experimental results and prevent data leakage, the transformation is fitted solely on the training partition and subsequently applied to the validation and test sets.
+Following the establishment of the overarching methodology, the initial phase of implementation utilizes a single-qubit VQC as a baseline model. Given the constraints of the Amplitude Efficient State Preparation method, a single-qubit register is limited to encoding a maximum of $2^1 = 2$ features. This necessitates a significant reduction in dimensionality from the original dataset, which initially comprised 30 distinct features. To address this while preserving the fundamental statistical characteristics of the data, PCA is performed across the training, validation, and testing subsets. To maintain the integrity of the experimental results and prevent data leakage, the transformation is fitted solely on the training partition and subsequently applied to the validation and test sets.
 
-This reduction yields two primary principal components that collectively explain 62.97\% of the total variance within the dataset. Although this captured variance is slightly lower than the 63.24\% that would be achievable if the transformation were fitted on the entire dataset simultaneously, it remains a robust representation of the underlying data distribution. By condensing the high-dimensional feature space into two components, the model retains over half of the original information, providing a manageable and statistically significant input for the 1-qubit variational circuit. This configuration serves as an essential starting point for evaluating the classification performance of quantum architectures at their most fundamental scale, allowing for a clear assessment of how effectively minimal quantum resources can handle the compressed feature space.
+This reduction yields two primary PCs that collectively explain 62.97\% of the total variance within the dataset. Although this captured variance is slightly lower than the 63.24\% that would be achievable if the transformation were fitted on the entire dataset simultaneously, it remains a robust representation of the underlying data distribution. By condensing the high-dimensional feature space into two components, the model retains over half of the original information, providing a manageable and statistically significant input for the 1-qubit variational circuit. This configuration serves as an essential starting point for evaluating the classification performance of quantum architectures at their most fundamental scale, allowing for a clear assessment of how effectively minimal quantum resources can handle the compressed feature space.
 
-To characterize the distribution and interrelationships of the identified principal components, we utilize the pairplot functionality provided by the Seaborn library \cite{bib:seaborn}. This visualization tool facilitates a comprehensive analysis of the pairwise interactions between variables within a dataset while simultaneously providing an estimation of the univariate distribution for each individual feature. The resulting output is structured as a symmetrical matrix-style grid, where both the rows and columns correspond to the principal components derived from the dimensionality reduction process. Within this grid, each off-diagonal cell represents a bivariate scatter plot comparing two specific variables, while the diagonal cells display the univariate distribution of each component, typically through histograms or kernel density estimates. This approach provides a condensed yet detailed summary of both the univariate and bivariate structures of the transformed tumor dataset, offering critical insights into the spatial separation between the benign and malignant classes before they are processed by the quantum classifier.
+To characterize the distribution and interrelationships of the identified PCs, we utilize the pairplot functionality provided by the Seaborn library \cite{bib:seaborn}. This visualization tool facilitates a comprehensive analysis of the pairwise interactions between variables within a dataset while simultaneously providing an estimation of the univariate distribution for each individual feature. The resulting output is structured as a symmetrical matrix-style grid, where both the rows and columns correspond to the PCs derived from the dimensionality reduction process. Within this grid, each off-diagonal cell represents a bivariate scatter plot comparing two specific variables, while the diagonal cells display the univariate distribution of each component, typically through histograms or kernel density estimates. This approach provides a condensed yet detailed summary of both the univariate and bivariate structures of the transformed tumor dataset, offering critical insights into the spatial separation between the benign and malignant classes before they are processed by the quantum classifier.
 
-The plots situated along the principal diagonal of the grid represent marginal univariate distributions. Each cell on the diagonal corresponds to an isolated variable, facilitating an analysis of its independent statistical profile rather than a bivariate interaction. While typically rendered as histograms, these visualizations can be adapted to employ kernel density estimates to provide a smoothed representation of the underlying probability density function. These diagonal plots are essential for inspecting fundamental statistical properties, including the range, dispersion, skewness, and modality of each principal component, as well as identifying potential outliers within the feature space. Effectively, the diagonal matrix elements characterize the distribution of each variable in isolation.
+The plots situated along the principal diagonal of the grid represent marginal univariate distributions. Each cell on the diagonal corresponds to an isolated variable, facilitating an analysis of its independent statistical profile rather than a bivariate interaction. While typically rendered as histograms, these visualizations can be adapted to employ kernel density estimates to provide a smoothed representation of the underlying probability density function. These diagonal plots are essential for inspecting fundamental statistical properties, including the range, dispersion, skewness, and modality of each PC, as well as identifying potential outliers within the feature space. Effectively, the diagonal matrix elements characterize the distribution of each variable in isolation.
 
 The remaining cells in the grid, located off the principal diagonal, illustrate the bivariate relationships between distinct pairs of variables. These cells primarily utilize scatter plots where each data point represents an individual observation from the transformed dataset. The axes for these plots are determined by their respective positions in the grid matrix: the variable associated with the column is mapped to the $x$-axis, while the variable associated with the row is mapped to the $y$-axis. These bivariate visualizations enable a qualitative assessment of how pairs of variables interact, revealing whether they exhibit positive or negative correlation, identifying the presence of linear or nonlinear dependencies, and highlighting structural nuances such as spatial clustering or heteroscedasticity across the range of values.
 
-The pairplot matrix exhibits inherent symmetry relative to its principal diagonal. This structural organization implies that the bivariate relationship between any two variables is represented twice within the grid; specifically, the interaction between components $i$ and $j$ is visualized once with variable $i$ on the $y$-axis and again with the axes transposed. Although this configuration introduces a deliberate degree of visual redundancy, it significantly enhances data interpretability by providing mirrored perspectives of feature interactions. This repetition allows for a more efficient cross-comparative analysis of patterns and correlations across the various principal component pairings.
+The pairplot matrix exhibits inherent symmetry relative to its principal diagonal. This structural organization implies that the bivariate relationship between any two variables is represented twice within the grid; specifically, the interaction between components $i$ and $j$ is visualized once with variable $i$ on the $y$-axis and again with the axes transposed. Although this configuration introduces a deliberate degree of visual redundancy, it significantly enhances data interpretability by providing mirrored perspectives of feature interactions. This repetition allows for a more efficient cross-comparative analysis of patterns and correlations across the various PC pairings.
 
 When the target categorical variable is assigned to the hue parameter, the pairplot introduces an additional layer of dimensionality by color-coding individual data points according to their respective class or group membership. In this context, the off-diagonal scatter plots facilitate a comparative analysis of class-specific spatial distributions within the feature space, while the diagonal elements provide stratified marginal density estimates for each class.
 
-This multidimensional representation is particularly advantageous for exploratory data analysis in classification tasks, as it allows for a rigorous assessment of class overlap, linear or non-linear separability, and the degree to which inter-variable relationships remain consistent across different target categories. By visualizing how classes occupy distinct regions or clusters within the principal component space, we can anticipate the potential efficacy of the Variational Quantum Classifier and identify specific regions where class boundaries may be ambiguous.
+This multidimensional representation is particularly advantageous for exploratory data analysis in classification tasks, as it allows for a rigorous assessment of class overlap, linear or non-linear separability, and the degree to which inter-variable relationships remain consistent across different target categories. By visualizing how classes occupy distinct regions or clusters within the PC space, we can anticipate the potential efficacy of the VQC and identify specific regions where class boundaries may be ambiguous.
 
-In summary, the pairplot serves as a comprehensive visual framework for exploratory data analysis. The marginal distributions situated along the diagonal facilitate an understanding of each individual feature in isolation, whereas the off-diagonal scatter plots elucidate the complex interactions and correlations between variable pairs. Collectively, these visualizations offer a holistic perspective on the underlying data structure, enabling the identification of significant patterns, linear dependencies, and potential anomalies prior to the commencement of formal modeling. Figure\textbf{~\ref{fig:pairplot_2_PCs}} illustrates the resulting pairplot for the training partition following the application of Principal Component Analysis and the selection of two principal components.
+In summary, the pairplot serves as a comprehensive visual framework for exploratory data analysis. The marginal distributions situated along the diagonal facilitate an understanding of each individual feature in isolation, whereas the off-diagonal scatter plots elucidate the complex interactions and correlations between variable pairs. Collectively, these visualizations offer a holistic perspective on the underlying data structure, enabling the identification of significant patterns, linear dependencies, and potential anomalies prior to the commencement of formal modeling. Figure\textbf{~\ref{fig:pairplot_2_PCs}} illustrates the resulting pairplot for the training partition following the application of PCA and the selection of two PCs.
 
-The visualization highlights the spatial distribution of the classes within the reduced feature space, providing a qualitative baseline for the expected performance of the single-qubit Variational Quantum Classifier. By observing the degree of overlap between the malignant and benign clusters in these two dimensions, one can gauge the relative difficulty the quantum model will face in establishing an optimal decision boundary. This visual confirmation is a prerequisite for the training phase, as it ensures that the dimensionality reduction process has preserved sufficient variance and class-specific structure to support the subsequent classification task. 
+The visualization highlights the spatial distribution of the classes within the reduced feature space, providing a qualitative baseline for the expected performance of the single-qubit VQC. By observing the degree of overlap between the malignant and benign clusters in these two dimensions, one can gauge the relative difficulty the quantum model will face in establishing an optimal decision boundary. This visual confirmation is a prerequisite for the training phase, as it ensures that the dimensionality reduction process has preserved sufficient variance and class-specific structure to support the subsequent classification task. 
 
 \begin{figure}[H]
 % Define the figure file in the \includegraphics command
@@ -1300,7 +1304,7 @@ The visualization highlights the spatial distribution of the classes within the 
 \label{fig:pairplot_2_PCs}
 \end{figure}
 
-A close examination of Figure\textbf{~\ref{fig:pairplot_2_PCs}} yields several significant insights regarding the class-specific distributions within the reduced feature space. By analyzing the marginal distributions along the main diagonal, it is evident that the two classes exhibit minimal spatial overlap with respect to the first principal component, suggesting that this dimension captures features with high discriminatory power. Conversely, regarding the second principal component, the probability density of the positive class appears to be largely enveloped by the distribution of the negative class. This configuration implies that while the first component provides a clear basis for separation, the second component encompasses a region of high statistical ambiguity where the feature values of the positive class are effectively a subset of those plausible for the negative class.
+A close examination of Figure\textbf{~\ref{fig:pairplot_2_PCs}} yields several significant insights regarding the class-specific distributions within the reduced feature space. By analyzing the marginal distributions along the main diagonal, it is evident that the two classes exhibit minimal spatial overlap with respect to the first PC, suggesting that this dimension captures features with high discriminatory power. Conversely, regarding the second PC, the probability density of the positive class appears to be largely enveloped by the distribution of the negative class. This configuration implies that while the first component provides a clear basis for separation, the second component encompasses a region of high statistical ambiguity where the feature values of the positive class are effectively a subset of those plausible for the negative class.
 
 In a general classification setting, the relative overlap between class-conditional distributions is a primary factor in determining how effectively a given feature can separate distinct classes. When the distribution of one class largely envelops that of another, it indicates that the majority of feature values characteristic of the enveloped class are also highly plausible under the encompassing class. In such instances, the classes share a substantial region of high probability density, which introduces a profound intrinsic ambiguity into the data. From a probabilistic perspective, there are few, if any, regions of the feature space uniquely associated with the enveloped class; consequently, even an optimal Bayes classifier is compelled to make errors in these overlapping regions, resulting in a high irreducible error that no modeling approach can entirely overcome.
 
@@ -1308,9 +1312,9 @@ This enveloping behavior has direct consequences for classification performance.
 
 In contrast, when class-conditional distributions do not overlap extensively, the feature space contains regions that are specific to each class. In this case, each distribution occupies a portion of the feature domain where the other assigns little or no probability mass. This partial separation implies the existence of feature values that provide strong evidence in favor of one class over the other. Consequently, a decision boundary can be positioned such that most samples are classified correctly, ensuring that errors are largely confined to the relatively narrow regions where the distributions intersect.
 
-From a theoretical standpoint, the non-enveloping case corresponds to a lower Bayes error rate, resulting in a more favorable classification problem. The existence of class-specific regions leads to more balanced precision and recall, as well as generally higher discrimination metrics, such as the area under the ROC curve (AUC). In these settings, simple models like linear classifiers are often sufficient to achieve near-optimal performance, where increasing model complexity yields only marginal improvements. Overall, the absence of enveloping behavior indicates that the feature is genuinely informative and that classification performance is primarily limited by noise rather than a fundamental overlap between the classes.
+From a theoretical standpoint, the non-enveloping case corresponds to a lower Bayes error rate, resulting in a more favorable classification problem. The existence of class-specific regions leads to more balanced precision and recall, as well as generally higher discrimination metrics, such as ROC AUC. In these settings, simple models like linear classifiers are often sufficient to achieve near-optimal performance, where increasing model complexity yields only marginal improvements. Overall, the absence of enveloping behavior indicates that the feature is genuinely informative and that classification performance is primarily limited by noise rather than a fundamental overlap between the classes.
 
-Shifting focus to the off-diagonal cells of the pairplot, we examine the bivariate relationship between the first and second principal components. It is evident that, despite localized class overlap or "spillage," the two categories appear largely linearly separable within this two-dimensional projection. This observation is particularly encouraging, as it suggests that even the most fundamental Variational Quantum Classifiers may achieve satisfactory performance. This structural behavior, including the marginal distribution overlaps, is consistent with expectations: the first component accounts for 42.34\% of the total variance, while the second describes the remaining 20.63\%. While the variance explained by each individual component typically decreases as the number of components increases, the current level of separation provides confidence that the quantum approach will yield robust results.
+Shifting focus to the off-diagonal cells of the pairplot, we examine the bivariate relationship between the first and second PCs. It is evident that, despite localized class overlap or "spillage," the two categories appear largely linearly separable within this two-dimensional projection. This observation is particularly encouraging, as it suggests that even the most fundamental VQCs may achieve satisfactory performance. This structural behavior, including the marginal distribution overlaps, is consistent with expectations: the first component accounts for 42.34\% of the total variance, while the second describes the remaining 20.63\%. While the variance explained by each individual component typically decreases as the number of components increases, the current level of separation provides confidence that the quantum approach will yield robust results.
 
 As previously stated, we investigate the impact of the circuit depth on classifier performance and evaluate whether the introduction of a classical bias parameter enhances or inhibits the model's classification capabilities. Given that the dimension of the associated Hilbert space is $4^n-1$, we restrict our experimentation to configurations with one and two layers. Since the architecture utilizes a single qubit, each layer consists exclusively of a single $Rot$ gate, comprising three trainable parameters, without the possibility of quantum entanglement. This structural constraint further justifies limiting the depth to two layers, as empirical evidence indicates that successive rotations in the absence of entangling $CNOT$ gates offer no additional expressive advantage. Each model configuration is trained for 150 epochs, a duration considered sufficient for the proper optimization of the variational and classical parameters.
 
@@ -1321,7 +1325,7 @@ As previously stated, we investigate the impact of the circuit depth on classifi
 \centering % This centers the image horizontally
 \includegraphics[scale=1.0]{1_qubit_layer}
 % Place caption under the figure
-\caption{A single layer of the 1-qubit VQC
+\caption{A single layer of the 1-qubit VQC circuit
 }
 % Label the caption to include in the list of figures
 \label{fig:1_qubit_layer}
@@ -1335,7 +1339,7 @@ An examination of the evaluation results reveals several noteworthy observations
 % in the \graphicspath command at the top
 \includegraphics[width=\linewidth]{heatmap_performance_1_qubits_10_runs.png}
 % Place caption under the figure
-\caption{Performance Results for 1-qubit classifiers after 10 runs
+\caption{Performance Results for 1-qubit VQCs after 10 runs
 }
 % Label the caption to include in the list of figures
 \label{fig:1_qubit_perf_heat}
@@ -1349,7 +1353,7 @@ Examining the efficiency metrics for the two approaches, we observe that for the
 % in the \graphicspath command at the top
 \includegraphics[width=\linewidth]{heatmap_efficiency_1_qubits_10_runs.png}
 % Place caption under the figure
-\caption{Efficiency Results for 1-qubit classifiers after 10 runs
+\caption{Efficiency Results for 1-qubit VQCs after 10 runs
 }
 % Label the caption to include in the list of figures
 \label{fig:1_qubit_eff_heat}
@@ -1365,17 +1369,17 @@ It is particularly noteworthy that, regardless of whether a biased or unbiased c
 % in the \graphicspath command at the top
 \includegraphics[width=\linewidth]{trend_1_qubits_10_runs.png}
 % Place caption under the figure
-\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 1-Qubit
+\caption{Performance and Efficiency Trends of Biased and Unbiased VQC for 1-Qubit
 }
 % Label the caption to include in the list of figures
 \label{fig:1_qubit_trend}
 \end{figure}
 
-In the final phase of our evaluation, we examine the highest-performing models from both the biased and unbiased configurations across all experimental runs. We present the specific variational quantum circuit (VQC) architectures alongside the evolution of the loss function and key performance metrics over the 150-epoch duration for both the training and validation sets.
+In the final phase of our evaluation, we examine the highest-performing models from both the biased and unbiased configurations across all experimental runs. We present the specific circuit architectures alongside the evolution of the loss function and key performance metrics over the 150-epoch duration for both the training and validation sets.
 
 This analysis facilitates an investigation of the loss landscape to identify plateaus and peaks, offering valuable insight into the progression and stability of the optimization procedure. Similarly, monitoring the evolution of these metrics throughout the training process allows us to detect potential signs of overfitting or underfitting while providing a comprehensive overview of the model's general learning trajectory and convergence behavior.
 
-For the best-performing biased classifier, the VQC architecture consists of a single layer, which aligns with our previous average findings. Despite its structural simplicity, this circuit achieved an accuracy of 92.11\%, a precision of 91.70\%, a recall of 91.27\%, and an F1-score of 91.47\% at the 84th epoch.
+For the best-performing biased VQC, the circuit architecture consists of a single layer, which aligns with our previous average findings. Despite its structural simplicity, this circuit achieved an accuracy of 92.11\%, a precision of 91.70\%, a recall of 91.27\%, and an F1-score of 91.47\% at the 84th epoch.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1384,7 +1388,7 @@ For the best-performing biased classifier, the VQC architecture consists of a si
 	\centering % This centers the image horizontally
 	\includegraphics[scale=1.0]{best_VQC_1_qubit_biased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 1-qubit biased classifier
+	\caption{Circuit of the best biased 1-qubit VQC
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:1_qubit_best_vqc_biased}
@@ -1398,7 +1402,7 @@ Regarding the evolution of the loss function, there is a prominent decline durin
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{best_losses_1_qubit_biased.png}
 	% Place caption under the figure
-	\caption{Evolution of the loss function of the best 1-qubit biased classifier
+	\caption{Evolution of the loss function of the best biased 1-qubit VQC
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:1_qubit_best_losses_biased}
@@ -1412,13 +1416,13 @@ This observation is further reinforced by a closer examination of the key metric
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{./figures/best_metrics_1_qubit_biased.png}
 	% Place caption under the figure
-	\caption{Validation and Training curves for the 4 key metrics of the best 1-qubit biased classifier
+	\caption{Validation and Training curves for the 4 key metrics of the best biased 1-qubit VQC
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:1_qubit_best_metrics_biased}
 \end{figure} 
 
-The results for the best-performing unbiased classifier follow a similar trend. Consistent with our average findings, its VQC architecture consists of a single layer. This configuration achieved an accuracy of 92.11\%, a precision of 91.70\%, a recall of 91.27\%, and an F1-score of 91.47\% at the 86th epoch. 
+The results for the best-performing unbiased VQC follow a similar trend. Consistent with our average findings, its circuit architecture consists of a single layer. This configuration achieved an accuracy of 92.11\%, a precision of 91.70\%, a recall of 91.27\%, and an F1-score of 91.47\% at the 86th epoch. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1427,7 +1431,7 @@ The results for the best-performing unbiased classifier follow a similar trend. 
 	\centering % This centers the image horizontally
 	\includegraphics[scale=1.0]{./figures/best_VQC_1_qubit_unbiased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 1-qubit unbiased classifier
+	\caption{Circuit of the best unbiased 1-qubit VQC
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:1_qubit_best_vqc_unbiased}
@@ -1441,13 +1445,13 @@ Regarding the evolution of the loss function, the trajectory for the unbiased cl
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{./figures/best_losses_1_qubit_unbiased.png}
 	% Place caption under the figure
-	\caption{Evolution of the loss function of the best 1-qubit unbiased classifier
+	\caption{Evolution of the loss function of the best unbiased 1-qubit VQC
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:1_qubit_best_losses_unbiased}
 \end{figure}
 
-The progression of key metrics for the unbiased classifier is quite similar to that of the biased case. Both curves exhibit comparable trends, and with the exception of the interval between the 80th and 100th epochs, their divergence remains largely insignificant, suggesting a lack of substantial overfitting or underfitting. The sudden increase in divergence during this specific interval coincides with the point where the cost function begins to rise. Precision appears to be the metric most affected by this development, while the others remain well within the 0.05 error margin. Interestingly, after the 100th epoch, as the cost function reaches its plateau, the performance metrics follow suit. However, this stability is not sufficient to surpass the peak scores recorded at the 86th epoch, further reinforcing the notion that while minimizing the loss function is essential to the training process, it is not an absolute panacea for achieving optimal classification results. 
+The progression of key metrics for the unbiased VQC is quite similar to that of the biased case. Both curves exhibit comparable trends, and with the exception of the interval between the 80th and 100th epochs, their divergence remains largely insignificant, suggesting a lack of substantial overfitting or underfitting. The sudden increase in divergence during this specific interval coincides with the point where the cost function begins to rise. Precision appears to be the metric most affected by this development, while the others remain well within the 0.05 error margin. Interestingly, after the 100th epoch, as the cost function reaches its plateau, the performance metrics follow suit. However, this stability is not sufficient to surpass the peak scores recorded at the 86th epoch, further reinforcing the notion that while minimizing the loss function is essential to the training process, it is not an absolute panacea for achieving optimal classification results. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1455,7 +1459,7 @@ The progression of key metrics for the unbiased classifier is quite similar to t
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{./figures/best_metrics_1_qubit_unbiased.png}
 	% Place caption under the figure
-	\caption{Validation and Training curves for the 4 key metrics of the best 1-qubit unbiased classifier
+	\caption{Validation and Training curves for the 4 key metrics of the best unbiased 1-qubit VQC
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:1_qubit_best_metrics_unbiased}
@@ -1465,7 +1469,7 @@ Having successfully addressed the classification problem using a single-qubit co
 
 \section{2-qubits Results} \label{2qbt}
 
-By utilizing a two-qubit architecture, we can incorporate four principal components ($2^2 = 4$), a significant increase over the single-qubit case. These four features account for 79.79\% of the total variance within the training subset of the tumor classification problem, a figure that closely aligns with the 79.24\% variance explained by four components across the entire dataset. Specifically, the first and second components account for 42.34\% and 20.63\% of the total variance, respectively, while the third and fourth components contribute an additional 10.80\% and 6.01\%. 
+By utilizing a two-qubit architecture, we can incorporate four PCs ($2^2 = 4$), a significant increase over the single-qubit case. These four features account for 79.79\% of the total variance within the training subset of the tumor classification problem, a figure that closely aligns with the 79.24\% variance explained by four components across the entire dataset. Specifically, the first and second components account for 42.34\% and 20.63\% of the total variance, respectively, while the third and fourth components contribute an additional 10.80\% and 6.01\%. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1479,7 +1483,7 @@ By utilizing a two-qubit architecture, we can incorporate four principal compone
 	\label{fig:pairplot_4_PCs}
 \end{figure}
 
-A close inspection of the pairplot in Figure\textbf{~\ref{fig:pairplot_4_PCs}} for the four principal components reveals that the relationship between the first two dimensions remains consistent with the single-qubit case. More notably, however, are the characteristics of the third and fourth features. The class distributions for the third component exhibit overlap, though to a lesser extent than that observed in the second component. In contrast, the positive class distribution for the fourth component is almost entirely enveloped by that of the negative class. Consequently, it can be argued that the third component is significantly more discriminative and informative than the fourth.
+A close inspection of the pairplot in Figure\textbf{~\ref{fig:pairplot_4_PCs}} for the four PCs reveals that the relationship between the first two dimensions remains consistent with the single-qubit case. More notably, however, are the characteristics of the third and fourth features. The class distributions for the third component exhibit overlap, though to a lesser extent than that observed in the second component. In contrast, the positive class distribution for the fourth component is almost entirely enveloped by that of the negative class. Consequently, it can be argued that the third component is significantly more discriminative and informative than the fourth.
 
 Turning our attention to the pairwise scatterplots, we observe that feature pairs involving the fourth component, when analyzed without the influence of the first, lack clear linear separability. In the $PC_2$–$PC_4$ pairing specifically, the majority of samples cluster within the same spatial region, with the negative class distribution effectively eclipsing the positive one. Consequently, we anticipate that the classification task will increase in complexity, as these higher-order components are less inherently informative and the classes become increasingly difficult to distinguish.
 
@@ -1492,7 +1496,7 @@ Utilizing two qubits allows us to leverage quantum entanglement to our advantage
 	\centering % This centers the image horizontally
 	\includegraphics[scale=1.0]{2_qubits_layer}
 	% Place caption under the figure
-	\caption{A single layer of the 2-qubit VQC
+	\caption{A single layer of the 2-qubit VQC circuit
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:2_qubit_layer}
@@ -1506,7 +1510,7 @@ An inspection of the evaluation results across ten independent runs allows for s
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{heatmap_performance_2_qubits_10_runs.png}
 	% Place caption under the figure
-	\caption{Performance Results for 2-qubit classifiers after 10 runs
+	\caption{Performance Results for 2-qubit VQCs after 10 runs
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:2_qubits_perf_heat}
@@ -1542,7 +1546,7 @@ Interestingly, both versions of the classifier demonstrate relatively comparable
 	\label{fig:2_qubits_trend}
 \end{figure}
 
-In regard to the top performers across all circuit depths and experimental runs, the most effective unbiased classifier utilized a 6-layer VQC. This configuration reached an accuracy of 94.74\%, a precision of 94.80\%, a recall of 93.85\%, and an F1-score of 94.29\% at the 94th epoch. 
+In regard to the top performers across all circuit depths and experimental runs, the most effective unbiased classifier utilized a 6-layer circuit. This configuration reached an accuracy of 94.74\%, a precision of 94.80\%, a recall of 93.85\%, and an F1-score of 94.29\% at the 94th epoch. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1551,7 +1555,7 @@ In regard to the top performers across all circuit depths and experimental runs,
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{./figures/best_VQC_2_qubits_unbiased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 2-qubit unbiased classifier
+	\caption{Circuit of the best 2-qubit unbiased classifier
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:2_qubits_best_vqc_unbiased}
@@ -1585,7 +1589,7 @@ Upon observing the performance curves of the model, we detect somewhat erratic b
 	\label{fig:2_qubits_best_metrics_unbiased}
 \end{figure}
 
-For the best-performing biased model, we identify a classifier with a VQC architecture consisting of 6 layers. This classifier achieves an accuracy of 95.61\%, a precision of 95.10\%, a recall of 95.54\%, and an F1-score of 95.31\% at the 75th epoch. 
+For the best-performing biased model, we identify a classifier with a circuit architecture consisting of 6 layers. This classifier achieves an accuracy of 95.61\%, a precision of 95.10\%, a recall of 95.54\%, and an F1-score of 95.31\% at the 75th epoch. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1594,7 +1598,7 @@ For the best-performing biased model, we identify a classifier with a VQC archit
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{./figures/best_VQC_2_qubits_biased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 2-qubit biased classifier
+	\caption{Circuit of the best 2-qubit biased classifier
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:2_qubits_best_vqc_biased}
@@ -1628,11 +1632,11 @@ An inspection of the progression of key metrics throughout the 200 epochs reveal
 	\label{fig:2_qubits_best_metrics_biased}
 \end{figure}
 
-Having concluded our investigation of the two-qubit paradigm, we proceed to increase the number of available qubits and, consequently, the number of principal components upon which the model will rely.
+Having concluded our investigation of the two-qubit paradigm, we proceed to increase the number of available qubits and, consequently, the number of PCs upon which the model will rely.
 
 \section{3-qubits Results} \label{3qbts}
 
-Since we are now working with three qubits, our data encoding scheme allows us to utilize eight features. This enables us to perform PCA with eight principal components serving as our features. With this approach, we can express 92.71\% of the variance in the training data for our classification task, which is a substantial increase compared to the 79.79\% achieved in the two-qubit case. This result was expected, as the exploratory data analysis of the classical approach had already determined that eight principal components can explain up to 92.60\% of the total variance in our data. With each of the eight components accounting for 42.34\%, 20.63\%, 10.80\%, 6.01\%, 4.65\%, 4.20\%, 2.46\%, and 1.60\% of the total explained variance respectively, we anticipate that each new component added will be less discriminatively informative than the previous ones. 
+Since we are now working with three qubits, our data encoding scheme allows us to utilize eight features. This enables us to perform PCA with eight PCs serving as our features. With this approach, we can express 92.71\% of the variance in the training data for our classification task, which is a substantial increase compared to the 79.79\% achieved in the two-qubit case. This result was expected, as the exploratory data analysis of the classical approach had already determined that eight PCs can explain up to 92.60\% of the total variance in our data. With each of the eight components accounting for 42.34\%, 20.63\%, 10.80\%, 6.01\%, 4.65\%, 4.20\%, 2.46\%, and 1.60\% of the total explained variance respectively, we anticipate that each new component added will be less discriminatively informative than the previous ones. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1646,11 +1650,11 @@ Since we are now working with three qubits, our data encoding scheme allows us t
 	\label{fig:pairplot_8_PCs}
 \end{figure}
 
-A closer examination of the pairplot in Figure\textbf{~\ref{fig:pairplot_8_PCs}} appears to validate this trend. Along the main diagonal, we can observe that as we progress through the principal components, their distributions exhibit increasing overlap. Specifically, in the eighth principal component, the negative class distribution encapsulates the positive class almost entirely. This pattern is also evident, though to a lesser extent, in the fifth, sixth, and seventh features, which is consistent with the fact that each of these components individually accounts for less than 5\% of the total explained variance.
+A closer examination of the pairplot in Figure\textbf{~\ref{fig:pairplot_8_PCs}} appears to validate this trend. Along the main diagonal, we can observe that as we progress through the PCs, their distributions exhibit increasing overlap. Specifically, in the eighth PC, the negative class distribution encapsulates the positive class almost entirely. This pattern is also evident, though to a lesser extent, in the fifth, sixth, and seventh features, which is consistent with the fact that each of these components individually accounts for less than 5\% of the total explained variance.
 
-Inspecting the remaining scatterplot cells reveals a distinct lack of linear separability, particularly in pairs involving the newly introduced components. For instance, the pairwise scatterplot between the fourth and fifth principal components exhibits little to no separability. Interestingly, all scatterplot pairs involving the first principal component appear to maintain a clear class distinction, which is a direct result of the significant amount of variance this component captures. Ultimately, we expect the classification task to become more challenging as the new features, while providing a more descriptive representation of the dataset, appear to be less informative for discriminating between classes.
+Inspecting the remaining scatterplot cells reveals a distinct lack of linear separability, particularly in pairs involving the newly introduced components. For instance, the pairwise scatterplot between the fourth and fifth PCs exhibits little to no separability. Interestingly, all scatterplot pairs involving the first PC appear to maintain a clear class distinction, which is a direct result of the significant amount of variance this component captures. Ultimately, we expect the classification task to become more challenging as the new features, while providing a more descriptive representation of the dataset, appear to be less informative for discriminating between classes.
 
-To address our problem, we evaluate both biased and unbiased variational quantum classifiers across configurations of 1, 5, 6, and 8 layers. These configurations involve 9, 45, 54, and 72 trainable parameters for the unbiased version, and 10, 46, 55, and 73 parameters for the biased variant, respectively. The layer architecture remains consistent with our previous models, utilizing a combination of rotation gates and $CNOT$ gates. Although several three-qubit gates are available, we maintain simplicity by using only single-qubit rotations and two-qubit $CNOT$ gates. To accommodate the increased number of trainable parameters relative to earlier experiments, we have extended the training duration to 250 epochs. 
+To address our problem, we evaluate both biased and unbiased VQCs across configurations of 1, 5, 6, and 8 layers. These configurations involve 9, 45, 54, and 72 trainable parameters for the unbiased version, and 10, 46, 55, and 73 parameters for the biased variant, respectively. The layer architecture remains consistent with our previous models, utilizing a combination of rotation gates and $CNOT$ gates. Although several three-qubit gates are available, we maintain simplicity by using only single-qubit rotations and two-qubit $CNOT$ gates. To accommodate the increased number of trainable parameters relative to earlier experiments, we have extended the training duration to 250 epochs. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1659,7 +1663,7 @@ To address our problem, we evaluate both biased and unbiased variational quantum
 	\centering % This centers the image horizontally
 	\includegraphics[scale=1.0]{3_qubits_layer}
 	% Place caption under the figure
-	\caption{A single layer of the 3-qubit VQC
+	\caption{A single layer of the 3-qubit VQC circuit
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:3_qubit_layer}
@@ -1709,7 +1713,7 @@ Considering that recall is critical for this tumor classification problem, a cas
 	\label{fig:3_qubits_trend}
 \end{figure}
 
-When identifying the top-performing unbiased classifier, we report a model whose VQC consists of 5 layers. After 234 epochs, this configuration achieved an accuracy of 95.61\%, a precision of 94.83\%, a recall of 96.03\%, and an F1-score of 95.35\%. 
+When identifying the top-performing unbiased classifier, we report a model whose circuit consists of 5 layers. After 234 epochs, this configuration achieved an accuracy of 95.61\%, a precision of 94.83\%, a recall of 96.03\%, and an F1-score of 95.35\%. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1718,7 +1722,7 @@ When identifying the top-performing unbiased classifier, we report a model whose
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{./figures/best_VQC_3_qubits_unbiased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 3-qubit unbiased classifier
+	\caption{Circuit of the best 3-qubit unbiased classifier
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:3_qubits_best_vqc_unbiased}
@@ -1761,7 +1765,7 @@ For the biased method, the best-performing classifier consists of 8 layers and, 
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{./figures/best_VQC_3_qubits_biased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 3-qubit biased classifier
+	\caption{Circuit of the best 3-qubit biased classifier
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:3_qubits_best_vqc_biased}
@@ -1799,7 +1803,7 @@ Having completed the classification task using the three-qubit approach, and con
 
 \section{4-qubits Results} \label{4qbts}
 
-Our 4-qubit implementation allows us, through the use of the Amplitude-Efficient State Preparation routine, to encode 16 features. These features are the 16 principal components obtained by fitting the PCA transformer onto the training subset and using it to transform all three data subsets. With this strategy, we are able to explain 99.08\% of the total variance in the training data, which is slightly higher than the 98.92\% that could be explained if the transformer were fitted on the entirety of the original dataset. Each of the principal components accounts for 42.34\%, 20.63\%, 10.80\%, 6.01\%, 4.65\%, 4.20\%, 2.46\%, 1.60\%, 1.38\%, 1.27\%, 1.11\%, 0.92\%, 0.72\%, 0.39\%, 0.28\%, and 0.25\% of the total explained variance ratio, respectively. We observe that with 16 principal components, we are able to describe our problem almost in its entirety, with the drawback being that some of the newly introduced features account for only miniscule amounts of variance. 
+Our 4-qubit implementation allows us, through the use of the Amplitude-Efficient State Preparation routine, to encode 16 features. These features are the 16 PCs obtained by fitting the PCA transformer onto the training subset and using it to transform all three data subsets. With this strategy, we are able to explain 99.08\% of the total variance in the training data, which is slightly higher than the 98.92\% that could be explained if the transformer were fitted on the entirety of the original dataset. Each of the PCs accounts for 42.34\%, 20.63\%, 10.80\%, 6.01\%, 4.65\%, 4.20\%, 2.46\%, 1.60\%, 1.38\%, 1.27\%, 1.11\%, 0.92\%, 0.72\%, 0.39\%, 0.28\%, and 0.25\% of the total explained variance ratio, respectively. We observe that with 16 PCs, we are able to describe our problem almost in its entirety, with the drawback being that some of the newly introduced features account for only miniscule amounts of variance. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1813,7 +1817,7 @@ Our 4-qubit implementation allows us, through the use of the Amplitude-Efficient
 	\label{fig:pairplot_16_PCs}
 \end{figure}
 
-As with the eight-principal-component case, each subsequent component becomes less informative. A close examination of the main diagonal reveals that the primary body of the positive class distribution is entirely enveloped by the negative distribution across the eight newly added components. This is expected, given that several of these components account for less than 1\% of the total explained variance ratio. Consequently, the introduction of these features is unlikely to contribute significantly to the classification of the input. This effect becomes even more apparent when focusing on the scatterplots involving these eight new features. No linear class separability is visible, as the blue negative class and the orange positive class conglomerate at the center of each corresponding cell. 
+As with the eight-PC case, each subsequent component becomes less informative. A close examination of the main diagonal reveals that the primary body of the positive class distribution is entirely enveloped by the negative distribution across the eight newly added components. This is expected, given that several of these components account for less than 1\% of the total explained variance ratio. Consequently, the introduction of these features is unlikely to contribute significantly to the classification of the input. This effect becomes even more apparent when focusing on the scatterplots involving these eight new features. No linear class separability is visible, as the blue negative class and the orange positive class conglomerate at the center of each corresponding cell. 
 
 To address the problem, we maintain the existing layer architecture, where each layer consists exclusively of rotation gates and $CNOT$ gates. To account for the increased complexity of the classification task, we evaluate biased and unbiased classifiers with variational quantum circuit depths of 1, 5, 10, and 15 layers. Consequently, the unbiased configurations require training 12, 60, 120, and 180 parameters, while the biased versions involve 13, 61, 121, and 181 trainable parameters, respectively. Given the increase in trainable parameters and the larger Hilbert space, each model is trained for 300 epochs, representing a slight increase over previous experiments.
 
@@ -1824,7 +1828,7 @@ To address the problem, we maintain the existing layer architecture, where each 
 	\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{4_qubits_layer}
 	% Place caption under the figure
-	\caption{A single layer of the 4-qubit VQC
+	\caption{A single layer of the 4-qubit VQC circuit
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:4_qubit_layer}
@@ -1872,7 +1876,7 @@ Several important conclusions emerge from the comparison of the two methods. It 
 	\label{fig:4_qubits_trend}
 \end{figure}
 
-When examining the top-performing models, the best unbiased classifier features a VQC with 15 layers. At the 179th epoch, this model achieves an accuracy of 96.49\%, a precision of 96.72\%, a recall of 95.73\%, and an F1-score of 96.19\%.
+When examining the top-performing models, the best unbiased classifier features a circuit with 15 layers. At the 179th epoch, this model achieves an accuracy of 96.49\%, a precision of 96.72\%, a recall of 95.73\%, and an F1-score of 96.19\%.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -1881,7 +1885,7 @@ When examining the top-performing models, the best unbiased classifier features 
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{./figures/best_VQC_4_qubits_unbiased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 4-qubit unbiased classifier
+	\caption{Circuit of the best 4-qubit unbiased classifier
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:4_qubits_best_vqc_unbiased}
@@ -1924,7 +1928,7 @@ For the biased approach, the best-performing classifier for the 4-qubit task con
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{./figures/best_VQC_4_qubits_biased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 4-qubit biased classifier
+	\caption{Circuit of the best 4-qubit biased classifier
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:4_qubits_best_vqc_biased}
@@ -1973,7 +1977,7 @@ Consistent with our previous methodology, the layer composition remains unchange
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{5_qubits_layer}
 	% Place caption under the figure
-	\caption{A single layer of the 5-qubit VQC
+	\caption{A single layer of the 5-qubit VQC circuit
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:5_qubit_layer}
@@ -2023,7 +2027,7 @@ In terms of efficiency, it is evident that increasing the number of layers to ac
 	\label{fig:5_qubits_trend}
 \end{figure}
 
-Regarding the top-performing models across all iterations and layer configurations, the unbiased method identified a VQC with 20 layers that, after 321 epochs, achieved an accuracy of 88.60\%, a precision of 87.44\%, a recall of 88.99\%, and an F1-score of 88.02\%.
+Regarding the top-performing models across all iterations and layer configurations, the unbiased method identified a circuit with 20 layers that, after 321 epochs, achieved an accuracy of 88.60\%, a precision of 87.44\%, a recall of 88.99\%, and an F1-score of 88.02\%.
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -2032,7 +2036,7 @@ Regarding the top-performing models across all iterations and layer configuratio
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{./figures/best_VQC_5_qubits_unbiased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 5-qubit unbiased classifier
+	\caption{Circuit of the best 5-qubit unbiased classifier
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:5_qubits_best_vqc_unbiased}
@@ -2066,7 +2070,7 @@ Observing the progression of the key metrics for this classifier, we see signifi
 	\label{fig:5_qubits_best_metrics_unbiased}
 \end{figure}
 
-For the biased method, the best-performing classifier for the 5-qubit task utilizes a 10-layer VQC. After 198 epochs, this model achieves an accuracy of 88.60\%, a precision of 87.64\%, a recall of 88.00\%, and an F1-score of 87.81\%. 
+For the biased method, the best-performing classifier for the 5-qubit task utilizes a 10-layer circuit. After 198 epochs, this model achieves an accuracy of 88.60\%, a precision of 87.64\%, a recall of 88.00\%, and an F1-score of 87.81\%. 
 
 \begin{figure}[H]
 	% Define the figure file in the \includegraphics command
@@ -2075,7 +2079,7 @@ For the biased method, the best-performing classifier for the 5-qubit task utili
 	%\centering % This centers the image horizontally
 	\includegraphics[width=\linewidth]{./figures/best_VQC_5_qubits_biased.png}
 	% Place caption under the figure
-	\caption{VQC of the best 5-qubit biased classifier
+	\caption{Circuit of the best 5-qubit biased classifier
 	}
 	% Label the caption to include in the list of figures
 	\label{fig:5_qubits_best_vqc_biased}
@@ -2183,7 +2187,7 @@ In terms of epochs, it is evident that the biased models reached their optimal p
 	\label{fig:10_runs_epochs}
 \end{figure}
 
-To ensure the final comparison between the quantum methods and Logistic Regression is equitable, an evaluation process similar to that of the quantum approaches was adopted. The classical method was trained and tested using the same datasets as the quantum models, with the process repeated across ten runs and various hyperparameter values for the Logistic Regression model. Although this approach is less rigorous than the exhaustive repeated nested cross-validation technique employed previously, it is appropriate here as the primary objective is to provide a fair and direct comparison between the models.
+To ensure the final comparison between the quantum methods and Logistic Regression is equitable, an evaluation process similar to that of the quantum approaches was adopted. The classical method was trained and tested using the same datasets as the quantum models, with the process repeated across ten runs and various hyperparameter values for the Logistic Regression model. Although this approach is less rigorous than the exhaustive rnCV technique employed previously, it is appropriate here as the primary objective is to provide a fair and direct comparison between the models.
 
 For the quantum methods, we report only the highest average results across all layers for each configuration and method. For instance, in the 5-qubit case, we consider the results of both the unbiased and biased classifiers comprised of 30 layers, and we apply this same logic to the remaining configurations. In essence, we set aside the number of parameters required to achieve these results and focus exclusively on the best average performance attained by each model.
 
@@ -2206,7 +2210,7 @@ With that in mind, we can see that our quantum approach demonstrates clear super
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FROM TEMPLATE
 Breast cancer remains one of the most serious and increasingly frequent malignancies worldwide. While numerous methods and complex machine learning models have been developed for the diagnosis and prognosis of these cases, there remains a need to evaluate simpler machine learning algorithms. Furthermore, the emergence of quantum computers opens up new possibilities through the utilization of VQCs.
 
-This thesis first examines the application of six distinct machine learning approaches, LightGBM, Random Forest, Logistic Regression, SVMs, LDA, and Gaussian Naïve Bayes, to predict malignant samples within a population of benign tumors and masses from breast tissue. The training features for these models are derived from fine-needle aspirates and detail 30 physical characteristics of cell nuclei. Reflecting empirical data, the dataset is imbalanced, with a higher frequency of the benign class.
+This thesis first examines the application of six distinct machine learning approaches, LightGBM, Random Forest, Logistic Regression, SVMs, LDA, and GNB, to predict malignant samples within a population of benign tumors and masses from breast tissue. The training features for these models are derived from fine-needle aspirates and detail 30 physical characteristics of cell nuclei. Reflecting empirical data, the dataset is imbalanced, with a higher frequency of the benign class.
 
 Following a brief exploratory data analysis and the application of rnCV, we determined that Logistic Regression was the top-performing model across nine key metrics. To gain a more robust understanding of its generalization capabilities, we performed bootstrapping with five thousand samples to calculate 95\% confidence intervals. Overall, the Logistic Regression model achieved exceptionally strong results, scoring above 95\% across all nine evaluated metrics.
 
@@ -2227,16 +2231,33 @@ It is certain that as quantum hardware advances and processors offer a growing n
 % abbreviations table
 \abbreviations
 \begin{center}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{longtable}{ l @{\qquad} l }
-        \toprule
-        AI    & Artificial Intelligence         \\
-        SPARQL & SPARQL Protocol and RDF Query Language \\
-        OWL    & Web Ontology Language                  \\
-        OGC    & Open Geospatial Consortium             \\
-        \bottomrule
-    \end{longtable}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{longtable}{ l @{\qquad} l }
+		\toprule
+		CNOT     & Controlled-NOT \\
+		FNA      & Fine Needle Aspiration \\
+		GNB      & Gaussian Naive Bayes \\
+		LDA      & Linear Discriminant Analysis \\
+		LightGBM & Light Gradient Boosting Machine \\
+		MCC      & Matthews Correlation Coefficient \\
+		MSE      & Mean Squared Error \\
+		NISQ     & Noisy Intermediate-Scale Quantum \\
+		NPV      & Negative Predictive Value \\
+		PC       & Principal Component \\
+		PCA      & Principal Component Analysis \\
+		PR AUC   & Area Under the Precision--Recall Curve \\
+		QML      & Quantum Machine Learning \\
+		rnCV     & Repeated nested cross-validation \\
+		ROC      & Receiver Operating Characteristic \\
+		ROC AUC  & Area Under the Receiver Operating Characteristic Curve \\
+		SVM      & Support Vector Machines \\
+		VQC      & Variational Quantum Classifier \\
+		\bottomrule
+	\end{longtable}
 \end{center}
+
+
+%\printglossary[type=\acronymtype,title=ABBREVIATIONS - ACRONYMS,toctitle=ABBREVIATIONS - ACRONYMS]
 
 % appendix
 \begin{appendix}

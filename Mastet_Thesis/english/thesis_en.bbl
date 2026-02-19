@@ -74,6 +74,14 @@ M.~Schuld and F.~Petruccione, \emph{Supervised learning with quantum
 C.~DIMITRIOS, ``The effects of quantum entanglement on variational quantum
   classifiers,'' 2024.
 
+\bibitem{bib:hhl}
+\BIBentryALTinterwordspacing
+A.~W. Harrow, A.~Hassidim, and S.~Lloyd, ``Quantum algorithm for linear systems
+  of equations,'' \emph{Phys. Rev. Lett.}, vol. 103, p. 150502, Oct 2009.
+  [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevLett.103.150502}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:mottonen}
 \BIBentryALTinterwordspacing
 M.~Mottonen, J.~J. Vartiainen, V.~Bergholm, and M.~M. Salomaa, ``Transformation
