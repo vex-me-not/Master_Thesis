@@ -1,0 +1,163 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\title{A Comparative Analysis of Classical Machine Learning Methods and Variational Quantum Methods for Breast Tumor Classification}
+\author{Charisis Nikolaos}
+\institute{National and Kapodistrian University of Athens, Department of Informatics and Telecommunications}
+\date{\today}
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{lscape}
+\usepackage{subcaption}
+\usepackage{listings}
+
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{braket}
+\usepackage{amssymb}
+
+
+\begin{document}
+	
+	
+\begin{frame}[plain]
+    \maketitle
+\end{frame}
+
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Introduction}
+    Our goals:
+    	\begin{itemize}
+    	\item Tumor Classification using Classical ML methods
+    	\item Tumor Classification using Variational Quantum methods
+    	\item Comparison of the results
+    \end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Thesis outline}
+	Workflow of the master thesis:
+	\begin{itemize}
+		\item Classical Machine Learning Methods Introduction
+		\item Quantum Computing and Quantum Machine Learning Basics
+		\item EDA \& Classification using Classical ML methods and rnCV
+		\item Classification using PCA and VQCs
+		\item Comparison of the Classical and Quantum approaches
+	\end{itemize}
+\end{frame}
+
+\section{Classical Machine Learning Methods Introduction}
+
+\begin{frame}
+	\frametitle{Classical Machine Learning Methods Introduction}
+	Classical ML methods that we will be using:
+	\begin{itemize}
+		\item Logistic Regression
+		\item Gaussian Naive Bayes
+		\item Linear Discriminant Analysis
+		\item Support Vector Machines
+		\item Random Forests
+		\item LightGBM
+	\end{itemize}
+\end{frame}
+
+\section{Quantum Computing and Quantum Machine Learning Basics}
+
+\begin{frame}
+	\frametitle{Quantum Computing and Quantum Machine Learning Basics}
+	Key points:
+	\begin{itemize}
+		\item The Qubit
+		\item Qubit Manipulation and Quantum Entanglement
+		\item Quantum Gates
+		\item Quantum Circuits
+		\item Data Encoding
+		\item Variational Quantum Classifiers
+	\end{itemize}
+\end{frame}
+
+\subsection{The Qubit}
+
+\begin{frame}
+	\frametitle{Bloch sphere}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\centering % This centers the image horizontally
+		\includegraphics[scale=0.5]{figures/qubit_bloch_sphere.png}
+		% Place caption under the figure
+		\caption[Bloch sphere representation of a qubit]{Bloch sphere representation of a qubit
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:bloch_sphere}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pauli Operators}
+
+\begin{equation}
+	\hat{I} = \begin{pmatrix} 
+		1 & 0 \\ 
+		0 & 1 
+	\end{pmatrix}
+	\label{eq:matrix_I}
+\end{equation}
+
+\begin{equation}
+	\hat{X} = \begin{pmatrix} 
+		0 & 1 \\ 
+		1 & 0 
+	\end{pmatrix}
+	\label{eq:matrix_X}
+\end{equation}
+
+\begin{equation}
+	\hat{Y} = \begin{pmatrix} 
+		0 & -i \\ 
+		i & 0 
+	\end{pmatrix}
+	\label{eq:matrix_Y}
+\end{equation}
+
+\begin{equation}
+	\hat{Z} = \begin{pmatrix} 
+		1 & 0 \\ 
+		0 & -1 
+	\end{pmatrix}
+	\label{eq:matrix_Z}
+\end{equation}	
+	
+
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Conclusion}
+	
+	\begin{itemize}
+		\item VQCs show strong potential, especially in low dimensionality problems
+		\item Classical ML still slightly superior
+		\item Future quantum hardware will improve results
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Thank you for your attention!}
+	\center
+	\Huge Questions?
+\end{frame}
+
+\end{document}
