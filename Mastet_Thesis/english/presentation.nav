@@ -8,26 +8,87 @@
 \headcommand {\beamer@framepages {4}{4}}
 \headcommand {\beamer@sectionpages {1}{4}}
 \headcommand {\beamer@subsectionpages {1}{4}}
-\headcommand {\sectionentry {1}{Classical Machine Learning Methods Introduction}{5}{Classical Machine Learning Methods Introduction}{0}}
+\headcommand {\sectionentry {1}{Classical Machine Learning Introduction}{5}{Classical Machine Learning Introduction}{0}}
 \headcommand {\slideentry {1}{0}{1}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\beamer@sectionpages {5}{5}}
-\headcommand {\beamer@subsectionpages {5}{5}}
-\headcommand {\sectionentry {2}{Quantum Computing and Quantum Machine Learning Basics}{6}{Quantum Computing and Quantum Machine Learning Basics}{0}}
-\headcommand {\slideentry {2}{0}{1}{6/6}{}{0}}
+\headcommand {\slideentry {1}{0}{2}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\beamer@subsectionpages {6}{6}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{7}{The Qubit}}
-\headcommand {\slideentry {2}{1}{1}{7/7}{The Qubit}{0}}
+\headcommand {\beamer@sectionpages {5}{6}}
+\headcommand {\beamer@subsectionpages {5}{6}}
+\headcommand {\sectionentry {2}{Quantum Computing and Quantum Machine Learning Basics}{7}{Quantum Computing and Quantum Machine Learning Basics}{0}}
+\headcommand {\slideentry {2}{0}{1}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {2}{1}{2}{8/8}{The Qubit}{0}}
+\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{8}{Quantum Mechanics and Quantum Computers}}
+\headcommand {\slideentry {2}{1}{1}{8/8}{Quantum Mechanics and Quantum Computers}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {2}{1}{3}{9/9}{The Qubit}{0}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{9}{The Qubit}}
+\headcommand {\slideentry {2}{2}{1}{9/9}{The Qubit}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {2}{1}{4}{10/10}{The Qubit}{0}}
+\headcommand {\slideentry {2}{2}{2}{10/10}{The Qubit}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@partpages {1}{10}}
-\headcommand {\beamer@subsectionpages {7}{10}}
-\headcommand {\beamer@sectionpages {6}{10}}
-\headcommand {\beamer@documentpages {10}}
-\headcommand {\gdef \inserttotalframenumber {10}}
+\headcommand {\slideentry {2}{2}{3}{11/11}{The Qubit}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsectionpages {9}{11}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{12}{Qubit Manipulation}}
+\headcommand {\slideentry {2}{3}{1}{12/12}{Qubit Manipulation}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {2}{3}{2}{13/13}{Qubit Manipulation}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {2}{3}{3}{14/14}{Qubit Manipulation}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {2}{3}{4}{15/15}{Qubit Manipulation}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@subsectionpages {12}{15}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{16}{Manipulation of Multiple Qubits}}
+\headcommand {\slideentry {2}{4}{1}{16/16}{Manipulation of Multiple Qubits}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {2}{4}{2}{17/17}{Manipulation of Multiple Qubits}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{4}{3}{18/18}{Manipulation of Multiple Qubits}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\beamer@subsectionpages {16}{18}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{19}{Quantum Entanglement}}
+\headcommand {\slideentry {2}{5}{1}{19/19}{Quantum Entanglement}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@subsectionpages {19}{19}}
+\headcommand {\beamer@subsectionentry {0}{2}{6}{20}{Quantum Gates}}
+\headcommand {\slideentry {2}{6}{1}{20/20}{Quantum Gates}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {2}{6}{2}{21/21}{Quantum Gates}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {2}{6}{3}{22/22}{Quantum Gates}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {2}{6}{4}{23/23}{Quantum Gates}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@subsectionpages {20}{23}}
+\headcommand {\beamer@subsectionentry {0}{2}{7}{24}{Input Encoding Techniques}}
+\headcommand {\slideentry {2}{7}{1}{24/24}{Input Encoding Techniques}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@subsectionpages {24}{24}}
+\headcommand {\beamer@subsectionentry {0}{2}{8}{25}{Variational Quantum Classifiers}}
+\headcommand {\slideentry {2}{8}{1}{25/25}{Variational Quantum Classifiers}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@sectionpages {7}{25}}
+\headcommand {\beamer@subsectionpages {25}{25}}
+\headcommand {\sectionentry {3}{Results from Classical Machine Learning methods}{26}{Results from Classical Machine Learning methods}{0}}
+\headcommand {\beamer@sectionpages {26}{25}}
+\headcommand {\beamer@subsectionpages {26}{25}}
+\headcommand {\sectionentry {4}{Results from Variational Quantum methods}{26}{Results from Variational Quantum methods}{0}}
+\headcommand {\beamer@sectionpages {26}{25}}
+\headcommand {\beamer@subsectionpages {26}{25}}
+\headcommand {\sectionentry {5}{Comparison \& Conclusion}{26}{Comparison \& Conclusion}{0}}
+\headcommand {\beamer@subsectionpages {26}{25}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{26}{Comparison}}
+\headcommand {\beamer@subsectionpages {26}{25}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{26}{Conclusion}}
+\headcommand {\slideentry {5}{2}{1}{26/26}{Conclusion}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\slideentry {5}{2}{2}{27/27}{Conclusion}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\beamer@partpages {1}{27}}
+\headcommand {\beamer@subsectionpages {26}{27}}
+\headcommand {\beamer@sectionpages {26}{27}}
+\headcommand {\beamer@documentpages {27}}
+\headcommand {\gdef \inserttotalframenumber {27}}

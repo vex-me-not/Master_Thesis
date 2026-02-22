@@ -54,18 +54,46 @@
 	\end{itemize}
 \end{frame}
 
-\section{Classical Machine Learning Methods Introduction}
+\section{Classical Machine Learning Introduction}
+
 
 \begin{frame}
-	\frametitle{Classical Machine Learning Methods Introduction}
-	Classical ML methods that we will be using:
+	\frametitle{Classical Machine Learning Basics}
+	\textbf{Two} types of ML:
 	\begin{itemize}
-		\item Logistic Regression
-		\item Gaussian Naive Bayes
-		\item Linear Discriminant Analysis
-		\item Support Vector Machines
-		\item Random Forests
-		\item LightGBM
+		\item Supervised (Labeled Datasets)
+		\item Unsupervised (Hidden patterns, no labels)
+	\end{itemize}	
+	
+\textbf{Unsupervised} ML:
+	\begin{itemize}
+		\item Clustering
+		\item Anomaly Detection
+		\item Dimensionality Reduction
+	\end{itemize}
+	
+	\textbf{Supervised} ML:
+	\begin{itemize}
+		\item Regression
+		\item Classification
+	\end{itemize}	
+	
+	We will focus on \textbf{Classification}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Binary Classification with Classical ML Methods}
+	\textbf{Binary} Classification: Choose between \textbf{two categories}
+	
+	\textbf{Classical} ML methods:
+	\begin{itemize}
+		\item \textbf{Logistic Regression}
+		\item \textbf{Gaussian Naive Bayes} (GNB)
+		\item \textbf{Linear Discriminant Analysis} (LDA)
+		\item \textbf{Support Vector Machines} (SVM)
+		\item \textbf{Random Forests}
+		\item \textbf{Light Gradient Boosting Machine} (LightGBM)
 	\end{itemize}
 \end{frame}
 
@@ -84,27 +112,125 @@
 	\end{itemize}
 \end{frame}
 
+\subsection{Quantum Mechanics and Quantum Computers}
+
+\begin{frame}
+	\frametitle{Quantum Mechanics and Quantum Computers}
+	\textbf{Quantum Theory} or \textbf{Quantum Mechanics}:
+	\begin{itemize}
+		\item Mathematical \textbf{Framework} for the results of measurement of \textbf{quantum systems}
+	\end{itemize}
+	\textbf{Quantum Systems}:
+	\begin{itemize}
+		\item\textbf{Microscopic} entities where \textbf{Newtonian} mechanics \textbf{fail} (e.g hydrogen atom)
+	\end{itemize}
+	\textbf{Quantum Computer}:
+	\begin{itemize}
+	\item Computational device that \textbf{exploits} \textbf{quantum mechanical effects} (superposition,entanglement) to carry out \textbf{operations on information}
+	\item Uses \textbf{Qubits} instead of bits
+	\item \textbf{Quantum characteristics} of particles can be \textbf{utilized}
+	\item \textbf{Quantum processes} can \textbf{manipulate} this information
+	\end{itemize}	
+\end{frame}
+
+
 \subsection{The Qubit}
 
 \begin{frame}
+	\frametitle{The Qubit}
+	\begin{itemize}
+	\item Fundamental building blocks of quantum computers
+	\item The quantum mechanical analogue of a classical bit
+	\item Created by manipulating and measuring systems that exhibit quantum mechanical behavior
+	\begin{itemize}
+		\item \textbf{Superconducting qubits}: \textbf{superconducting} materials at \textbf{cryogenic} temperatures, offer \textbf{rapid} gate speeds and \textbf{precise} control
+		\item \textbf{Trapped ion qubits}: individual \textbf{ions} \textbf{confined} by electromagnetic fields, \textbf{long coherence} times and \textbf{high-fidelity measurements}, slower than \textbf{superconducting}
+		\item \textbf{Quantum dots}: tiny \textbf{semiconductors} capture a \textbf{single electron}, potential for \textbf{scalability}
+		\item \textbf{Photons}: particles of \textbf{light}, encode quantum information and transmit via \textbf{optical fibers}, applications in quantum \textbf{communication} and \textbf{cryptography}
+	\end{itemize}
+	
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Qubit, more formally}
+	\begin{itemize}
+		\item A two-state quantum system defined by the \textbf{basis vectors} $\ket{0}$ and $\ket{1}$
+		\item A qubit may exist in a \textbf{superposition}, a mathematical \textbf{linear combination} of both basis states, $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$
+		\item $\ket{0} = \bigl( \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \bigr)$, $\ket{1} = \bigl( \begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \bigr)$, $\alpha, \beta$  probability amplitudes with complex values
+		\item Hermitian conjugate: $\bra{\psi} = \begin{pmatrix} \alpha^* & \beta^* \end{pmatrix}$
+		\item $\ket{\cdot}$ is called "\textbf{ket}", $\bra{\cdot}$ is called "\textbf{bra}"
+		\item Upon \textbf{measurement}, Qubit \textbf{collapses} with $P(\ket{0} )= \left|\alpha\right|^2$ and $P(\ket{1} )= \left|\beta\right|^2$
+		\item Thus, it must hold $\left|\alpha\right|^2 + \left|\beta\right|^2 = 1$ or $\left\| \psi \right\|= \sqrt{\braket{\psi|\psi}} = 1$
+		\item If not, then we do $\ket{\tilde{\psi}} = \frac{\ket{\psi}}{\left\| \psi \right\|}$
+		\item A qubit is defined as a \textbf{vector} residing in a \textbf{two-dimensional complex Hilbert} space $\mathbb{C}^2$
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
 	\frametitle{Bloch sphere}
+	\begin{itemize}
+		\item $\ket{\psi} = \cos\left(\frac{\theta}{2}\right) \ket{0} + e^{i\phi} \sin\left(\frac{\theta}{2}\right) \ket{1}$
+		\item $\ket{\psi} = \ket{0}$ occurs at $\theta = 0$
+		\item $\ket{\psi} = \ket{1}$ occurs at $\theta = \pi$
+	\end{itemize}
+
 	\begin{figure}
 		% Define the figure file in the \includegraphics command
 		% Must be relative to one of the paths
 		% in the \graphicspath command at the top
 		\centering % This centers the image horizontally
-		\includegraphics[scale=0.5]{figures/qubit_bloch_sphere.png}
+		\includegraphics[scale=0.40]{figures/qubit_bloch_sphere.png}
 		% Place caption under the figure
-		\caption[Bloch sphere representation of a qubit]{Bloch sphere representation of a qubit
+		\caption[A qubit can be mapped to a point on the surface of this unit-radius sphere ($r = 1$), uniquely determined by the angular coordinates $\theta$ and $\phi$]{A qubit can be mapped to a point on the surface of this unit-radius sphere ($r = 1$), uniquely determined by the angular coordinates $\theta$ and $\phi$
 		}
 		% Label the caption to include in the list of figures
 		\label{fig:bloch_sphere}
 	\end{figure}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Pauli Operators}
+\subsection{Qubit Manipulation}
 
+\begin{frame}
+	\frametitle{Operators}
+	We transition qubits through \textbf{different states} with the use of \textbf{operators}
+	\begin{itemize}
+		\item $\hat{A}\ket{\psi} = \ket{\phi}$, $\hat{A}\bra{\psi} = \bra{\phi}$
+		\item Vital set of operators called \textbf{Pauli} operators:
+		\begin{itemize}
+			\item $\hat{I}\ket{\psi} = \ket{\psi}$
+			\item $\hat{X}\ket{0} = \ket{1}$, $\hat{X}\ket{1} = \ket{0}$ ($NOT$ operator)
+			\item $\hat{Y}\ket{0} = -i\ket{1}$, $\hat{Y}\ket{1} = i\ket{0}$
+			\item $\hat{Z}\ket{0} = \ket{0}$, $\hat{Z}\ket{1} = -\ket{1}$
+		\end{itemize}
+	\end{itemize}
+	We can also express an operator as an outer product
+	\begin{itemize}
+		\item $(\ket{\psi}\bra{\phi})\ket{\chi} = \ket{\psi}\braket{\phi|\chi} = \braket{\phi|\chi}\ket{\psi}$
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Operators as Matrices}
+	Another method for representing an operator is through matrix notation
+	\begin{itemize}
+		\item For an \textbf{$n$-dimensional} vector space \textrightarrow \textbf{$n \times n$ matrices}. We focus on $\mathbb{C}^2$, so \textbf{$2 \times 2$ matrices}
+	\end{itemize}
+	\begin{equation}
+		\hat{A} = \begin{pmatrix} 
+			\braket{0 | \hat{A} | 0} & \braket{0 | \hat{A} | 1} \\ 
+			\braket{1 | \hat{A} | 0} & \braket{1 | \hat{A} | 1} 
+		\end{pmatrix}
+		\label{eq:matrix_rep}
+	\end{equation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pauli Operators as Matrices}
+	Following Equation~\ref{eq:matrix_rep} we get that:
 \begin{equation}
 	\hat{I} = \begin{pmatrix} 
 		1 & 0 \\ 
@@ -136,11 +262,300 @@
 	\end{pmatrix}
 	\label{eq:matrix_Z}
 \end{equation}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hermitian \& Unitary Operators}
+	A given operator $\hat{A}$ is classified as \textbf{Hermitian} iff:
+	\begin{equation}
+		\hat{A} = \hat{A}^\dagger
+		\label{eq:matrix_A_dagger}
+	\end{equation}
+	\begin{itemize}
+		\item $\hat{A}^\dagger$ denotes the Hermitian adjoint \textrightarrow transposing the matrix and taking the complex conjugate of every entry
+		\item Hermitians possess \textbf{real eigenvalues} and their \textbf{main diagonal} consists solely of \textbf{real} numbers.
+		\item Therefore they represent \textbf{physical observables}
+	\end{itemize}
 	
+	A given operator $\hat{U}$ is classified as \textbf{Unitary} iff:
+	\begin{equation}
+	\hat{U}\hat{U}^\dagger =\hat{U}^\dagger\hat{U} = \hat{I}
+	\label{eq:matrix_U_dagger}
+	\end{equation}
+	\begin{itemize}
+		\item They characterize the \textbf{temporal evolution} of a quantum state
+	\end{itemize}
+	The \textbf{Pauli} operators are \textbf{both} the Hermitian and Unitary
 
 \end{frame}
 
+\subsection{Manipulation of Multiple Qubits}
 
+\begin{frame}
+	\frametitle{Outer product}
+	\begin{itemize}
+		\item To explore more sophisticated and advantageous quantum algorithms, we need systems of \textbf{multiple interacting qubits}
+		\item Construction of a \textbf{composite} Hilbert space
+		\item The mathematical operation used is the Kronecker or tensor product ($\otimes$)
+	\end{itemize}
+	
+	If $H_1$ and $H_2$ two Hilbert spaces with dimensions $N_1$ and $N_2$, then we can form a composite Hilbert space $H$ with dimension $N_1N_2$, defined as:
+	\begin{equation}
+		H = H_1 \otimes H_2
+		\label{eq:tensor}
+	\end{equation}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{States derived from tensor product}
+	The tensor product can be employed to construct a state residing within the composite space $H$:
+	
+	\begin{equation}
+		\ket{\psi} = \ket{\phi} \otimes \ket{\chi}
+		\label{eq:tensor_states}
+	\end{equation}
+	
+	For two-dimensional subspaces, the following procedure is employed to calculate the product:
+	
+	\begin{equation}
+		\ket{\psi} = \ket{\phi} \otimes \ket{\chi} 
+		= \begin{pmatrix} 
+			a \\ 
+			b 
+		\end{pmatrix} 
+		\otimes
+		\begin{pmatrix} 
+			c \\ 
+			d
+		\end{pmatrix} 
+		= \begin{pmatrix} 
+			ac \\ 
+			ad \\
+			bc \\
+			bd
+		\end{pmatrix}
+		\label{eq:constr_states}
+	\end{equation}
+
+	Usually, the $\otimes$ symbol is omitted; for example, $\ket{\phi} \otimes \ket{\chi}$ may be written as $\ket{\phi} \ket{\chi}$, or even more compactly as $\ket{\phi\chi}$.
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Basis vectors and operators of a composite system}
+	If $\ket{u_i}$ and $\ket{v_i}$ are the basis vectors of $H_1$ and $H_2$, the resulting basis for the joint space $H$ is:
+	
+	\begin{equation}
+		\ket{w_i} = \ket{u_i} \otimes \ket{v_i}
+		\label{eq:wi}
+	\end{equation}
+
+	We can define operators that act upon our composite system. If $\ket{\phi} \in H_1$ and $\ket{\chi} \in H_2$, and $A$ acting on $\ket{\phi}$ and $B$ acting on $\ket{\chi}$. A new operator, which acts on a state $\ket{\psi} \in H$ is:
+	
+	\begin{equation}
+		(A \otimes B) \ket{\psi} = (A \otimes B)(\ket{\phi} \otimes \ket{\chi}) = (A\ket{\phi}) \otimes (B\ket{\chi})
+		\label{eq:comp_systems}
+	\end{equation}
+	
+	The matrix representation is computed as:
+	
+	\begin{equation}
+		A \otimes B 
+		= 	\begin{pmatrix} 
+			\alpha_{11}B &  \alpha_{12}B\\ 
+			\alpha_{21}B &  \alpha_{22}B
+		\end{pmatrix}  
+		= 	\begin{pmatrix} 
+			\alpha_{11}\beta_{11} &  \alpha_{11}\beta_{12} & \alpha_{12}\beta_{11} &\alpha_{12}\beta_{12}\\ 
+			\alpha_{11}\beta_{21} &  \alpha_{11}\beta_{22} & \alpha_{12}\beta_{21} &\alpha_{12}\beta_{22}\\
+			\alpha_{21}\beta_{11} &  \alpha_{21}\beta_{12} & \alpha_{22}\beta_{11} &\alpha_{22}\beta_{12}\\
+			\alpha_{21}\beta_{21} &  \alpha_{21}\beta_{22} & \alpha_{22}\beta_{21} &\alpha_{22}\beta_{22}
+		\end{pmatrix}
+		\label{eq:comp_systems_matrix}
+	\end{equation}
+	
+\end{frame}
+
+\subsection{Quantum Entanglement}
+
+\begin{frame}
+	\frametitle{Quantum Entanglement}
+	A composite system \textbf{cannot always} be expressed as a tensor product of individual states, only if the qubits are prepared separately and kept in isolation. If the qubits are permitted to \textbf{interact}, they form a single integrated closed system and are described as \textbf{entangled}:
+	\begin{itemize}
+		\item \textbf{Quantum Entanglement} is a fundamental phenomenon and a vital resource for quantum computation
+		\item \textbf{Particles} sharing a common origin remain fundamentally \textbf{linked} regardless of the distance between them
+		\item Any measurement or interaction of one particle instantaneously \textbf{influences} the state of its entangled \textbf{partners}
+		\item Information can be transmitted \textbf{faster} than the speed of \textbf{light}
+	\end{itemize}
+\end{frame}
+
+\subsection{Quantum Gates}
+
+\begin{frame}
+	\frametitle{Quantum Gates}
+	\textbf{Transformations} applied to qubit states are referred to as quantum gates, and a sequence of such operations forms a \textbf{quantum circuit}:
+	\begin{itemize}
+		\item \textbf{Quantum gates} represent unitary \textbf{operations} performed on \textbf{qubits}
+		\item The terms "\textbf{gate}" and "\textbf{unitary operator}" are used \textbf{interchangeably}
+		\item A gate processing \textbf{$n$ inputs} and outputs is represented by a \textbf{$2^n \times 2^n$ matrix}
+		\item A \textbf{single-qubit} gate is depicted as a \textbf{$2 \times 2$ matrix}
+		\item A quantum gate acting on \textbf{two qubits} requires a \textbf{$4 \times 4$ matrix }representation
+	\end{itemize}
+	
+	The most fundamental single-qubit operation is the quantum $NOT$ gate, which is equivalent to the Pauli $X$ operator. This gate effectively swaps the basis states. Represented as a matrix in the computational basis, we have:
+	
+	\begin{equation}
+		\hat{U}_{NOT} = \hat{X} 
+		= \begin{pmatrix} 
+			0 & 1 \\ 
+			1 & 0 
+		\end{pmatrix} 
+		\label{eq:Unot}
+	\end{equation}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hadamard and Rotation gates}
+	\begin{itemize}
+		\item The Hadamard gate, which transforms the standard basis states into a balanced superposition
+		\begin{equation}
+			\hat{H} = \frac{1}{\sqrt{2}} \begin{pmatrix} 
+				1 & 1 \\ 
+				1 & -1 
+			\end{pmatrix} 
+			\label{eq:hadamard_matrix}
+		\end{equation}
+		\item Rotations of a qubit along the $x$, $y$, and $z$ axes of the Bloch sphere:
+		\begin{itemize}
+			\item \begin{equation}
+				\hat{R}_{x}(\theta) = e^{-i\theta\frac{X}{2}}	
+				= \begin{pmatrix} 
+					\cos(\frac{\theta}{2}) & -i\sin(\frac{\theta}{2}) \\ 
+					-i\sin(\frac{\theta}{2}) & 	\cos(\frac{\theta}{2}) 
+				\end{pmatrix} 
+				\label{eq:Rx}
+			\end{equation}
+			\item \begin{equation}
+				\hat{R}_{y}(\theta) = e^{-i\theta\frac{Y}{2}}	
+				= \begin{pmatrix} 
+					\cos(\frac{\theta}{2}) & -\sin(\frac{\theta}{2}) \\ 
+					\sin(\frac{\theta}{2}) & 	\cos(\frac{\theta}{2}) 
+				\end{pmatrix} 
+				\label{eq:Ry}
+			\end{equation}
+			\item \begin{equation}
+				\hat{R}_{z}(\theta) = e^{-i\theta\frac{Z}{2}}	
+				= \begin{pmatrix} 
+					e^{-i\frac{\theta}{2} } & 0 \\ 
+					0 & 	e^{-i\frac{\theta}{2} } 
+				\end{pmatrix} 
+				\label{eq:Rz}
+			\end{equation}
+		\end{itemize}
+	\end{itemize}
+	Any arbitrary single-qubit gate can be represented as a specific sequence of rotations around the $z$ and $y$ axes ($Z$-$Y$ decomposition)
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{The $controlled\text{-}NOT$ ($CNOT$) gate}
+	Two-qubit gate where the target qubit remains unchanged if the control qubit is in the state $\ket{0}$; however, if the control qubit is in the state $\ket{1}$, the target qubit undergoes a bit-flip, as if a $NOT$ gate had been applied
+	
+	\begin{itemize}
+		\item 	
+		\[
+		CNOT\ket{00} = \ket{00} 
+		\]
+		\item
+		\[
+		CNOT\ket{01} = \ket{01} 
+		\] 
+		\item 
+		\[
+		CNOT\ket{10} = \ket{11} 
+		\]
+		\item
+		\[
+		CNOT\ket{11} = \ket{10} 
+		\]		
+	\end{itemize}
+	
+	Its matrix representation is :
+	\begin{equation}
+		CNOT = \begin{pmatrix}
+			%first line 
+			1 & 0 & 0 & 0 \\ 
+			%second line
+			0 & 1 & 0 & 0 \\ 
+			%third line
+			0 & 0 & 0 & 1 \\ 		
+			%fourth line
+			0 & 0 & 1 & 0 \\ 
+		\end{pmatrix} 
+		\label{eq:cnot_matrix}
+	\end{equation}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Quantum Circuits}
+	\begin{figure}[H]
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering
+		\includegraphics[width=\linewidth]{figures/circuit_diagram.png}
+		% Place caption under the figure
+		\caption[An example of a quantum circuit diagram]{An example of a quantum circuit diagram
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:circuit_diagram}
+	\end{figure}
+\end{frame}
+
+\subsection{Input Encoding Techniques}
+
+\begin{frame}
+	\frametitle{Input Encoding Techniques}
+	Various techniques to \textbf{embed classical dat}a into an $n$-qubit quantum system:
+	\begin{itemize}
+		\item \textbf{Basis} encoding
+		\item \textbf{Time-evolution} encoding
+		\item \textbf{Hamiltonian} encoding
+		\item \textbf{Amplitude} encoding
+	\end{itemize}
+	
+	We will be using \textbf{Amplitude} encoding with \textbf{Amplitude-Efficient State Preparation} to encode $2^n$ features using $n$ qubits
+	
+\end{frame}
+
+\subsection{Variational Quantum Classifiers}
+
+\begin{frame}
+	\frametitle{Variational Quantum Classifiers}
+	\begin{figure}[H]
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{figures/general_variational.png}
+		% Place caption under the figure
+		\caption[General structure of a variational quantum classifier]{General structure of a variational quantum classifier 
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:general_variational}
+	\end{figure}
+\end{frame}
+
+\section{Results from Classical Machine Learning methods}
+
+\section{Results from Variational Quantum methods}
+
+\section{Comparison \& Conclusion}
+\subsection{Comparison}
+
+\subsection{Conclusion}
 
 \begin{frame}
 	\frametitle{Conclusion}

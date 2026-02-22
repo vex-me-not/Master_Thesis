@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  21 FEB 2026 22:07
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  22 FEB 2026 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,36 +1006,93 @@ Package caption Info: End \AtBeginDocument code.
 
 ] [6
 
-]
-File: figures/qubit_bloch_sphere.png Graphic file (type bmp)
-<figures/qubit_bloch_sphere.png>
- [7
+] [7
+
+] [8
+
+] [9
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 141
+LaTeX Font Info:    Trying to load font information for U+msa on input line 170
 .
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 141
+LaTeX Font Info:    Trying to load font information for U+msb on input line 170
 .
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 141.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 170.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 141.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 170.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 141.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 170.
 
-[8
+[10
 
-] [9
+]
+File: figures/qubit_bloch_sphere.png Graphic file (type bmp)
+<figures/qubit_bloch_sphere.png>
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 192.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 192.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 192.
 
-] [10
+Overfull \vbox (5.16832pt too high) detected at line 192
+ []
+
+[11
+
+] [12
+
+] [13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
+] [18
+
+] [19
+
+] [20
+
+] [21
+
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 500.
+
+Overfull \vbox (14.89984pt too high) detected at line 500
+ []
+
+[22
+
+]
+File: figures/circuit_diagram.png Graphic file (type bmp)
+<figures/circuit_diagram.png>
+ [23
+
+] [24
+
+]
+File: figures/general_variational.png Graphic file (type bmp)
+<figures/general_variational.png>
+ [25
+
+] [26
+
+] [27
 
 ]
 \tf@nav=\write6
@@ -1053,15 +1110,15 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: DFA207EFEBFC2D3975AF5A6C2A292FD2;721.
+(rerunfilecheck)             Checksum: 510EE15630EAF2E28CD7B92731CD1979;2947.
  ) 
 Here is how much of TeX's memory you used:
- 24454 strings out of 402982
- 462359 string characters out of 5448680
- 846690 words of memory out of 5000000
- 52710 multiletter control sequences out of 15000+600000
- 632822 words of font info for 70 fonts, out of 8000000 for 9000
+ 24601 strings out of 402982
+ 464758 string characters out of 5448680
+ 858535 words of memory out of 5000000
+ 52842 multiletter control sequences out of 15000+600000
+ 637036 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,11n,123p,444b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on presentation.pdf (10 pages).
+Output written on presentation.pdf (27 pages).
