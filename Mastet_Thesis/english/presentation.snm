@@ -20,3 +20,6 @@
 \beamer@slide {eq:cnot_matrix}{22}
 \beamer@slide {fig:circuit_diagram}{23}
 \beamer@slide {fig:general_variational}{25}
+\beamer@slide {fig:nuclei}{27}
+\beamer@slide {fig:model_heatmap}{31}
+\beamer@slide {fig:violin_plot}{32}

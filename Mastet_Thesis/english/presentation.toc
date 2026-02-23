@@ -9,7 +9,7 @@
 \beamer@subsectionintoc {2}{7}{Input Encoding Techniques}{24}{0}{2}
 \beamer@subsectionintoc {2}{8}{Variational Quantum Classifiers}{25}{0}{2}
 \beamer@sectionintoc {3}{Results from Classical Machine Learning methods}{26}{0}{3}
-\beamer@sectionintoc {4}{Results from Variational Quantum methods}{26}{0}{4}
-\beamer@sectionintoc {5}{Comparison \& Conclusion}{26}{0}{5}
-\beamer@subsectionintoc {5}{1}{Comparison}{26}{0}{5}
-\beamer@subsectionintoc {5}{2}{Conclusion}{26}{0}{5}
+\beamer@sectionintoc {4}{Results from Variational Quantum methods}{33}{0}{4}
+\beamer@sectionintoc {5}{Comparison \& Conclusion}{33}{0}{5}
+\beamer@subsectionintoc {5}{1}{Comparison}{33}{0}{5}
+\beamer@subsectionintoc {5}{2}{Conclusion}{33}{0}{5}

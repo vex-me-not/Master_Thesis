@@ -550,6 +550,120 @@
 
 \section{Results from Classical Machine Learning methods}
 
+\begin{frame}
+	\frametitle{Breast Cancer}
+	\begin{itemize}
+		\item \textbf{Most common} malignancy among women worldwide
+		\item\textbf{ 36\%} of all oncological cases
+		\item An estimated \textbf{2.089 million} women diagnosed in 2018
+	\end{itemize}
+	\textbf{Lifestyle} related factors:
+	\begin{itemize}
+		\item \textbf{Unhealthy dietary} habits
+		\item \textbf{Nicotine} use
+		\item Chronic \textbf{stress}
+		\item \textbf{Low} levels of \textbf{physical} activity
+	\end{itemize}
+	\textbf{Other} risk factors:
+	\begin{itemize}
+		\item Advanced \textbf{age}
+		\item Family \textbf{history} of breast cancer
+		\item Infection with \textbf{oncogenic} viruses
+		\item \textbf{Early} onset of \textbf{menstruation} or \textbf{late} \textbf{menopause}
+		\item \textbf{First} pregnancy at an \textbf{advanced} age or the \textbf{absence} of pregnancy
+		\item Use of \textbf{hormone replacement therapy}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fine Needle Aspiration}
+	We will be working with samples derived from Fine Needle Aspirates
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.5]{figures/fna_nuclei.png}
+		% Place caption under the figure
+		\caption[A magnified image of a malignant breast FNA with the visible cell nuclei having been outlined with the help of a curve fitting program]{A magnified image of a malignant breast FNA with the visible cell nuclei having been outlined with the help of a curve fitting program.
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:nuclei}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Evaluation Metrics}
+	\textbf{Six} models from before with \textbf{nine} key \textbf{metrics}:
+	\begin{itemize}
+		\item (Balanced) \textbf{Accuracy} ($\frac{1}{2}
+		\left(
+		\frac{TP}{TP + FN}
+		+
+		\frac{TN}{TN + FP}
+		\right)$)
+		\item \textbf{Precision} ($\frac{TP}{TP + FP}$)
+		\item \textbf{Recall} ($\frac{TP}{TP + FN}$)
+		\item \textbf{F1-Score} ($2 \cdot \frac{\text{Precision} \cdot \text{Recall}}
+		{\text{Precision} + \text{Recall}}
+		= \frac{2TP}{2TP + FP + FN}$)
+		\item \textbf{MCC} ($\frac{TP \cdot TN - FP \cdot FN}
+		{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}$)
+		\item \textbf{ROC AUC} ($\int_{0}^{1} \text{TPR}(\text{FPR}) \, d(\text{FPR})$)
+		\item \textbf{PR AUC} ($\int_{0}^{1} \text{Precision}(\text{Recall}) \, d(\text{Recall})$)
+		\item \textbf{Specificity} ($\frac{TN}{TN + FP}$)
+		\item \textbf{NPV} ($\frac{TN}{TN + FN}$)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Evalution Outline}
+	\begin{itemize}
+		\item \textbf{Exploratory} Data \textbf{Analysis} (feature distribution, class imbalance)
+		\item Finding the \textbf{best} model (80-20 spilt, rnCV, data cleaning)
+		\item \textbf{Fine tune} the winner (bootstrapping, 95\% confidence intervals)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Exploratory Data Analysis}
+	\begin{itemize}
+		\item \textbf{30} features with \textbf{569} entries
+		\item Class \textbf{imbalance}: \textbf{357} instances of \textbf{benign}, \textbf{212} instances of \textbf{malignant} (62.74\% - 37.25\%)
+		\item Majority of features exist on \textbf{different} scales, will \textbf{scale inside} rnCV
+		\item \textbf{15} out of 30 features heavily \textbf{correlated} with \textbf{prognosis}
+		\item \textbf{No correlation} among features that we did not expect
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Logistic Regression as the best model}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{figures/model_comparison_heatmap.png}
+		% Place caption under the figure
+		\caption{}
+		% Label the caption to include in the list of figures
+		\label{fig:model_heatmap}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Finetuning and bootstrapping}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{figures/violin_plot_boot_lr.png}
+		% Place caption under the figure
+		\caption{Violin plot of the confidence intervals
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:violin_plot}
+	\end{figure}
+\end{frame}
+
 \section{Results from Variational Quantum methods}
 
 \section{Comparison \& Conclusion}

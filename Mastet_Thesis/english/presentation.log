@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  22 FEB 2026 22:06
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  23 FEB 2026 12:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1092,7 +1092,38 @@ File: figures/general_variational.png Graphic file (type bmp)
 
 ] [26
 
-] [27
+]
+File: figures/fna_nuclei.png Graphic file (type bmp)
+<figures/fna_nuclei.png>
+ [27
+
+] [28
+
+] [29
+
+] [30
+
+]
+File: figures/model_comparison_heatmap.png Graphic file (type bmp)
+<figures/model_comparison_heatmap.png>
+
+Overfull \vbox (38.76862pt too high) detected at line 650
+ []
+
+[31
+
+]
+File: figures/violin_plot_boot_lr.png Graphic file (type bmp)
+<figures/violin_plot_boot_lr.png>
+
+Overfull \vbox (8.8803pt too high) detected at line 665
+ []
+
+[32
+
+] [33
+
+] [34
 
 ]
 \tf@nav=\write6
@@ -1110,15 +1141,15 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 510EE15630EAF2E28CD7B92731CD1979;2947.
+(rerunfilecheck)             Checksum: C0B0007A0325283610087D8E21A3EF89;2947.
  ) 
 Here is how much of TeX's memory you used:
- 24601 strings out of 402982
- 464758 string characters out of 5448680
- 858535 words of memory out of 5000000
- 52842 multiletter control sequences out of 15000+600000
+ 24645 strings out of 402982
+ 465848 string characters out of 5448680
+ 858964 words of memory out of 5000000
+ 52883 multiletter control sequences out of 15000+600000
  637036 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,11n,123p,444b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on presentation.pdf (27 pages).
+Output written on presentation.pdf (34 pages).
