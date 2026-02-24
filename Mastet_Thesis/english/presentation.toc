@@ -1,15 +1,17 @@
 \beamer@sectionintoc {1}{Classical Machine Learning Introduction}{5}{0}{1}
 \beamer@sectionintoc {2}{Quantum Computing and Quantum Machine Learning Basics}{7}{0}{2}
-\beamer@subsectionintoc {2}{1}{Quantum Mechanics and Quantum Computers}{8}{0}{2}
-\beamer@subsectionintoc {2}{2}{The Qubit}{9}{0}{2}
-\beamer@subsectionintoc {2}{3}{Qubit Manipulation}{12}{0}{2}
-\beamer@subsectionintoc {2}{4}{Manipulation of Multiple Qubits}{16}{0}{2}
-\beamer@subsectionintoc {2}{5}{Quantum Entanglement}{19}{0}{2}
-\beamer@subsectionintoc {2}{6}{Quantum Gates}{20}{0}{2}
-\beamer@subsectionintoc {2}{7}{Input Encoding Techniques}{24}{0}{2}
-\beamer@subsectionintoc {2}{8}{Variational Quantum Classifiers}{25}{0}{2}
+\beamer@subsectionintoc {2}{1}{The Qubit}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Qubit Manipulation}{12}{0}{2}
+\beamer@subsectionintoc {2}{3}{Quantum Gates}{20}{0}{2}
+\beamer@subsectionintoc {2}{4}{Input Encoding Techniques}{24}{0}{2}
+\beamer@subsectionintoc {2}{5}{Variational Quantum Classifiers}{25}{0}{2}
 \beamer@sectionintoc {3}{Results from Classical Machine Learning methods}{26}{0}{3}
 \beamer@sectionintoc {4}{Results from Variational Quantum methods}{33}{0}{4}
-\beamer@sectionintoc {5}{Comparison \& Conclusion}{33}{0}{5}
-\beamer@subsectionintoc {5}{1}{Comparison}{33}{0}{5}
-\beamer@subsectionintoc {5}{2}{Conclusion}{33}{0}{5}
+\beamer@subsectionintoc {4}{1}{One qubit results}{34}{0}{4}
+\beamer@subsectionintoc {4}{2}{Two qubit results}{41}{0}{4}
+\beamer@subsectionintoc {4}{3}{Three qubit results}{48}{0}{4}
+\beamer@subsectionintoc {4}{4}{Four qubit results}{55}{0}{4}
+\beamer@subsectionintoc {4}{5}{Five qubit results}{62}{0}{4}
+\beamer@sectionintoc {5}{Comparison \& Conclusion}{69}{0}{5}
+\beamer@subsectionintoc {5}{1}{Comparison}{69}{0}{5}
+\beamer@subsectionintoc {5}{2}{Conclusion}{73}{0}{5}

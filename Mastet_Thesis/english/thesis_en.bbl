@@ -223,6 +223,17 @@ V.~Bergholm, J.~Izaac, M.~Schuld, C.~Gogolin, S.~Ahmed, V.~Ajith, M.~S. Alam,
   \url{https://arxiv.org/abs/1811.04968}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:numpy}
+\BIBentryALTinterwordspacing
+C.~R. Harris, K.~J. Millman, S.~J. van~der Walt, R.~Gommers, P.~Virtanen,
+  D.~Cournapeau, E.~Wieser, J.~Taylor, S.~Berg, N.~J. Smith, R.~Kern, M.~Picus,
+  S.~Hoyer, M.~H. van Kerkwijk, M.~Brett, A.~Haldane, J.~F. del R{\'{i}}o,
+  M.~Wiebe, P.~Peterson, P.~G{\'{e}}rard-Marchant, K.~Sheppard, T.~Reddy,
+  W.~Weckesser, H.~Abbasi, C.~Gohlke, and T.~E. Oliphant, ``Array programming
+  with {NumPy},'' \emph{Nature}, vol. 585, no. 7825, pp. 357--362, Sep. 2020.
+  [Online]. Available: \url{https://doi.org/10.1038/s41586-020-2649-2}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:seaborn}
 \BIBentryALTinterwordspacing
 M.~L. Waskom, ``seaborn: statistical data visualization,'' \emph{Journal of
@@ -263,17 +274,6 @@ M.~A. Nielsen and I.~L. Chuang, \emph{Quantum Computation and Quantum
 D.~McMahon, \emph{Quantum Computing Explained}, ser. IEEE Press.\hskip 1em plus
   0.5em minus 0.4em\relax Wiley, 2008. [Online]. Available:
   \url{https://books.google.gr/books?id=bDXwFHJNKFAC}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:numpy}
-\BIBentryALTinterwordspacing
-C.~R. Harris, K.~J. Millman, S.~J. van~der Walt, R.~Gommers, P.~Virtanen,
-  D.~Cournapeau, E.~Wieser, J.~Taylor, S.~Berg, N.~J. Smith, R.~Kern, M.~Picus,
-  S.~Hoyer, M.~H. van Kerkwijk, M.~Brett, A.~Haldane, J.~F. del R{\'{i}}o,
-  M.~Wiebe, P.~Peterson, P.~G{\'{e}}rard-Marchant, K.~Sheppard, T.~Reddy,
-  W.~Weckesser, H.~Abbasi, C.~Gohlke, and T.~E. Oliphant, ``Array programming
-  with {NumPy},'' \emph{Nature}, vol. 585, no. 7825, pp. 357--362, Sep. 2020.
-  [Online]. Available: \url{https://doi.org/10.1038/s41586-020-2649-2}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:violin_plot}

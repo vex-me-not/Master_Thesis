@@ -112,8 +112,6 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Quantum Mechanics and Quantum Computers}
-
 \begin{frame}
 	\frametitle{Quantum Mechanics and Quantum Computers}
 	\textbf{Quantum Theory} or \textbf{Quantum Mechanics}:
@@ -289,8 +287,6 @@
 
 \end{frame}
 
-\subsection{Manipulation of Multiple Qubits}
-
 \begin{frame}
 	\frametitle{Outer product}
 	\begin{itemize}
@@ -376,8 +372,6 @@
 	\end{equation}
 	
 \end{frame}
-
-\subsection{Quantum Entanglement}
 
 \begin{frame}
 	\frametitle{Quantum Entanglement}
@@ -519,7 +513,7 @@
 
 \begin{frame}
 	\frametitle{Input Encoding Techniques}
-	Various techniques to \textbf{embed classical dat}a into an $n$-qubit quantum system:
+	Various techniques to \textbf{embed classical data} into an $n$-qubit quantum system:
 	\begin{itemize}
 		\item \textbf{Basis} encoding
 		\item \textbf{Time-evolution} encoding
@@ -666,8 +660,634 @@
 
 \section{Results from Variational Quantum methods}
 
+\begin{frame}
+	\frametitle{Quantum Experimental Framework}
+	\begin{itemize}
+		\item \textbf{1}, \textbf{2}, \textbf{3}, \textbf{4} and \textbf{5} qubits with \textbf{2}, \textbf{4}, \textbf{8}, \textbf{16} and \textbf{30} features through \textbf{PCA}
+		\item \textbf{60-20-20} train-validation-test split
+		\item \textbf{-1} for \textbf{benign} and \textbf{1} for \textbf{malignant}
+		\item Mean Squared Error (\textbf{MSE}) for \textbf{loss} function, \textbf{Nesterov} Momentum for \textbf{optimizer} 
+		\item Focus on \textbf{4} metrics: Accuracy, Recall, Precision, F1-score
+		\item Circuit consisting of \textbf{3} parts: Data \textbf{encoding}, \textbf{Variational} and \textbf{Measurement}
+		\item \textbf{Same} architecture for Variational: \textbf{Layers} consisting solely of \textbf{Rotations} and $\mathbf{CNOT}$s
+		\item \textbf{Two} variants of VQCs: \textbf{Unbiased} vs \textbf{Biased}
+		\item \textbf{Set} number of training \textbf{epochs} for each \textbf{qubit}, we keep track of \textbf{time}
+		\item \textbf{Average} over \textbf{10} runs, keep \textbf{track} of the \textbf{best} performers per variation 
+	\end{itemize}
+\end{frame}
+
+\subsection{One qubit results}
+
+\begin{frame}
+	\frametitle{One qubit results}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.239]{figures/trend_1_qubits_10_runs.png}
+		% Place caption under the figure
+		\caption{Performance and Efficiency Trends of Biased and Unbiased VQC for 1-Qubit
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:1_qubit_trend}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{One qubit results, circuit of best unbiased VQC}
+	\begin{figure}[H]
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\centering % This centers the image horizontally
+		\includegraphics[scale=1.0]{./figures/best_VQC_1_qubit_unbiased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best unbiased 1-qubit VQC
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:1_qubit_best_vqc_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{One qubit results, loss evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_1_qubit_unbiased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best unbiased 1-qubit VQC
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:1_qubit_best_losses_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{One qubit results, performance evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_1_qubit_unbiased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best unbiased 1-qubit VQC
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:1_qubit_best_metrics_unbiased}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{One qubit results, circuit of best biased VQC}
+	\begin{figure}[H]
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\centering % This centers the image horizontally
+		\includegraphics[scale=1.0]{figures/best_VQC_1_qubit_biased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best biased 1-qubit VQC
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:1_qubit_best_vqc_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{One qubit results, loss evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{figures/best_losses_1_qubit_biased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best biased 1-qubit VQC
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:1_qubit_best_losses_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{One qubit results, performance evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_1_qubit_biased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best biased 1-qubit VQC
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:1_qubit_best_metrics_biased}
+	\end{figure}
+\end{frame}
+
+\subsection{Two qubit results}
+
+\begin{frame}
+	\frametitle{Two qubit results}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.239]{figures/trend_2_qubits_10_runs.png}
+		% Place caption under the figure
+		\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 2 Qubits
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:2_qubits_trend}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Two qubit results, circuit of best unbiased VQC}
+	\begin{figure}[H]
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering % This centers the image horizontally
+		\includegraphics[width=\linewidth]{./figures/best_VQC_2_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best 2-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:2_qubits_best_vqc_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Two qubit results, loss evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_2_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best 2-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:2_qubits_best_losses_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Two qubit results, performance evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_2_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best 2-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:2_qubits_best_metrics_unbiased}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Two qubit results, circuit of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering % This centers the image horizontally
+		\includegraphics[width=\linewidth]{./figures/best_VQC_2_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best 2-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:2_qubits_best_vqc_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Two qubit results, loss evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_2_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best 2-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:2_qubits_best_losses_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Two qubit results, performance evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_2_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best 2-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:2_qubits_best_metrics_biased}
+	\end{figure}
+\end{frame}
+
+\subsection{Three qubit results}
+
+\begin{frame}
+	\frametitle{Three qubit results}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.239]{figures/trend_3_qubits_10_runs.png}
+		% Place caption under the figure
+		\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 3 Qubits
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:3_qubits_trend}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Three qubit results, circuit of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering % This centers the image horizontally
+		\includegraphics[width=\linewidth]{./figures/best_VQC_3_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best 3-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:3_qubits_best_vqc_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Three qubit results, loss evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_3_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best 3-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:3_qubits_best_losses_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Three qubit results, performance evolution of best unbiased VQC}
+	\begin{figure}[H]
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_3_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best 3-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:3_qubits_best_metrics_unbiased}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Three qubit results, circuit of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering % This centers the image horizontally
+		\includegraphics[width=\linewidth]{./figures/best_VQC_3_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best 3-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:3_qubits_best_vqc_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Three qubit results, loss evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_3_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best 3-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:3_qubits_best_losses_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Three qubit results, performance evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_3_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best 3-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:3_qubits_best_metrics_biased}
+	\end{figure}
+\end{frame}
+
+\subsection{Four qubit results}
+
+\begin{frame}
+	\frametitle{Four qubit results}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.239]{figures/trend_4_qubits_10_runs.png}
+		% Place caption under the figure
+		\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 4 Qubits
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:4_qubits_trend}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Four qubit results, circuit of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering % This centers the image horizontally
+		\includegraphics[width=\linewidth]{./figures/best_VQC_4_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best 4-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:4_qubits_best_vqc_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Four qubit results, loss evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_4_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best 4-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:4_qubits_best_losses_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Four qubit results, performance evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_4_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best 4-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:4_qubits_best_metrics_unbiased}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Four qubit results, circuit of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering % This centers the image horizontally
+		\includegraphics[width=\linewidth]{./figures/best_VQC_4_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best 4-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:4_qubits_best_vqc_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Four qubit results, loss evolution of best biased VQC}
+	\begin{figure}[H]
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_4_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best 4-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:4_qubits_best_losses_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Four qubit results, performance evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_4_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best 4-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:4_qubits_best_metrics_biased}
+	\end{figure}   
+\end{frame}
+
+\subsection{Five qubit results}
+
+\begin{frame}
+	\frametitle{Five qubit results}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.239]{figures/trend_5_qubits_10_runs.png}
+		% Place caption under the figure
+		\caption{Performance and Efficiency Trends of Biased and Unbiased Classifier for 5 Qubits
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:5_qubits_trend}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Five qubit results, circuit of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering % This centers the image horizontally
+		\includegraphics[width=\linewidth]{./figures/best_VQC_5_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best 5-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:5_qubits_best_vqc_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Five qubit results, loss evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_5_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best 5-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:5_qubits_best_losses_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Five qubit results, performance evolution of best unbiased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_5_qubits_unbiased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best 5-qubit unbiased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:5_qubits_best_metrics_unbiased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Five qubit results, circuit of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		%\centering % This centers the image horizontally
+		\includegraphics[width=\linewidth]{./figures/best_VQC_5_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Circuit of the best 5-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:5_qubits_best_vqc_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Five qubit results, loss evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/best_losses_5_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Evolution of the loss function of the best 5-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:5_qubits_best_losses_biased}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Five qubit results, performance evolution of best biased VQC}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.267]{./figures/best_metrics_5_qubits_biased.png}
+		% Place caption under the figure
+		\caption{Validation and Training curves for the 4 key metrics of the best 5-qubit biased classifier
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:5_qubits_best_metrics_biased}
+	\end{figure}   
+\end{frame}
+
+
 \section{Comparison \& Conclusion}
 \subsection{Comparison}
+
+\begin{frame}
+	\frametitle{Comparison, Best unbiased performers}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.3]{./figures/10_runs_unbiased_metrics_labeled.png}
+		% Place caption under the figure
+		\caption{Performance of best unbiased classifier per number of qubits across all runs
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:10_runs_best_unbiased_performers}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comparison, Best biased performers}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.3]{./figures/10_runs_biased_metrics_labeled.png}
+		% Place caption under the figure
+		\caption{Performance of best biased classifier per number of qubits across all runs
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:10_runs_best_biased_performers}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comparison, parameters needed for best performers}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[width=\linewidth]{./figures/10_runs_vqc_params_comparison.png}
+		% Place caption under the figure
+		\caption{Number of trainable parameters in respect to the number of qubits for biased and unbiased classifiers
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:10_runs_params}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{VQCs vs Logistic Regression}
+	\begin{figure}
+		% Define the figure file in the \includegraphics command
+		% Must be relative to one of the paths
+		% in the \graphicspath command at the top
+		\includegraphics[scale=0.26]{./figures/vqc_vs_classical.png}
+		% Place caption under the figure
+		\caption{Average performance of the Quantum Models and the classical Logistic Regression model across 10 different runs for all the different number of qubits
+		}
+		% Label the caption to include in the list of figures
+		\label{fig:vqc_vs_classical}
+	\end{figure}
+\end{frame}
 
 \subsection{Conclusion}
 
@@ -675,9 +1295,9 @@
 	\frametitle{Conclusion}
 	
 	\begin{itemize}
-		\item VQCs show strong potential, especially in low dimensionality problems
-		\item Classical ML still slightly superior
-		\item Future quantum hardware will improve results
+		\item VQCs show \textbf{strong potential}, especially in low dimensionality problems
+		\item Classical ML still \textbf{slightly} superior
+		\item \textbf{Future} quantum hardware will \textbf{improve} results
 	\end{itemize}
 	
 \end{frame}
