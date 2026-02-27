@@ -47,4 +47,4 @@
 \contentsline {chapter}{APPENDICES}{125}{section*.82}%
 \contentsline {chapter}{\numberline {A}CODE AND DATA AVAILABILITY}{127}{appendix.A}%
 \contentsline {chapter}{\numberline {B}AI USAGE DISCLAIMER}{129}{appendix.B}%
-\contentsline {chapter}{BIBLIOGRAPHY}{133}{appendix*.83}%
+\contentsline {chapter}{REFERENCES}{133}{appendix*.83}%
