@@ -364,7 +364,7 @@ Finally, a vector space equipped with an inner product is known as a Hilbert spa
 
 This representation allows for the visualization of a qubit via the Bloch sphere. Every two-level quantum system can be mapped to a point on the surface of this unit-radius sphere ($r = 1$), uniquely determined by the angular coordinates $\theta$ and $\phi$. Provided the vector remains normalized, these two parameters are sufficient to define the state. Within this geometric model, the primary basis states are positioned at antipodal points: $\ket{\psi} = \ket{0}$ occurs at $\theta = 0$, while $\ket{\psi} = \ket{1}$ occurs at $\theta = \pi$.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -712,7 +712,7 @@ By utilizing the rotation matrices defined in Equations\textbf{~\ref{eq:Rx}}, \t
 
 Quantum gate operations can be visualized through circuit diagrams, where the inputs and outputs of each unitary operator are represented by horizontal lines known as "wires," and the gates themselves are depicted as rectangular blocks. A representative example of such a graphical representation is shown in Figure\textbf{~\ref{fig:circuit_diagram}}. The process is read from left to right: the left side indicates the initial state of the qubits prior to any operations, and gates are applied sequentially until the final output is reached on the right. In the illustrated example, a Hadamard gate and a Pauli-$X$ gate are initially applied to the first and third qubits, respectively. Subsequently, a two-qubit $U$ gate acts upon the first and second qubits, followed by a $Z$-axis rotation applied to the first qubit. Finally, a measurement is performed on the first and third qubits, represented by a meter symbol within a rectangle.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -860,7 +860,7 @@ Significant research and development have been dedicated to the creation of earl
 
 These algorithms are characterized not by a fixed sequence of operations, but by an "ansatz", a structural template that defines the arrangement of gates across specific qubits. This modular framework is scalable, as it can be extended to an arbitrary number of qubits by repeating the pattern in successive layers. The term "variational" stems from the fact that specific gates within the ansatz, typically Pauli rotations, are governed by continuous, adjustable parameters. These parameters are iteratively refined through a classical optimization process designed to minimize or maximize a cost function derived from the specific problem being addressed.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -908,7 +908,7 @@ Upon loading the dataset, we find that it contains no missing or duplicate value
 
 Examining the distribution of the two classes across the 569 samples, we notice a class imbalance between the malignant and benign categories. There are 357 instances of benign tumors and 212 instances of malignant tumors, meaning that benign cases account for 62.74\% of the samples while malignant cases cover the remaining 37.25\%. This imbalance must be carefully considered when splitting the dataset and creating subsets. To address this, we ensure that every split of the data is stratified, maintaining the original class proportions across all subsets.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -922,7 +922,7 @@ Examining the distribution of the two classes across the 569 samples, we notice 
 
 Observing the distribution of each feature, we notice that the majority of them exist on different scales. To account for this, we will scale them using appropriate methods during the application of the rnCV. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -937,7 +937,7 @@ Observing the distribution of each feature, we notice that the majority of them 
 
 Following this, we proceed to inspect the correlation between the features and the diagnosis label. Based on Pearson’s correlation coefficient, we find that 15 out of the 30 features are heavily correlated, either positively or negatively, with the class label. These features include \textit{radius mean}, \textit{perimeter mean}, \textit{area mean}, \textit{compactness mean},\textit{ concavity mean}, \textit{concave points mean}, \textit{radius se}, \textit{perimeter se}, \textit{area se}, \textit{radius worst}, \textit{perimeter worst}, \textit{area worst}, \textit{compactness worst}, \textit{concavity worst}, and \textit{concave points worst}. While we could elect to retain only these features and significantly reduce the dimensionality of the problem, we believe that in a critical task like breast cancer detection, every feature provides valuable information. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -951,7 +951,7 @@ Following this, we proceed to inspect the correlation between the features and t
 
 Regarding the feature-wise correlation, we detect no significant linear relationships between features that are not naturally expected to be correlated. For instance, \textit{radius mean} is heavily correlated with \textit{perimeter mean}, and \textit{radius worst} shows a strong correlation with \textit{perimeter worst}. Such relationships are expected, as the radius is fundamentally used to calculate the perimeter in most circular or near-circular shapes.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -965,7 +965,7 @@ Regarding the feature-wise correlation, we detect no significant linear relation
 
 As a final step of this analysis, we also perform Principal Component Analysis (PCA) on the entire dataset. Our purpose here is twofold. First and foremost, for our quantum implementation, we must perform some form of dimensionality reduction, as the number of features we can encode into the quantum circuit is limited. Therefore, we need to gain a rough understanding of how much information from our problem is preserved when we utilize 2, 4, 8, and 16 Principal Components (PC).
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -979,7 +979,7 @@ As a final step of this analysis, we also perform Principal Component Analysis (
 
 Secondly, PCA allows us to gain a general understanding of class separability. If only two PCS are utilized and no significant linear class separability is observed, it is likely that the classes are not linearly separable. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1113,7 +1113,7 @@ Despite its methodological advantages, rnCV is computationally demanding. The to
 
 In summary, rnCV represents a rigorous and statistically sound framework for model evaluation in supervised learning. By combining the unbiased estimation properties of nested cross-validation with the variance-reducing benefits of repetition, rnCV provides a reliable estimate of the generalization performance of a complete model selection pipeline. For studies in which methodological validity, fairness of comparison, and reproducibility are critical, rnCV constitutes a gold-standard evaluation strategy.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1130,7 +1130,7 @@ In summary, rnCV represents a rigorous and statistically sound framework for mod
 
 Upon completing the rnCV technique in approximately 25 minutes, we were able to identify the optimal model by observing the number of metrics for which each model was the top performer. As the results indicate, Logistic Regression was the superior model in eight of the nine metrics, lagging only in ROC AUC, where it was marginally surpassed by SVM. This is a particularly advantageous outcome, as Logistic Regression allows us not only to achieve high classification performance but also to gain meaningful insights into which features contribute to the classification process and to what degree.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1146,7 +1146,7 @@ Taking a more quantitative look into our rnCV results, we report that Logistic R
 
 We can observe that while Logistic Regression is the top performer across most metrics, SVM remains highly competitive. In fact, SVM slightly surpasses Logistic Regression in the ROC AUC metric and achieves identical scores for accuracy, recall, and F1-score. However, Logistic Regression maintains a slight edge in the other key metrics. Two particularly noteworthy points are the perfect scores it achieves in precision and specificity, as well as its superior performance in MCC, which is a critical metric for evaluating the quality of binary classification tasks.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1186,7 +1186,7 @@ In summary, bootstrapping provides a powerful and flexible framework for estimat
 
 After bootstrapping five thousand sets on our Logistic Regression model using the validation subset, we obtained the 95\% confidence intervals for the nine key metrics. Accuracy lies within the $[0.9595, 1]$ interval, while precision and specificity both maintain a perfect $[1, 1]$ interval. Recall is situated between $[0.9189, 1.000]$, and the F1-score falls within $[0.9577, 1]$. Additionally, the NPV is in the $[0.9552, 1]$ range, and the MCC, a crucial metric for binary classification, lies within $[0.9395, 1]$. Both the ROC AUC and PR AUC remain exceptionally high, with intervals of $[0.9919, 1]$ and $[0.9877, 1]$, respectively. Notably, every metric reaches a perfect upper bound of 1.0, while the lower bounds remain consistently above 91\%. Furthermore, those metrics that demonstrated perfect mean scores during the rnCV process continue to exhibit high performance throughout the bootstrapping analysis.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1200,7 +1200,7 @@ After bootstrapping five thousand sets on our Logistic Regression model using th
 
 As a final step in our classical approach, we utilize the entire dataset to train and fine-tune the Logistic Regression model, from which we extract the 16 most influential features based on the descending absolute values of their coefficients. These features, in order of impact, are \textit{texture worst}, \textit{area se}, \textit{texture mean}, \textit{concave points mean}, \textit{concavity worst}, \textit{symmetry worst}, \textit{concavity mean}, \textit{compactness se}, \textit{area worst}, \textit{smoothness worst}, \textit{radius se}, \textit{symmetry se}, \textit{concave points worst}, \textit{radius worst}, \textit{perimeter worst}, and \textit{fractal dimension se}. Upon examining the coefficients, we observe that \textit{compactness se}, \textit{symmetry se}, and \textit{fractal dimension se} are negative, indicating that higher values in these features are associated with the majority class—the benign tumors. Conversely, the remaining 13 features possess positive coefficients, suggesting that higher measurements in these areas correlate with an increased likelihood of the minority class, which corresponds to malignant tumors.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1236,7 +1236,7 @@ This specific configuration of gates allows the model to navigate the Hilbert sp
 
 The third and final component of the VQC architecture is the measurement stage, during which the quantum state is collapsed to extract classical information. To maintain a streamlined and interpretable framework, the measurement is restricted to the first qubit of the circuit. The integration of $CNOT$ gates in the preceding layers is critical at this stage, as the entanglement generated by these multi-qubit operations ensures that the state of the primary qubit is inextricably linked to the states of all other qubits in the register. Consequently, the expectation value derived from the first qubit, typically obtained through measurement in the Z basis, reflects a global state influenced by the entire circuit. This approach exploits the intrinsic properties of quantum entanglement, where a measurement on a single subsystem provides representative insights into the collective quantum state of the system. An illustrative representation of a VQC configuration comprising two qubits and six layers is provided in Figure\textbf{~\ref{fig:2_qbts_6_layers}} to clarify this architectural design.
 
-\begin{figure}[H]
+\begin{figure}
 % Define the figure file in the \includegraphics command
 % Must be relative to one of the paths
 % in the \graphicspath command at the top
@@ -1294,7 +1294,7 @@ In summary, the pairplot serves as a comprehensive visual framework for explorat
 
 The visualization highlights the spatial distribution of the classes within the reduced feature space, providing a qualitative baseline for the expected performance of the single-qubit VQC. By observing the degree of overlap between the malignant and benign clusters in these two dimensions, one can gauge the relative difficulty the quantum model will face in establishing an optimal decision boundary. This visual confirmation is a prerequisite for the training phase, as it ensures that the dimensionality reduction process has preserved sufficient variance and class-specific structure to support the subsequent classification task. 
 
-\begin{figure}[H]
+\begin{figure}
 % Define the figure file in the \includegraphics command
 % Must be relative to one of the paths
 % in the \graphicspath command at the top
@@ -1320,7 +1320,7 @@ Shifting focus to the off-diagonal cells of the pairplot, we examine the bivaria
 
 As previously stated, we investigate the impact of the circuit depth on classifier performance and evaluate whether the introduction of a classical bias parameter enhances or inhibits the model's classification capabilities. Given that the dimension of the associated Hilbert space is $4^n-1$, we restrict our experimentation to configurations with one and two layers. Since the architecture utilizes a single qubit, each layer consists exclusively of a single $Rot$ gate, comprising three trainable parameters, without the possibility of quantum entanglement. This structural constraint further justifies limiting the depth to two layers, as empirical evidence indicates that successive rotations in the absence of entangling $CNOT$ gates offer no additional expressive advantage. Each model configuration is trained for 150 epochs, a duration considered sufficient for the proper optimization of the variational and classical parameters.
 
-\begin{figure}[H]
+\begin{figure}
 % Define the figure file in the \includegraphics command
 % Must be relative to one of the paths
 % in the \graphicspath command at the top
@@ -1335,7 +1335,7 @@ As previously stated, we investigate the impact of the circuit depth on classifi
 
 An examination of the evaluation results reveals several noteworthy observations regarding the classifier's performance. Foremost, the 1-qubit configuration yields highly satisfactory results even with a single variational layer. In the unbiased case, the model achieves average performance metrics across ten independent runs of 91.93\% accuracy, 91.95\% precision, 90.63\% recall, and a 91.19\% F1-score, with all indicators consistently exceeding the 90\% threshold. The introduction of a classical bias parameter produces a marginal performance shift, resulting in an average accuracy of 92.11\%, 91.83\% precision, 91.12\% recall, and a 91.45\% F1-score. Transitioning to a two-layer architecture yields comparable outcomes; the unbiased classifier achieves an accuracy of 91.93\%, a precision of 91.85\%, a recall of 90.73\%, and an F1-score of 91.21\%. Similarly, the biased two-layer model demonstrates stable performance with 92.02\% accuracy, 91.68\% precision, 91.10\% recall, and a 91.37\% F1-score. These findings suggest that for a single-qubit system, both configurations are remarkably effective, and increasing circuit depth beyond a single layer provides negligible performance gains.
 
-\begin{figure}[H]
+\begin{figure}
 % Define the figure file in the \includegraphics command
 % Must be relative to one of the paths
 % in the \graphicspath command at the top
@@ -1349,7 +1349,7 @@ An examination of the evaluation results reveals several noteworthy observations
 
 Examining the efficiency metrics for the two approaches, we observe that for the single-layer configuration, the unbiased classifier converges to its optimal parameters after approximately 81 epochs, with the training procedure lasting an average of 4.9 seconds. In comparison, the biased classifier requires nearly 78 epochs to reach optimization, with an average training time of 4.78 seconds. Upon adding an extra layer, the unbiased classifier finds its optimal values significantly faster, at approximately 44 epochs, though the training procedure extends to an average of 6.12 seconds. For the biased two-layer variety, the model identifies its best parameter values after only 37 epochs, completing its training in an average of 4.91 seconds. 
 
-\begin{figure}[H]
+\begin{figure}
 % Define the figure file in the \includegraphics command
 % Must be relative to one of the paths
 % in the \graphicspath command at the top
@@ -1365,7 +1365,7 @@ From a comparative perspective, the biased classifier appears to demonstrate sup
 
 It is particularly noteworthy that, regardless of whether a biased or unbiased classifier is employed, our initial intuition regarding the impact of circuit depth, and consequently, the number of parameters, is validated. Aside from marginal variations attributable to statistical error, there is no significant performance improvement when transitioning from a single-layer to a two-layer classifier. In certain instances, such as the biased classifier, a slight decrease in performance is even observable. Regarding efficiency, the results align with expectations: as the number of trainable parameters increases, the computational time per training instance also rises. Simultaneously, increasing the parameter count while maintaining a constant Hilbert space dimension allows the model to converge to optimal results in fewer epochs. 
 
-\begin{figure}[H]
+\begin{figure}
 % Define the figure file in the \includegraphics command
 % Must be relative to one of the paths
 % in the \graphicspath command at the top
@@ -1383,7 +1383,7 @@ This analysis facilitates an investigation of the loss landscape to identify pla
 
 For the best-performing biased VQC, the circuit architecture consists of a single layer, which aligns with our previous average findings. Despite its structural simplicity, this circuit achieved an accuracy of 92.11\%, a precision of 91.70\%, a recall of 91.27\%, and an F1-score of 91.47\% at the 84th epoch.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1398,7 +1398,7 @@ For the best-performing biased VQC, the circuit architecture consists of a singl
 
 Regarding the evolution of the loss function, there is a prominent decline during the initial 20 epochs, followed by an anomalous period between the 80th and 100th epochs where the loss increases and then decreases sharply. Remarkably, the model identifies its optimal parameters during this volatile interval. While this might appear surprising, it is important to note that neither the minimization of the training cost nor the validation cost exclusively guarantees high performance; indeed, such fluctuations can be a concerning sign of potential overfitting.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1412,7 +1412,7 @@ Regarding the evolution of the loss function, there is a prominent decline durin
 
 This observation is further reinforced by a closer examination of the key metric progression for the training and validation sets throughout the 150 epochs. Notably, the model demonstrates strong generalization, as the trajectories of the training and validation curves are remarkably similar; with the exception of brief intervals where validation performance marginally exceeds training metrics, the divergence between the two remains minimal and consistently within a statistical error margin of 0.05. Furthermore, in relation to the loss function behavior, the peak scores are indeed observed at epoch 84, where the loss function paradoxically exhibits an upward trend. Conversely, around epoch 100, when the loss function reaches its absolute minimum, the performance metrics begin to decline, indicating that the point of lowest loss does not necessarily coincide with the model's most accurate predictive state. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1426,7 +1426,7 @@ This observation is further reinforced by a closer examination of the key metric
 
 The results for the best-performing unbiased VQC follow a similar trend. Consistent with our average findings, its circuit architecture consists of a single layer. This configuration achieved an accuracy of 92.11\%, a precision of 91.70\%, a recall of 91.27\%, and an F1-score of 91.47\% at the 86th epoch. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1441,7 +1441,7 @@ The results for the best-performing unbiased VQC follow a similar trend. Consist
 
 Regarding the evolution of the loss function, the trajectory for the unbiased classifier differs notably from the frequent fluctuations observed in the biased variant. While the cost function exhibits a rapid initial decline during the first 20 epochs, it subsequently enters a plateau lasting approximately 20 epochs following a minor increase and decrease. The loss then rises for nearly 10 epochs before descending again around epoch 100, where it reaches its minimum and ultimately stabilizes. Notably, the optimal performance metrics are once again identified at an epoch where the cost function is not at its absolute minimum, but is instead characterized by an increasing trend. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1455,8 +1455,8 @@ Regarding the evolution of the loss function, the trajectory for the unbiased cl
 
 The progression of key metrics for the unbiased VQC is quite similar to that of the biased case. Both curves exhibit comparable trends, and with the exception of the interval between the 80th and 100th epochs, their divergence remains largely insignificant, suggesting a lack of substantial overfitting or underfitting. The sudden increase in divergence during this specific interval coincides with the point where the cost function begins to rise. Precision appears to be the metric most affected by this development, while the others remain well within the 0.05 error margin. Interestingly, after the 100th epoch, as the cost function reaches its plateau, the performance metrics follow suit. However, this stability is not sufficient to surpass the peak scores recorded at the 86th epoch, further reinforcing the notion that while minimizing the loss function is essential to the training process, it is not an absolute panacea for achieving optimal classification results. 
 
-\begin{figure}[H]
-	% Define the figure file in the \includegraphics command
+\begin{figure}
+	% Define thefigure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
 	\includegraphics[width=\linewidth]{./figures/best_metrics_1_qubit_unbiased.png}
@@ -1473,7 +1473,7 @@ Having successfully addressed the classification problem using a single-qubit co
 
 By utilizing a two-qubit architecture, we can incorporate four PCs ($2^2 = 4$), a significant increase over the single-qubit case. These four features account for 79.79\% of the total variance within the training subset of the tumor classification problem, a figure that closely aligns with the 79.24\% variance explained by four components across the entire dataset. Specifically, the first and second components account for 42.34\% and 20.63\% of the total variance, respectively, while the third and fourth components contribute an additional 10.80\% and 6.01\%. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1491,7 +1491,7 @@ Turning our attention to the pairwise scatterplots, we observe that feature pair
 
 Utilizing two qubits allows us to leverage quantum entanglement to our advantage. Consequently, the $Rot$ gates in each layer are followed by a ring of $CNOT$ gates that entangle the qubits. This introduction of entanglement is intended to enhance the classifier's expressive power, assisting the model in navigating the increased dimensionality of the feature space. Reflecting on the limitations and empirical findings discussed previously, we evaluate both biased and unbiased versions of the classifier across configurations of 1, 4, 5, 6, and 7 layers. This results in 6, 24, 30, 36, and 42 trainable parameters for the unbiased cases, respectively, while the biased counterparts require 7, 25, 31, 37, and 43 parameters. To accommodate this expanded parameter space, we have extended the training duration to 200 epochs to ensure sufficient optimization. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1506,7 +1506,7 @@ Utilizing two qubits allows us to leverage quantum entanglement to our advantage
 
 An inspection of the evaluation results across ten independent runs allows for several key conclusions. Most notably, the performance of the single-layer classifier has decreased significantly compared to the 1-qubit model. In the unbiased configuration, the model achieves an accuracy of 74.30\%, a precision of 72.61\%, a recall of 70.58\%, and an F1-score of 71.21\%. The biased case yields slightly higher results, with 75.61\% accuracy, 74.18\% precision, 72.01\% recall, and a 72.68\% F1-score. In both instances, these metrics represent a substantial decline from the 1-qubit baseline and only marginally surpass the random chance threshold of 62.70\%. However, increasing the circuit depth to four layers leads to a dramatic improvement: the unbiased classifier reaches 90.18\% accuracy and an 89.16\% F1-score, while the biased version achieves 91.40\% accuracy and a 90.73\% F1-score. These gains suggest that the expanded feature dimensionality necessitates a higher number of trainable parameters to achieve satisfactory performance. This trend continues as the depth increases to five, six, and seven layers. For these configurations, the unbiased classifier yields accuracies of 91.40\%, 92.28\%, and 91.84\%, and F1-scores of 90.65\%, 91.51\%, and 90.95\%, respectively. Similarly, the biased classifier scores 91.67\%, 92.72\%, and 91.84\% in accuracy, and 90.92\%, 92.12\%, and 91.16\% in F1-score, indicating that peak performance is reached at approximately six layers before stabilizing or slightly declining. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1520,7 +1520,7 @@ An inspection of the evaluation results across ten independent runs allows for s
 
 In terms of training efficiency across the varying circuit depths, the unbiased classifier identified its optimal parameter values after 8, 152, 142, 131, and 127 epochs for each respective layer configuration, with average training durations of 7.48, 13.91, 15.95, 18.53, and 21.23 seconds. For the biased variant, the required optimization periods reached 161, 156, 139, 118, and 126 epochs, while the corresponding training procedures averaged 7.36, 14.03, 16.41, 18.70, and 21.57 seconds. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1536,7 +1536,7 @@ From a comparative perspective, a clear trend emerges in our results. First, the
 
 Interestingly, both versions of the classifier demonstrate relatively comparable performance. While the biased classifier achieves marginally higher scores across all metrics, these differences remain within the scope of statistical error. A more significant observation is that the biased classifier appears to be at least as efficient as its unbiased counterpart, if not more so. Aside from the single-layer case, where both models yielded unsatisfactory results, the biased classifier converges to optimal parameter values in fewer epochs while maintaining training times similar to the unbiased version. This slight advantage in efficiency justifies a preference for the biased approach, notwithstanding its negligible superiority in predictive accuracy. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1550,7 +1550,7 @@ Interestingly, both versions of the classifier demonstrate relatively comparable
 
 In regard to the top performers across all circuit depths and experimental runs, the most effective unbiased classifier utilized a 6-layer circuit. This configuration reached an accuracy of 94.74\%, a precision of 94.80\%, a recall of 93.85\%, and an F1-score of 94.29\% at the 94th epoch. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1565,7 +1565,7 @@ In regard to the top performers across all circuit depths and experimental runs,
 
 Regarding the evolution of the loss function, we observe that the sharp decline in cost begins after the 30th epoch and continues until approximately the 75th epoch, at which point it appears to reach a plateau. Subsequently, the loss fluctuates sporadically before reaching its absolute minimum after the 100th epoch. Although the timing for finding the best parameters is closer to this minimum than in previous instances, we still observe that the absolute minimization of the cost does not coincide perfectly with the highest performance scores. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1579,7 +1579,7 @@ Regarding the evolution of the loss function, we observe that the sharp decline 
 
 Upon observing the performance curves of the model, we detect somewhat erratic behavior. The model undergoes an extensive period of underperformance until the 50th epoch, at which point it begins to improve, ultimately reaching its peak by the 94th epoch. Following this peak, performance declines rapidly before once again exhibiting signs of improvement. Despite these fluctuations, there is no evidence of overfitting or underfitting, as the training and validation curves follow a consistent trend. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1593,7 +1593,7 @@ Upon observing the performance curves of the model, we detect somewhat erratic b
 
 For the best-performing biased model, we identify a classifier with a circuit architecture consisting of 6 layers. This classifier achieves an accuracy of 95.61\%, a precision of 95.10\%, a recall of 95.54\%, and an F1-score of 95.31\% at the 75th epoch. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1608,7 +1608,7 @@ For the best-performing biased model, we identify a classifier with a circuit ar
 
 The evolution of the loss function for this classifier is quite similar to that of its unbiased counterpart, with the sharp decrease appearing after 30 epochs and lasting until the 70th epoch. Subsequently, we observe the same pattern in which the cost increases and then decreases until it reaches a plateau after 190 epochs. It is evident that the discovery of the best parameters does not occur when the cost is at its lowest, as the loss function exhibits an upward trend at the 75th epoch. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1622,7 +1622,7 @@ The evolution of the loss function for this classifier is quite similar to that 
 
 An inspection of the progression of key metrics throughout the 200 epochs reveals that the biased model exhibits the same erratic behavior as its unbiased counterpart. Performance begins with relatively low scores, not exceeding 80\%. Around the 45th epoch, the performance increases drastically, reaching its peak at the 75th epoch. This is followed by a series of sharp decreases and subsequent increases in performance until a local maximum occurs at approximately epoch 175, after which it begins to decline. Nevertheless, because the behavior of the training and validation curves remains similar, there is no evidence to suggest significant overfitting or underfitting of the model. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1640,7 +1640,7 @@ Having concluded our investigation of the two-qubit paradigm, we proceed to incr
 
 Since we are now working with three qubits, our data encoding scheme allows us to utilize eight features. This enables us to perform PCA with eight PCs serving as our features. With this approach, we can express 92.71\% of the variance in the training data for our classification task, which is a substantial increase compared to the 79.79\% achieved in the two-qubit case. This result was expected, as the exploratory data analysis of the classical approach had already determined that eight PCs can explain up to 92.60\% of the total variance in our data. With each of the eight components accounting for 42.34\%, 20.63\%, 10.80\%, 6.01\%, 4.65\%, 4.20\%, 2.46\%, and 1.60\% of the total explained variance respectively, we anticipate that each new component added will be less discriminatively informative than the previous ones. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1658,7 +1658,7 @@ Inspecting the remaining scatterplot cells reveals a distinct lack of linear sep
 
 To address our problem, we evaluate both biased and unbiased VQCs across configurations of 1, 5, 6, and 8 layers. These configurations involve 9, 45, 54, and 72 trainable parameters for the unbiased version, and 10, 46, 55, and 73 parameters for the biased variant, respectively. The layer architecture remains consistent with our previous models, utilizing a combination of rotation gates and $CNOT$ gates. Although several three-qubit gates are available, we maintain simplicity by using only single-qubit rotations and two-qubit $CNOT$ gates. To accommodate the increased number of trainable parameters relative to earlier experiments, we have extended the training duration to 250 epochs. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1673,7 +1673,7 @@ To address our problem, we evaluate both biased and unbiased VQCs across configu
 
 An inspection of the average results across ten runs reveals that the simplest single-layer classifier significantly underperforms, failing to surpass the random chance baseline. The unbiased version achieves an accuracy of 61.40\%, a precision of 53.96\%, a recall of 52.03\%, and an F1-score of 49.01\%. Similarly, the biased version performs slightly better but remains below standards, reaching an accuracy of 61.84\%, a precision of 54.72\%, a recall of 52.33\%, and an F1-score of 49.18\%. Performance improves notably as more layers and trainable parameters are introduced. For the unbiased classifier, the 5, 6, and 8-layer configurations yield accuracies of 91.58\%, 91.40\%, and 92.02\%, with corresponding F1-scores of 90.78\%, 90.64\%, and 91.37\%. Likewise, the biased classifier achieves accuracy scores of 91.49\%, 92.37\%, and 92.46\%, and F1-scores of 91.05\%, 91.71\%, and 91.92\% for the same respective layer counts.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1687,7 +1687,7 @@ An inspection of the average results across ten runs reveals that the simplest s
 
 Regarding the efficiency of the classifiers, the unbiased model reached its optimal parameter values after 92, 231, 214, and 191 epochs for the 1, 5, 6, and 8-layer configurations, respectively. These training procedures lasted an average of 10.42, 29.57, 35.46, and 45.50 seconds for each corresponding depth. Similarly, the biased classifier identified its best parameters after 49, 211, 209, and 196 epochs, with the training sessions averaging 10.55, 31.43, 36.08, and 46.78 seconds. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1703,7 +1703,7 @@ A comparison of the biased and unbiased approaches reveals several clear insight
 
 Considering that recall is critical for this tumor classification problem, a case can be made for preferring the biased classifier, as it consistently achieves higher scores in this metric. Additionally, the biased approach maintains training times comparable to the unbiased version while converging to optimal parameter values slightly faster. However, it remains important to note that these marginal differences in performance and efficiency may be attributable to statistical variance rather than a definitive architectural advantage. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1717,7 +1717,7 @@ Considering that recall is critical for this tumor classification problem, a cas
 
 When identifying the top-performing unbiased classifier, we report a model whose circuit consists of 5 layers. After 234 epochs, this configuration achieved an accuracy of 95.61\%, a precision of 94.83\%, a recall of 96.03\%, and an F1-score of 95.35\%. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1732,7 +1732,7 @@ When identifying the top-performing unbiased classifier, we report a model whose
 
 A closer examination of the cost function evolution reveals that it is no longer characterized by the sharp decreases observed in previous models. This effect is visible only to a much lesser extent between the 100th and 150th epochs. Prior to that, the loss function undergoes minor fluctuations, though a general downward trend remains present. Following the 150th epoch and the subsequent minor peaks, the loss function reaches a plateau, consistently remaining between 0.6 and 0.9. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1746,7 +1746,7 @@ A closer examination of the cost function evolution reveals that it is no longer
 
 There appears to be a slight difference in the progression of the key metrics. For most metrics, although the training and validation curves are not identical, they follow similar patterns by increasing and decreasing in the same regions. The only exception is the precision metric, where the validation and training curves appear significantly divergent initially. This gap narrows after the 125th epoch, after which the two curves share many similarities, particularly in their general trends. This is encouraging since the best parameters are identified at the 234th epoch, a point where the model shows no indications of overfitting or underfitting across any of the metrics. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1760,7 +1760,7 @@ There appears to be a slight difference in the progression of the key metrics. F
 
 For the biased method, the best-performing classifier consists of 8 layers and, after 201 epochs, yields an accuracy of 95.61\%, a precision of 96.05\%, a recall of 94.54\%, and an F1-score of 95.21\%. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1775,7 +1775,7 @@ For the biased method, the best-performing classifier consists of 8 layers and, 
 
 If we examine the evolution of the loss function more closely, we notice a pattern similar to that of the unbiased case. The sharp and immediate decrease in cost observed in previous iterations of our classifiers is absent. Instead, it is replaced by a series of minor fluctuations, followed around the 50th epoch by a gradual yet steep decline in cost that continues until the 110th epoch. Subsequently, the loss appears to reach a plateau, notwithstanding some inconsequential fluctuations. Notably, the cost is not at its absolute minimum at the 201st epoch, when the best parameters are identified. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1789,7 +1789,7 @@ If we examine the evolution of the loss function more closely, we notice a patte
 
 Unlike its unbiased counterpart, the validation and training curves for the key metrics are quite similar. With the exception of the precision metric, they remain close throughout the training process, and the distance between them remains minimal. Even regarding precision, the behavior stabilizes and the curves align more closely once the training passes the 150th epoch.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1807,7 +1807,7 @@ Having completed the classification task using the three-qubit approach, and con
 
 Our 4-qubit implementation allows us, through the use of the Amplitude-Efficient State Preparation routine, to encode 16 features. These features are the 16 PCs obtained by fitting the PCA transformer onto the training subset and using it to transform all three data subsets. With this strategy, we are able to explain 99.08\% of the total variance in the training data, which is slightly higher than the 98.92\% that could be explained if the transformer were fitted on the entirety of the original dataset. Each of the PCs accounts for 42.34\%, 20.63\%, 10.80\%, 6.01\%, 4.65\%, 4.20\%, 2.46\%, 1.60\%, 1.38\%, 1.27\%, 1.11\%, 0.92\%, 0.72\%, 0.39\%, 0.28\%, and 0.25\% of the total explained variance ratio, respectively. We observe that with 16 PCs, we are able to describe our problem almost in its entirety, with the drawback being that some of the newly introduced features account for only miniscule amounts of variance. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1823,7 +1823,7 @@ As with the eight-PC case, each subsequent component becomes less informative. A
 
 To address the problem, we maintain the existing layer architecture, where each layer consists exclusively of rotation gates and $CNOT$ gates. To account for the increased complexity of the classification task, we evaluate biased and unbiased classifiers with variational quantum circuit depths of 1, 5, 10, and 15 layers. Consequently, the unbiased configurations require training 12, 60, 120, and 180 parameters, while the biased versions involve 13, 61, 121, and 181 trainable parameters, respectively. Given the increase in trainable parameters and the larger Hilbert space, each model is trained for 300 epochs, representing a slight increase over previous experiments.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1838,7 +1838,7 @@ To address the problem, we maintain the existing layer architecture, where each 
 
 An inspection of the average scores obtained after ten runs reveals that the simple one-layered classifier performs poorly, with some metrics falling below 50\%. Specifically, the unbiased version achieves an accuracy of 61.40\%, a precision of 50.35\%, a recall of 50.10\%, and an F1-score of 43.64\%, while the biased counterpart yields an average accuracy of 61.23\%, a precision of 49.90\%, a recall of 49.96\%, and an F1-score of 43.55\%. Interestingly, increasing the circuit depth to five layers shows improvement, yet the results remain underwhelming; the unbiased classifier reaches an average accuracy of 72.02\%, a precision of 72.99\%, a recall of 65.55\%, and an F1-score of 64.52\%, whereas the biased version performs notably better with an accuracy of 82.46\%, a precision of 82.03\%, a recall of 80.65\%, and an F1-score of 80.69\%. The results gain significant weight as we move to the ten-layer circuit, where the unbiased classifier achieves an accuracy of 89.56\%, a precision of 90.71\%, a recall of 87.32\%, and an F1-score of 88.35\%, and the biased version reaches an accuracy of 89.91\%, a precision of 90.65\%, a recall of 88.44\%, and an F1-score of 89.01\%. Performance improves further with 15 layers, as the unbiased classifier returns an accuracy of 93.42\%, a precision of 94.47\%, a recall of 91.72\%, and an F1-score of 92.70\%, while the biased counterpart yields an accuracy of 92.72\%, a precision of 92.88\%, a recall of 91.81\%, and an F1-score of 92.10\%.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1852,7 +1852,7 @@ An inspection of the average scores obtained after ten runs reveals that the sim
 
 Regarding the efficiency of the 4-qubit classifiers across depths of 1, 5, 10, and 15 layers, the unbiased method identified its optimal parameters after 108, 252, 241, and 226 epochs, respectively, with training procedures lasting an average of 16.06, 56.19, 98.02, and 146 seconds for each corresponding circuit depth. For the biased method, the best values for the trainable parameters were found after 29, 252, 243, and 206 epochs, while the training sessions lasted an average of 15.70, 56.59, 98.92, and 151.06 seconds, respectively. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1866,7 +1866,7 @@ Regarding the efficiency of the 4-qubit classifiers across depths of 1, 5, 10, a
 
 Several important conclusions emerge from the comparison of the two methods. It is immediately clear that with a low number of layers and a limited count of trainable parameters, both approaches severely underperform. While the biased method shows a performance advantage in the 5-layer configuration, it remains considerably substandard. This outcome is expected, as the significantly larger Hilbert space of a 4-qubit system requires a higher number of parameters to be traversed efficiently. Substantial results are only achieved by increasing circuit depth; specifically, at 15 layers, the unbiased method demonstrates a slight edge over its biased counterpart. Furthermore, the unbiased version requires less training time and identifies optimal parameters at approximately the same epoch as the biased model, suggesting that the efficiency advantage previously observed for the biased approach has diminished in this larger space. Nevertheless, because the differences in key metrics are so miniscule, it remains valid to argue that the two models are effectively equivalent.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1880,7 +1880,7 @@ Several important conclusions emerge from the comparison of the two methods. It 
 
 When examining the top-performing models, the best unbiased classifier features a circuit with 15 layers. At the 179th epoch, this model achieves an accuracy of 96.49\%, a precision of 96.72\%, a recall of 95.73\%, and an F1-score of 96.19\%.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1895,7 +1895,7 @@ When examining the top-performing models, the best unbiased classifier features 
 
 The evolution of its loss function differs slightly from previous models. Initially, the validation cost remains higher than the training cost until approximately the 160th epoch, at which point its curve crosses below the training cost before eventually reaching a plateau after the 200th epoch. While we observe some sharp increases in cost followed by similarly sharp declines, they are not as pronounced as those seen in previous cases. If anything, these fluctuations may indicate temporary periods of overfitting or underfitting, confirming that the decision to extend the training duration was well-advised. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1909,7 +1909,7 @@ The evolution of its loss function differs slightly from previous models. Initia
 
 Observing the progression of the key metrics, we notice somewhat erratic behavior from the model. During the first 140 epochs, the classifier underperforms and fails to achieve either high accuracy or recall. However, after the 150th epoch, the performance picks up significantly, eventually reaching its peak at the 179th epoch where it scores an accuracy of 96.49\%, a precision of 96.72\%, a recall of 95.73\%, and an F1-score of 96.19\%. Generally, it appears that the unbiased classifier, with its 180 parameters, struggles to learn effectively from the data initially and only achieves strong results after 150 epochs have passed. Until that point, the scores remain relatively low, although, surprisingly, the model manages to avoid severe instances of overfitting or underfitting throughout this process. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1923,7 +1923,7 @@ Observing the progression of the key metrics, we notice somewhat erratic behavio
 
 For the biased approach, the best-performing classifier for the 4-qubit task consists of 15 layers. After 255 epochs, this model achieves an accuracy of 95.61\%, a precision of 95.51\%, a recall of 95.04\%, and an F1-score of 95.26\%.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1938,7 +1938,7 @@ For the biased approach, the best-performing classifier for the 4-qubit task con
 
 The loss function for the biased model begins discouragingly, with a sharp increase during the initial epochs, but it soon follows with an equally rapid decline. By the 90th epoch, the validation curve drops below the training curve, effectively alleviating concerns regarding overfitting. Unlike the unbiased case, a final fluctuation occurs toward the end of the training process after the 250th epoch; however, we successfully identified the best parameters at epoch 255, where the model achieved an accuracy of 95.61\%, a precision of 95.51\%, a recall of 95.04\%, and an F1-score of 95.26\%, just before this instability occurred.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1952,7 +1952,7 @@ The loss function for the biased model begins discouragingly, with a sharp incre
 
 Examining the progression of the key metrics, we observe the same erratic behavior that characterized the unbiased classifier. Initially, all key metrics score poorly, followed by significant fluctuations between high and low values. It is during one of these surges that the best parameters are identified, achieving an accuracy of 95.61\%, a precision of 95.51\%, a recall of 95.04\%, and an F1-score of 95.26\%, which demonstrates that the extended training duration was pivotal to achieving high performance. Despite these constant fluctuations, the model shows minimal signs of overfitting, as the distance between the training and validation curves remains low throughout the process, even as they periodically cross one another.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1972,7 +1972,7 @@ The use of 5 qubits allows us, through the Amplitude-Efficient State Preparation
 
 Consistent with our previous methodology, the layer composition remains unchanged, consisting exclusively of $Rot$ and $CNOT$ gates. To address the increased dimensionality of the 5-qubit problem, we employ a significantly larger number of trainable parameters by evaluating biased and unbiased classifiers at circuit depths of 1, 20, and 30 layers. Consequently, the unbiased configurations require the optimization of 15, 300, and 450 parameters, respectively, while the biased versions involve 16, 301, and 451 parameters. Given the substantial increase in parameter counts, we have extended the training duration for each model to 400 epochs to ensure sufficient convergence. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -1987,7 +1987,7 @@ Consistent with our previous methodology, the layer composition remains unchange
 
 An inspection of the average scores obtained across ten runs reveals several compelling patterns. Once again, the simple single-layer classifier fails to categorize the data in a satisfactory manner; the unbiased version achieves an accuracy of 62.28\%, a precision of 31.42\%, a recall of 49.31\%, and an F1-score of 38.38\%, while the biased counterpart performs slightly better but still inadequately, scoring an accuracy of 66.67\%, a precision of 70.26\%, a recall of 56.70\%, and an F1-score of 52.36\%. It is evident that in both instances, the parameter count is insufficient to navigate the enlarged Hilbert space effectively. However, performance improves significantly as the circuit depth increases. For depths of 10, 20, and 30 layers, the unbiased classifier achieves accuracies of 82.72\%, 84.56\%, and 85.35\%, precisions of 84.05\%, 84.96\%, and 85.25\%, recalls of 78.63\%, 81.73\%, and 83.14\%, and F1-scores of 80.01\%, 82.67\%, and 83.80\%, respectively. Similarly, the biased classifier yields accuracies of 84.74\%, 84.47\%, and 84.74\%, precisions of 85.66\%, 84.80\%, and 84.75\%, recalls of 81.52\%, 81.81\%, and 82.16\%, and F1-scores of 82.63\%, 82.57\%, and 82.99\%.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2001,7 +2001,7 @@ An inspection of the average scores obtained across ten runs reveals several com
 
 In terms of efficiency, the unbiased 5-qubit classifier identified its optimal parameters after 192 epochs for 1 layer, 280 epochs for 10 layers, 214 epochs for 20 layers, and 270 epochs for 30 layers. The average training durations for these unbiased configurations were 33.77 seconds, 210.74 seconds, 390.85 seconds, and 569.58 seconds, respectively. Similarly, the biased classifier reached its best performance after 341, 255, 233, and 251 epochs, with corresponding average training times of 30.38 seconds for 1 layer, 203.97 seconds for 10 layers, 422.98 seconds for 20 layers, and 568.32 seconds for 30 layers.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2017,7 +2017,7 @@ A close comparison of the two approaches reveals several critical insights. Most
 
 In terms of efficiency, it is evident that increasing the number of layers to achieve higher scores results in a corresponding increase in training time for both methods. This trend suggests that if we were to increase the number of trainable parameters further, the practical feasibility of our approach could be compromised. Despite this potential drawback, the allocated number of epochs appears to be more than sufficient, as both models consistently identify their optimal parameter values in fewer than 300 epochs across all tested configurations. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2031,7 +2031,7 @@ In terms of efficiency, it is evident that increasing the number of layers to ac
 
 Regarding the top-performing models across all iterations and layer configurations, the unbiased method identified a circuit with 20 layers that, after 321 epochs, achieved an accuracy of 88.60\%, a precision of 87.44\%, a recall of 88.99\%, and an F1-score of 88.02\%.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2046,7 +2046,7 @@ Regarding the top-performing models across all iterations and layer configuratio
 
 The evolution of the loss function in this case is more similar to our low-qubit approaches. The cost begins to decrease relatively early and, despite fluctuations that lead to some substantial spikes, it starts to plateau after the 150th epoch. It is encouraging that no signs of overfitting or underfitting are observed, as the validation and training curves remain in close proximity while consistently exhibiting the aforementioned downward tendencies. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2060,7 +2060,7 @@ The evolution of the loss function in this case is more similar to our low-qubit
 
 Observing the progression of the key metrics for this classifier, we see significant volatility with numerous fluctuations in both the training and validation curves. Interestingly, despite the initial decrease in cost, the performance metrics drop dramatically during the early epochs before rising to fluctuate between 0.7 and 0.9, failing to achieve a truly high-level performance. This behavior suggests that the model struggles to learn effectively from the data and that a higher parameter count may be required to reach more substantial results; however, since no lasting distance develops between the validation and training curves, the model appears to avoid both overfitting and underfitting throughout the process.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2074,7 +2074,7 @@ Observing the progression of the key metrics for this classifier, we see signifi
 
 For the biased method, the best-performing classifier for the 5-qubit task utilizes a 10-layer circuit. After 198 epochs, this model achieves an accuracy of 88.60\%, a precision of 87.64\%, a recall of 88.00\%, and an F1-score of 87.81\%. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2089,7 +2089,7 @@ For the biased method, the best-performing classifier for the 5-qubit task utili
 
 The evolution of the loss function for this biased model is slightly different from its unbiased counterpart, as it initially shows an increase in cost before gradually dropping until the 50th epoch. From that point, it begins to steadily decrease and eventually plateaus after the 200th epoch, a stage where no further significant increases or decreases are observed. Once again, the fact that both curves follow the same general tendencies and that the validation curve remains consistently below the training curve serves as a promising sign regarding the capabilities of the model
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2103,7 +2103,7 @@ The evolution of the loss function for this biased model is slightly different f
 
 Should we observe the progression of the four key metrics for the training and validation data, it is evident that despite an initial drop in scores up until the 50th epoch, the model remains quite stable. Around the 100th epoch, it reaches relatively high scores and with the exception of some fluctuations, it never drops significantly lower. Although the model still displays some difficulty learning from the data, it appears to stabilize as the epochs progress. Most encouragingly, there is no dramatic difference in shape or distance between the training and validation curves for the majority of the training process, indicating that the model suffers from neither overfitting nor underfitting. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2121,7 +2121,7 @@ In the final steps of this examination, we present a summary and comparison of t
 
 Starting with the unbiased case, we observe that the top-performing models exhibit an upward trend until reaching the 4-qubit configuration. Up to that point, all scores remained well above 90\%, indicating that the models were robust and efficient in their classification tasks. In the 5-qubit case, however, performance dropped significantly, and the model was unable to score above 90\% in any metric. This outcome was expected, as we have already noted that a considerably larger number of parameters is required to tackle the problem when it consists of 30 features. We remain confident that if we were to increase the number of trainable parameters further, the scores of the key metrics would improve. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2135,7 +2135,7 @@ Starting with the unbiased case, we observe that the top-performing models exhib
 
 In the biased case, we observe a similar pattern where the majority of the configurations maintain consistently high scores, only to drop below the 90\% threshold for the 5-qubit case. It appears that the presence of the classical bias parameter is insufficient to push the model beyond this 90\% mark as initially hoped, which suggests that the introduction of more layers and a higher number of trainable parameters is necessary to achieve better performance.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2149,7 +2149,7 @@ In the biased case, we observe a similar pattern where the majority of the confi
 
 Regarding the circuit depth for each method's best-performing model, we can observe that with the exception of the 3-qubit and 5-qubit configurations, the two methods require a similar number of layers. Notably, the biased method requires more layers for the simpler 3-qubit case where the number of trainable parameters per layer is lower, whereas the unbiased method requires more layers for the 5-qubit case where each layer is more costly in terms of parameter count. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2163,7 +2163,7 @@ Regarding the circuit depth for each method's best-performing model, we can obse
 
 The aforementioned trend becomes clearer when focusing on the number of parameters each top-performing model must train. For the majority of the configurations, the primary difference between the two methods is the single classical bias parameter introduced by the biased method. The only two instances where this does not hold true are the 3-qubit and 5-qubit cases. In the 3-qubit scenario, the biased method trains an additional 23 parameters; in contrast, the unbiased method must optimize an extra 149 parameters in the 5-qubit case. Consequently, the introduction of the classical parameter appears to have been beneficial in terms of efficiency, especially considering that each classifier in the 5-qubit paradigm requires a considerable amount of training time. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2177,7 +2177,7 @@ The aforementioned trend becomes clearer when focusing on the number of paramete
 
 In terms of epochs, it is evident that the biased models reached their optimal parameter values faster than the unbiased models in almost every instance, with the 4-qubit configuration being the only exception. This provides further evidence that the introduction of the classical bias parameter effectively benefits the performance and convergence of our quantum classifier. 
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top
@@ -2195,7 +2195,7 @@ For the quantum methods, we report only the highest average results across all l
 
 With that in mind, we can see that our quantum approach demonstrates clear superiority only in the 1-qubit configuration, where the dataset consists of only 2 features. In this instance, the biased classifier clearly outperforms the Logistic Regression model across all key metrics while performing slightly better than its unbiased counterpart. In all other scenarios, the Logistic Regression model remains superior in terms of accuracy. Interestingly, it is not always more effective than its quantum counterparts regarding recall and maintains a similar performance in terms of F1-score for the most part. While the dimensionality remains relatively low, the difference between the classical and quantum approaches is not particularly severe. However, this shifts significantly when addressing the complete original problem comprising 30 features; in this case, the quantum methods are not comparable to the classical model, as they consistently fail to surpass the 85\% threshold across most performance metrics.
 
-\begin{figure}[H]
+\begin{figure}
 	% Define the figure file in the \includegraphics command
 	% Must be relative to one of the paths
 	% in the \graphicspath command at the top

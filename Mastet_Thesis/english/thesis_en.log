@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  27 FEB 2026 22:29
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  28 FEB 2026 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1223,27 +1223,20 @@ Underfull \vbox (badness 3525) has occurred while \output is active []
 [25]
 File: figures/qubit_bloch_sphere.png Graphic file (type bmp)
 <figures/qubit_bloch_sphere.png>
-
-Underfull \vbox (badness 1308) has occurred while \output is active []
-
- [26]
-[27] [28] [29] [30] [31] [32] [33]
+ [26] [27] [28] [29] [30] [31] [32] [33]
 File: figures/circuit_diagram.png Graphic file (type bmp)
 <figures/circuit_diagram.png>
- [34] [35]
+ [34] [35] [36]
 Overfull \hbox (0.8075pt too wide) in paragraph at lines 803--804
 \TU/Arial(0)/m/n/12 Hassidim-Lloyd algorithm for matrix inversion [[]]. This me
 thod involves mapping a square
  []
 
-[36] [37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38]
+[37] [38]
 File: figures/general_variational.png Graphic file (type bmp)
 <figures/general_variational.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1087) has occurred while \output is active []
 
  [39]
 [40]
@@ -1259,94 +1252,71 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [42]
 File: figures/class_distro.png Graphic file (type bmp)
 <figures/class_distro.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43]
 File: figures/feature_distro.png Graphic file (type bmp)
 <figures/feature_distro.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
-Overfull \vbox (30.33893pt too high) has occurred while \output is active []
+LaTeX Warning: Float too large for page by 30.33893pt on input line 936.
 
-
-[45]
+[43] [44] [45]
 File: figures/feature_corr_with_diagno.png Graphic file (type bmp)
 <figures/feature_corr_with_diagno.png>
 File: figures/heatmap_correlation_between_feats.png Graphic file (type bmp)
 <figures/heatmap_correlation_between_feats.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [46]
 File: figures/cum_variance_PCA.png Graphic file (type bmp)
 <figures/cum_variance_PCA.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47]
 File: figures/pca_2_components.png Graphic file (type bmp)
 <figures/pca_2_components.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
-[49]
+ [46] [47]
 Overfull \hbox (12.06427pt too wide) in paragraph at lines 1002--1003
 \TU/Arial(0)/m/n/12 To determine the most effective classifier for the tumor cl
 assification task, six well-established
  []
 
-[50] [51] [52] [53]
+[48] [49]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+[51] [52] [53]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54]
 File: figures/nested_cv_flowchart_edited.png Graphic file (type bmp)
 <figures/nested_cv_flowchart_edited.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55]
-Overfull \vbox (30.12321pt too high) has occurred while \output is active []
+LaTeX Warning: Float too large for page by 30.12321pt on input line 1127.
 
-
-[56]
 File: figures/model_comparison_faceted_horizontal_colored.png Graphic file (typ
 e bmp)
 <figures/model_comparison_faceted_horizontal_colored.png>
- [57]
+[55] [56] [57]
 File: figures/model_comparison_heatmap.png Graphic file (type bmp)
 <figures/model_comparison_heatmap.png>
-
+ [58] [59]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58]
-[59] [60]
+ [60]
 File: figures/violin_plot_boot_lr.png Graphic file (type bmp)
 <figures/violin_plot_boot_lr.png>
 File: figures/top_16_influential_lr.png Graphic file (type bmp)
 <figures/top_16_influential_lr.png>
 
-Underfull \vbox (badness 6691) has occurred while \output is active []
+[61] [62] [63] [64
 
- [61]
-[62]
+]
 Chapter 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63
-
-]
+ [65]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64]
+ [66]
 File: ./figures/best_VQC_2_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_2_qubits_biased.png>
 
-[65]
+[67]
 Overfull \hbox (0.33028pt too wide) in paragraph at lines 1261--1262
 []\TU/Arial(0)/m/n/12 The specific parameters associated with the highest valid
 ation performance are preserved,
@@ -1355,329 +1325,255 @@ ation performance are preserved,
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66]
-[67]
+ [68]
+[69]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68]
+ [70]
 File: ./figures/pairplot_2_PCs.png Graphic file (type bmp)
 <./figures/pairplot_2_PCs.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
-[70]
+ [71]
+[72]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71]
+ [73]
 File: ./figures/1_qubit_layer.png Graphic file (type bmp)
 <./figures/1_qubit_layer.png>
+
+Underfull \vbox (badness 2384) has occurred while \output is active []
+
+ [74]
 File: ./figures/heatmap_performance_1_qubits_10_runs.png Graphic file (type bmp
 )
 <./figures/heatmap_performance_1_qubits_10_runs.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [72]
 File: ./figures/heatmap_efficiency_1_qubits_10_runs.png Graphic file (type bmp)
 
 <./figures/heatmap_efficiency_1_qubits_10_runs.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [73]
+[75] [76]
 File: ./figures/trend_1_qubits_10_runs.png Graphic file (type bmp)
 <./figures/trend_1_qubits_10_runs.png>
 
-Underfull \vbox (badness 7832) has occurred while \output is active []
-
- [74]
-File: ./figures/best_VQC_1_qubit_biased.png Graphic file (type bmp)
-<./figures/best_VQC_1_qubit_biased.png>
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75]
+ [77]
+File: ./figures/best_VQC_1_qubit_biased.png Graphic file (type bmp)
+<./figures/best_VQC_1_qubit_biased.png>
 File: ./figures/best_losses_1_qubit_biased.png Graphic file (type bmp)
 <./figures/best_losses_1_qubit_biased.png>
-
-[76]
 File: ./figures/best_metrics_1_qubit_biased.png Graphic file (type bmp)
 <./figures/best_metrics_1_qubit_biased.png>
 File: ./figures/best_VQC_1_qubit_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_1_qubit_unbiased.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [77]
+[78]
 File: ./figures/best_losses_1_qubit_unbiased.png Graphic file (type bmp)
 <./figures/best_losses_1_qubit_unbiased.png>
-
-[78]
 File: ./figures/best_metrics_1_qubit_unbiased.png Graphic file (type bmp)
 <./figures/best_metrics_1_qubit_unbiased.png>
 
-Underfull \vbox (badness 2418) has occurred while \output is active []
-
- [79]
-File: ./figures/pairplot_4_PCs.png Graphic file (type bmp)
-<./figures/pairplot_4_PCs.png>
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [80]
+ [79]
+[80]
+File: ./figures/pairplot_4_PCs.png Graphic file (type bmp)
+<./figures/pairplot_4_PCs.png>
+ [81] [82] [83]
 File: ./figures/2_qubits_layer.png Graphic file (type bmp)
 <./figures/2_qubits_layer.png>
-
-[81]
+ [84]
 File: ./figures/heatmap_performance_2_qubits_10_runs.png Graphic file (type bmp
 )
 <./figures/heatmap_performance_2_qubits_10_runs.png>
 File: ./figures/heatmap_efficiency_2_qubits_10_runs.png Graphic file (type bmp)
 
 <./figures/heatmap_efficiency_2_qubits_10_runs.png>
-
-Underfull \vbox (badness 5893) has occurred while \output is active []
-
- [82]
+ [85] [86]
 File: ./figures/trend_2_qubits_10_runs.png Graphic file (type bmp)
 <./figures/trend_2_qubits_10_runs.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [83]
 File: ./figures/best_VQC_2_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_2_qubits_unbiased.png>
+ [87]
 File: ./figures/best_losses_2_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_losses_2_qubits_unbiased.png>
-
-[84]
 File: ./figures/best_metrics_2_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_metrics_2_qubits_unbiased.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [85]
 File: ./figures/best_VQC_2_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_2_qubits_biased.png>
 File: ./figures/best_losses_2_qubits_biased.png Graphic file (type bmp)
 <./figures/best_losses_2_qubits_biased.png>
-
-[86]
+ [88] [89]
 File: ./figures/best_metrics_2_qubits_biased.png Graphic file (type bmp)
 <./figures/best_metrics_2_qubits_biased.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [87]
+ [90] [91]
 File: ./figures/pairplot_8_PCs.png Graphic file (type bmp)
 <./figures/pairplot_8_PCs.png>
-
-[88] [89]
 File: ./figures/3_qubits_layer.png Graphic file (type bmp)
 <./figures/3_qubits_layer.png>
 File: ./figures/heatmap_performance_3_qubits_10_runs.png Graphic file (type bmp
 )
 <./figures/heatmap_performance_3_qubits_10_runs.png>
- [90]
 File: ./figures/heatmap_efficiency_3_qubits_10_runs.png Graphic file (type bmp)
 
 <./figures/heatmap_efficiency_3_qubits_10_runs.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [91]
+ [92]
+[93] [94]
 File: ./figures/trend_3_qubits_10_runs.png Graphic file (type bmp)
 <./figures/trend_3_qubits_10_runs.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [92]
 File: ./figures/best_VQC_3_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_3_qubits_unbiased.png>
+
+Underfull \vbox (badness 1152) has occurred while \output is active []
+
+ [95]
+[96]
 File: ./figures/best_losses_3_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_losses_3_qubits_unbiased.png>
-
-[93]
 File: ./figures/best_metrics_3_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_metrics_3_qubits_unbiased.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [94]
 File: ./figures/best_VQC_3_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_3_qubits_biased.png>
+
+Underfull \vbox (badness 3281) has occurred while \output is active []
+
+ [97]
+[98]
 File: ./figures/best_losses_3_qubits_biased.png Graphic file (type bmp)
 <./figures/best_losses_3_qubits_biased.png>
-
-[95]
 File: ./figures/best_metrics_3_qubits_biased.png Graphic file (type bmp)
 <./figures/best_metrics_3_qubits_biased.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [96]
+ [99] [100]
 File: ./figures/pairplot_16_PCs.png Graphic file (type bmp)
 <./figures/pairplot_16_PCs.png>
-
-[97] [98]
 File: ./figures/4_qubits_layer.png Graphic file (type bmp)
 <./figures/4_qubits_layer.png>
- [99]
 File: ./figures/heatmap_performance_4_qubits_10_runs.png Graphic file (type bmp
 )
 <./figures/heatmap_performance_4_qubits_10_runs.png>
-File: ./figures/heatmap_efficiency_4_qubits_10_runs.png Graphic file (type bmp)
-
-<./figures/heatmap_efficiency_4_qubits_10_runs.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [100]
-File: ./figures/trend_4_qubits_10_runs.png Graphic file (type bmp)
-<./figures/trend_4_qubits_10_runs.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [101]
+[102] [103]
+File: ./figures/heatmap_efficiency_4_qubits_10_runs.png Graphic file (type bmp)
+
+<./figures/heatmap_efficiency_4_qubits_10_runs.png>
+File: ./figures/trend_4_qubits_10_runs.png Graphic file (type bmp)
+<./figures/trend_4_qubits_10_runs.png>
 File: ./figures/best_VQC_4_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_4_qubits_unbiased.png>
-File: ./figures/best_losses_4_qubits_unbiased.png Graphic file (type bmp)
-<./figures/best_losses_4_qubits_unbiased.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [102]
-File: ./figures/best_metrics_4_qubits_unbiased.png Graphic file (type bmp)
-<./figures/best_metrics_4_qubits_unbiased.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [103]
-File: ./figures/best_VQC_4_qubits_biased.png Graphic file (type bmp)
-<./figures/best_VQC_4_qubits_biased.png>
-File: ./figures/best_losses_4_qubits_biased.png Graphic file (type bmp)
-<./figures/best_losses_4_qubits_biased.png>
-
-Underfull \vbox (badness 1389) has occurred while \output is active []
 
  [104]
+[105]
+File: ./figures/best_losses_4_qubits_unbiased.png Graphic file (type bmp)
+<./figures/best_losses_4_qubits_unbiased.png>
+File: ./figures/best_metrics_4_qubits_unbiased.png Graphic file (type bmp)
+<./figures/best_metrics_4_qubits_unbiased.png>
+File: ./figures/best_VQC_4_qubits_biased.png Graphic file (type bmp)
+<./figures/best_VQC_4_qubits_biased.png>
+
+Underfull \vbox (badness 3281) has occurred while \output is active []
+
+ [106]
+[107]
+File: ./figures/best_losses_4_qubits_biased.png Graphic file (type bmp)
+<./figures/best_losses_4_qubits_biased.png>
 File: ./figures/best_metrics_4_qubits_biased.png Graphic file (type bmp)
 <./figures/best_metrics_4_qubits_biased.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [105]
-[106]
+ [108]
+[109]
 File: ./figures/5_qubits_layer.png Graphic file (type bmp)
 <./figures/5_qubits_layer.png>
+ [110]
 File: ./figures/heatmap_performance_5_qubits_10_runs.png Graphic file (type bmp
 )
 <./figures/heatmap_performance_5_qubits_10_runs.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [107]
 File: ./figures/heatmap_efficiency_5_qubits_10_runs.png Graphic file (type bmp)
 
 <./figures/heatmap_efficiency_5_qubits_10_runs.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [108]
+ [111]
+[112]
 File: ./figures/trend_5_qubits_10_runs.png Graphic file (type bmp)
 <./figures/trend_5_qubits_10_runs.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [109]
 File: ./figures/best_VQC_5_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_5_qubits_unbiased.png>
 File: ./figures/best_losses_5_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_losses_5_qubits_unbiased.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [110]
+ [113]
 File: ./figures/best_metrics_5_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_metrics_5_qubits_unbiased.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [111]
 File: ./figures/best_VQC_5_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_5_qubits_biased.png>
 File: ./figures/best_losses_5_qubits_biased.png Graphic file (type bmp)
 <./figures/best_losses_5_qubits_biased.png>
 
-[112]
+Underfull \vbox (badness 3281) has occurred while \output is active []
+
+ [114]
+[115]
 File: ./figures/best_metrics_5_qubits_biased.png Graphic file (type bmp)
 <./figures/best_metrics_5_qubits_biased.png>
+ [116] [117] [118
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [113]
-[114]
+]
 Chapter 4.
 File: ./figures/10_runs_unbiased_metrics_labeled.png Graphic file (type bmp)
 <./figures/10_runs_unbiased_metrics_labeled.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [115
-
-]
 File: ./figures/10_runs_biased_metrics_labeled.png Graphic file (type bmp)
 <./figures/10_runs_biased_metrics_labeled.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [116]
 File: ./figures/10_runs_vqc_depth_comparison.png Graphic file (type bmp)
 <./figures/10_runs_vqc_depth_comparison.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [117]
 File: ./figures/10_runs_vqc_params_comparison.png Graphic file (type bmp)
 <./figures/10_runs_vqc_params_comparison.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [118]
+ [119]
+[120] [121] [122]
 File: ./figures/10_runs_vqc_epochs_comparison.png Graphic file (type bmp)
 <./figures/10_runs_vqc_epochs_comparison.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3460) has occurred while \output is active []
 
- [119]
-Underfull \vbox (badness 1565) has occurred while \output is active []
-
- [120]
+ [123]
 File: ./figures/vqc_vs_classical.png Graphic file (type bmp)
 <./figures/vqc_vs_classical.png>
 
-[121] [122
-
-]
+[124]
 Chapter 5.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [123]
-[124] [125
+ [125
 
-] [126
+]
+[126] [127
+
+] [128
 
 ]
 Appendix A.
-[127] [128
+[129] [130
 
 ]
 Appendix B.
-(thesis_en.bbl [129] [130
+(thesis_en.bbl [131] [132
 
-] [131] [132]
+] [133] [134]
 Underfull \hbox (badness 6188) in paragraph at lines 328--331
 []\TU/Arial(0)/m/n/10 World Health Organization, “Breast cancer,” [][]$[][][][]
 [] [] [] [] [][][] [] [][][] [] [][][] [] [][][][][][][][][][] [] [][][][][][][
@@ -1691,7 +1587,7 @@ Underfull \hbox (badness 2253) in paragraph at lines 333--336
 ][] [] [][][][][][][][][][][] []
  []
 
-) [133] (thesis_en.aux)
+) [135] (thesis_en.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1700,12 +1596,12 @@ Package rerunfilecheck Info: File `thesis_en.out' has not changed.
 (rerunfilecheck)             Checksum: A18BF8699715F71BCED67256EF30AF24;7955.
  ) 
 Here is how much of TeX's memory you used:
- 23497 strings out of 402982
- 447537 string characters out of 5448680
- 926255 words of memory out of 5000000
- 51848 multiletter control sequences out of 15000+600000
+ 23496 strings out of 402982
+ 447527 string characters out of 5448680
+ 926258 words of memory out of 5000000
+ 51847 multiletter control sequences out of 15000+600000
  634785 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  88i,13n,130p,1566b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thesis_en.pdf (133 pages).
+Output written on thesis_en.pdf (135 pages).

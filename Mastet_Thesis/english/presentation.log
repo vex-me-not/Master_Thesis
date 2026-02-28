@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  27 FEB 2026 21:46
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.2.18)  28 FEB 2026 12:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1008,8 +1008,6 @@ Package caption Info: End \AtBeginDocument code.
 
 ] [7
 
-] [8
-
 ]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 169
 .
@@ -1030,7 +1028,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 169.
 
-[9
+[8
 
 ]
 File: figures/qubit_bloch_sphere.png Graphic file (type bmp)
@@ -1045,7 +1043,9 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 Overfull \vbox (5.16832pt too high) detected at line 191
  []
 
-[10
+[9
+
+] [10
 
 ] [11
 
@@ -1065,8 +1065,6 @@ Overfull \vbox (5.16832pt too high) detected at line 191
 
 ] [19
 
-] [20
-
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <14.4> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 495.
@@ -1074,32 +1072,32 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <14.4> not available
 Overfull \vbox (14.89984pt too high) detected at line 495
  []
 
-[21
+[20
 
 ]
 File: figures/circuit_diagram.png Graphic file (type bmp)
 <figures/circuit_diagram.png>
- [22
+ [21
 
-] [23
+] [22
 
 ]
 File: figures/general_variational.png Graphic file (type bmp)
 <figures/general_variational.png>
- [24
+ [23
 
-] [25
+] [24
 
 ]
 File: figures/fna_nuclei.png Graphic file (type bmp)
 <figures/fna_nuclei.png>
- [26
+ [25
+
+] [26
 
 ] [27
 
 ] [28
-
-] [29
 
 ]
 File: figures/model_comparison_heatmap.png Graphic file (type bmp)
@@ -1108,7 +1106,7 @@ File: figures/model_comparison_heatmap.png Graphic file (type bmp)
 Overfull \vbox (38.76862pt too high) detected at line 645
  []
 
-[30
+[29
 
 ]
 File: figures/violin_plot_boot_lr.png Graphic file (type bmp)
@@ -1117,7 +1115,7 @@ File: figures/violin_plot_boot_lr.png Graphic file (type bmp)
 Overfull \vbox (8.8803pt too high) detected at line 660
  []
 
-[31
+[30
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.95> not available
@@ -1126,7 +1124,7 @@ LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <8> not available
 (Font)              Font shape `TU/lmss/bx/n' tried instead on input line 678.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6> not available
 (Font)              Font shape `TU/lmss/bx/n' tried instead on input line 678.
- [32
+ [31
 
 ]
 File: figures/trend_1_qubits_10_runs.png Graphic file (type bmp)
@@ -1135,7 +1133,7 @@ File: figures/trend_1_qubits_10_runs.png Graphic file (type bmp)
 Overfull \vbox (22.3899pt too high) detected at line 695
  []
 
-[33
+[32
 
 ]
 File: ./figures/best_VQC_1_qubit_unbiased.png Graphic file (type bmp)
@@ -1145,7 +1143,7 @@ Overfull \hbox (32.78577pt too wide) in paragraph at lines 711--711
  [] 
  []
 
-[34
+[33
 
 ]
 File: ./figures/best_losses_1_qubit_unbiased.png Graphic file (type bmp)
@@ -1154,7 +1152,7 @@ File: ./figures/best_losses_1_qubit_unbiased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 726
  []
 
-[35
+[34
 
 ]
 File: ./figures/best_metrics_1_qubit_unbiased.png Graphic file (type bmp)
@@ -1163,7 +1161,7 @@ File: ./figures/best_metrics_1_qubit_unbiased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 741
  []
 
-[36
+[35
 
 ]
 File: figures/best_VQC_1_qubit_biased.png Graphic file (type bmp)
@@ -1173,7 +1171,7 @@ Overfull \hbox (32.78577pt too wide) in paragraph at lines 758--758
  [] 
  []
 
-[37
+[36
 
 ]
 File: figures/best_losses_1_qubit_biased.png Graphic file (type bmp)
@@ -1182,7 +1180,7 @@ File: figures/best_losses_1_qubit_biased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 773
  []
 
-[38
+[37
 
 ]
 File: ./figures/best_metrics_1_qubit_biased.png Graphic file (type bmp)
@@ -1191,7 +1189,7 @@ File: ./figures/best_metrics_1_qubit_biased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 788
  []
 
-[39
+[38
 
 ]
 File: figures/trend_2_qubits_10_runs.png Graphic file (type bmp)
@@ -1200,12 +1198,12 @@ File: figures/trend_2_qubits_10_runs.png Graphic file (type bmp)
 Overfull \vbox (22.3899pt too high) detected at line 805
  []
 
-[40
+[39
 
 ]
 File: ./figures/best_VQC_2_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_2_qubits_unbiased.png>
- [41
+ [40
 
 ]
 File: ./figures/best_losses_2_qubits_unbiased.png Graphic file (type bmp)
@@ -1214,7 +1212,7 @@ File: ./figures/best_losses_2_qubits_unbiased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 836
  []
 
-[42
+[41
 
 ]
 File: ./figures/best_metrics_2_qubits_unbiased.png Graphic file (type bmp)
@@ -1223,12 +1221,12 @@ File: ./figures/best_metrics_2_qubits_unbiased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 851
  []
 
-[43
+[42
 
 ]
 File: ./figures/best_VQC_2_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_2_qubits_biased.png>
- [44
+ [43
 
 ]
 File: ./figures/best_losses_2_qubits_biased.png Graphic file (type bmp)
@@ -1237,7 +1235,7 @@ File: ./figures/best_losses_2_qubits_biased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 883
  []
 
-[45
+[44
 
 ]
 File: ./figures/best_metrics_2_qubits_biased.png Graphic file (type bmp)
@@ -1246,7 +1244,7 @@ File: ./figures/best_metrics_2_qubits_biased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 898
  []
 
-[46
+[45
 
 ]
 File: figures/trend_3_qubits_10_runs.png Graphic file (type bmp)
@@ -1255,12 +1253,12 @@ File: figures/trend_3_qubits_10_runs.png Graphic file (type bmp)
 Overfull \vbox (22.3899pt too high) detected at line 915
  []
 
-[47
+[46
 
 ]
 File: ./figures/best_VQC_3_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_3_qubits_unbiased.png>
- [48
+ [47
 
 ]
 File: ./figures/best_losses_3_qubits_unbiased.png Graphic file (type bmp)
@@ -1269,7 +1267,7 @@ File: ./figures/best_losses_3_qubits_unbiased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 946
  []
 
-[49
+[48
 
 ]
 File: ./figures/best_metrics_3_qubits_unbiased.png Graphic file (type bmp)
@@ -1278,12 +1276,12 @@ File: ./figures/best_metrics_3_qubits_unbiased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 961
  []
 
-[50
+[49
 
 ]
 File: ./figures/best_VQC_3_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_3_qubits_biased.png>
- [51
+ [50
 
 ]
 File: ./figures/best_losses_3_qubits_biased.png Graphic file (type bmp)
@@ -1292,7 +1290,7 @@ File: ./figures/best_losses_3_qubits_biased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 993
  []
 
-[52
+[51
 
 ]
 File: ./figures/best_metrics_3_qubits_biased.png Graphic file (type bmp)
@@ -1301,7 +1299,7 @@ File: ./figures/best_metrics_3_qubits_biased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 1008
  []
 
-[53
+[52
 
 ]
 File: figures/trend_4_qubits_10_runs.png Graphic file (type bmp)
@@ -1310,12 +1308,12 @@ File: figures/trend_4_qubits_10_runs.png Graphic file (type bmp)
 Overfull \vbox (22.3899pt too high) detected at line 1025
  []
 
-[54
+[53
 
 ]
 File: ./figures/best_VQC_4_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_4_qubits_unbiased.png>
- [55
+ [54
 
 ]
 File: ./figures/best_losses_4_qubits_unbiased.png Graphic file (type bmp)
@@ -1324,7 +1322,7 @@ File: ./figures/best_losses_4_qubits_unbiased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 1056
  []
 
-[56
+[55
 
 ]
 File: ./figures/best_metrics_4_qubits_unbiased.png Graphic file (type bmp)
@@ -1333,12 +1331,12 @@ File: ./figures/best_metrics_4_qubits_unbiased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 1071
  []
 
-[57
+[56
 
 ]
 File: ./figures/best_VQC_4_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_4_qubits_biased.png>
- [58
+ [57
 
 ]
 File: ./figures/best_losses_4_qubits_biased.png Graphic file (type bmp)
@@ -1347,7 +1345,7 @@ File: ./figures/best_losses_4_qubits_biased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 1103
  []
 
-[59
+[58
 
 ]
 File: ./figures/best_metrics_4_qubits_biased.png Graphic file (type bmp)
@@ -1356,7 +1354,7 @@ File: ./figures/best_metrics_4_qubits_biased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 1118
  []
 
-[60
+[59
 
 ]
 File: figures/trend_5_qubits_10_runs.png Graphic file (type bmp)
@@ -1365,12 +1363,12 @@ File: figures/trend_5_qubits_10_runs.png Graphic file (type bmp)
 Overfull \vbox (22.3899pt too high) detected at line 1135
  []
 
-[61
+[60
 
 ]
 File: ./figures/best_VQC_5_qubits_unbiased.png Graphic file (type bmp)
 <./figures/best_VQC_5_qubits_unbiased.png>
- [62
+ [61
 
 ]
 File: ./figures/best_losses_5_qubits_unbiased.png Graphic file (type bmp)
@@ -1379,7 +1377,7 @@ File: ./figures/best_losses_5_qubits_unbiased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 1166
  []
 
-[63
+[62
 
 ]
 File: ./figures/best_metrics_5_qubits_unbiased.png Graphic file (type bmp)
@@ -1388,12 +1386,12 @@ File: ./figures/best_metrics_5_qubits_unbiased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 1181
  []
 
-[64
+[63
 
 ]
 File: ./figures/best_VQC_5_qubits_biased.png Graphic file (type bmp)
 <./figures/best_VQC_5_qubits_biased.png>
- [65
+ [64
 
 ]
 File: ./figures/best_losses_5_qubits_biased.png Graphic file (type bmp)
@@ -1402,7 +1400,7 @@ File: ./figures/best_losses_5_qubits_biased.png Graphic file (type bmp)
 Overfull \vbox (16.99469pt too high) detected at line 1212
  []
 
-[66
+[65
 
 ]
 File: ./figures/best_metrics_5_qubits_biased.png Graphic file (type bmp)
@@ -1411,7 +1409,7 @@ File: ./figures/best_metrics_5_qubits_biased.png Graphic file (type bmp)
 Overfull \vbox (24.74069pt too high) detected at line 1227
  []
 
-[67
+[66
 
 ]
 File: ./figures/10_runs_unbiased_metrics_labeled.png Graphic file (type bmp)
@@ -1420,7 +1418,7 @@ File: ./figures/10_runs_unbiased_metrics_labeled.png Graphic file (type bmp)
 Overfull \vbox (23.22519pt too high) detected at line 1246
  []
 
-[68
+[67
 
 ]
 File: ./figures/10_runs_biased_metrics_labeled.png Graphic file (type bmp)
@@ -1429,7 +1427,7 @@ File: ./figures/10_runs_biased_metrics_labeled.png Graphic file (type bmp)
 Overfull \vbox (11.22519pt too high) detected at line 1261
  []
 
-[69
+[68
 
 ]
 File: ./figures/10_runs_vqc_params_comparison.png Graphic file (type bmp)
@@ -1438,7 +1436,7 @@ File: ./figures/10_runs_vqc_params_comparison.png Graphic file (type bmp)
 Overfull \vbox (20.04pt too high) detected at line 1276
  []
 
-[70
+[69
 
 ]
 File: ./figures/vqc_vs_classical.png Graphic file (type bmp)
@@ -1447,11 +1445,11 @@ File: ./figures/vqc_vs_classical.png Graphic file (type bmp)
 Overfull \vbox (12.84097pt too high) detected at line 1291
  []
 
-[71
+[70
+
+] [71
 
 ] [72
-
-] [73
 
 ]
 \tf@nav=\write6
@@ -1469,15 +1467,15 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 21CBA3A1CACC924809F8CEC9BF8A236C;3067.
+(rerunfilecheck)             Checksum: 5B23FFF409F98CD66E2A0E6EFD03547D;3067.
  ) 
 Here is how much of TeX's memory you used:
- 25126 strings out of 402982
- 483517 string characters out of 5448680
- 865449 words of memory out of 5000000
- 53322 multiletter control sequences out of 15000+600000
+ 25124 strings out of 402982
+ 483499 string characters out of 5448680
+ 865428 words of memory out of 5000000
+ 53320 multiletter control sequences out of 15000+600000
  637052 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,11n,123p,444b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on presentation.pdf (73 pages).
+Output written on presentation.pdf (72 pages).

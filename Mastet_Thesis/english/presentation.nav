@@ -16,175 +16,173 @@
 \headcommand {\sectionentry {2}{Quantum Computing and Quantum Machine Learning Basics}{6}{Quantum Computing and Quantum Machine Learning Basics}{0}}
 \headcommand {\slideentry {2}{0}{1}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {2}{0}{2}{7/7}{}{0}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{7}{The Qubit}}
+\headcommand {\slideentry {2}{1}{1}{7/7}{The Qubit}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@subsectionpages {6}{7}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{8}{The Qubit}}
-\headcommand {\slideentry {2}{1}{1}{8/8}{The Qubit}{0}}
+\headcommand {\slideentry {2}{1}{2}{8/8}{The Qubit}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {2}{1}{2}{9/9}{The Qubit}{0}}
+\headcommand {\slideentry {2}{1}{3}{9/9}{The Qubit}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {2}{1}{3}{10/10}{The Qubit}{0}}
+\headcommand {\beamer@subsectionpages {7}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{10}{Qubit Manipulation}}
+\headcommand {\slideentry {2}{2}{1}{10/10}{Qubit Manipulation}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@subsectionpages {8}{10}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{11}{Qubit Manipulation}}
-\headcommand {\slideentry {2}{2}{1}{11/11}{Qubit Manipulation}{0}}
+\headcommand {\slideentry {2}{2}{2}{11/11}{Qubit Manipulation}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {2}{2}{2}{12/12}{Qubit Manipulation}{0}}
+\headcommand {\slideentry {2}{2}{3}{12/12}{Qubit Manipulation}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {2}{2}{3}{13/13}{Qubit Manipulation}{0}}
+\headcommand {\slideentry {2}{2}{4}{13/13}{Qubit Manipulation}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {2}{2}{4}{14/14}{Qubit Manipulation}{0}}
+\headcommand {\slideentry {2}{2}{5}{14/14}{Qubit Manipulation}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {2}{2}{5}{15/15}{Qubit Manipulation}{0}}
+\headcommand {\slideentry {2}{2}{6}{15/15}{Qubit Manipulation}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {2}{2}{6}{16/16}{Qubit Manipulation}{0}}
+\headcommand {\slideentry {2}{2}{7}{16/16}{Qubit Manipulation}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {2}{2}{7}{17/17}{Qubit Manipulation}{0}}
+\headcommand {\slideentry {2}{2}{8}{17/17}{Qubit Manipulation}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {2}{2}{8}{18/18}{Qubit Manipulation}{0}}
+\headcommand {\beamer@subsectionpages {10}{17}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{18}{Quantum Gates}}
+\headcommand {\slideentry {2}{3}{1}{18/18}{Quantum Gates}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@subsectionpages {11}{18}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{19}{Quantum Gates}}
-\headcommand {\slideentry {2}{3}{1}{19/19}{Quantum Gates}{0}}
+\headcommand {\slideentry {2}{3}{2}{19/19}{Quantum Gates}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {2}{3}{2}{20/20}{Quantum Gates}{0}}
+\headcommand {\slideentry {2}{3}{3}{20/20}{Quantum Gates}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {2}{3}{3}{21/21}{Quantum Gates}{0}}
+\headcommand {\slideentry {2}{3}{4}{21/21}{Quantum Gates}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\slideentry {2}{3}{4}{22/22}{Quantum Gates}{0}}
+\headcommand {\beamer@subsectionpages {18}{21}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{22}{Input Encoding Techniques}}
+\headcommand {\slideentry {2}{4}{1}{22/22}{Input Encoding Techniques}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@subsectionpages {19}{22}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{23}{Input Encoding Techniques}}
-\headcommand {\slideentry {2}{4}{1}{23/23}{Input Encoding Techniques}{0}}
+\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{23}{Variational Quantum Classifiers}}
+\headcommand {\slideentry {2}{5}{1}{23/23}{Variational Quantum Classifiers}{0}}
 \headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@sectionpages {6}{23}}
 \headcommand {\beamer@subsectionpages {23}{23}}
-\headcommand {\beamer@subsectionentry {0}{2}{5}{24}{Variational Quantum Classifiers}}
-\headcommand {\slideentry {2}{5}{1}{24/24}{Variational Quantum Classifiers}{0}}
+\headcommand {\sectionentry {3}{Results from Classical Machine Learning methods}{24}{Results from Classical Machine Learning methods}{0}}
+\headcommand {\slideentry {3}{0}{1}{24/24}{}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\beamer@sectionpages {6}{24}}
-\headcommand {\beamer@subsectionpages {24}{24}}
-\headcommand {\sectionentry {3}{Results from Classical Machine Learning methods}{25}{Results from Classical Machine Learning methods}{0}}
-\headcommand {\slideentry {3}{0}{1}{25/25}{}{0}}
+\headcommand {\slideentry {3}{0}{2}{25/25}{}{0}}
 \headcommand {\beamer@framepages {25}{25}}
-\headcommand {\slideentry {3}{0}{2}{26/26}{}{0}}
+\headcommand {\slideentry {3}{0}{3}{26/26}{}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\slideentry {3}{0}{3}{27/27}{}{0}}
+\headcommand {\slideentry {3}{0}{4}{27/27}{}{0}}
 \headcommand {\beamer@framepages {27}{27}}
-\headcommand {\slideentry {3}{0}{4}{28/28}{}{0}}
+\headcommand {\slideentry {3}{0}{5}{28/28}{}{0}}
 \headcommand {\beamer@framepages {28}{28}}
-\headcommand {\slideentry {3}{0}{5}{29/29}{}{0}}
+\headcommand {\slideentry {3}{0}{6}{29/29}{}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\slideentry {3}{0}{6}{30/30}{}{0}}
+\headcommand {\slideentry {3}{0}{7}{30/30}{}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {3}{0}{7}{31/31}{}{0}}
+\headcommand {\beamer@sectionpages {24}{30}}
+\headcommand {\beamer@subsectionpages {24}{30}}
+\headcommand {\sectionentry {4}{Results from Variational Quantum methods}{31}{Results from Variational Quantum methods}{0}}
+\headcommand {\slideentry {4}{0}{1}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\beamer@sectionpages {25}{31}}
-\headcommand {\beamer@subsectionpages {25}{31}}
-\headcommand {\sectionentry {4}{Results from Variational Quantum methods}{32}{Results from Variational Quantum methods}{0}}
-\headcommand {\slideentry {4}{0}{1}{32/32}{}{0}}
+\headcommand {\beamer@subsectionpages {31}{31}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{32}{One qubit results}}
+\headcommand {\slideentry {4}{1}{1}{32/32}{One qubit results}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\beamer@subsectionpages {32}{32}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{33}{One qubit results}}
-\headcommand {\slideentry {4}{1}{1}{33/33}{One qubit results}{0}}
+\headcommand {\slideentry {4}{1}{2}{33/33}{One qubit results}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {4}{1}{2}{34/34}{One qubit results}{0}}
+\headcommand {\slideentry {4}{1}{3}{34/34}{One qubit results}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {4}{1}{3}{35/35}{One qubit results}{0}}
+\headcommand {\slideentry {4}{1}{4}{35/35}{One qubit results}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {4}{1}{4}{36/36}{One qubit results}{0}}
+\headcommand {\slideentry {4}{1}{5}{36/36}{One qubit results}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\slideentry {4}{1}{5}{37/37}{One qubit results}{0}}
+\headcommand {\slideentry {4}{1}{6}{37/37}{One qubit results}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\slideentry {4}{1}{6}{38/38}{One qubit results}{0}}
+\headcommand {\slideentry {4}{1}{7}{38/38}{One qubit results}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\slideentry {4}{1}{7}{39/39}{One qubit results}{0}}
+\headcommand {\beamer@subsectionpages {32}{38}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{39}{Two qubit results}}
+\headcommand {\slideentry {4}{2}{1}{39/39}{Two qubit results}{0}}
 \headcommand {\beamer@framepages {39}{39}}
-\headcommand {\beamer@subsectionpages {33}{39}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{40}{Two qubit results}}
-\headcommand {\slideentry {4}{2}{1}{40/40}{Two qubit results}{0}}
+\headcommand {\slideentry {4}{2}{2}{40/40}{Two qubit results}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {4}{2}{2}{41/41}{Two qubit results}{0}}
+\headcommand {\slideentry {4}{2}{3}{41/41}{Two qubit results}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\slideentry {4}{2}{3}{42/42}{Two qubit results}{0}}
+\headcommand {\slideentry {4}{2}{4}{42/42}{Two qubit results}{0}}
 \headcommand {\beamer@framepages {42}{42}}
-\headcommand {\slideentry {4}{2}{4}{43/43}{Two qubit results}{0}}
+\headcommand {\slideentry {4}{2}{5}{43/43}{Two qubit results}{0}}
 \headcommand {\beamer@framepages {43}{43}}
-\headcommand {\slideentry {4}{2}{5}{44/44}{Two qubit results}{0}}
+\headcommand {\slideentry {4}{2}{6}{44/44}{Two qubit results}{0}}
 \headcommand {\beamer@framepages {44}{44}}
-\headcommand {\slideentry {4}{2}{6}{45/45}{Two qubit results}{0}}
+\headcommand {\slideentry {4}{2}{7}{45/45}{Two qubit results}{0}}
 \headcommand {\beamer@framepages {45}{45}}
-\headcommand {\slideentry {4}{2}{7}{46/46}{Two qubit results}{0}}
+\headcommand {\beamer@subsectionpages {39}{45}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{46}{Three qubit results}}
+\headcommand {\slideentry {4}{3}{1}{46/46}{Three qubit results}{0}}
 \headcommand {\beamer@framepages {46}{46}}
-\headcommand {\beamer@subsectionpages {40}{46}}
-\headcommand {\beamer@subsectionentry {0}{4}{3}{47}{Three qubit results}}
-\headcommand {\slideentry {4}{3}{1}{47/47}{Three qubit results}{0}}
+\headcommand {\slideentry {4}{3}{2}{47/47}{Three qubit results}{0}}
 \headcommand {\beamer@framepages {47}{47}}
-\headcommand {\slideentry {4}{3}{2}{48/48}{Three qubit results}{0}}
+\headcommand {\slideentry {4}{3}{3}{48/48}{Three qubit results}{0}}
 \headcommand {\beamer@framepages {48}{48}}
-\headcommand {\slideentry {4}{3}{3}{49/49}{Three qubit results}{0}}
+\headcommand {\slideentry {4}{3}{4}{49/49}{Three qubit results}{0}}
 \headcommand {\beamer@framepages {49}{49}}
-\headcommand {\slideentry {4}{3}{4}{50/50}{Three qubit results}{0}}
+\headcommand {\slideentry {4}{3}{5}{50/50}{Three qubit results}{0}}
 \headcommand {\beamer@framepages {50}{50}}
-\headcommand {\slideentry {4}{3}{5}{51/51}{Three qubit results}{0}}
+\headcommand {\slideentry {4}{3}{6}{51/51}{Three qubit results}{0}}
 \headcommand {\beamer@framepages {51}{51}}
-\headcommand {\slideentry {4}{3}{6}{52/52}{Three qubit results}{0}}
+\headcommand {\slideentry {4}{3}{7}{52/52}{Three qubit results}{0}}
 \headcommand {\beamer@framepages {52}{52}}
-\headcommand {\slideentry {4}{3}{7}{53/53}{Three qubit results}{0}}
+\headcommand {\beamer@subsectionpages {46}{52}}
+\headcommand {\beamer@subsectionentry {0}{4}{4}{53}{Four qubit results}}
+\headcommand {\slideentry {4}{4}{1}{53/53}{Four qubit results}{0}}
 \headcommand {\beamer@framepages {53}{53}}
-\headcommand {\beamer@subsectionpages {47}{53}}
-\headcommand {\beamer@subsectionentry {0}{4}{4}{54}{Four qubit results}}
-\headcommand {\slideentry {4}{4}{1}{54/54}{Four qubit results}{0}}
+\headcommand {\slideentry {4}{4}{2}{54/54}{Four qubit results}{0}}
 \headcommand {\beamer@framepages {54}{54}}
-\headcommand {\slideentry {4}{4}{2}{55/55}{Four qubit results}{0}}
+\headcommand {\slideentry {4}{4}{3}{55/55}{Four qubit results}{0}}
 \headcommand {\beamer@framepages {55}{55}}
-\headcommand {\slideentry {4}{4}{3}{56/56}{Four qubit results}{0}}
+\headcommand {\slideentry {4}{4}{4}{56/56}{Four qubit results}{0}}
 \headcommand {\beamer@framepages {56}{56}}
-\headcommand {\slideentry {4}{4}{4}{57/57}{Four qubit results}{0}}
+\headcommand {\slideentry {4}{4}{5}{57/57}{Four qubit results}{0}}
 \headcommand {\beamer@framepages {57}{57}}
-\headcommand {\slideentry {4}{4}{5}{58/58}{Four qubit results}{0}}
+\headcommand {\slideentry {4}{4}{6}{58/58}{Four qubit results}{0}}
 \headcommand {\beamer@framepages {58}{58}}
-\headcommand {\slideentry {4}{4}{6}{59/59}{Four qubit results}{0}}
+\headcommand {\slideentry {4}{4}{7}{59/59}{Four qubit results}{0}}
 \headcommand {\beamer@framepages {59}{59}}
-\headcommand {\slideentry {4}{4}{7}{60/60}{Four qubit results}{0}}
+\headcommand {\beamer@subsectionpages {53}{59}}
+\headcommand {\beamer@subsectionentry {0}{4}{5}{60}{Five qubit results}}
+\headcommand {\slideentry {4}{5}{1}{60/60}{Five qubit results}{0}}
 \headcommand {\beamer@framepages {60}{60}}
-\headcommand {\beamer@subsectionpages {54}{60}}
-\headcommand {\beamer@subsectionentry {0}{4}{5}{61}{Five qubit results}}
-\headcommand {\slideentry {4}{5}{1}{61/61}{Five qubit results}{0}}
+\headcommand {\slideentry {4}{5}{2}{61/61}{Five qubit results}{0}}
 \headcommand {\beamer@framepages {61}{61}}
-\headcommand {\slideentry {4}{5}{2}{62/62}{Five qubit results}{0}}
+\headcommand {\slideentry {4}{5}{3}{62/62}{Five qubit results}{0}}
 \headcommand {\beamer@framepages {62}{62}}
-\headcommand {\slideentry {4}{5}{3}{63/63}{Five qubit results}{0}}
+\headcommand {\slideentry {4}{5}{4}{63/63}{Five qubit results}{0}}
 \headcommand {\beamer@framepages {63}{63}}
-\headcommand {\slideentry {4}{5}{4}{64/64}{Five qubit results}{0}}
+\headcommand {\slideentry {4}{5}{5}{64/64}{Five qubit results}{0}}
 \headcommand {\beamer@framepages {64}{64}}
-\headcommand {\slideentry {4}{5}{5}{65/65}{Five qubit results}{0}}
+\headcommand {\slideentry {4}{5}{6}{65/65}{Five qubit results}{0}}
 \headcommand {\beamer@framepages {65}{65}}
-\headcommand {\slideentry {4}{5}{6}{66/66}{Five qubit results}{0}}
+\headcommand {\slideentry {4}{5}{7}{66/66}{Five qubit results}{0}}
 \headcommand {\beamer@framepages {66}{66}}
-\headcommand {\slideentry {4}{5}{7}{67/67}{Five qubit results}{0}}
+\headcommand {\beamer@sectionpages {31}{66}}
+\headcommand {\beamer@subsectionpages {60}{66}}
+\headcommand {\sectionentry {5}{Comparison \& Conclusion}{67}{Comparison \& Conclusion}{0}}
+\headcommand {\beamer@subsectionpages {67}{66}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{67}{Comparison}}
+\headcommand {\slideentry {5}{1}{1}{67/67}{Comparison}{0}}
 \headcommand {\beamer@framepages {67}{67}}
-\headcommand {\beamer@sectionpages {32}{67}}
-\headcommand {\beamer@subsectionpages {61}{67}}
-\headcommand {\sectionentry {5}{Comparison \& Conclusion}{68}{Comparison \& Conclusion}{0}}
-\headcommand {\beamer@subsectionpages {68}{67}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{68}{Comparison}}
-\headcommand {\slideentry {5}{1}{1}{68/68}{Comparison}{0}}
+\headcommand {\slideentry {5}{1}{2}{68/68}{Comparison}{0}}
 \headcommand {\beamer@framepages {68}{68}}
-\headcommand {\slideentry {5}{1}{2}{69/69}{Comparison}{0}}
+\headcommand {\slideentry {5}{1}{3}{69/69}{Comparison}{0}}
 \headcommand {\beamer@framepages {69}{69}}
-\headcommand {\slideentry {5}{1}{3}{70/70}{Comparison}{0}}
+\headcommand {\slideentry {5}{1}{4}{70/70}{Comparison}{0}}
 \headcommand {\beamer@framepages {70}{70}}
-\headcommand {\slideentry {5}{1}{4}{71/71}{Comparison}{0}}
+\headcommand {\beamer@subsectionpages {67}{70}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{71}{Conclusion}}
+\headcommand {\slideentry {5}{2}{1}{71/71}{Conclusion}{0}}
 \headcommand {\beamer@framepages {71}{71}}
-\headcommand {\beamer@subsectionpages {68}{71}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{72}{Conclusion}}
-\headcommand {\slideentry {5}{2}{1}{72/72}{Conclusion}{0}}
+\headcommand {\slideentry {5}{2}{2}{72/72}{Conclusion}{0}}
 \headcommand {\beamer@framepages {72}{72}}
-\headcommand {\slideentry {5}{2}{2}{73/73}{Conclusion}{0}}
-\headcommand {\beamer@framepages {73}{73}}
-\headcommand {\beamer@partpages {1}{73}}
-\headcommand {\beamer@subsectionpages {72}{73}}
-\headcommand {\beamer@sectionpages {68}{73}}
-\headcommand {\beamer@documentpages {73}}
-\headcommand {\gdef \inserttotalframenumber {73}}
+\headcommand {\beamer@partpages {1}{72}}
+\headcommand {\beamer@subsectionpages {71}{72}}
+\headcommand {\beamer@sectionpages {67}{72}}
+\headcommand {\beamer@documentpages {72}}
+\headcommand {\gdef \inserttotalframenumber {72}}

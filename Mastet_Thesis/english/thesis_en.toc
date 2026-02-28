@@ -15,36 +15,36 @@
 \contentsline {subsection}{\numberline {1.1.6}Light Gradient Boosting Machine}{23}{subsection.1.1.6}%
 \contentsline {section}{\numberline {1.2}Quantum Computing and Quantum Machine Learning}{24}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}The Qubit}{25}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Qubit Manipulation}{27}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.2}Qubit Manipulation}{26}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}Manipulation of Multiple Qubits}{30}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Quantum Entanglement}{31}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.4}Quantum Entanglement}{32}{subsection.1.2.4}%
 \contentsline {subsection}{\numberline {1.2.5}Quantum Gates}{32}{subsection.1.2.5}%
-\contentsline {subsection}{\numberline {1.2.6}Input Encoding Techniques}{35}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.6}Input Encoding Techniques}{36}{subsection.1.2.6}%
 \contentsline {subsubsection}{\numberline {1.2.6.1}Basis Encoding}{36}{subsubsection.1.2.6.1}%
 \contentsline {subsubsection}{\numberline {1.2.6.2}Time-evolution Encoding}{36}{subsubsection.1.2.6.2}%
-\contentsline {subsubsection}{\numberline {1.2.6.3}Hamiltonian Encoding}{36}{subsubsection.1.2.6.3}%
+\contentsline {subsubsection}{\numberline {1.2.6.3}Hamiltonian Encoding}{37}{subsubsection.1.2.6.3}%
 \contentsline {subsubsection}{\numberline {1.2.6.4}Amplitude Encoding}{37}{subsubsection.1.2.6.4}%
 \contentsline {subsection}{\numberline {1.2.7}Variational Quantum Classifier}{39}{subsection.1.2.7}%
 \contentsline {chapter}{\numberline {2}RESULTS FROM CLASSICAL MACHINE LEARNING METHODS}{41}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Exploratory Data Analysis}{43}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Evaluation of Classical Machine Learning Methods}{49}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Classical Models and their Respective Hyperparameters}{50}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.2}Evaluation of Classical Machine Learning Methods}{48}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Classical Models and their Respective Hyperparameters}{48}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Evaluation Metrics}{51}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Repeated Nested Cross Validation}{53}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Finding the Best Classical Model}{57}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Finetuning the Best Model}{59}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Bootstrapping}{59}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}95\% Confidence Intervals based on bootstrapping}{60}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}RESULTS FROM VARIATIONAL QUANTUM METHODS}{63}{chapter.3}%
-\contentsline {section}{\numberline {3.1}1-qubit Results}{67}{section.3.1}%
-\contentsline {section}{\numberline {3.2}2-qubits Results}{80}{section.3.2}%
-\contentsline {section}{\numberline {3.3}3-qubits Results}{88}{section.3.3}%
-\contentsline {section}{\numberline {3.4}4-qubits Results}{97}{section.3.4}%
-\contentsline {section}{\numberline {3.5}5-qubits Results}{106}{section.3.5}%
-\contentsline {chapter}{\numberline {4}COMPARISON OF THE RESULTS}{115}{chapter.4}%
-\contentsline {chapter}{\numberline {5}CONCLUSION}{123}{chapter.5}%
-\contentsline {chapter}{ABBREVIATIONS - ACRONYMS}{125}{chapter*.81}%
-\contentsline {chapter}{APPENDICES}{125}{section*.82}%
-\contentsline {chapter}{\numberline {A}CODE AND DATA AVAILABILITY}{127}{appendix.A}%
-\contentsline {chapter}{\numberline {B}AI USAGE DISCLAIMER}{129}{appendix.B}%
-\contentsline {chapter}{REFERENCES}{133}{appendix*.83}%
+\contentsline {section}{\numberline {2.3}Finding the Best Classical Model}{55}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Finetuning the Best Model}{58}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Bootstrapping}{58}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}95\% Confidence Intervals based on bootstrapping}{61}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}RESULTS FROM VARIATIONAL QUANTUM METHODS}{65}{chapter.3}%
+\contentsline {section}{\numberline {3.1}1-qubit Results}{69}{section.3.1}%
+\contentsline {section}{\numberline {3.2}2-qubits Results}{81}{section.3.2}%
+\contentsline {section}{\numberline {3.3}3-qubits Results}{90}{section.3.3}%
+\contentsline {section}{\numberline {3.4}4-qubits Results}{99}{section.3.4}%
+\contentsline {section}{\numberline {3.5}5-qubits Results}{110}{section.3.5}%
+\contentsline {chapter}{\numberline {4}COMPARISON OF THE RESULTS}{119}{chapter.4}%
+\contentsline {chapter}{\numberline {5}CONCLUSION}{125}{chapter.5}%
+\contentsline {chapter}{ABBREVIATIONS - ACRONYMS}{127}{chapter*.81}%
+\contentsline {chapter}{APPENDICES}{127}{section*.82}%
+\contentsline {chapter}{\numberline {A}CODE AND DATA AVAILABILITY}{129}{appendix.A}%
+\contentsline {chapter}{\numberline {B}AI USAGE DISCLAIMER}{131}{appendix.B}%
+\contentsline {chapter}{REFERENCES}{135}{appendix*.83}%
